@@ -162,8 +162,8 @@
                         if (this.y8GameId !== '' && this.y8HostId !== '' && this.y8AdsenseId !== '') {
                             bridgeOptions.platforms['y8'] = { 
                                 gameId: this.y8GameId,
-                                y8HostId: this.y8HostId,
-                                y8AdsenseId: this.y8AdsenseId,
+                                hostId: this.y8HostId,
+                                adsenseId: this.y8AdsenseId,
                             }
                         }
 
