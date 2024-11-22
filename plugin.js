@@ -40,7 +40,6 @@
                 new SDK.PluginProperty('check', 'load-sdk-from-cdn', true),
                 new SDK.PluginProperty('text', 'custom-cdn-url', ''),
                 new SDK.PluginProperty('text', 'game-distribution-game-id', ''),
-                new SDK.PluginProperty('text', 'vk-play-game-id', ''),
                 new SDK.PluginProperty('text', 'y8-game-id', ''),
                 new SDK.PluginProperty('text', 'y8-host-id', ''),
                 new SDK.PluginProperty('text', 'y8-adsense-id', ''),

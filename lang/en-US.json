@@ -21,10 +21,6 @@
                         "name": "GameDistribution Game ID",
                         "desc": "Game ID, which you can find from your control panel on GameDistribution.com."
                     },
-                    "vk-play-game-id": {
-                        "name": "VK Play Game ID",
-                        "desc": "Game ID, which you can find from your control panel on VKPlay.ru."
-                    },
                     "y8-game-id": {
                         "name": "Y8 Game ID",
                         "desc": "Game ID, which you can find from your control panel on Y8.com."

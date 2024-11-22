@@ -30,14 +30,13 @@
             }
 
             this.gameDistributionGameId = properties[2]
-            this.vkPlayGameId = properties[3]
-            this.y8GameId = properties[4]
-            this.y8HostId = properties[5]
-            this.y8AdsenseId = properties[6]
-            this.laggedDevId = properties[7]
-            this.laggedPublisherId = properties[8]
-            this.facebookPlacementId = properties[9]
-            this.adsgramBlockId = properties[10]
+            this.y8GameId = properties[3]
+            this.y8HostId = properties[4]
+            this.y8AdsenseId = properties[5]
+            this.laggedDevId = properties[6]
+            this.laggedPublisherId = properties[7]
+            this.facebookPlacementId = properties[8]
+            this.adsgramBlockId = properties[9]
 
             if (properties[0]) {
                 this._runtime.AddLoadPromise(this.loadSdk(cdnUrl))
@@ -45,8 +44,8 @@
 
             this._runtime.AddLoadPromise(this.initializeSdk())
 
-            if (properties[11]) {
-                this.showInterstitialOnInit = properties[11]
+            if (properties[10]) {
+                this.showInterstitialOnInit = properties[10]
             }
 
             this.serverTime = 0
@@ -153,10 +152,6 @@
 
                         if (this.gameDistributionGameId !== '') {
                             bridgeOptions.platforms['game_distribution'] = { gameId: this.gameDistributionGameId }
-                        }
-
-                        if (this.vkPlayGameId !== '') {
-                            bridgeOptions.platforms['vk_play'] = { gameId: this.vkPlayGameId }
                         }
 
                         if (this.y8GameId !== '' && this.y8HostId !== '' && this.y8AdsenseId !== '') {
