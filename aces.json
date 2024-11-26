@@ -1006,7 +1006,7 @@
             },
 
             {
-                "id": "on-payments-show-native-popup-completed",
+                "id": "on-achievements-show-native-popup-completed",
                 "scriptName": "OnAchievementsShowNativePopupCompleted",
                 "isTrigger": true,
                 "isInvertible": false,
