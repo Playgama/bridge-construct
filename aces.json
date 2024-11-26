@@ -1058,7 +1058,7 @@
                 "returnType": "any",
                 "params": [
                     {
-                        "id": "purchase-index",
+                        "id": "achievement-index",
                         "type": "number"
                     },
                     {

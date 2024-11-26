@@ -1073,7 +1073,7 @@
                         "translated-name": "AchievementPropertyName",
                         "description": "Achievement Property Name",
                         "params": {
-                            "purchase-index": {
+                            "achievement-index": {
                                 "name": "Achievement Index",
                                 "desc": "Achievement Index"
                             },
@@ -1087,7 +1087,7 @@
                         "translated-name": "AchievementPropertyValue",
                         "description": "Achievement Property Value",
                         "params": {
-                            "purchase-index": {
+                            "achievement-index": {
                                 "name": "Achievement Index",
                                 "desc": "Achievement Index"
                             },
