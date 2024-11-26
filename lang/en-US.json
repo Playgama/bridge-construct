@@ -488,6 +488,37 @@
                         "description": "On Payments Consume Purchase Completed"
                     },
 
+                    "is-achievements-supported": {
+                        "list-name": "IsAchievementsSupported",
+                        "display-text": "Is Achievements Supported",
+                        "description": "Is Achievements Supported"
+                    },
+                    "is-achievements-get-list-supported": {
+                        "list-name": "IsAchievementsGetListSupported",
+                        "display-text": "Is Achievements Get List Supported",
+                        "description": "Is Achievements Get List Supported"
+                    },
+                    "is-achievements-show-native-popup-supported": {
+                        "list-name": "IsAchievementsShowNativePopupSupported",
+                        "display-text": "Is Achievements Show Native Popup Supported",
+                        "description": "Is Achievements Show Native Popup Supported"
+                    },
+                    "on-achievements-unlock-completed": {
+                        "list-name": "OnAchievementsUnlockCompleted",
+                        "display-text": "On Achievements Unlock Completed",
+                        "description": "On Achievements Unlock Completed"
+                    },
+                    "on-achievements-get-list-completed": {
+                        "list-name": "OnAchievementsGetListCompleted",
+                        "display-text": "On Achievements Get List Completed",
+                        "description": "On Achievements Get List Completed"
+                    },
+                    "on-achievements-show-native-popup-completed": {
+                        "list-name": "OnAchievementsShowNativePopupCompleted",
+                        "display-text": "On Achievements Show Native Popup Completed",
+                        "description": "On Achievements Show Native Popup Completed"
+                    },
+
 
                     "is-remote-config-supported": {
                         "list-name": "IsRemoteConfigSupported",
@@ -790,6 +821,22 @@
                         "description": "Payments Consume Purchase"
                     },
 
+                    "achievements-unlock": {
+                        "list-name": "AchievementsUnlock",
+                        "display-text": "Achievements Unlock",
+                        "description": "Achievements Unlock"
+                    },
+                    "achievements-get-list": {
+                        "list-name": "AchievementsGetList",
+                        "display-text": "Achievements Get List",
+                        "description": "Achievements Get List"
+                    },
+                    "achievements-show-native-popup": {
+                        "list-name": "AchievementsShowNativePopup",
+                        "display-text": "Achievements Show Native Popup",
+                        "description": "Achievements Show Native Popup"
+                    },
+
 
                     "send-remote-config-get-request": {
                         "list-name": "SendRemoteConfigGetRequest",
@@ -1014,6 +1061,42 @@
                         }
                     },
 
+                    "achievements-count": {
+                        "translated-name": "AchievementsCount",
+                        "description": "Achievements Count"
+                    },
+                    "achievement-properties-count": {
+                        "translated-name": "AchievementPropertiesCount",
+                        "description": "Achievement Properties Count"
+                    },
+                    "achievement-property-name": {
+                        "translated-name": "AchievementPropertyName",
+                        "description": "Achievement Property Name",
+                        "params": {
+                            "purchase-index": {
+                                "name": "Achievement Index",
+                                "desc": "Achievement Index"
+                            },
+                            "property-index": {
+                                "name": "Property Index",
+                                "desc": "Property Index"
+                            }
+                        }
+                    },
+                    "achievement-property-value": {
+                        "translated-name": "AchievementPropertyValue",
+                        "description": "Achievement Property Value",
+                        "params": {
+                            "purchase-index": {
+                                "name": "Achievement Index",
+                                "desc": "Achievement Index"
+                            },
+                            "property": {
+                                "name": "Property",
+                                "desc": "Property"
+                            }
+                        }
+                    },
 
                     "remote-config-value": {
                         "translated-name": "RemoteConfigValue",

@@ -974,6 +974,101 @@
             }
         ]
     },
+    "achievements": {
+        "conditions": [
+            {
+                "id": "is-achievements-supported",
+                "scriptName": "IsAchievementsSupported"
+            },
+            {
+                "id": "is-achievements-get-list-supported",
+                "scriptName": "IsAchievementsGetListSupported"
+            },
+            {
+                "id": "is-achievements-show-native-popup-supported",
+                "scriptName": "IsAchievementsShowNativePopupSupported"
+            },
+
+            {
+                "id": "on-achievements-unlock-completed",
+                "scriptName": "OnAchievementsUnlockCompleted",
+                "isTrigger": true,
+                "isInvertible": false,
+                "isCompatibleWithTriggers": false
+            },
+
+            {
+                "id": "on-achievements-get-list-completed",
+                "scriptName": "OnAchievementsGetListCompleted",
+                "isTrigger": true,
+                "isInvertible": false,
+                "isCompatibleWithTriggers": false
+            },
+
+            {
+                "id": "on-payments-show-native-popup-completed",
+                "scriptName": "OnAchievementsShowNativePopupCompleted",
+                "isTrigger": true,
+                "isInvertible": false,
+                "isCompatibleWithTriggers": false
+            }
+        ],
+        "actions": [
+            {
+                "id": "achievements-unlock",
+                "scriptName": "AchievementsUnlock",
+                "isAsync": true
+            },
+            {
+                "id": "achievements-get-list",
+                "scriptName": "AchievementsGetList",
+                "isAsync": true
+            },
+            {
+                "id": "achievements-show-native-popup",
+                "scriptName": "AchievementsShowNativePopup",
+                "isAsync": true
+            }
+        ],
+        "expressions": [
+            {
+                "id": "achievements-count",
+                "expressionName": "AchievementsCount",
+                "returnType": "number"
+            },
+            {
+                "id": "achievement-properties-count",
+                "expressionName": "AchievementPropertiesCount",
+                "returnType": "number"
+            },
+            {
+                "id": "achievement-property-name",
+                "expressionName": "AchievementPropertyName",
+                "returnType": "string",
+                "params": [
+                    {
+                        "id": "property-index",
+                        "type": "number"
+                    }
+                ]
+            },
+            {
+                "id": "achievement-property-value",
+                "expressionName": "AchievementPropertyValue",
+                "returnType": "any",
+                "params": [
+                    {
+                        "id": "purchase-index",
+                        "type": "number"
+                    },
+                    {
+                        "id": "property",
+                        "type": "any"
+                    }
+                ]
+            }
+        ]
+    },
     "remote-config": {
         "conditions": [
             {
