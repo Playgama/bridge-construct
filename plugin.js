@@ -25,6 +25,7 @@
                 new SDK.PluginProperty('text', 'game-distribution-game-id', ''),
                 new SDK.PluginProperty('text', 'y8-game-id', ''),
                 new SDK.PluginProperty('text', 'y8-host-id', ''),
+                new SDK.PluginProperty('text', 'y8-channel-id', ''),
                 new SDK.PluginProperty('text', 'y8-adsense-id', ''),
                 new SDK.PluginProperty('text', 'lagged-dev-id', ''),
                 new SDK.PluginProperty('text', 'lagged-publisher-id', ''),

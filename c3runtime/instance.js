@@ -15,11 +15,12 @@
             this.gameDistributionGameId = properties[2]
             this.y8GameId = properties[3]
             this.y8HostId = properties[4]
-            this.y8AdsenseId = properties[5]
-            this.laggedDevId = properties[6]
-            this.laggedPublisherId = properties[7]
-            this.facebookPlacementId = properties[8]
-            this.adsgramBlockId = properties[9]
+            this.y8ChannelId = properties[5]
+            this.y8AdsenseId = properties[6]
+            this.laggedDevId = properties[7]
+            this.laggedPublisherId = properties[8]
+            this.facebookPlacementId = properties[9]
+            this.adsgramBlockId = properties[10]
 
             if (properties[0]) {
                 this._runtime.AddLoadPromise(this.loadSdk(cdnUrl))
@@ -27,8 +28,8 @@
 
             this._runtime.AddLoadPromise(this.initializeSdk())
 
-            if (properties[10]) {
-                this.showInterstitialOnInit = properties[10]
+            if (properties[11]) {
+                this.showInterstitialOnInit = properties[11]
             }
 
             this.serverTime = 0
@@ -137,11 +138,18 @@
                             bridgeOptions.platforms['game_distribution'] = { gameId: this.gameDistributionGameId }
                         }
 
-                        if (this.y8GameId !== '' && this.y8HostId !== '' && this.y8AdsenseId !== '') {
+                        if (this.y8GameId !== '' && this.y8AdsenseId !== '') {
                             bridgeOptions.platforms['y8'] = { 
                                 gameId: this.y8GameId,
-                                hostId: this.y8HostId,
                                 adsenseId: this.y8AdsenseId,
+                            }
+
+                            if (this.y8HostId !== '') {
+                                bridgeOptions.platforms['y8'].hostId = this.y8HostId
+                            }
+
+                            if (this.y8ChannelId !== '') {
+                                bridgeOptions.platforms['y8'].channelId = this.y8ChannelId
                             }
                         }
 
