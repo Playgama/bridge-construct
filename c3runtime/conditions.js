@@ -285,7 +285,7 @@
             return window.bridge.achievements.isSupported
         },
         IsAchievementsGetListSupported() {
-            return window.bridge.achievements.isGetListupported
+            return window.bridge.achievements.isGetListSupported
         },
         IsAchievementsNativePopupSupported() {
             return window.bridge.achievements.isNativePopupSupported

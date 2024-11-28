@@ -65,6 +65,7 @@
                     "social": "Social",
                     "leaderboard": "Leaderboard",
                     "payments": "Payments",
+                    "achievements": "Achievements",
                     "remote-config": "Remote Config"
                 },
                 "conditions": {
