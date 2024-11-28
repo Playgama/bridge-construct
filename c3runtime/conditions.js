@@ -304,8 +304,8 @@
         IsAchievementsGetListSupported() {
             return window.bridge.achievements.isGetListupported
         },
-        IsAchievementsShowNativePopupSupported() {
-            return window.bridge.achievements.isShowNativePopupSupported
+        IsAchievementsNativePopupSupported() {
+            return window.bridge.achievements.isNativePopupSupported
         },
 
         OnAchievementsUnlockCompleted() {

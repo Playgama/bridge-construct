@@ -985,8 +985,8 @@
                 "scriptName": "IsAchievementsGetListSupported"
             },
             {
-                "id": "is-achievements-show-native-popup-supported",
-                "scriptName": "IsAchievementsShowNativePopupSupported"
+                "id": "is-achievements-native-popup-supported",
+                "scriptName": "IsAchievementsNativePopupSupported"
             },
 
             {

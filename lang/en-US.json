@@ -498,10 +498,10 @@
                         "display-text": "Is Achievements Get List Supported",
                         "description": "Is Achievements Get List Supported"
                     },
-                    "is-achievements-show-native-popup-supported": {
-                        "list-name": "IsAchievementsShowNativePopupSupported",
-                        "display-text": "Is Achievements Show Native Popup Supported",
-                        "description": "Is Achievements Show Native Popup Supported"
+                    "is-achievements-native-popup-supported": {
+                        "list-name": "IsAchievementsNativePopupSupported",
+                        "display-text": "Is Achievements Native Popup Supported",
+                        "description": "Is Achievements Native Popup Supported"
                     },
                     "on-achievements-unlock-completed": {
                         "list-name": "OnAchievementsUnlockCompleted",
