@@ -138,6 +138,49 @@
             return entry[property]
         },
 
+        // achievements
+        AchievementsCount() {
+            if (!this.achievementsList) {
+                return 0
+            }
+
+            return this.achievementsList.length
+        },
+
+        AchievementPropertiesCount() {
+            if (this.achievementsList || this.achievementsList.length <= 0) {
+                return 0
+            }
+
+            let achievement = this.achievementsList[0]
+            let properties = Object.keys(achievement)
+            return properties.length
+        },
+
+        AchievementPropertyName(propertyIndex) {
+            if (!this.achievementsList || this.achievementsList.length <= 0) {
+                return ''
+            }
+
+            let achievement = this.achievementsList[0]
+            let properties = Object.keys(achievement)
+            return properties[propertyIndex]
+        },
+
+        AchievementPropertyValue(achievementIndex, property) {
+            if (!this.achievementsList || this.achievementsList.length <= 0) {
+                return ''
+            }
+
+            let achievement = this.achievementsList[achievementIndex]
+            if (typeof property === 'number') {
+                let properties = Object.keys(achievement)
+                let propertyName = properties[property]
+                return achievement[propertyName]
+            }
+
+            return achievement[property]
+        },
 
         // payments
         PaymentsPurchasesCount() {

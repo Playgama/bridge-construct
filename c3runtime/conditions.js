@@ -279,6 +279,28 @@
             return true
         },
 
+
+        // achievements
+        IsAchievementsSupported() {
+            return window.bridge.achievements.isSupported
+        },
+        IsAchievementsGetListSupported() {
+            return window.bridge.achievements.isGetListSupported
+        },
+        IsAchievementsNativePopupSupported() {
+            return window.bridge.achievements.isNativePopupSupported
+        },
+
+        OnAchievementsUnlockCompleted() {
+            return true
+        },
+        OnAchievementsGetListCompleted() {
+            return true
+        },
+        OnAchievementsShowNativePopupCompleted() {
+            return true
+        },
+
         // remote-config
         IsRemoteConfigSupported() {
             return window.bridge.remoteConfig.isSupported

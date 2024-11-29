@@ -477,6 +477,57 @@
             })
         },
 
+        // achievements
+        AchievementsUnlock() {
+            this.isLastActionCompletedSuccessfully = false
+
+            return new Promise(resolve => {
+                window.bridge.achievements.unlock(this.actionParametersContainer)
+                    .then(() => {
+                        this.isLastActionCompletedSuccessfully = true
+                    })
+                    .catch(error => console.log(error))
+                    .finally(() => {
+                        this.actionParametersContainer = {}
+                        this.Trigger(this.conditions.OnAchievementsUnlockCompleted)
+                        resolve()
+                    })
+            })
+        },
+
+        AchievementsGetList() {
+            this.isLastActionCompletedSuccessfully = false
+
+            return new Promise(resolve => {
+                window.bridge.achievements.getList()
+                    .then(data => {
+                        this.isLastActionCompletedSuccessfully = true
+                        this.achievementsList = data
+                    })
+                    .catch(error => console.log(error))
+                    .finally(() => {
+                        this.Trigger(this.conditions.OnAchievementsGetListCompleted)
+                        resolve()
+                    })
+            })
+        },
+
+        AchievementsShowNativePopup() {
+            this.isLastActionCompletedSuccessfully = false
+
+            return new Promise(resolve => {
+                window.bridge.achievements.showNativePopup()
+                    .then(() => {
+                        this.isLastActionCompletedSuccessfully = true
+                    })
+                    .catch(error => console.log(error))
+                    .finally(() => {
+                        this.Trigger(this.conditions.OnAchievementsShowNativePopupCompleted)
+                        resolve()
+                    })
+            })
+        },
+
         // remote-config
         SendRemoteConfigGetRequest() {
             this.isLastActionCompletedSuccessfully = false
