@@ -183,6 +183,20 @@
         },
 
         // payments
+        PaymentsLastPurchasePropertyValue(property) {
+            if (!this.paymentsPurchase) {
+                return ''
+            }
+
+            if (typeof property === 'number') {
+                let properties = Object.keys(this.paymentsPurchase)
+                let propertyName = properties[property]
+                return this.paymentsPurchase[propertyName]
+            }
+
+            return this.paymentsPurchase[property]
+        },
+
         PaymentsPurchasesCount() {
             if (!this.paymentsPurchases) {
                 return 0

@@ -987,7 +987,16 @@
                         }
                     },
 
-
+                    "payments-last-purchase-property-value": {
+                        "translated-name": "PaymentsLastPurchasePropertyValue",
+                        "description": "Payments Last Purchase Property Value",
+                        "params": {
+                            "property": {
+                                "name": "Property",
+                                "desc": "Property"
+                            }
+                        }
+                    },
                     "payments-purchases-count": {
                         "translated-name": "PaymentsPurchasesCount",
                         "description": "Payments Purchases Count"
