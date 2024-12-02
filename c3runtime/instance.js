@@ -137,14 +137,15 @@
                             bridgeOptions.platforms['game_distribution'] = { gameId: this.gameDistributionGameId }
                         }
 
-                        if (this.y8GameId !== '' && this.y8AdsenseId !== '') {
+                        if (this.y8GameId !== '') {
                             bridgeOptions.platforms['y8'] = { 
                                 gameId: this.y8GameId,
-                                adsenseId: this.y8AdsenseId,
                             }
 
                             if (this.y8ChannelId !== '') {
                                 bridgeOptions.platforms['y8'].channelId = this.y8ChannelId
+                            } else if (this.y8AdsenseId !== '' ) {
+                                bridgeOptions.platforms['y8'].adsenseId = this.y8AdsenseId
                             }
                         }
 
