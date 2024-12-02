@@ -14,7 +14,7 @@
 
             this.gameDistributionGameId = properties[2]
             this.y8GameId = properties[3]
-            this.y8HostId = properties[4]
+            this.y8ChannelId = properties[4]
             this.y8AdsenseId = properties[5]
             this.laggedDevId = properties[6]
             this.laggedPublisherId = properties[7]
@@ -137,11 +137,16 @@
                             bridgeOptions.platforms['game_distribution'] = { gameId: this.gameDistributionGameId }
                         }
 
-                        if (this.y8GameId !== '' && this.y8HostId !== '' && this.y8AdsenseId !== '') {
+                        if (this.y8GameId !== '') {
                             bridgeOptions.platforms['y8'] = { 
                                 gameId: this.y8GameId,
-                                hostId: this.y8HostId,
-                                adsenseId: this.y8AdsenseId,
+                            }
+
+                            if (this.y8ChannelId !== '') {
+                                bridgeOptions.platforms['y8'].channelId = this.y8ChannelId
+                            } 
+                            if (this.y8AdsenseId !== '' ) {
+                                bridgeOptions.platforms['y8'].adsenseId = this.y8AdsenseId
                             }
                         }
 

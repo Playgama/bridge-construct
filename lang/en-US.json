@@ -25,9 +25,9 @@
                         "name": "Y8 Game ID",
                         "desc": "Game ID, which you can find from your control panel on Y8.com."
                     },
-                    "y8-host-id": {
-                        "name": "Y8 Host ID",
-                        "desc": "Host ID, which you can find from your control panel on developers.google.com/google-ads."
+                    "y8-channel-id": {
+                        "name": "Y8 Channel ID",
+                        "desc": "Channel ID, which you can find from your control panel on developers.google.com/google-ads."
                     },
                     "y8-adsense-id": {
                         "name": "Y8 Adsense ID",
