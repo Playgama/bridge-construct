@@ -499,13 +499,14 @@
             this.isLastActionCompletedSuccessfully = false
 
             return new Promise(resolve => {
-                window.bridge.achievements.getList()
+                window.bridge.achievements.getList(this.actionParametersContainer)
                     .then(data => {
                         this.isLastActionCompletedSuccessfully = true
                         this.achievementsList = data
                     })
                     .catch(error => console.log(error))
                     .finally(() => {
+                        this.actionParametersContainer = {}
                         this.Trigger(this.conditions.OnAchievementsGetListCompleted)
                         resolve()
                     })
@@ -516,12 +517,13 @@
             this.isLastActionCompletedSuccessfully = false
 
             return new Promise(resolve => {
-                window.bridge.achievements.showNativePopup()
+                window.bridge.achievements.showNativePopup(this.actionParametersContainer)
                     .then(() => {
                         this.isLastActionCompletedSuccessfully = true
                     })
                     .catch(error => console.log(error))
                     .finally(() => {
+                        this.actionParametersContainer = {}
                         this.Trigger(this.conditions.OnAchievementsShowNativePopupCompleted)
                         resolve()
                     })
