@@ -10,7 +10,6 @@ One SDK for cross-platform publishing HTML5 games.
 + [Wortal](https://wortal.ai)
 + [PlayDeck](https://playdeck.io)
 + [Telegram](https://core.telegram.org/bots/webapps)
-+ [VK Play](https://vkplay.ru/)
 + [VK](https://vk.com)
 + [OK](https://ok.ru)
 + [Absolute Games](https://ag.ru)

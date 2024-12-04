@@ -414,8 +414,9 @@
 
             return new Promise(resolve => {
                 window.bridge.payments.purchase(this.actionParametersContainer)
-                    .then(() => {
+                    .then(data => {
                         this.isLastActionCompletedSuccessfully = true
+                        this.paymentsPurchase = data
                     })
                     .catch(error => console.log(error))
                     .finally(() => {
@@ -472,6 +473,59 @@
                     .finally(() => {
                         this.actionParametersContainer = {}
                         this.Trigger(this.conditions.OnPaymentsConsumePurchaseCompleted)
+                        resolve()
+                    })
+            })
+        },
+
+        // achievements
+        AchievementsUnlock() {
+            this.isLastActionCompletedSuccessfully = false
+
+            return new Promise(resolve => {
+                window.bridge.achievements.unlock(this.actionParametersContainer)
+                    .then(() => {
+                        this.isLastActionCompletedSuccessfully = true
+                    })
+                    .catch(error => console.log(error))
+                    .finally(() => {
+                        this.actionParametersContainer = {}
+                        this.Trigger(this.conditions.OnAchievementsUnlockCompleted)
+                        resolve()
+                    })
+            })
+        },
+
+        AchievementsGetList() {
+            this.isLastActionCompletedSuccessfully = false
+
+            return new Promise(resolve => {
+                window.bridge.achievements.getList(this.actionParametersContainer)
+                    .then(data => {
+                        this.isLastActionCompletedSuccessfully = true
+                        this.achievementsList = data
+                    })
+                    .catch(error => console.log(error))
+                    .finally(() => {
+                        this.actionParametersContainer = {}
+                        this.Trigger(this.conditions.OnAchievementsGetListCompleted)
+                        resolve()
+                    })
+            })
+        },
+
+        AchievementsShowNativePopup() {
+            this.isLastActionCompletedSuccessfully = false
+
+            return new Promise(resolve => {
+                window.bridge.achievements.showNativePopup(this.actionParametersContainer)
+                    .then(() => {
+                        this.isLastActionCompletedSuccessfully = true
+                    })
+                    .catch(error => console.log(error))
+                    .finally(() => {
+                        this.actionParametersContainer = {}
+                        this.Trigger(this.conditions.OnAchievementsShowNativePopupCompleted)
                         resolve()
                     })
             })

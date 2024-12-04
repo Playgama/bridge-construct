@@ -7,18 +7,19 @@
             this.conditions = C3.Plugins.PlaygamaBridge.Cnds
             this.actions = C3.Plugins.PlaygamaBridge.Acts
 
-            let cdnUrl = 'https://cdn.jsdelivr.net/gh/playgama/bridge@1.18.0/dist/playgama-bridge.js'
+            let cdnUrl = 'https://cdn.jsdelivr.net/gh/playgama/bridge@1.19.0/dist/playgama-bridge.js'
             if (properties[1] !== '') {
                 cdnUrl = properties[1]
             }
 
             this.gameDistributionGameId = properties[2]
-            this.vkPlayGameId = properties[3]
-            this.y8GameId = properties[4]
-            this.laggedDevId = properties[5]
-            this.laggedPublisherId = properties[6]
-            this.facebookPlacementId = properties[7]
-            this.adsgramBlockId = properties[8]
+            this.y8GameId = properties[3]
+            this.y8ChannelId = properties[4]
+            this.y8AdsenseId = properties[5]
+            this.laggedDevId = properties[6]
+            this.laggedPublisherId = properties[7]
+            this.facebookPlacementId = properties[8]
+            this.adsgramBlockId = properties[9]
 
             if (properties[0]) {
                 this._runtime.AddLoadPromise(this.loadSdk(cdnUrl))
@@ -26,8 +27,8 @@
 
             this._runtime.AddLoadPromise(this.initializeSdk())
 
-            if (properties[9]) {
-                this.showInterstitialOnInit = properties[9]
+            if (properties[10]) {
+                this.showInterstitialOnInit = properties[10]
             }
 
             this.serverTime = 0
@@ -136,12 +137,17 @@
                             bridgeOptions.platforms['game_distribution'] = { gameId: this.gameDistributionGameId }
                         }
 
-                        if (this.vkPlayGameId !== '') {
-                            bridgeOptions.platforms['vk_play'] = { gameId: this.vkPlayGameId }
-                        }
-
                         if (this.y8GameId !== '') {
-                            bridgeOptions.platforms['y8'] = { gameId: this.y8GameId }
+                            bridgeOptions.platforms['y8'] = { 
+                                gameId: this.y8GameId,
+                            }
+
+                            if (this.y8ChannelId !== '') {
+                                bridgeOptions.platforms['y8'].channelId = this.y8ChannelId
+                            } 
+                            if (this.y8AdsenseId !== '' ) {
+                                bridgeOptions.platforms['y8'].adsenseId = this.y8AdsenseId
+                            }
                         }
 
                         if (this.laggedDevId !== '' && this.laggedPublisherId !== '' ) {

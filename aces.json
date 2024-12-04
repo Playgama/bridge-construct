@@ -900,6 +900,33 @@
         ],
         "expressions": [
             {
+                "id": "payments-last-purchase-properties-count",
+                "expressionName": "PaymentsLastPurchasePropertiesCount",
+                "returnType": "number"
+            },
+            {
+                "id": "payments-last-purchase-property-name",
+                "expressionName": "PaymentsLastPurchasePropertyName",
+                "returnType": "string",
+                "params": [
+                    {
+                        "id": "property-index",
+                        "type": "number"
+                    }
+                ]
+            },
+            {
+                "id": "payments-last-purchase-property-value",
+                "expressionName": "PaymentsLastPurchasePropertyValue",
+                "returnType": "any",
+                "params": [
+                    {
+                        "id": "property",
+                        "type": "any"
+                    }
+                ]
+            },
+            {
                 "id": "payments-purchases-count",
                 "expressionName": "PaymentsPurchasesCount",
                 "returnType": "number"
@@ -964,6 +991,101 @@
                 "params": [
                     {
                         "id": "item-index",
+                        "type": "number"
+                    },
+                    {
+                        "id": "property",
+                        "type": "any"
+                    }
+                ]
+            }
+        ]
+    },
+    "achievements": {
+        "conditions": [
+            {
+                "id": "is-achievements-supported",
+                "scriptName": "IsAchievementsSupported"
+            },
+            {
+                "id": "is-achievements-get-list-supported",
+                "scriptName": "IsAchievementsGetListSupported"
+            },
+            {
+                "id": "is-achievements-native-popup-supported",
+                "scriptName": "IsAchievementsNativePopupSupported"
+            },
+
+            {
+                "id": "on-achievements-unlock-completed",
+                "scriptName": "OnAchievementsUnlockCompleted",
+                "isTrigger": true,
+                "isInvertible": false,
+                "isCompatibleWithTriggers": false
+            },
+
+            {
+                "id": "on-achievements-get-list-completed",
+                "scriptName": "OnAchievementsGetListCompleted",
+                "isTrigger": true,
+                "isInvertible": false,
+                "isCompatibleWithTriggers": false
+            },
+
+            {
+                "id": "on-achievements-show-native-popup-completed",
+                "scriptName": "OnAchievementsShowNativePopupCompleted",
+                "isTrigger": true,
+                "isInvertible": false,
+                "isCompatibleWithTriggers": false
+            }
+        ],
+        "actions": [
+            {
+                "id": "achievements-unlock",
+                "scriptName": "AchievementsUnlock",
+                "isAsync": true
+            },
+            {
+                "id": "achievements-get-list",
+                "scriptName": "AchievementsGetList",
+                "isAsync": true
+            },
+            {
+                "id": "achievements-show-native-popup",
+                "scriptName": "AchievementsShowNativePopup",
+                "isAsync": true
+            }
+        ],
+        "expressions": [
+            {
+                "id": "achievements-count",
+                "expressionName": "AchievementsCount",
+                "returnType": "number"
+            },
+            {
+                "id": "achievement-properties-count",
+                "expressionName": "AchievementPropertiesCount",
+                "returnType": "number"
+            },
+            {
+                "id": "achievement-property-name",
+                "expressionName": "AchievementPropertyName",
+                "returnType": "string",
+                "params": [
+                    {
+                        "id": "property-index",
+                        "type": "number"
+                    }
+                ]
+            },
+            {
+                "id": "achievement-property-value",
+                "expressionName": "AchievementPropertyValue",
+                "returnType": "any",
+                "params": [
+                    {
+                        "id": "achievement-index",
                         "type": "number"
                     },
                     {

@@ -3,7 +3,7 @@
     "type": "plugin",
     "name": "PlaygamaBridge",
     "id": "PlaygamaBridge",
-    "version": "1.18.0",
+    "version": "1.19.0",
     "author": "Playgama",
     "website": "https://playgama.com",
     "documentation": "https://github.com/playgama/bridge-construct",
