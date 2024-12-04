@@ -900,6 +900,33 @@
         ],
         "expressions": [
             {
+                "id": "payments-last-purchase-properties-count",
+                "expressionName": "PaymentsLastPurchasePropertiesCount",
+                "returnType": "number"
+            },
+            {
+                "id": "payments-last-purchase-property-name",
+                "expressionName": "PaymentsLastPurchasePropertyName",
+                "returnType": "string",
+                "params": [
+                    {
+                        "id": "property-index",
+                        "type": "number"
+                    }
+                ]
+            },
+            {
+                "id": "payments-last-purchase-property-value",
+                "expressionName": "PaymentsLastPurchasePropertyValue",
+                "returnType": "any",
+                "params": [
+                    {
+                        "id": "property",
+                        "type": "any"
+                    }
+                ]
+            },
+            {
                 "id": "payments-purchases-count",
                 "expressionName": "PaymentsPurchasesCount",
                 "returnType": "number"

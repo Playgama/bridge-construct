@@ -183,6 +183,36 @@
         },
 
         // payments
+        PaymentsLastPurchasePropertiesCount() {
+            if (!this.paymentsPurchase) {
+                return 0
+            }
+
+            let properties = Object.keys(this.paymentsPurchase)
+            return properties.length
+        },
+        PaymentsLastPurchasePropertyName(propertyIndex) {
+            if (!this.paymentsPurchase) {
+                return ''
+            }
+
+            let properties = Object.keys(this.paymentsPurchase)
+            return properties[propertyIndex]
+        },
+        PaymentsLastPurchasePropertyValue(property) {
+            if (!this.paymentsPurchase) {
+                return ''
+            }
+
+            if (typeof property === 'number') {
+                let properties = Object.keys(this.paymentsPurchase)
+                let propertyName = properties[property]
+                return this.paymentsPurchase[propertyName]
+            }
+
+            return this.paymentsPurchase[property]
+        },
+
         PaymentsPurchasesCount() {
             if (!this.paymentsPurchases) {
                 return 0

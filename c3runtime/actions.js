@@ -414,8 +414,9 @@
 
             return new Promise(resolve => {
                 window.bridge.payments.purchase(this.actionParametersContainer)
-                    .then(() => {
+                    .then(data => {
                         this.isLastActionCompletedSuccessfully = true
+                        this.paymentsPurchase = data
                     })
                     .catch(error => console.log(error))
                     .finally(() => {
