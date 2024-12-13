@@ -135,6 +135,10 @@
             return new Promise(resolve => {
                 window.bridge.storage.set(this.storageDataSetRequestKeys, this.storageDataSetRequestValues, storageType)
                     .then(() => {
+                        if (!this.storageData) {
+                            this.storageData = {}
+                        }
+
                         for (let i = 0; i < this.storageDataSetRequestKeys.length; i++) {
                             let key = this.storageDataSetRequestKeys[i]
                             this.storageData[key] = this.storageDataSetRequestValues[i]
