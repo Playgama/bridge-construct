@@ -9,6 +9,7 @@
     "website": "https://playgama.com",
     "documentation": "https://github.com/playgama/bridge-construct",
     "description": "One SDK for cross-platform publishing HTML5 games",
+    "supports-worker-mode": false,
     "editor-scripts": [
         "plugin.js",
         "type.js",
