@@ -1,5 +1,6 @@
 ﻿{
     "is-c3-addon": true,
+    "sdk-version": 2,
     "type": "plugin",
     "name": "PlaygamaBridge",
     "id": "PlaygamaBridge",
