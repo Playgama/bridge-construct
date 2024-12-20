@@ -1,5 +1,6 @@
 ﻿{
     "is-c3-addon": true,
+    "sdk-version": 2,
     "type": "plugin",
     "name": "PlaygamaBridge",
     "id": "PlaygamaBridge",
@@ -8,6 +9,7 @@
     "website": "https://playgama.com",
     "documentation": "https://github.com/playgama/bridge-construct",
     "description": "One SDK for cross-platform publishing HTML5 games",
+    "supports-worker-mode": false,
     "editor-scripts": [
         "plugin.js",
         "type.js",
