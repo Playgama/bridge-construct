@@ -32,10 +32,6 @@ const C3 = globalThis.C3
 
             this.runtime.sdk.addLoadPromise(this.initializeSdk())
 
-            if (properties[10]) {
-                this.showInterstitialOnInit = properties[10]
-            }
-
             this.serverTime = 0
             this.isAdBlockDetected = false
             this.storageData = null
@@ -237,12 +233,6 @@ const C3 = globalThis.C3
                                 })
 
                                 resolve()
-
-                                if (this.showInterstitialOnInit) {
-                                    if (window.bridge.platform.id === window.bridge.PLATFORM_ID.GAME_DISTRIBUTION) {
-                                        window.bridge.advertisement.showInterstitial()
-                                    }
-                                }
                             })
                             .catch(error => reject(error))
                     } else {

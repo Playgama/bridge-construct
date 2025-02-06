@@ -48,10 +48,6 @@
                     "adsgram-block-id": {
                         "name": "Adsgram Block ID",
                         "desc": "Advertisement block ID, which you can find from your control panel on adsgram.ai."
-                    },
-                    "show-interstitial-on-init": {
-                        "name": "Show Interstitial On Init",
-                        "desc": "Automatically show interstitial when SDK is initialized. Supported only on Game Distribution."
                     }
                 },
                 "aceCategories": {

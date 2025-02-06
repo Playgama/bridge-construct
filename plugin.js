@@ -31,7 +31,6 @@ const SDK = globalThis.SDK
                 new SDK.PluginProperty('text', 'lagged-publisher-id', ''),
                 new SDK.PluginProperty('text', 'facebook-placement-id', ''),
                 new SDK.PluginProperty('text', 'adsgram-block-id', ''),
-                new SDK.PluginProperty('check', 'show-interstitial-on-init', true)
             ]);
 
             SDK.Lang.PopContext()
