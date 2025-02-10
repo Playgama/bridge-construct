@@ -1,4 +1,7 @@
 'use strict'
+
+const C3 = globalThis.C3
+
 {
     C3.Plugins.PlaygamaBridge.Acts = {
         // action parameters
@@ -46,7 +49,7 @@
                     })
                     .catch(error => console.log(error))
                     .finally(() => {
-                        this.Trigger(this.conditions.OnGetServerTimeCompleted)
+                        this._trigger(this.conditions.OnGetServerTimeCompleted)
                         resolve()
                     })
             })
@@ -64,7 +67,7 @@
                     .catch(error => console.log(error))
                     .finally(() => {
                         this.actionParametersContainer = {}
-                        this.Trigger(this.conditions.OnAuthorizePlayerCompleted)
+                        this._trigger(this.conditions.OnAuthorizePlayerCompleted)
                         resolve()
                     })
             })
@@ -108,7 +111,7 @@
                     .catch(error => console.log(error))
                     .finally(() => {
                         this.storageDataGetRequestKeys = []
-                        this.Trigger(this.conditions.OnStorageDataGetRequestCompleted)
+                        this._trigger(this.conditions.OnStorageDataGetRequestCompleted)
                         resolve()
                     })
             })
@@ -135,6 +138,10 @@
             return new Promise(resolve => {
                 window.bridge.storage.set(this.storageDataSetRequestKeys, this.storageDataSetRequestValues, storageType)
                     .then(() => {
+                        if (!this.storageData) {
+                            this.storageData = {}
+                        }
+
                         for (let i = 0; i < this.storageDataSetRequestKeys.length; i++) {
                             let key = this.storageDataSetRequestKeys[i]
                             this.storageData[key] = this.storageDataSetRequestValues[i]
@@ -146,7 +153,7 @@
                     .finally(() => {
                         this.storageDataSetRequestKeys = []
                         this.storageDataSetRequestValues = []
-                        this.Trigger(this.conditions.OnStorageDataSetRequestCompleted)
+                        this._trigger(this.conditions.OnStorageDataSetRequestCompleted)
                         resolve()
                     })
             })
@@ -184,7 +191,7 @@
                     .catch(error => console.log(error))
                     .finally(() => {
                         this.storageDataDeleteRequestKeys = []
-                        this.Trigger(this.conditions.OnStorageDataDeleteRequestCompleted)
+                        this._trigger(this.conditions.OnStorageDataDeleteRequestCompleted)
                         resolve()
                     })
             })
@@ -219,7 +226,7 @@
                     })
                     .catch(error => console.log(error))
                     .finally(() => {
-                        this.Trigger(this.conditions.OnCheckAdBlockCompleted)
+                        this._trigger(this.conditions.OnCheckAdBlockCompleted)
                         resolve()
                     })
             })
@@ -238,7 +245,7 @@
                     .catch(error => console.log(error))
                     .finally(() => {
                         this.actionParametersContainer = {}
-                        this.Trigger(this.conditions.OnShareCompleted)
+                        this._trigger(this.conditions.OnShareCompleted)
                         resolve()
                     })
             })
@@ -254,7 +261,7 @@
                     .catch(error => console.log(error))
                     .finally(() => {
                         this.actionParametersContainer = {}
-                        this.Trigger(this.conditions.OnInviteFriendsCompleted)
+                        this._trigger(this.conditions.OnInviteFriendsCompleted)
                         resolve()
                     })
             })
@@ -270,7 +277,7 @@
                     .catch(error => console.log(error))
                     .finally(() => {
                         this.actionParametersContainer = {}
-                        this.Trigger(this.conditions.OnJoinCommunityCompleted)
+                        this._trigger(this.conditions.OnJoinCommunityCompleted)
                         resolve()
                     })
             })
@@ -286,7 +293,7 @@
                     .catch(error => console.log(error))
                     .finally(() => {
                         this.actionParametersContainer = {}
-                        this.Trigger(this.conditions.OnCreatePostCompleted)
+                        this._trigger(this.conditions.OnCreatePostCompleted)
                         resolve()
                     })
             })
@@ -301,7 +308,7 @@
                     })
                     .catch(error => console.log(error))
                     .finally(() => {
-                        this.Trigger(this.conditions.OnAddToHomeScreenCompleted)
+                        this._trigger(this.conditions.OnAddToHomeScreenCompleted)
                         resolve()
                     })
             })
@@ -316,7 +323,7 @@
                     })
                     .catch(error => console.log(error))
                     .finally(() => {
-                        this.Trigger(this.conditions.OnAddToFavoritesCompleted)
+                        this._trigger(this.conditions.OnAddToFavoritesCompleted)
                         resolve()
                     })
             })
@@ -331,7 +338,7 @@
                     })
                     .catch(error => console.log(error))
                     .finally(() => {
-                        this.Trigger(this.conditions.OnRateCompleted)
+                        this._trigger(this.conditions.OnRateCompleted)
                         resolve()
                     })
             })
@@ -349,7 +356,7 @@
                     .catch(error => console.log(error))
                     .finally(() => {
                         this.actionParametersContainer = {}
-                        this.Trigger(this.conditions.OnLeaderboardSetScoreCompleted)
+                        this._trigger(this.conditions.OnLeaderboardSetScoreCompleted)
                         resolve()
                     })
             })
@@ -367,7 +374,7 @@
                     .catch(error => console.log(error))
                     .finally(() => {
                         this.actionParametersContainer = {}
-                        this.Trigger(this.conditions.OnLeaderboardGetScoreCompleted)
+                        this._trigger(this.conditions.OnLeaderboardGetScoreCompleted)
                         resolve()
                     })
             })
@@ -385,7 +392,7 @@
                     .catch(error => console.log(error))
                     .finally(() => {
                         this.actionParametersContainer = {}
-                        this.Trigger(this.conditions.OnLeaderboardGetEntriesCompleted)
+                        this._trigger(this.conditions.OnLeaderboardGetEntriesCompleted)
                         resolve()
                     })
             })
@@ -401,7 +408,7 @@
                     .catch(error => console.log(error))
                     .finally(() => {
                         this.actionParametersContainer = {}
-                        this.Trigger(this.conditions.OnLeaderboardShowNativePopupCompleted)
+                        this._trigger(this.conditions.OnLeaderboardShowNativePopupCompleted)
                         resolve()
                     })
             })
@@ -421,7 +428,7 @@
                     .catch(error => console.log(error))
                     .finally(() => {
                         this.actionParametersContainer = {}
-                        this.Trigger(this.conditions.OnPaymentsPurchaseCompleted)
+                        this._trigger(this.conditions.OnPaymentsPurchaseCompleted)
                         resolve()
                     })
             })
@@ -438,7 +445,7 @@
                     })
                     .catch(error => console.log(error))
                     .finally(() => {
-                        this.Trigger(this.conditions.OnPaymentsGetPurchasesCompleted)
+                        this._trigger(this.conditions.OnPaymentsGetPurchasesCompleted)
                         resolve()
                     })
             })
@@ -455,7 +462,7 @@
                     })
                     .catch(error => console.log(error))
                     .finally(() => {
-                        this.Trigger(this.conditions.OnPaymentsGetCatalogCompleted)
+                        this._trigger(this.conditions.OnPaymentsGetCatalogCompleted)
                         resolve()
                     })
             })
@@ -472,7 +479,7 @@
                     .catch(error => console.log(error))
                     .finally(() => {
                         this.actionParametersContainer = {}
-                        this.Trigger(this.conditions.OnPaymentsConsumePurchaseCompleted)
+                        this._trigger(this.conditions.OnPaymentsConsumePurchaseCompleted)
                         resolve()
                     })
             })
@@ -490,7 +497,7 @@
                     .catch(error => console.log(error))
                     .finally(() => {
                         this.actionParametersContainer = {}
-                        this.Trigger(this.conditions.OnAchievementsUnlockCompleted)
+                        this._trigger(this.conditions.OnAchievementsUnlockCompleted)
                         resolve()
                     })
             })
@@ -508,7 +515,7 @@
                     .catch(error => console.log(error))
                     .finally(() => {
                         this.actionParametersContainer = {}
-                        this.Trigger(this.conditions.OnAchievementsGetListCompleted)
+                        this._trigger(this.conditions.OnAchievementsGetListCompleted)
                         resolve()
                     })
             })
@@ -525,7 +532,7 @@
                     .catch(error => console.log(error))
                     .finally(() => {
                         this.actionParametersContainer = {}
-                        this.Trigger(this.conditions.OnAchievementsShowNativePopupCompleted)
+                        this._trigger(this.conditions.OnAchievementsShowNativePopupCompleted)
                         resolve()
                     })
             })
@@ -544,7 +551,7 @@
                     .catch(error => console.log(error))
                     .finally(() => {
                         this.actionParametersContainer = {}
-                        this.Trigger(this.conditions.OnRemoteConfigGotCompleted)
+                        this._trigger(this.conditions.OnRemoteConfigGotCompleted)
                         resolve()
                     })
             })
