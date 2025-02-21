@@ -1006,7 +1006,7 @@
                 "params": [
                     {
                         "id": "item-id-property",
-                        "type": "any"
+                        "type": "string"
                     },
                     {
                         "id": "item-id",
