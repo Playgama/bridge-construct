@@ -1080,6 +1080,24 @@
                             }
                         }
                     },
+                    "payments-catalog-item-by-id-property-value": {
+                        "translated-name": "PaymentsCatalogItemByIdPropertyValue",
+                        "description": "Payments Catalog Item By Id Property Value",
+                        "params": {
+                            "item-id-property": {
+                                "name": "Item Id Property",
+                                "desc": "Item Id Property"
+                            },
+                            "item-id": {
+                                "name": "Item Id",
+                                "desc": "Item Id"
+                            },
+                            "property": {
+                                "name": "Property",
+                                "desc": "Property"
+                            }
+                        }
+                    },
 
                     "achievements-count": {
                         "translated-name": "AchievementsCount",

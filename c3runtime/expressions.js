@@ -295,6 +295,24 @@ const C3 = globalThis.C3
 
             return item[property]
         },
+        PaymentsCatalogItemByIdPropertyValue(itemIdProperty, itemId, property) {
+            if (!this.paymentsCatalog || this.paymentsCatalog.length <= 0) {
+                return ''
+            }
+
+            let item = this.paymentsCatalog.find(item => item[itemIdProperty] === itemId)
+            if (!item) {
+                return ''
+            }
+
+            if (typeof property === 'number') {
+                let properties = Object.keys(item)
+                let propertyName = properties[property]
+                return item[propertyName]
+            }
+
+            return item[property]
+        },
 
 
         // remote-config

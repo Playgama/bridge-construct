@@ -998,6 +998,25 @@
                         "type": "any"
                     }
                 ]
+            },
+            {
+                "id": "payments-catalog-item-by-id-property-value",
+                "expressionName": "PaymentsCatalogItemByIdPropertyValue",
+                "returnType": "any",
+                "params": [
+                    {
+                        "id": "item-id-property",
+                        "type": "any"
+                    },
+                    {
+                        "id": "item-id",
+                        "type": "string"
+                    },
+                    {
+                        "id": "property",
+                        "type": "any"
+                    }
+                ]
             }
         ]
     },
