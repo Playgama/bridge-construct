@@ -1000,16 +1000,16 @@
                 ]
             },
             {
-                "id": "payments-catalog-item-by-id-property-value",
-                "expressionName": "PaymentsCatalogItemByIdPropertyValue",
+                "id": "payments-first-catalog-item-property-value",
+                "expressionName": "PaymentsFirstCatalogItemPropertyValue",
                 "returnType": "any",
                 "params": [
                     {
-                        "id": "item-id-property",
+                        "id": "filter-property",
                         "type": "string"
                     },
                     {
-                        "id": "item-id",
+                        "id": "filter-property-value",
                         "type": "string"
                     },
                     {

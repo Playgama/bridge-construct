@@ -295,12 +295,12 @@ const C3 = globalThis.C3
 
             return item[property]
         },
-        PaymentsCatalogItemByIdPropertyValue(itemIdProperty, itemId, property) {
+        PaymentsFirstCatalogItemPropertyValue(filterProperty, filterPropertyValue, property) {
             if (!this.paymentsCatalog || this.paymentsCatalog.length <= 0) {
                 return ''
             }
 
-            let item = this.paymentsCatalog.find(item => item[itemIdProperty] === itemId)
+            let item = this.paymentsCatalog.find(item => item[filterProperty] === filterPropertyValue)
             if (!item) {
                 return ''
             }

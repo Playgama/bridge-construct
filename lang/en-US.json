@@ -1080,17 +1080,17 @@
                             }
                         }
                     },
-                    "payments-catalog-item-by-id-property-value": {
-                        "translated-name": "PaymentsCatalogItemByIdPropertyValue",
+                    "payments-first-catalog-item-property-value": {
+                        "translated-name": "PaymentsFirstCatalogItemPropertyValue",
                         "description": "Payments Catalog Item By Id Property Value",
                         "params": {
-                            "item-id-property": {
-                                "name": "Item Id Property",
-                                "desc": "Item Id Property"
+                            "filter-property": {
+                                "name": "Filter Property",
+                                "desc": "Filter Property"
                             },
-                            "item-id": {
-                                "name": "Item Id",
-                                "desc": "Item Id"
+                            "filter-property-value": {
+                                "name": "Filter Property Value",
+                                "desc": "Filter Property Value"
                             },
                             "property": {
                                 "name": "Property",
