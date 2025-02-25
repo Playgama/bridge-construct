@@ -998,6 +998,25 @@
                         "type": "any"
                     }
                 ]
+            },
+            {
+                "id": "payments-first-catalog-item-property-value",
+                "expressionName": "PaymentsFirstCatalogItemPropertyValue",
+                "returnType": "any",
+                "params": [
+                    {
+                        "id": "filter-property",
+                        "type": "string"
+                    },
+                    {
+                        "id": "filter-property-value",
+                        "type": "string"
+                    },
+                    {
+                        "id": "property",
+                        "type": "any"
+                    }
+                ]
             }
         ]
     },

@@ -1080,6 +1080,24 @@
                             }
                         }
                     },
+                    "payments-first-catalog-item-property-value": {
+                        "translated-name": "PaymentsFirstCatalogItemPropertyValue",
+                        "description": "Payments Catalog Item By Id Property Value",
+                        "params": {
+                            "filter-property": {
+                                "name": "Filter Property",
+                                "desc": "Filter Property"
+                            },
+                            "filter-property-value": {
+                                "name": "Filter Property Value",
+                                "desc": "Filter Property Value"
+                            },
+                            "property": {
+                                "name": "Property",
+                                "desc": "Property"
+                            }
+                        }
+                    },
 
                     "achievements-count": {
                         "translated-name": "AchievementsCount",
