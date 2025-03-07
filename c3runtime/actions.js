@@ -54,6 +54,39 @@ const C3 = globalThis.C3
                     })
             })
         },
+        GetAllGames() {
+            this.isLastActionCompletedSuccessfully = false
+
+            return new Promise(resolve => {
+                window.bridge.platform.getAllGames()
+                    .then((games) => {
+                        this.isLastActionCompletedSuccessfully = true
+                        this.allGames = games
+                    })
+                    .catch(error => console.log(error))
+                    .finally(() => {
+                        this._trigger(this.conditions.OnGetAllGamesCompleted)
+                        resolve()
+                    })
+            })
+        },
+        GetGameById() {
+            this.isLastActionCompletedSuccessfully = false
+
+            return new Promise(resolve => {
+                window.bridge.platform.getGameById(this.actionParametersContainer)
+                    .then((game) => {
+                        this.isLastActionCompletedSuccessfully = true
+                        this.gameById = game
+                    })
+                    .catch(error => console.log(error))
+                    .finally(() => {
+                        this.actionParametersContainer = {}
+                        this._trigger(this.conditions.OnGetGameByIdCompleted)
+                        resolve()
+                    })
+            })
+        },
 
 
         // player

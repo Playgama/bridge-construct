@@ -11,6 +11,22 @@ const C3 = globalThis.C3
 
 
         // platform
+        IsPlatformGetAllGamesSupported() {
+            return window.bridge.platform.isGetAllGamesSupported
+        },
+
+        IsPlatformGetGameByIdSupported() {
+            return window.bridge.platform.isGetGameByIdSupported
+        },
+
+        OnGetAllGamesCompleted() {
+            return true
+        },
+
+        OnGetGameByIdCompleted() {
+            return true
+        },
+
         OnGetServerTimeCompleted() {
             return true
         },
