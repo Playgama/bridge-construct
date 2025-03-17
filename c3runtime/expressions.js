@@ -31,7 +31,7 @@ const C3 = globalThis.C3
 
             return this.allGames.length
         },
-        PlatformAllGamePropertiesCount() {
+        PlatformAllGamesPropertiesCount() {
             if (!this.allGames || this.allGames.length <= 0) {
                 return 0
             }
@@ -40,7 +40,7 @@ const C3 = globalThis.C3
             let properties = Object.keys(game)
             return properties.length
         },
-        PlatformAllGamePropertyName(propertyIndex) {
+        PlatformAllGamesPropertyName(propertyIndex) {
             if (!this.allGames || this.allGames.length <= 0) {
                 return ''
             }
@@ -49,7 +49,7 @@ const C3 = globalThis.C3
             let properties = Object.keys(game)
             return properties[propertyIndex]
         },
-        PlatformAllGamePropertyValue(gameIndex, property) {
+        PlatformAllGamesPropertyValue(gameIndex, property) {
             if (!this.allGames || this.allGames.length <= 0) {
                 return ''
             }

@@ -105,13 +105,13 @@
                 "returnType": "number"
             },
             {
-                "id": "platform-all-game-properties-count",
-                "expressionName": "PlatformAllGamePropertiesCount",
+                "id": "platform-all-games-properties-count",
+                "expressionName": "PlatformAllGamesPropertiesCount",
                 "returnType": "number"
             },
             {
-                "id": "platform-all-game-property-name",
-                "expressionName": "PlatformAllGamePropertyName",
+                "id": "platform-all-games-property-name",
+                "expressionName": "PlatformAllGamesPropertyName",
                 "returnType": "string",
                 "params": [
                     {
@@ -121,8 +121,8 @@
                 ]
             },
             {
-                "id": "platform-all-game-property-value",
-                "expressionName": "PlatformAllGamePropertyValue",
+                "id": "platform-all-games-property-value",
+                "expressionName": "PlatformAllGamesPropertyValue",
                 "returnType": "any",
                 "params": [
                     {

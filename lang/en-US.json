@@ -83,6 +83,27 @@
                         "description": "Has Server Time"
                     },
 
+                    "is-platform-get-all-games-supported": {
+                        "list-name": "IsPlatformGetAllGamesSupported",
+                        "display-text": "Is Platform Get All Games Supported",
+                        "description": "Is Platform Get All Games Supported"
+                    },
+
+                    "is-platform-get-game-by-id-supported": {
+                        "list-name": "IsPlatformGetGameByIdSupported",
+                        "display-text": "Is Platform Get Game By Id Supported",
+                        "description": "Is Platform Get Game By Id Supported"
+                    },
+                    "on-get-all-games-completed": {
+                        "list-name": "OnGetAllGamesCompleted",
+                        "display-text": "On Get All Games Completed",
+                        "description": "On Get All Games Completed"
+                    },
+                    "on-get-game-by-id-completed": {
+                        "list-name": "OnGetGameByIdCompleted",
+                        "display-text": "On Get Game By Id Completed",
+                        "description": "On Get Game By Id Completed"
+                    },
 
                     "is-mobile": {
                         "list-name": "IsMobile",
@@ -596,7 +617,22 @@
                         "display-text": "Get Server Time",
                         "description": "Get Server Time"
                     },
-
+                    "get-all-games": {
+                        "list-name": "GetAllGames",
+                        "display-text": "Get All Games",
+                        "description": "Get All Games"
+                    },
+                    "get-game-by-id": {
+                        "list-name": "GetGameById",
+                        "display-text": "Get Game By Id",
+                        "description": "Get Game By Id",
+                        "params": {
+                            "game-id": {
+                                "name": "GameId",
+                                "desc": "Game ID"
+                            }
+                        }
+                    },
 
                     "authorize-player": {
                         "list-name": "AuthorizePlayer",
@@ -861,6 +897,62 @@
                     "server-time": {
                         "translated-name": "ServerTime",
                         "description": "Server Time"
+                    },
+                    "platform-all-games-count": {
+                        "translated-name": "PlatformAllGamesCount",
+                        "description": "Platform All Games Count"
+                    },
+                    "platform-all-games-properties-count": {
+                        "translated-name": "PlatformAllGamesPropertiesCount",
+                        "description": "Platform All Games Properties Count"
+                    },
+                    "platform-all-games-property-name": {
+                        "translated-name": "PlatformAllGamesPropertyName",
+                        "description": "Platform All Games Property Name",
+                        "params": {
+                            "property-index": {
+                                "name": "Property Index",
+                                "desc": "Property Index"
+                            }
+                        }
+                    },
+                    "platform-all-games-property-value": {
+                        "translated-name": "PlatformAllGamesPropertyValue",
+                        "description": "Platform All Games Property Value",
+                        "params": {
+                            "game-index": {
+                                "name": "Game Index",
+                                "desc": "Game Index"
+                            },
+                            "property": {
+                                "name": "Property",
+                                "desc": "Property"
+                            }
+                        }
+                    },
+                    "platform-game-by-id-properties-count": {
+                        "translated-name": "PlatformGameByIdPropertiesCount",
+                        "description": "Platform Game By Id Properties Count"
+                    },
+                    "platform-game-by-id-property-name": {
+                        "translated-name": "PlatformGameByIdPropertyName",
+                        "description": "Platform Game By Id Property Name",
+                        "params": {
+                            "property-index": {
+                                "name": "Property Index",
+                                "desc": "Property Index"
+                            }
+                        }
+                    },
+                    "platform-game-by-id-property-value": {
+                        "translated-name": "PlatformGameByIdPropertyValue",
+                        "description": "Platform Game By Id Property Value",
+                        "params": {
+                            "property": {
+                                "name": "Property",
+                                "desc": "Property"
+                            }
+                        }
                     },
 
 
