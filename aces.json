@@ -49,6 +49,28 @@
             {
                 "id": "has-server-time",
                 "scriptName": "HasServerTime"
+            },
+            {
+                "id": "is-platform-get-all-games-supported",
+                "scriptName": "IsPlatformGetAllGamesSupported"
+            },
+            {
+                "id": "is-platform-get-game-by-id-supported",
+                "scriptName": "IsPlatformGetGameByIdSupported"
+            },
+            {
+                "id": "on-get-all-games-completed",
+                "scriptName": "OnGetAllGamesCompleted",
+                "isTrigger": true,
+                "isInvertible": false,
+                "isCompatibleWithTriggers": false
+            },
+            {
+                "id": "on-get-game-by-id-completed",
+                "scriptName": "OnGetGameByIdCompleted",
+                "isTrigger": true,
+                "isInvertible": false,
+                "isCompatibleWithTriggers": false
             }
         ],
         "expressions": [
@@ -76,6 +98,69 @@
                 "id": "server-time",
                 "expressionName": "ServerTime",
                 "returnType": "number"
+            },
+            {
+                "id": "platform-all-games-count",
+                "expressionName": "PlatformAllGamesCount",
+                "returnType": "number"
+            },
+            {
+                "id": "platform-all-games-properties-count",
+                "expressionName": "PlatformAllGamesPropertiesCount",
+                "returnType": "number"
+            },
+            {
+                "id": "platform-all-games-property-name",
+                "expressionName": "PlatformAllGamesPropertyName",
+                "returnType": "string",
+                "params": [
+                    {
+                        "id": "property-index",
+                        "type": "number"
+                    }
+                ]
+            },
+            {
+                "id": "platform-all-games-property-value",
+                "expressionName": "PlatformAllGamesPropertyValue",
+                "returnType": "any",
+                "params": [
+                    {
+                        "id": "game-index",
+                        "type": "number"
+                    },
+                    {
+                        "id": "property",
+                        "type": "any"
+                    }
+                ]
+            },
+            {
+                "id": "platform-game-by-id-properties-count",
+                "expressionName": "PlatformGameByIdPropertiesCount",
+                "returnType": "number"
+            },
+            {
+                "id": "platform-game-by-id-property-name",
+                "expressionName": "PlatformGameByIdPropertyName",
+                "returnType": "string",
+                "params": [
+                    {
+                        "id": "property-index",
+                        "type": "number"
+                    }
+                ]
+            },
+            {
+                "id": "platform-game-by-id-property-value",
+                "expressionName": "PlatformGameByIdPropertyValue",
+                "returnType": "any",
+                "params": [
+                    {
+                        "id": "property",
+                        "type": "any"
+                    }
+                ]
             }
         ],
         "actions": [
@@ -94,6 +179,16 @@
             {
                 "id": "get-server-time",
                 "scriptName": "GetServerTime",
+                "isAsync": true
+            },
+            {
+                "id": "get-all-games",
+                "scriptName": "GetAllGames",
+                "isAsync": true
+            },
+            {
+                "id": "get-game-by-id",
+                "scriptName": "GetGameById",
                 "isAsync": true
             }
         ]

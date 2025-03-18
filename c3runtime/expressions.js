@@ -24,6 +24,79 @@ const C3 = globalThis.C3
         ServerTime() {
             return this.serverTime
         },
+        PlatformAllGamesCount() {
+            if (!this.allGames) {
+                return 0
+            }
+
+            return this.allGames.length
+        },
+        PlatformAllGamesPropertiesCount() {
+            if (!this.allGames || this.allGames.length <= 0) {
+                return 0
+            }
+
+            let game = this.allGames[0]
+            let properties = Object.keys(game)
+            return properties.length
+        },
+        PlatformAllGamesPropertyName(propertyIndex) {
+            if (!this.allGames || this.allGames.length <= 0) {
+                return ''
+            }
+
+            let game = this.allGames[0]
+            let properties = Object.keys(game)
+            return properties[propertyIndex]
+        },
+        PlatformAllGamesPropertyValue(gameIndex, property) {
+            if (!this.allGames || this.allGames.length <= 0) {
+                return ''
+            }
+
+            let game = this.allGames[gameIndex]
+
+            if (!game) {
+                return ''
+            }
+
+            if (typeof property === 'number') {
+                let properties = Object.keys(game)
+                let propertyName = properties[property]
+                return game[propertyName]
+            }
+
+            return game[property]
+        },
+        PlatformGameByIdPropertiesCount() {
+            if (!this.gameById) {
+                return 0
+            }
+
+            let properties = Object.keys(this.gameById)
+            return properties.length
+        },
+        PlatformGameByIdPropertyName(propertyIndex) {
+            if (!this.gameById) {
+                return ''
+            }
+
+            let properties = Object.keys(this.gameById)
+            return properties[propertyIndex]
+        },
+        PlatformGameByIdPropertyValue(property) {
+            if (!this.gameById) {
+                return ''
+            }
+
+            if (typeof property === 'number') {
+                let properties = Object.keys(this.gameById)
+                let propertyName = properties[property]
+                return this.gameById[propertyName]
+            }
+
+            return this.gameById[property]
+        },
 
 
         // device
