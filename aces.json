@@ -927,6 +927,10 @@
                 "scriptName": "IsPaymentsSupported"
             },
             {
+                "id": "is-payments-available",
+                "scriptName": "IsPaymentsAvailable"
+            },
+            {
                 "id": "is-payments-get-catalog-supported",
                 "scriptName": "IsPaymentsGetCatalogSupported"
             },
