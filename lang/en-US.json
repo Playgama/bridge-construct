@@ -16,38 +16,6 @@
                     "custom-cdn-url": {
                         "name": "Custom CDN URL",
                         "desc": "Custom CDN URL for loading SDK."
-                    },
-                    "game-distribution-game-id": {
-                        "name": "GameDistribution Game ID",
-                        "desc": "Game ID, which you can find from your control panel on GameDistribution.com."
-                    },
-                    "y8-game-id": {
-                        "name": "Y8 Game ID",
-                        "desc": "Game ID, which you can find from your control panel on Y8.com."
-                    },
-                    "y8-channel-id": {
-                        "name": "Y8 Channel ID",
-                        "desc": "Channel ID, which you can find from your control panel on developers.google.com/google-ads."
-                    },
-                    "y8-adsense-id": {
-                        "name": "Y8 Adsense ID",
-                        "desc": "Adsense ID, which you can find from your control panel on developers.google.com/google-ads."
-                    },
-                    "lagged-dev-id": {
-                        "name": "Lagged Dev ID",
-                        "desc": "Dev ID, which you can find from your control panel on Lagged.dev."
-                    },
-                    "lagged-publisher-id": {
-                        "name": "Lagged publisher ID",
-                        "desc": "Publisher ID, which you can find from your control panel on Lagged.dev."
-                    },
-                    "facebook-placement-id": {
-                        "name": "Facebook Placement ID",
-                        "desc": "Placement ID, which you can find from your control panel on developers.facebook.com."
-                    },
-                    "adsgram-block-id": {
-                        "name": "Adsgram Block ID",
-                        "desc": "Advertisement block ID, which you can find from your control panel on adsgram.ai."
                     }
                 },
                 "aceCategories": {

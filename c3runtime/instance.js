@@ -1,7 +1,6 @@
 'use strict'
 
 const C3 = globalThis.C3
-
 {
     C3.Plugins.PlaygamaBridge.Instance = class PlaygamaBridgeInstance extends globalThis.ISDKInstanceBase {
         constructor() {
@@ -16,15 +15,6 @@ const C3 = globalThis.C3
             if (properties[1] !== '') {
                 cdnUrl = properties[1]
             }
-
-            this.gameDistributionGameId = properties[2]
-            this.y8GameId = properties[3]
-            this.y8ChannelId = properties[4]
-            this.y8AdsenseId = properties[5]
-            this.laggedDevId = properties[6]
-            this.laggedPublisherId = properties[7]
-            this.facebookPlacementId = properties[8]
-            this.adsgramBlockId = properties[9]
 
             if (properties[0]) {
                 this.runtime.sdk.addLoadPromise(this.loadSdk(cdnUrl))
@@ -132,43 +122,7 @@ const C3 = globalThis.C3
             return new Promise((resolve, reject) => {
                 const waitForBridgeLoaded = () => {
                     if (window.bridge !== undefined) {
-                        let bridgeOptions = {
-                            platforms: { }
-                        }
-
-                        if (this.gameDistributionGameId !== '') {
-                            bridgeOptions.platforms['game_distribution'] = { gameId: this.gameDistributionGameId }
-                        }
-
-                        if (this.y8GameId !== '') {
-                            bridgeOptions.platforms['y8'] = { 
-                                gameId: this.y8GameId,
-                            }
-
-                            if (this.y8ChannelId !== '') {
-                                bridgeOptions.platforms['y8'].channelId = this.y8ChannelId
-                            } 
-                            if (this.y8AdsenseId !== '' ) {
-                                bridgeOptions.platforms['y8'].adsenseId = this.y8AdsenseId
-                            }
-                        }
-
-                        if (this.laggedDevId !== '' && this.laggedPublisherId !== '' ) {
-                            bridgeOptions.platforms['lagged'] = {
-                                devId: this.laggedDevId,
-                                publisherId: this.laggedPublisherId
-                            }
-                        }
-
-                        if (this.facebookPlacementId !== '') {
-                            bridgeOptions.platforms['facebook'] = { placementId: this.facebookPlacementId }
-                        }
-
-                        if (this.adsgramBlockId !== '') {
-                            bridgeOptions.platforms['telegram'] = { adsgramBlockId: this.adsgramBlockId }
-                        }
-
-                        window.bridge.initialize(bridgeOptions)
+                        window.bridge.initialize()
                             .then(() => {
                                 window.bridge.advertisement.on('banner_state_changed', state => {
                                     this._trigger(this.conditions.OnBannerStateChanged)
