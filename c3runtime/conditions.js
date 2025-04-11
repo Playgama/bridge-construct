@@ -275,9 +275,6 @@ const C3 = globalThis.C3
         IsPaymentsSupported() {
             return window.bridge.payments.isSupported
         },
-        IsPaymentsAvailable() {
-            return window.bridge.payments.isAvailable
-        },
         IsPaymentsGetCatalogSupported() {
             return window.bridge.payments.isGetCatalogSupported
         },

@@ -438,11 +438,6 @@
                         "display-text": "Is Payments Supported",
                         "description": "Is Payments Supported"
                     },
-                    "is-payments-available": {
-                        "list-name": "IsPaymentsAvailable",
-                        "display-text": "Is Payments Available",
-                        "description": "Is Payments Available"
-                    },
                     "is-payments-get-catalog-supported": {
                         "list-name": "IsPaymentsGetCatalogSupported",
                         "display-text": "Is Payments Get Catalog Supported",
