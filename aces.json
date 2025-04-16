@@ -926,18 +926,6 @@
                 "id": "is-payments-supported",
                 "scriptName": "IsPaymentsSupported"
             },
-            {
-                "id": "is-payments-get-catalog-supported",
-                "scriptName": "IsPaymentsGetCatalogSupported"
-            },
-            {
-                "id": "is-payments-get-purchases-supported",
-                "scriptName": "IsPaymentsGetPurchasesSupported"
-            },
-            {
-                "id": "is-payments-consume-purchase-supported",
-                "scriptName": "IsPaymentsConsumePurchaseSupported"
-            },
 
             {
                 "id": "on-payments-purchase-completed",
@@ -975,7 +963,13 @@
             {
                 "id": "payments-purchase",
                 "scriptName": "PaymentsPurchase",
-                "isAsync": true
+                "isAsync": true,
+                "params": [
+                    {
+                        "id": "commonId",
+                        "type": "string"
+                    }
+                ]
             },
             {
                 "id": "payments-get-purchases",
@@ -990,7 +984,13 @@
             {
                 "id": "payments-consume-purchase",
                 "scriptName": "PaymentsConsumePurchase",
-                "isAsync": true
+                "isAsync": true,
+                "params": [
+                    {
+                        "id": "commonId",
+                        "type": "string"
+                    }
+                ]
             }
         ],
         "expressions": [

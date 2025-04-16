@@ -438,21 +438,6 @@
                         "display-text": "Is Payments Supported",
                         "description": "Is Payments Supported"
                     },
-                    "is-payments-get-catalog-supported": {
-                        "list-name": "IsPaymentsGetCatalogSupported",
-                        "display-text": "Is Payments Get Catalog Supported",
-                        "description": "Is Payments Get Catalog Supported"
-                    },
-                    "is-payments-get-purchases-supported": {
-                        "list-name": "IsPaymentsGetPurchasesSupported",
-                        "display-text": "Is Payments Get Purchases Supported",
-                        "description": "Is Payments Get Purchases Supported"
-                    },
-                    "is-payments-consume-purchase-supported": {
-                        "list-name": "IsPaymentsConsumePurchaseSupported",
-                        "display-text": "Is Payments Consume Purchase Supported",
-                        "description": "Is Payments Consume Purchase Supported"
-                    },
                     "on-payments-purchase-completed": {
                         "list-name": "OnPaymentsPurchaseCompleted",
                         "display-text": "On Payments Purchase Completed",
@@ -803,8 +788,14 @@
 
                     "payments-purchase": {
                         "list-name": "PaymentsPurchase",
-                        "display-text": "Payments Purchase",
-                        "description": "Payments Purchase"
+                        "display-text": "Payments Purchase. Common ID: [b]{0}[/b].",
+                        "description": "Payments Purchase",
+                        "params": {
+                            "commonId": {
+                                "name": "Common ID",
+                                "desc": "Common ID"
+                            }
+                        }
                     },
                     "payments-get-purchases": {
                         "list-name": "PaymentsGetPurchases",
@@ -818,8 +809,14 @@
                     },
                     "payments-consume-purchase": {
                         "list-name": "PaymentsConsumePurchase",
-                        "display-text": "Payments Consume Purchase",
-                        "description": "Payments Consume Purchase"
+                        "display-text": "Payments Consume Purchase. Common ID: [b]{0}[/b].",
+                        "description": "Payments Consume Purchase",
+                        "params": {
+                            "commonId": {
+                                "name": "Common ID",
+                                "desc": "Common ID"
+                            }
+                        }
                     },
 
                     "achievements-unlock": {

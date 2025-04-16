@@ -1,7 +1,6 @@
 'use strict'
 
 const C3 = globalThis.C3
-
 {
     C3.Plugins.PlaygamaBridge.Acts = {
         // action parameters
@@ -449,18 +448,17 @@ const C3 = globalThis.C3
 
 
         // payments
-        PaymentsPurchase() {
+        PaymentsPurchase(commonId) {
             this.isLastActionCompletedSuccessfully = false
 
             return new Promise(resolve => {
-                window.bridge.payments.purchase(this.actionParametersContainer)
+                window.bridge.payments.purchase(commonId)
                     .then(data => {
                         this.isLastActionCompletedSuccessfully = true
                         this.paymentsPurchase = data
                     })
                     .catch(error => console.log(error))
                     .finally(() => {
-                        this.actionParametersContainer = {}
                         this._trigger(this.conditions.OnPaymentsPurchaseCompleted)
                         resolve()
                     })
@@ -501,17 +499,16 @@ const C3 = globalThis.C3
             })
         },
 
-        PaymentsConsumePurchase() {
+        PaymentsConsumePurchase(commonId) {
             this.isLastActionCompletedSuccessfully = false
 
             return new Promise(resolve => {
-                window.bridge.payments.consumePurchase(this.actionParametersContainer)
+                window.bridge.payments.consumePurchase(commonId)
                     .then(() => {
                         this.isLastActionCompletedSuccessfully = true
                     })
                     .catch(error => console.log(error))
                     .finally(() => {
-                        this.actionParametersContainer = {}
                         this._trigger(this.conditions.OnPaymentsConsumePurchaseCompleted)
                         resolve()
                     })
