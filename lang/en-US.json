@@ -16,38 +16,6 @@
                     "custom-cdn-url": {
                         "name": "Custom CDN URL",
                         "desc": "Custom CDN URL for loading SDK."
-                    },
-                    "game-distribution-game-id": {
-                        "name": "GameDistribution Game ID",
-                        "desc": "Game ID, which you can find from your control panel on GameDistribution.com."
-                    },
-                    "y8-game-id": {
-                        "name": "Y8 Game ID",
-                        "desc": "Game ID, which you can find from your control panel on Y8.com."
-                    },
-                    "y8-channel-id": {
-                        "name": "Y8 Channel ID",
-                        "desc": "Channel ID, which you can find from your control panel on developers.google.com/google-ads."
-                    },
-                    "y8-adsense-id": {
-                        "name": "Y8 Adsense ID",
-                        "desc": "Adsense ID, which you can find from your control panel on developers.google.com/google-ads."
-                    },
-                    "lagged-dev-id": {
-                        "name": "Lagged Dev ID",
-                        "desc": "Dev ID, which you can find from your control panel on Lagged.dev."
-                    },
-                    "lagged-publisher-id": {
-                        "name": "Lagged publisher ID",
-                        "desc": "Publisher ID, which you can find from your control panel on Lagged.dev."
-                    },
-                    "facebook-placement-id": {
-                        "name": "Facebook Placement ID",
-                        "desc": "Placement ID, which you can find from your control panel on developers.facebook.com."
-                    },
-                    "adsgram-block-id": {
-                        "name": "Adsgram Block ID",
-                        "desc": "Advertisement block ID, which you can find from your control panel on adsgram.ai."
                     }
                 },
                 "aceCategories": {
@@ -83,6 +51,27 @@
                         "description": "Has Server Time"
                     },
 
+                    "is-platform-get-all-games-supported": {
+                        "list-name": "IsPlatformGetAllGamesSupported",
+                        "display-text": "Is Platform Get All Games Supported",
+                        "description": "Is Platform Get All Games Supported"
+                    },
+
+                    "is-platform-get-game-by-id-supported": {
+                        "list-name": "IsPlatformGetGameByIdSupported",
+                        "display-text": "Is Platform Get Game By Id Supported",
+                        "description": "Is Platform Get Game By Id Supported"
+                    },
+                    "on-get-all-games-completed": {
+                        "list-name": "OnGetAllGamesCompleted",
+                        "display-text": "On Get All Games Completed",
+                        "description": "On Get All Games Completed"
+                    },
+                    "on-get-game-by-id-completed": {
+                        "list-name": "OnGetGameByIdCompleted",
+                        "display-text": "On Get Game By Id Completed",
+                        "description": "On Get Game By Id Completed"
+                    },
 
                     "is-mobile": {
                         "list-name": "IsMobile",
@@ -449,21 +438,6 @@
                         "display-text": "Is Payments Supported",
                         "description": "Is Payments Supported"
                     },
-                    "is-payments-get-catalog-supported": {
-                        "list-name": "IsPaymentsGetCatalogSupported",
-                        "display-text": "Is Payments Get Catalog Supported",
-                        "description": "Is Payments Get Catalog Supported"
-                    },
-                    "is-payments-get-purchases-supported": {
-                        "list-name": "IsPaymentsGetPurchasesSupported",
-                        "display-text": "Is Payments Get Purchases Supported",
-                        "description": "Is Payments Get Purchases Supported"
-                    },
-                    "is-payments-consume-purchase-supported": {
-                        "list-name": "IsPaymentsConsumePurchaseSupported",
-                        "display-text": "Is Payments Consume Purchase Supported",
-                        "description": "Is Payments Consume Purchase Supported"
-                    },
                     "on-payments-purchase-completed": {
                         "list-name": "OnPaymentsPurchaseCompleted",
                         "display-text": "On Payments Purchase Completed",
@@ -596,7 +570,22 @@
                         "display-text": "Get Server Time",
                         "description": "Get Server Time"
                     },
-
+                    "get-all-games": {
+                        "list-name": "GetAllGames",
+                        "display-text": "Get All Games",
+                        "description": "Get All Games"
+                    },
+                    "get-game-by-id": {
+                        "list-name": "GetGameById",
+                        "display-text": "Get Game By Id",
+                        "description": "Get Game By Id",
+                        "params": {
+                            "game-id": {
+                                "name": "GameId",
+                                "desc": "Game ID"
+                            }
+                        }
+                    },
 
                     "authorize-player": {
                         "list-name": "AuthorizePlayer",
@@ -799,8 +788,14 @@
 
                     "payments-purchase": {
                         "list-name": "PaymentsPurchase",
-                        "display-text": "Payments Purchase",
-                        "description": "Payments Purchase"
+                        "display-text": "Payments Purchase. Common ID: [b]{0}[/b].",
+                        "description": "Payments Purchase",
+                        "params": {
+                            "commonId": {
+                                "name": "Common ID",
+                                "desc": "Common ID"
+                            }
+                        }
                     },
                     "payments-get-purchases": {
                         "list-name": "PaymentsGetPurchases",
@@ -814,8 +809,14 @@
                     },
                     "payments-consume-purchase": {
                         "list-name": "PaymentsConsumePurchase",
-                        "display-text": "Payments Consume Purchase",
-                        "description": "Payments Consume Purchase"
+                        "display-text": "Payments Consume Purchase. Common ID: [b]{0}[/b].",
+                        "description": "Payments Consume Purchase",
+                        "params": {
+                            "commonId": {
+                                "name": "Common ID",
+                                "desc": "Common ID"
+                            }
+                        }
                     },
 
                     "achievements-unlock": {
@@ -861,6 +862,62 @@
                     "server-time": {
                         "translated-name": "ServerTime",
                         "description": "Server Time"
+                    },
+                    "platform-all-games-count": {
+                        "translated-name": "PlatformAllGamesCount",
+                        "description": "Platform All Games Count"
+                    },
+                    "platform-all-games-properties-count": {
+                        "translated-name": "PlatformAllGamesPropertiesCount",
+                        "description": "Platform All Games Properties Count"
+                    },
+                    "platform-all-games-property-name": {
+                        "translated-name": "PlatformAllGamesPropertyName",
+                        "description": "Platform All Games Property Name",
+                        "params": {
+                            "property-index": {
+                                "name": "Property Index",
+                                "desc": "Property Index"
+                            }
+                        }
+                    },
+                    "platform-all-games-property-value": {
+                        "translated-name": "PlatformAllGamesPropertyValue",
+                        "description": "Platform All Games Property Value",
+                        "params": {
+                            "game-index": {
+                                "name": "Game Index",
+                                "desc": "Game Index"
+                            },
+                            "property": {
+                                "name": "Property",
+                                "desc": "Property"
+                            }
+                        }
+                    },
+                    "platform-game-by-id-properties-count": {
+                        "translated-name": "PlatformGameByIdPropertiesCount",
+                        "description": "Platform Game By Id Properties Count"
+                    },
+                    "platform-game-by-id-property-name": {
+                        "translated-name": "PlatformGameByIdPropertyName",
+                        "description": "Platform Game By Id Property Name",
+                        "params": {
+                            "property-index": {
+                                "name": "Property Index",
+                                "desc": "Property Index"
+                            }
+                        }
+                    },
+                    "platform-game-by-id-property-value": {
+                        "translated-name": "PlatformGameByIdPropertyValue",
+                        "description": "Platform Game By Id Property Value",
+                        "params": {
+                            "property": {
+                                "name": "Property",
+                                "desc": "Property"
+                            }
+                        }
                     },
 
 
@@ -1073,6 +1130,24 @@
                             "item-index": {
                                 "name": "Item Index",
                                 "desc": "Item Index"
+                            },
+                            "property": {
+                                "name": "Property",
+                                "desc": "Property"
+                            }
+                        }
+                    },
+                    "payments-first-catalog-item-property-value": {
+                        "translated-name": "PaymentsFirstCatalogItemPropertyValue",
+                        "description": "Payments Catalog Item By Id Property Value",
+                        "params": {
+                            "filter-property": {
+                                "name": "Filter Property",
+                                "desc": "Filter Property"
+                            },
+                            "filter-property-value": {
+                                "name": "Filter Property Value",
+                                "desc": "Filter Property Value"
                             },
                             "property": {
                                 "name": "Property",
