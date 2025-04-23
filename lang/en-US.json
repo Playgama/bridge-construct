@@ -788,12 +788,12 @@
 
                     "payments-purchase": {
                         "list-name": "PaymentsPurchase",
-                        "display-text": "Payments Purchase. Common ID: [b]{0}[/b].",
+                        "display-text": "Payments Purchase. ID: [b]{0}[/b].",
                         "description": "Payments Purchase",
                         "params": {
-                            "commonId": {
-                                "name": "Common ID",
-                                "desc": "Common ID"
+                            "id": {
+                                "name": "ID",
+                                "desc": "ID"
                             }
                         }
                     },
@@ -809,12 +809,12 @@
                     },
                     "payments-consume-purchase": {
                         "list-name": "PaymentsConsumePurchase",
-                        "display-text": "Payments Consume Purchase. Common ID: [b]{0}[/b].",
+                        "display-text": "Payments Consume Purchase. ID: [b]{0}[/b].",
                         "description": "Payments Consume Purchase",
                         "params": {
-                            "commonId": {
-                                "name": "Common ID",
-                                "desc": "Common ID"
+                            "id": {
+                                "name": "ID",
+                                "desc": "ID"
                             }
                         }
                     },

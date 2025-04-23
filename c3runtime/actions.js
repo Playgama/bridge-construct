@@ -448,11 +448,11 @@ const C3 = globalThis.C3
 
 
         // payments
-        PaymentsPurchase(commonId) {
+        PaymentsPurchase(id) {
             this.isLastActionCompletedSuccessfully = false
 
             return new Promise(resolve => {
-                window.bridge.payments.purchase(commonId)
+                window.bridge.payments.purchase(id)
                     .then(data => {
                         this.isLastActionCompletedSuccessfully = true
                         this.paymentsPurchase = data
@@ -465,18 +465,18 @@ const C3 = globalThis.C3
             })
         },
 
-        PaymentsGetPurchases() {
+        PaymentsConsumePurchase(id) {
             this.isLastActionCompletedSuccessfully = false
 
             return new Promise(resolve => {
-                window.bridge.payments.getPurchases()
-                    .then(data => {
+                window.bridge.payments.consumePurchase(id)
+                    .then((data) => {
                         this.isLastActionCompletedSuccessfully = true
-                        this.paymentsPurchases = data
+                        this.paymentsPurchase = data
                     })
                     .catch(error => console.log(error))
                     .finally(() => {
-                        this._trigger(this.conditions.OnPaymentsGetPurchasesCompleted)
+                        this._trigger(this.conditions.OnPaymentsConsumePurchaseCompleted)
                         resolve()
                     })
             })
@@ -499,21 +499,23 @@ const C3 = globalThis.C3
             })
         },
 
-        PaymentsConsumePurchase(commonId) {
+        PaymentsGetPurchases() {
             this.isLastActionCompletedSuccessfully = false
 
             return new Promise(resolve => {
-                window.bridge.payments.consumePurchase(commonId)
-                    .then(() => {
+                window.bridge.payments.getPurchases()
+                    .then(data => {
                         this.isLastActionCompletedSuccessfully = true
+                        this.paymentsPurchases = data
                     })
                     .catch(error => console.log(error))
                     .finally(() => {
-                        this._trigger(this.conditions.OnPaymentsConsumePurchaseCompleted)
+                        this._trigger(this.conditions.OnPaymentsGetPurchasesCompleted)
                         resolve()
                     })
             })
         },
+
 
         // achievements
         AchievementsUnlock() {
