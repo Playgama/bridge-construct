@@ -1,6 +1,5 @@
 'use strict'
 
-const SDK = globalThis.SDK
 {
     const PLUGIN_CLASS = SDK.Plugins.PlaygamaBridge
 

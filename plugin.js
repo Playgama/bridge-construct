@@ -1,8 +1,8 @@
 'use strict'
 
-const SDK = globalThis.SDK
 {
     const PLUGIN_ID = 'PlaygamaBridge'
+    const PLUGIN_VERSION = '1.21.0'
     const PLUGIN_CATEGORY = 'platform-specific'
 
     const PLUGIN_CLASS = (SDK.Plugins.PlaygamaBridge = class PlaygamaBridgePlugin extends SDK.IPluginBase {
@@ -12,6 +12,7 @@ const SDK = globalThis.SDK
             SDK.Lang.PushContext('plugins.' + PLUGIN_ID.toLowerCase())
             this._info.SetName(lang('.name'))
             this._info.SetDescription(lang('.description'))
+            this._info.SetVersion(PLUGIN_VERSION)
             this._info.SetCategory(PLUGIN_CATEGORY)
             this._info.SetAuthor(lang('.author'))
             this._info.SetHelpUrl(lang('.help-url'))
