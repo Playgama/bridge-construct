@@ -1,10 +1,9 @@
 'use strict'
 
-const C3 = globalThis.C3
 {
-    C3.Plugins.PlaygamaBridge.Instance = class PlaygamaBridgeInstance extends globalThis.ISDKInstanceBase {
-        constructor() {
-            super()
+    C3.Plugins.PlaygamaBridge.Instance = class PlaygamaBridgeInstance extends C3.SDKInstanceBase {
+        constructor(inst, properties) {
+            super(inst)
 
             this.conditions = C3.Plugins.PlaygamaBridge.Cnds
             this.actions = C3.Plugins.PlaygamaBridge.Acts
@@ -17,10 +16,10 @@ const C3 = globalThis.C3
             }
 
             if (properties[0]) {
-                this.runtime.sdk.addLoadPromise(this.loadSdk(cdnUrl))
+                this._runtime.AddLoadPromise(this.loadSdk(cdnUrl))
             }
 
-            this.runtime.sdk.addLoadPromise(this.initializeSdk())
+            this._runtime.AddLoadPromise(this.initializeSdk())
 
             this.serverTime = 0
             this.allGames = []
@@ -200,18 +199,25 @@ const C3 = globalThis.C3
             })
         }
 
-        _release() {
-            super._release()
+        Release() {
+            super.Release()
         }
 
-        _saveToJson() {
+        SaveToJson() {
             return {
                 storageData: this.storageData
             }
         }
 
-        _loadFromJson(o) {
+        LoadFromJson(o) {
             this.storageData = o.storageData || { }
+        }
+
+        GetDebuggerProperties() {
+            return [{
+                title: 'PlaygamaBridge',
+                properties: []
+            }]
         }
     }
 }

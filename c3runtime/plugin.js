@@ -1,10 +1,12 @@
 'use strict'
-
-const C3 = globalThis.C3
 {
-    C3.Plugins.PlaygamaBridge = class PlaygamaBridgePlugin extends globalThis.ISDKPluginBase {
-        constructor() {
-            super()
+    C3.Plugins.PlaygamaBridge = class PlaygamaBridgePlugin extends C3.SDKPluginBase {
+        constructor(opts) {
+            super(opts, 'PlaygamaBridge')
+        }
+
+        Release() {
+            super.Release()
         }
     }
 }
