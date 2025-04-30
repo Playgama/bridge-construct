@@ -48,7 +48,7 @@ const C3 = globalThis.C3
                     })
                     .catch(error => console.log(error))
                     .finally(() => {
-                        this._trigger(this.conditions.OnGetServerTimeCompleted)
+                        this.Trigger(this.conditions.OnGetServerTimeCompleted)
                         resolve()
                     })
             })
@@ -64,7 +64,7 @@ const C3 = globalThis.C3
                     })
                     .catch(error => console.log(error))
                     .finally(() => {
-                        this._trigger(this.conditions.OnGetAllGamesCompleted)
+                        this.Trigger(this.conditions.OnGetAllGamesCompleted)
                         resolve()
                     })
             })
@@ -81,7 +81,7 @@ const C3 = globalThis.C3
                     .catch(error => console.log(error))
                     .finally(() => {
                         this.actionParametersContainer = {}
-                        this._trigger(this.conditions.OnGetGameByIdCompleted)
+                        this.Trigger(this.conditions.OnGetGameByIdCompleted)
                         resolve()
                     })
             })
@@ -99,7 +99,7 @@ const C3 = globalThis.C3
                     .catch(error => console.log(error))
                     .finally(() => {
                         this.actionParametersContainer = {}
-                        this._trigger(this.conditions.OnAuthorizePlayerCompleted)
+                        this.Trigger(this.conditions.OnAuthorizePlayerCompleted)
                         resolve()
                     })
             })
@@ -143,7 +143,7 @@ const C3 = globalThis.C3
                     .catch(error => console.log(error))
                     .finally(() => {
                         this.storageDataGetRequestKeys = []
-                        this._trigger(this.conditions.OnStorageDataGetRequestCompleted)
+                        this.Trigger(this.conditions.OnStorageDataGetRequestCompleted)
                         resolve()
                     })
             })
@@ -185,7 +185,7 @@ const C3 = globalThis.C3
                     .finally(() => {
                         this.storageDataSetRequestKeys = []
                         this.storageDataSetRequestValues = []
-                        this._trigger(this.conditions.OnStorageDataSetRequestCompleted)
+                        this.Trigger(this.conditions.OnStorageDataSetRequestCompleted)
                         resolve()
                     })
             })
@@ -223,7 +223,7 @@ const C3 = globalThis.C3
                     .catch(error => console.log(error))
                     .finally(() => {
                         this.storageDataDeleteRequestKeys = []
-                        this._trigger(this.conditions.OnStorageDataDeleteRequestCompleted)
+                        this.Trigger(this.conditions.OnStorageDataDeleteRequestCompleted)
                         resolve()
                     })
             })
@@ -258,7 +258,7 @@ const C3 = globalThis.C3
                     })
                     .catch(error => console.log(error))
                     .finally(() => {
-                        this._trigger(this.conditions.OnCheckAdBlockCompleted)
+                        this.Trigger(this.conditions.OnCheckAdBlockCompleted)
                         resolve()
                     })
             })
@@ -277,7 +277,7 @@ const C3 = globalThis.C3
                     .catch(error => console.log(error))
                     .finally(() => {
                         this.actionParametersContainer = {}
-                        this._trigger(this.conditions.OnShareCompleted)
+                        this.Trigger(this.conditions.OnShareCompleted)
                         resolve()
                     })
             })
@@ -293,7 +293,7 @@ const C3 = globalThis.C3
                     .catch(error => console.log(error))
                     .finally(() => {
                         this.actionParametersContainer = {}
-                        this._trigger(this.conditions.OnInviteFriendsCompleted)
+                        this.Trigger(this.conditions.OnInviteFriendsCompleted)
                         resolve()
                     })
             })
@@ -309,7 +309,7 @@ const C3 = globalThis.C3
                     .catch(error => console.log(error))
                     .finally(() => {
                         this.actionParametersContainer = {}
-                        this._trigger(this.conditions.OnJoinCommunityCompleted)
+                        this.Trigger(this.conditions.OnJoinCommunityCompleted)
                         resolve()
                     })
             })
@@ -325,7 +325,7 @@ const C3 = globalThis.C3
                     .catch(error => console.log(error))
                     .finally(() => {
                         this.actionParametersContainer = {}
-                        this._trigger(this.conditions.OnCreatePostCompleted)
+                        this.Trigger(this.conditions.OnCreatePostCompleted)
                         resolve()
                     })
             })
@@ -340,7 +340,7 @@ const C3 = globalThis.C3
                     })
                     .catch(error => console.log(error))
                     .finally(() => {
-                        this._trigger(this.conditions.OnAddToHomeScreenCompleted)
+                        this.Trigger(this.conditions.OnAddToHomeScreenCompleted)
                         resolve()
                     })
             })
@@ -355,7 +355,7 @@ const C3 = globalThis.C3
                     })
                     .catch(error => console.log(error))
                     .finally(() => {
-                        this._trigger(this.conditions.OnAddToFavoritesCompleted)
+                        this.Trigger(this.conditions.OnAddToFavoritesCompleted)
                         resolve()
                     })
             })
@@ -370,7 +370,7 @@ const C3 = globalThis.C3
                     })
                     .catch(error => console.log(error))
                     .finally(() => {
-                        this._trigger(this.conditions.OnRateCompleted)
+                        this.Trigger(this.conditions.OnRateCompleted)
                         resolve()
                     })
             })
@@ -388,7 +388,7 @@ const C3 = globalThis.C3
                     .catch(error => console.log(error))
                     .finally(() => {
                         this.actionParametersContainer = {}
-                        this._trigger(this.conditions.OnLeaderboardSetScoreCompleted)
+                        this.Trigger(this.conditions.OnLeaderboardSetScoreCompleted)
                         resolve()
                     })
             })
@@ -406,7 +406,7 @@ const C3 = globalThis.C3
                     .catch(error => console.log(error))
                     .finally(() => {
                         this.actionParametersContainer = {}
-                        this._trigger(this.conditions.OnLeaderboardGetScoreCompleted)
+                        this.Trigger(this.conditions.OnLeaderboardGetScoreCompleted)
                         resolve()
                     })
             })
@@ -424,7 +424,7 @@ const C3 = globalThis.C3
                     .catch(error => console.log(error))
                     .finally(() => {
                         this.actionParametersContainer = {}
-                        this._trigger(this.conditions.OnLeaderboardGetEntriesCompleted)
+                        this.Trigger(this.conditions.OnLeaderboardGetEntriesCompleted)
                         resolve()
                     })
             })
@@ -440,7 +440,7 @@ const C3 = globalThis.C3
                     .catch(error => console.log(error))
                     .finally(() => {
                         this.actionParametersContainer = {}
-                        this._trigger(this.conditions.OnLeaderboardShowNativePopupCompleted)
+                        this.Trigger(this.conditions.OnLeaderboardShowNativePopupCompleted)
                         resolve()
                     })
             })
@@ -459,7 +459,7 @@ const C3 = globalThis.C3
                     })
                     .catch(error => console.log(error))
                     .finally(() => {
-                        this._trigger(this.conditions.OnPaymentsPurchaseCompleted)
+                        this.Trigger(this.conditions.OnPaymentsPurchaseCompleted)
                         resolve()
                     })
             })
@@ -476,7 +476,7 @@ const C3 = globalThis.C3
                     })
                     .catch(error => console.log(error))
                     .finally(() => {
-                        this._trigger(this.conditions.OnPaymentsConsumePurchaseCompleted)
+                        this.Trigger(this.conditions.OnPaymentsConsumePurchaseCompleted)
                         resolve()
                     })
             })
@@ -493,7 +493,7 @@ const C3 = globalThis.C3
                     })
                     .catch(error => console.log(error))
                     .finally(() => {
-                        this._trigger(this.conditions.OnPaymentsGetCatalogCompleted)
+                        this.Trigger(this.conditions.OnPaymentsGetCatalogCompleted)
                         resolve()
                     })
             })
@@ -510,7 +510,7 @@ const C3 = globalThis.C3
                     })
                     .catch(error => console.log(error))
                     .finally(() => {
-                        this._trigger(this.conditions.OnPaymentsGetPurchasesCompleted)
+                        this.Trigger(this.conditions.OnPaymentsGetPurchasesCompleted)
                         resolve()
                     })
             })
@@ -529,7 +529,7 @@ const C3 = globalThis.C3
                     .catch(error => console.log(error))
                     .finally(() => {
                         this.actionParametersContainer = {}
-                        this._trigger(this.conditions.OnAchievementsUnlockCompleted)
+                        this.Trigger(this.conditions.OnAchievementsUnlockCompleted)
                         resolve()
                     })
             })
@@ -547,7 +547,7 @@ const C3 = globalThis.C3
                     .catch(error => console.log(error))
                     .finally(() => {
                         this.actionParametersContainer = {}
-                        this._trigger(this.conditions.OnAchievementsGetListCompleted)
+                        this.Trigger(this.conditions.OnAchievementsGetListCompleted)
                         resolve()
                     })
             })
@@ -564,7 +564,7 @@ const C3 = globalThis.C3
                     .catch(error => console.log(error))
                     .finally(() => {
                         this.actionParametersContainer = {}
-                        this._trigger(this.conditions.OnAchievementsShowNativePopupCompleted)
+                        this.Trigger(this.conditions.OnAchievementsShowNativePopupCompleted)
                         resolve()
                     })
             })
@@ -583,7 +583,7 @@ const C3 = globalThis.C3
                     .catch(error => console.log(error))
                     .finally(() => {
                         this.actionParametersContainer = {}
-                        this._trigger(this.conditions.OnRemoteConfigGotCompleted)
+                        this.Trigger(this.conditions.OnRemoteConfigGotCompleted)
                         resolve()
                     })
             })
