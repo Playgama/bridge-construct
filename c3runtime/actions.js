@@ -234,18 +234,17 @@ const C3 = globalThis.C3
         SetMinimumDelayBetweenInterstitial(seconds) {
             window.bridge.advertisement.setMinimumDelayBetweenInterstitial(seconds)
         },
-        ShowBanner() {
-            window.bridge.advertisement.showBanner(this.actionParametersContainer)
-            this.actionParametersContainer = {}
+        ShowBanner(position, placement) {
+            window.bridge.advertisement.showBanner(position, placement)
         },
         HideBanner() {
             window.bridge.advertisement.hideBanner()
         },
-        ShowInterstitial(ignoreDelay) {
-            window.bridge.advertisement.showInterstitial(ignoreDelay)
+        ShowInterstitial(placement) {
+            window.bridge.advertisement.showInterstitial(placement)
         },
-        ShowRewarded() {
-            window.bridge.advertisement.showRewarded()
+        ShowRewarded(placement) {
+            window.bridge.advertisement.showRewarded(placement)
         },
         CheckAdBlock() {
             this.isLastActionCompletedSuccessfully = false

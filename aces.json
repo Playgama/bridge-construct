@@ -614,7 +614,18 @@
             {
                 "id": "show-banner",
                 "scriptName": "ShowBanner",
-                "isAsync": false
+                "isAsync": false,
+                "params": [
+                    {
+                        "id": "position",
+                        "type": "combo",
+                        "items": ["top", "bottom"]
+                    },
+                    {
+                        "id": "placement",
+                        "type": "string"
+                    }
+                ]
             },
             {
                 "id": "hide-banner",
@@ -627,15 +638,21 @@
                 "isAsync": false,
                 "params": [
                     {
-                        "id": "ignore-delay",
-                        "type": "boolean"
+                        "id": "placement",
+                        "type": "string"
                     }
                 ]
             },
             {
                 "id": "show-rewarded",
                 "scriptName": "ShowRewarded",
-                "isAsync": false
+                "isAsync": false,
+                "params": [
+                    {
+                        "id": "placement",
+                        "type": "string"
+                    }
+                ]
             },
             {
                 "id": "check-adblock",
@@ -662,6 +679,11 @@
             {
                 "id": "rewarded-state",
                 "expressionName": "RewardedState",
+                "returnType": "string"
+            },
+            {
+                "id": "rewarded-placement",
+                "expressionName": "RewardedPlacement",
                 "returnType": "string"
             }
         ]

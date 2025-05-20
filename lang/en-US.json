@@ -685,8 +685,22 @@
 
                     "show-banner": {
                         "list-name": "ShowBanner",
-                        "display-text": "Show Banner",
-                        "description": "Show Banner"
+                        "display-text": "Show Banner. Position: [b]{0}[/b]. Placement: [b]{1}[/b].",
+                        "description": "Show Banner",
+                        "params": {
+                            "position": {
+                                "name": "Position",
+                                "desc": "Position",
+                                "items": {
+                                    "top": "Top",
+                                    "bottom": "Bottom"
+                                }
+                            },
+                            "placement": {
+                                "name": "Placement",
+                                "desc": "Placement (optional)"
+                            }
+                        }
                     },
                     "hide-banner": {
                         "list-name": "HideBanner",
@@ -706,19 +720,25 @@
                     },
                     "show-interstitial": {
                         "list-name": "ShowInterstitial",
-                        "display-text": "Show Interstitial. Ignore Delay [b]{0}[/b].",
+                        "display-text": "Show Interstitial. Placement [b]{0}[/b].",
                         "description": "Show Interstitial",
                         "params": {
-                            "ignore-delay": {
-                                "name": "Ignore Delay",
-                                "desc": "Ignore Delay"
+                            "placement": {
+                                "name": "Placement",
+                                "desc": "Placement (optional)"
                             }
                         }
                     },
                     "show-rewarded": {
                         "list-name": "ShowRewarded",
-                        "display-text": "Show Rewarded",
-                        "description": "Show Rewarded"
+                        "display-text": "Show Rewarded. Placement [b]{0}[/b].",
+                        "description": "Show Rewarded",
+                        "params": {
+                            "placement": {
+                                "name": "Placement",
+                                "desc": "Placement (optional)"
+                            }
+                        }
                     },
                     "check-adblock": {
                         "list-name": "CheckAdBlock",
@@ -992,6 +1012,10 @@
                     "rewarded-state": {
                         "translated-name": "RewardedState",
                         "description": "Rewarded State"
+                    },
+                    "rewarded-placement": {
+                        "translated-name": "RewardedPlacement",
+                        "description": "Rewarded Placement"
                     },
                     "minimum-delay-between-interstitial": {
                         "translated-name": "MinimumDelayBetweenInterstitial",

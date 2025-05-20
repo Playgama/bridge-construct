@@ -163,6 +163,9 @@ const C3 = globalThis.C3
         RewardedState() {
             return window.bridge.advertisement.rewardedState
         },
+        RewardedPlacement() {
+            return window.bridge.advertisement.rewardedPlacement
+        },
 
 
         // leaderboard
