@@ -817,60 +817,31 @@
             }
         ]
     },
-    "leaderboard": {
+    "leaderboards": {
         "conditions": [
             {
-                "id": "is-leaderboard-supported",
-                "scriptName": "IsLeaderboardSupported"
+                "id": "is-leaderboards-type-not-available",
+                "scriptName": "IsLeaderboardsTypeNotAvailable"
             },
             {
-                "id": "is-leaderboard-native-popup-supported",
-                "scriptName": "IsLeaderboardNativePopupSupported"
+                "id": "is-leaderboards-type-in-game",
+                "scriptName": "IsLeaderboardsTypeInGame"
             },
             {
-                "id": "is-leaderboard-multiple-boards-supported",
-                "scriptName": "IsLeaderboardMultipleBoardsSupported"
-            },
-            {
-                "id": "is-leaderboard-set-score-supported",
-                "scriptName": "IsLeaderboardSetScoreSupported"
-            },
-            {
-                "id": "is-leaderboard-get-score-supported",
-                "scriptName": "IsLeaderboardGetScoreSupported"
-            },
-            {
-                "id": "is-leaderboard-get-entries-supported",
-                "scriptName": "IsLeaderboardGetEntriesSupported"
+                "id": "is-leaderboards-type-native",
+                "scriptName": "IsLeaderboardsTypeNative"
             },
 
             {
-                "id": "on-leaderboard-set-score-completed",
-                "scriptName": "OnLeaderboardSetScoreCompleted",
+                "id": "on-leaderboards-set-score-completed",
+                "scriptName": "OnLeaderboardsSetScoreCompleted",
                 "isTrigger": true,
                 "isInvertible": false,
                 "isCompatibleWithTriggers": false
             },
-
             {
-                "id": "on-leaderboard-get-score-completed",
-                "scriptName": "OnLeaderboardGetScoreCompleted",
-                "isTrigger": true,
-                "isInvertible": false,
-                "isCompatibleWithTriggers": false
-            },
-
-            {
-                "id": "on-leaderboard-get-entries-completed",
-                "scriptName": "OnLeaderboardGetEntriesCompleted",
-                "isTrigger": true,
-                "isInvertible": false,
-                "isCompatibleWithTriggers": false
-            },
-
-            {
-                "id": "on-leaderboard-show-native-popup-completed",
-                "scriptName": "OnLeaderboardShowNativePopupCompleted",
+                "id": "on-leaderboards-get-entries-completed",
+                "scriptName": "OnLeaderboardsGetEntriesCompleted",
                 "isTrigger": true,
                 "isInvertible": false,
                 "isCompatibleWithTriggers": false
@@ -878,31 +849,37 @@
         ],
         "actions": [
             {
-                "id": "leaderboard-set-score",
-                "scriptName": "LeaderboardSetScore",
-                "isAsync": true
+                "id": "leaderboards-set-score",
+                "scriptName": "LeaderboardsSetScore",
+                "isAsync": true,
+                "params": [
+                    {
+                        "id": "id",
+                        "type": "string"
+                    },
+                    {
+                        "id": "score",
+                        "type": "number"
+                    }
+                ]
             },
             {
-                "id": "leaderboard-get-score",
-                "scriptName": "LeaderboardGetScore",
-                "isAsync": true
-            },
-            {
-                "id": "leaderboard-get-entries",
-                "scriptName": "LeaderboardGetEntries",
-                "isAsync": true
-            },
-            {
-                "id": "leaderboard-show-native-popup",
-                "scriptName": "LeaderboardShowNativePopup",
-                "isAsync": true
+                "id": "leaderboards-get-entries",
+                "scriptName": "LeaderboardsGetEntries",
+                "isAsync": true,
+                "params": [
+                    {
+                        "id": "id",
+                        "type": "string"
+                    }
+                ]
             }
         ],
         "expressions": [
             {
-                "id": "leaderboard-player-score",
-                "expressionName": "LeaderboardPlayerScore",
-                "returnType": "number"
+                "id": "leaderboards-type",
+                "expressionName": "LeaderboardsType",
+                "returnType": "string"
             },
             {
                 "id": "leaderboard-entries-count",
@@ -910,33 +887,57 @@
                 "returnType": "number"
             },
             {
-                "id": "leaderboard-entry-properties-count",
-                "expressionName": "LeaderboardEntryPropertiesCount",
-                "returnType": "number"
-            },
-            {
-                "id": "leaderboard-entry-property-name",
-                "expressionName": "LeaderboardEntryPropertyName",
-                "returnType": "string",
-                "params": [
-                    {
-                        "id": "property-index",
-                        "type": "number"
-                    }
-                ]
-            },
-            {
-                "id": "leaderboard-entry-property-value",
-                "expressionName": "LeaderboardEntryPropertyValue",
+                "id": "leaderboard-entry-id",
+                "expressionName": "LeaderboardEntryId",
                 "returnType": "any",
                 "params": [
                     {
                         "id": "entry-index",
                         "type": "number"
-                    },
+                    }
+                ]
+            },
+            {
+                "id": "leaderboard-entry-name",
+                "expressionName": "LeaderboardEntryName",
+                "returnType": "any",
+                "params": [
                     {
-                        "id": "property",
-                        "type": "any"
+                        "id": "entry-index",
+                        "type": "number"
+                    }
+                ]
+            },
+            {
+                "id": "leaderboard-entry-photo",
+                "expressionName": "LeaderboardEntryPhoto",
+                "returnType": "any",
+                "params": [
+                    {
+                        "id": "entry-index",
+                        "type": "number"
+                    }
+                ]
+            },
+            {
+                "id": "leaderboard-entry-score",
+                "expressionName": "LeaderboardEntryScore",
+                "returnType": "any",
+                "params": [
+                    {
+                        "id": "entry-index",
+                        "type": "number"
+                    }
+                ]
+            },
+            {
+                "id": "leaderboard-entry-rank",
+                "expressionName": "LeaderboardEntryRank",
+                "returnType": "any",
+                "params": [
+                    {
+                        "id": "entry-index",
+                        "type": "number"
                     }
                 ]
             }

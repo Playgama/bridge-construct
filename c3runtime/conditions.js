@@ -236,36 +236,21 @@ const C3 = globalThis.C3
         },
 
 
-        // leaderboard
-        IsLeaderboardSupported() {
-            return window.bridge.leaderboard.isSupported
+        // leaderboards
+        IsLeaderboardsTypeNotAvailable() {
+            return window.bridge.leaderboards.type === 'not_available'
         },
-        IsLeaderboardNativePopupSupported() {
-            return window.bridge.leaderboard.isNativePopupSupported
+        IsLeaderboardsTypeInGame() {
+            return window.bridge.leaderboards.type === 'in_game'
         },
-        IsLeaderboardMultipleBoardsSupported() {
-            return window.bridge.leaderboard.isMultipleBoardsSupported
-        },
-        IsLeaderboardSetScoreSupported() {
-            return window.bridge.leaderboard.isSetScoreSupported
-        },
-        IsLeaderboardGetScoreSupported() {
-            return window.bridge.leaderboard.isGetScoreSupported
-        },
-        IsLeaderboardGetEntriesSupported() {
-            return window.bridge.leaderboard.isGetEntriesSupported
+        IsLeaderboardsTypeNative() {
+            return window.bridge.leaderboards.type === 'native'
         },
 
-        OnLeaderboardSetScoreCompleted() {
+        OnLeaderboardsSetScoreCompleted() {
             return true
         },
-        OnLeaderboardGetScoreCompleted() {
-            return true
-        },
-        OnLeaderboardGetEntriesCompleted() {
-            return true
-        },
-        OnLeaderboardShowNativePopupCompleted() {
+        OnLeaderboardsGetEntriesCompleted() {
             return true
         },
 

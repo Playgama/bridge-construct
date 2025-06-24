@@ -376,70 +376,35 @@ const C3 = globalThis.C3
         },
 
 
-        LeaderboardSetScore() {
+        // leaderboards
+        LeaderboardsSetScore(id, score) {
             this.isLastActionCompletedSuccessfully = false
 
             return new Promise(resolve => {
-                window.bridge.leaderboard.setScore(this.actionParametersContainer)
+                window.bridge.leaderboards.setScore(id, score)
                     .then(() => {
                         this.isLastActionCompletedSuccessfully = true
                     })
                     .catch(error => console.log(error))
                     .finally(() => {
-                        this.actionParametersContainer = {}
-                        this._trigger(this.conditions.OnLeaderboardSetScoreCompleted)
+                        this._trigger(this.conditions.OnLeaderboardsSetScoreCompleted)
                         resolve()
                     })
             })
         },
-        LeaderboardGetScore() {
-            this.leaderboardPlayerScore = null
-            this.isLastActionCompletedSuccessfully = false
-
-            return new Promise(resolve => {
-                window.bridge.leaderboard.getScore(this.actionParametersContainer)
-                    .then(score => {
-                        this.leaderboardPlayerScore = score
-                        this.isLastActionCompletedSuccessfully = true
-                    })
-                    .catch(error => console.log(error))
-                    .finally(() => {
-                        this.actionParametersContainer = {}
-                        this._trigger(this.conditions.OnLeaderboardGetScoreCompleted)
-                        resolve()
-                    })
-            })
-        },
-        LeaderboardGetEntries() {
+        LeaderboardsGetEntries(id) {
             this.leaderboardEntries = null
             this.isLastActionCompletedSuccessfully = false
 
             return new Promise(resolve => {
-                window.bridge.leaderboard.getEntries(this.actionParametersContainer)
+                window.bridge.leaderboards.getEntries(id)
                     .then(entries => {
                         this.leaderboardEntries = entries
                         this.isLastActionCompletedSuccessfully = true
                     })
                     .catch(error => console.log(error))
                     .finally(() => {
-                        this.actionParametersContainer = {}
-                        this._trigger(this.conditions.OnLeaderboardGetEntriesCompleted)
-                        resolve()
-                    })
-            })
-        },
-        LeaderboardShowNativePopup() {
-            this.isLastActionCompletedSuccessfully = false
-
-            return new Promise(resolve => {
-                window.bridge.leaderboard.showNativePopup(this.actionParametersContainer)
-                    .then(() => {
-                        this.isLastActionCompletedSuccessfully = true
-                    })
-                    .catch(error => console.log(error))
-                    .finally(() => {
-                        this.actionParametersContainer = {}
-                        this._trigger(this.conditions.OnLeaderboardShowNativePopupCompleted)
+                        this._trigger(this.conditions.OnLeaderboardsGetEntriesCompleted)
                         resolve()
                     })
             })

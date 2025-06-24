@@ -11,7 +11,7 @@ const C3 = globalThis.C3
 
             const properties = this._getInitProperties()
 
-            let cdnUrl = 'https://bridge.playgama.com/v1.22.0/playgama-bridge.js'
+            let cdnUrl = 'https://bridge.playgama.com/v1.23.0/playgama-bridge.js'
             if (properties[1] !== '') {
                 cdnUrl = properties[1]
             }

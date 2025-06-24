@@ -27,7 +27,7 @@
                     "storage": "Storage",
                     "advertisement": "Advertisement",
                     "social": "Social",
-                    "leaderboard": "Leaderboard",
+                    "leaderboards": "Leaderboards",
                     "payments": "Payments",
                     "achievements": "Achievements",
                     "remote-config": "Remote Config"
@@ -380,56 +380,31 @@
                     },
 
 
-                    "is-leaderboard-supported": {
-                        "list-name": "IsLeaderboardSupported",
-                        "display-text": "Is Leaderboard Supported",
-                        "description": "Is Leaderboard Supported"
+                    "is-leaderboards-type-not-available": {
+                        "list-name": "IsLeaderboardsTypeNotAvailable",
+                        "display-text": "Is Leaderboards Type = Not Available",
+                        "description": "Is Leaderboards Type = Not Available"
                     },
-                    "is-leaderboard-native-popup-supported": {
-                        "list-name": "IsLeaderboardNativePopupSupported",
-                        "display-text": "Is Leaderboard Native Popup Supported",
-                        "description": "Is Leaderboard Native Popup Supported"
+                    "is-leaderboards-type-in-game": {
+                        "list-name": "IsLeaderboardsTypeInGame",
+                        "display-text": "Is Leaderboards Type = In Game",
+                        "description": "Is Leaderboards Type = In Game"
                     },
-                    "is-leaderboard-multiple-boards-supported": {
-                        "list-name": "IsLeaderboardMultipleBoardsSupported",
-                        "display-text": "Is Leaderboard Multiple Boards Supported",
-                        "description": "Is Leaderboard Multiple Boards Supported"
-                    },
-                    "is-leaderboard-set-score-supported": {
-                        "list-name": "IsLeaderboardSetScoreSupported",
-                        "display-text": "Is Leaderboard Set Score Supported",
-                        "description": "Is Leaderboard Set Score Supported"
-                    },
-                    "is-leaderboard-get-score-supported": {
-                        "list-name": "IsLeaderboardGetScoreSupported",
-                        "display-text": "Is Leaderboard Get Score Supported",
-                        "description": "Is Leaderboard Get Score Supported"
-                    },
-                    "is-leaderboard-get-entries-supported": {
-                        "list-name": "IsLeaderboardGetEntriesSupported",
-                        "display-text": "Is Leaderboard Get Entries Supported",
-                        "description": "Is Leaderboard Get Entries Supported"
+                    "is-leaderboards-type-native": {
+                        "list-name": "IsLeaderboardsTypeNative",
+                        "display-text": "Is Leaderboards Type = Native",
+                        "description": "Is Leaderboards Type = Native"
                     },
 
-                    "on-leaderboard-set-score-completed": {
-                        "list-name": "OnLeaderboardSetScoreCompleted",
-                        "display-text": "On Leaderboard Set Score Completed",
-                        "description": "On Leaderboard Set Score Completed"
+                    "on-leaderboards-set-score-completed": {
+                        "list-name": "OnLeaderboardsSetScoreCompleted",
+                        "display-text": "On Leaderboards Set Score Completed",
+                        "description": "On Leaderboards Set Score Completed"
                     },
-                    "on-leaderboard-get-score-completed": {
-                        "list-name": "OnLeaderboardGetScoreCompleted",
-                        "display-text": "On Leaderboard Get Score Completed",
-                        "description": "On Leaderboard Get Score Completed"
-                    },
-                    "on-leaderboard-get-entries-completed": {
-                        "list-name": "OnLeaderboardGetEntriesCompleted",
-                        "display-text": "On Leaderboard Get Entries Completed",
-                        "description": "On Leaderboard Get Entries Completed"
-                    },
-                    "on-leaderboard-show-native-popup-completed": {
-                        "list-name": "OnLeaderboardShowNativePopupCompleted",
-                        "display-text": "On Leaderboard Show Native Popup Completed",
-                        "description": "On Leaderboard Show Native Popup Completed"
+                    "on-leaderboards-get-entries-completed": {
+                        "list-name": "OnLeaderboardsGetEntriesCompleted",
+                        "display-text": "On Leaderboards Get Entries Completed",
+                        "description": "On Leaderboards Get Entries Completed"
                     },
 
 
@@ -784,25 +759,31 @@
                     },
 
 
-                    "leaderboard-set-score": {
-                        "list-name": "LeaderboardSetScore",
-                        "display-text": "Set Leaderboard Score",
-                        "description": "Set Leaderboard Score"
+                    "leaderboards-set-score": {
+                        "list-name": "LeaderboardsSetScore",
+                        "display-text": "Set Leaderboard Score. ID: [b]{0}[/b]. Score: [b]{1}[/b].",
+                        "description": "Set Leaderboard Score",
+                        "params": {
+                            "id": {
+                                "name": "ID",
+                                "desc": "ID"
+                            },
+                            "score": {
+                                "name": "Score",
+                                "desc": "Score"
+                            }
+                        }
                     },
-                    "leaderboard-get-score": {
-                        "list-name": "LeaderboardGetScore",
-                        "display-text": "Get Leaderboard Score",
-                        "description": "Get Leaderboard Score"
-                    },
-                    "leaderboard-get-entries": {
-                        "list-name": "LeaderboardGetEntries",
-                        "display-text": "Get Leaderboard Entries",
-                        "description": "Get Leaderboard Entries"
-                    },
-                    "leaderboard-show-native-popup": {
-                        "list-name": "LeaderboardShowNativePopup",
-                        "display-text": "Show Leaderboard Native Popup",
-                        "description": "Show Leaderboard Native Popup"
+                    "leaderboards-get-entries": {
+                        "list-name": "LeaderboardsGetEntries",
+                        "display-text": "Get Leaderboard Entries. ID: [b]{0}[/b].",
+                        "description": "Get Leaderboard Entries",
+                        "params": {
+                            "id": {
+                                "name": "ID",
+                                "desc": "ID"
+                            }
+                        }
                     },
 
 
@@ -1023,43 +1004,61 @@
                     },
 
 
-                    "leaderboard-player-score": {
-                        "translated-name": "LeaderboardPlayerScore",
-                        "description": "Leaderboard Player Score"
+                    "leaderboards-type": {
+                        "translated-name": "LeaderboardsType",
+                        "description": "Leaderboards Type"
                     },
                     "leaderboard-entries-count": {
                         "translated-name": "LeaderboardEntriesCount",
                         "description": "Leaderboard Entries Count"
                     },
-                    "leaderboard-entry-properties-count": {
-                        "translated-name": "LeaderboardEntryPropertiesCount",
-                        "description": "Leaderboard Entry Properties Count"
-                    },
-                    "leaderboard-entry-property-name": {
-                        "translated-name": "LeaderboardEntryPropertyName",
-                        "description": "Leaderboard Entry Property Name",
+                    "leaderboard-entry-id": {
+                        "translated-name": "LeaderboardEntryId",
+                        "description": "Leaderboard Entry Id",
                         "params": {
                             "entry-index": {
                                 "name": "Entry Index",
                                 "desc": "Entry Index"
-                            },
-                            "property-index": {
-                                "name": "Property Index",
-                                "desc": "Property Index"
                             }
                         }
                     },
-                    "leaderboard-entry-property-value": {
-                        "translated-name": "LeaderboardEntryPropertyValue",
-                        "description": "Leaderboard Entry Property Value",
+                    "leaderboard-entry-name": {
+                        "translated-name": "LeaderboardEntryName",
+                        "description": "Leaderboard Entry Name",
                         "params": {
                             "entry-index": {
                                 "name": "Entry Index",
                                 "desc": "Entry Index"
-                            },
-                            "property": {
-                                "name": "Property",
-                                "desc": "Property"
+                            }
+                        }
+                    },
+                    "leaderboard-entry-photo": {
+                        "translated-name": "LeaderboardEntryPhoto",
+                        "description": "Leaderboard Entry Photo",
+                        "params": {
+                            "entry-index": {
+                                "name": "Entry Index",
+                                "desc": "Entry Index"
+                            }
+                        }
+                    },
+                    "leaderboard-entry-score": {
+                        "translated-name": "LeaderboardEntryScore",
+                        "description": "Leaderboard Entry Score",
+                        "params": {
+                            "entry-index": {
+                                "name": "Entry Index",
+                                "desc": "Entry Index"
+                            }
+                        }
+                    },
+                    "leaderboard-entry-rank": {
+                        "translated-name": "LeaderboardEntryRank",
+                        "description": "Leaderboard Entry Rank",
+                        "params": {
+                            "entry-index": {
+                                "name": "Entry Index",
+                                "desc": "Entry Index"
                             }
                         }
                     },

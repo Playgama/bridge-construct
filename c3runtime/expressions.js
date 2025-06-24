@@ -168,13 +168,9 @@ const C3 = globalThis.C3
         },
 
 
-        // leaderboard
-        LeaderboardPlayerScore() {
-            if (typeof this.leaderboardPlayerScore !== 'number') {
-                return 0
-            }
-
-            return this.leaderboardPlayerScore
+        // leaderboards
+        LeaderboardsType() {
+            return window.bridge.leaderboards.type
         },
         LeaderboardEntriesCount() {
             if (!this.leaderboardEntries) {
@@ -183,37 +179,45 @@ const C3 = globalThis.C3
 
             return this.leaderboardEntries.length
         },
-        LeaderboardEntryPropertiesCount() {
-            if (!this.leaderboardEntries || this.leaderboardEntries.length <= 0) {
-                return 0
-            }
-
-            let entry = this.leaderboardEntries[0]
-            let properties = Object.keys(entry)
-            return properties.length
-        },
-        LeaderboardEntryPropertyName(propertyIndex) {
-            if (!this.leaderboardEntries || this.leaderboardEntries.length <= 0) {
-                return ''
-            }
-
-            let entry = this.leaderboardEntries[0]
-            let properties = Object.keys(entry)
-            return properties[propertyIndex]
-        },
-        LeaderboardEntryPropertyValue(entryIndex, property) {
+        LeaderboardEntryId(entryIndex) {
             if (!this.leaderboardEntries || this.leaderboardEntries.length <= 0) {
                 return ''
             }
 
             let entry = this.leaderboardEntries[entryIndex]
-            if (typeof property === 'number') {
-                let properties = Object.keys(entry)
-                let propertyName = properties[property]
-                return entry[propertyName]
+            return entry['id']
+        },
+        LeaderboardEntryName(entryIndex) {
+            if (!this.leaderboardEntries || this.leaderboardEntries.length <= 0) {
+                return ''
             }
 
-            return entry[property]
+            let entry = this.leaderboardEntries[entryIndex]
+            return entry['name']
+        },
+        LeaderboardEntryPhoto(entryIndex) {
+            if (!this.leaderboardEntries || this.leaderboardEntries.length <= 0) {
+                return ''
+            }
+
+            let entry = this.leaderboardEntries[entryIndex]
+            return entry['photo']
+        },
+        LeaderboardEntryScore(entryIndex) {
+            if (!this.leaderboardEntries || this.leaderboardEntries.length <= 0) {
+                return ''
+            }
+
+            let entry = this.leaderboardEntries[entryIndex]
+            return entry['score']
+        },
+        LeaderboardEntryRank(entryIndex) {
+            if (!this.leaderboardEntries || this.leaderboardEntries.length <= 0) {
+                return ''
+            }
+
+            let entry = this.leaderboardEntries[entryIndex]
+            return entry['rank']
         },
 
         // achievements

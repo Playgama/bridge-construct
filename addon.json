@@ -4,7 +4,7 @@
     "type": "plugin",
     "name": "PlaygamaBridge",
     "id": "PlaygamaBridge",
-    "version": "1.22.0",
+    "version": "1.23.0",
     "author": "Playgama",
     "website": "https://playgama.com",
     "documentation": "https://github.com/playgama/bridge-construct",
