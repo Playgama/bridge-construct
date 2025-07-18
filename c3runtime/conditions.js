@@ -129,6 +129,12 @@ const C3 = globalThis.C3
         IsBannerSupported() {
             return window.bridge.advertisement.isBannerSupported
         },
+        IsInterstitialSupported() {
+            return window.bridge.advertisement.isInterstitialSupported
+        },
+        IsRewardedSupported() {
+            return window.bridge.advertisement.isRewardedSupported
+        },
         OnBannerStateChanged() {
             return true
         },

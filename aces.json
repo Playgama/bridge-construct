@@ -474,6 +474,14 @@
                 "scriptName": "IsBannerSupported"
             },
             {
+                "id": "is-interstitial-supported",
+                "scriptName": "IsInterstitialSupported"
+            },
+            {
+                "id": "is-rewarded-supported",
+                "scriptName": "IsRewardedSupported"
+            },
+            {
                 "id": "on-banner-state-changed",
                 "scriptName": "OnBannerStateChanged",
                 "isTrigger": true,

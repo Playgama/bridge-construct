@@ -212,6 +212,16 @@
                         "display-text": "Is Banner Supported",
                         "description": "Is Banner Supported"
                     },
+                    "is-interstitial-supported": {
+                        "list-name": "IsInterstitialSupported",
+                        "display-text": "Is Interstitial Supported",
+                        "description": "Is Interstitial Supported"
+                    },
+                    "is-rewarded-supported": {
+                        "list-name": "IsRewardedSupported",
+                        "display-text": "Is Rewarded Supported",
+                        "description": "Is Rewarded Supported"
+                    },
                     "on-banner-state-changed": {
                         "list-name": "OnBannerStateChanged",
                         "display-text": "On Banner State Changed",
