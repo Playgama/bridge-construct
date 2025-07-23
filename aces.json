@@ -51,6 +51,28 @@
                 "scriptName": "HasServerTime"
             },
             {
+                "id": "is-platform-audio-enabled",
+                "scriptName": "IsPlatformAudioEnabled"
+            },
+            {
+                "id": "on-platform-audio-state-changed",
+                "scriptName": "OnPlatformAudioStateChanged",
+                "isTrigger": true,
+                "isInvertible": false,
+                "isCompatibleWithTriggers": false
+            },
+            {
+                "id": "is-platform-paused",
+                "scriptName": "IsPlatformPaused"
+            },
+            {
+                "id": "on-platform-pause-state-changed",
+                "scriptName": "OnPlatformPauseStateChanged",
+                "isTrigger": true,
+                "isInvertible": false,
+                "isCompatibleWithTriggers": false
+            },
+            {
                 "id": "is-platform-get-all-games-supported",
                 "scriptName": "IsPlatformGetAllGamesSupported"
             },

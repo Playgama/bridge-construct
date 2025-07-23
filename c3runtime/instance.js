@@ -188,6 +188,14 @@ const C3 = globalThis.C3
                                     this._trigger(this.conditions.OnVisibilityStateChanged)
                                 })
 
+                                window.bridge.platform.on('audio_state_changed', isEnabled => {
+                                    this._trigger(this.conditions.OnPlatformAudioStateChanged)
+                                })
+
+                                window.bridge.platform.on('pause_state_changed', isPaused => {
+                                    this._trigger(this.conditions.OnPlatformPauseStateChanged)
+                                })
+
                                 resolve()
                             })
                             .catch(error => reject(error))

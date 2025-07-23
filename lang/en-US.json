@@ -51,12 +51,32 @@
                         "description": "Has Server Time"
                     },
 
+                    "is-platform-audio-enabled": {
+                        "list-name": "IsPlatformAudioEnabled",
+                        "display-text": "Is Platform Audio Enabled",
+                        "description": "Is Platform Audio Enabled"
+                    },
+                    "on-platform-audio-state-changed": {
+                        "list-name": "OnPlatformAudioStateChanged",
+                        "display-text": "On Platform Audio State Changed",
+                        "description": "On Platform Audio State Changed"
+                    },
+                    "is-platform-paused": {
+                        "list-name": "IsPlatformPaused",
+                        "display-text": "Is Platform Paused",
+                        "description": "Is Platform Paused"
+                    },
+                    "on-platform-pause-state-changed": {
+                        "list-name": "OnPlatformPauseStateChanged",
+                        "display-text": "On Platform Pause State Changed",
+                        "description": "On Platform Pause State Changed"
+                    },
+
                     "is-platform-get-all-games-supported": {
                         "list-name": "IsPlatformGetAllGamesSupported",
                         "display-text": "Is Platform Get All Games Supported",
                         "description": "Is Platform Get All Games Supported"
                     },
-
                     "is-platform-get-game-by-id-supported": {
                         "list-name": "IsPlatformGetGameByIdSupported",
                         "display-text": "Is Platform Get Game By Id Supported",

@@ -10,6 +10,22 @@ const C3 = globalThis.C3
 
 
         // platform
+        IsPlatformAudioEnabled() {
+            return window.bridge.platform.isAudioEnabled
+        },
+
+        OnPlatformAudioStateChanged() {
+            return true
+        },
+
+        IsPlatformPaused() {
+            return window.bridge.platform.isPaused
+        },
+
+        OnPlatformPauseStateChanged() {
+            return true
+        },
+
         IsPlatformGetAllGamesSupported() {
             return window.bridge.platform.isGetAllGamesSupported
         },
