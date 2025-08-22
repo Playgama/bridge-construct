@@ -425,6 +425,11 @@
                         "display-text": "Is Leaderboards Type = Native",
                         "description": "Is Leaderboards Type = Native"
                     },
+                    "is-leaderboards-type-native-popup": {
+                        "list-name": "IsLeaderboardsTypeNativePopup",
+                        "display-text": "Is Leaderboards Type = Native Popup",
+                        "description": "Is Leaderboards Type = Native Popup"
+                    },
 
                     "on-leaderboards-set-score-completed": {
                         "list-name": "OnLeaderboardsSetScoreCompleted",
@@ -435,6 +440,11 @@
                         "list-name": "OnLeaderboardsGetEntriesCompleted",
                         "display-text": "On Leaderboards Get Entries Completed",
                         "description": "On Leaderboards Get Entries Completed"
+                    },
+                    "on-leaderboards-show-native-popup-completed": {
+                        "list-name": "OnLeaderboardsShowNativePopupCompleted",
+                        "display-text": "On Leaderboards Show Native Popup Completed",
+                        "description": "On Leaderboards Show Native Popup Completed"
                     },
 
 
@@ -808,6 +818,17 @@
                         "list-name": "LeaderboardsGetEntries",
                         "display-text": "Get Leaderboard Entries. ID: [b]{0}[/b].",
                         "description": "Get Leaderboard Entries",
+                        "params": {
+                            "id": {
+                                "name": "ID",
+                                "desc": "ID"
+                            }
+                        }
+                    },
+                    "leaderboards-show-native-popup": {
+                        "list-name": "LeaderboardsShowNativePopup",
+                        "display-text": "Show Leaderboard Native Popup. ID: [b]{0}[/b].",
+                        "description": "Show Leaderboard Native Popup",
                         "params": {
                             "id": {
                                 "name": "ID",
