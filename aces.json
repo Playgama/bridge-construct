@@ -861,6 +861,10 @@
                 "id": "is-leaderboards-type-native",
                 "scriptName": "IsLeaderboardsTypeNative"
             },
+            {
+                "id": "is-leaderboards-type-native-popup",
+                "scriptName": "IsLeaderboardsTypeNativePopup"
+            },
 
             {
                 "id": "on-leaderboards-set-score-completed",
@@ -872,6 +876,13 @@
             {
                 "id": "on-leaderboards-get-entries-completed",
                 "scriptName": "OnLeaderboardsGetEntriesCompleted",
+                "isTrigger": true,
+                "isInvertible": false,
+                "isCompatibleWithTriggers": false
+            },
+            {
+                "id": "on-leaderboards-show-native-popup-completed",
+                "scriptName": "OnLeaderboardsShowNativePopupCompleted",
                 "isTrigger": true,
                 "isInvertible": false,
                 "isCompatibleWithTriggers": false
@@ -896,6 +907,17 @@
             {
                 "id": "leaderboards-get-entries",
                 "scriptName": "LeaderboardsGetEntries",
+                "isAsync": true,
+                "params": [
+                    {
+                        "id": "id",
+                        "type": "string"
+                    }
+                ]
+            },
+            {
+                "id": "leaderboards-show-native-popup",
+                "scriptName": "LeaderboardsShowNativePopup",
                 "isAsync": true,
                 "params": [
                     {

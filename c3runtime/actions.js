@@ -409,6 +409,21 @@ const C3 = globalThis.C3
                     })
             })
         },
+        LeaderboardsShowNativePopup(id) {
+            this.isLastActionCompletedSuccessfully = false
+
+            return new Promise(resolve => {
+                window.bridge.leaderboards.showNativePopup(id)
+                    .then(() => {
+                        this.isLastActionCompletedSuccessfully = true
+                    })
+                    .catch(error => console.log(error))
+                    .finally(() => {
+                        this._trigger(this.conditions.OnLeaderboardsShowNativePopupCompleted)
+                        resolve()
+                    })
+            })
+        },
 
 
         // payments
