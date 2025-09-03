@@ -122,6 +122,7 @@ const C3 = globalThis.C3
             return new Promise((resolve, reject) => {
                 const waitForBridgeLoaded = () => {
                     if (window.bridge !== undefined) {
+                        window.bridge.engine = 'construct'
                         window.bridge.initialize()
                             .then(() => {
                                 window.bridge.advertisement.on('banner_state_changed', state => {
