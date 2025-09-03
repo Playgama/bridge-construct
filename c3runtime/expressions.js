@@ -117,6 +117,24 @@ const C3 = globalThis.C3
         PlayerPhoto(index) {
             return window.bridge.player.photos[index]
         },
+        PlayerExtraPropertiesCount() {
+            let properties = Object.keys(window.bridge.player.extra)
+            return properties.length
+        },
+        PlayerExtraPropertyName(propertyIndex) {
+            let properties = Object.keys(window.bridge.player.extra)
+            return properties[propertyIndex]
+        },
+        PlayerExtraPropertyValue(property) {
+            let extra = window.bridge.player.extra
+            if (typeof property === 'number') {
+                let properties = Object.keys(extra)
+                let propertyName = properties[property]
+                return extra[propertyName]
+            }
+
+            return extra[property]
+        },
 
 
         // game

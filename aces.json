@@ -295,6 +295,33 @@
                 "returnType": "string"
             },
             {
+                "id": "player-extra-properties-count",
+                "expressionName": "PlayerExtraPropertiesCount",
+                "returnType": "number"
+            },
+            {
+                "id": "player-extra-property-name",
+                "expressionName": "PlayerExtraPropertyName",
+                "returnType": "string",
+                "params": [
+                    {
+                        "id": "property-index",
+                        "type": "number"
+                    }
+                ]
+            },
+            {
+                "id": "player-extra-property-value",
+                "expressionName": "PlayerExtraPropertyValue",
+                "returnType": "any",
+                "params": [
+                    {
+                        "id": "property",
+                        "type": "any"
+                    }
+                ]
+            },
+            {
                 "id": "player-photos-count",
                 "expressionName": "PlayerPhotosCount",
                 "returnType": "number"

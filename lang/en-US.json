@@ -1001,6 +1001,30 @@
                             }
                         }
                     },
+                    "player-extra-properties-count": {
+                        "translated-name": "PlayerExtraPropertiesCount",
+                        "description": "Player Extra Properties Count"
+                    },
+                    "player-extra-property-name": {
+                        "translated-name": "PlayerExtraPropertyName",
+                        "description": "Player Extra Property Name",
+                        "params": {
+                            "property-index": {
+                                "name": "Property Index",
+                                "desc": "Property Index"
+                            }
+                        }
+                    },
+                    "player-extra-property-value": {
+                        "translated-name": "PlayerExtraPropertyValue",
+                        "description": "Player Extra Property Value",
+                        "params": {
+                            "property": {
+                                "name": "Property",
+                                "desc": "Property"
+                            }
+                        }
+                    },
 
                     "visibility-state": {
                         "translated-name": "VisibilityState",
