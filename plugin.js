@@ -19,10 +19,7 @@ const SDK = globalThis.SDK
             this._info.SetSupportedRuntimes(['c3'])
 
             SDK.Lang.PushContext('.properties')
-            this._info.SetProperties([
-                new SDK.PluginProperty('check', 'load-sdk-from-cdn', true),
-                new SDK.PluginProperty('text', 'custom-cdn-url', ''),
-            ]);
+            this._info.SetProperties([]);
 
             SDK.Lang.PopContext()
             SDK.Lang.PopContext()

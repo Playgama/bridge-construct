@@ -8,16 +8,7 @@
                 "description": "One SDK for cross-platform publishing HTML5 games",
                 "author": "Playgama",
                 "help-url": "https://github.com/playgama",
-                "properties": {
-                    "load-sdk-from-cdn": {
-                        "name": "Load SDK from CDN",
-                        "desc": "If false - you should import SDK JS script into scripts folder and mark as main."
-                    },
-                    "custom-cdn-url": {
-                        "name": "Custom CDN URL",
-                        "desc": "Custom CDN URL for loading SDK."
-                    }
-                },
+                "properties": { },
                 "aceCategories": {
                     "common": "Common",
                     "platform": "Platform",
