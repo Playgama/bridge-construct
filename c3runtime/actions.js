@@ -12,7 +12,7 @@ const C3 = globalThis.C3
         },
 
 
-        // platfrom
+        // platform
         SendMessage(message) {
             switch (message) {
                 case 0:
