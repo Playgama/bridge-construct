@@ -12,7 +12,7 @@ const C3 = globalThis.C3
         },
 
 
-        // platfrom
+        // platform
         SendMessage(message) {
             switch (message) {
                 case 0:
@@ -431,13 +431,14 @@ const C3 = globalThis.C3
             this.isLastActionCompletedSuccessfully = false
 
             return new Promise(resolve => {
-                window.bridge.payments.purchase(id)
+                window.bridge.payments.purchase(id, this.actionParametersContainer)
                     .then(data => {
                         this.isLastActionCompletedSuccessfully = true
                         this.paymentsPurchase = data
                     })
                     .catch(error => console.log(error))
                     .finally(() => {
+                        this.actionParametersContainer = {}
                         this._trigger(this.conditions.OnPaymentsPurchaseCompleted)
                         resolve()
                     })
