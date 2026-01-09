@@ -1,12 +1,15 @@
 'use strict'
 
-const C3 = globalThis.C3
 {
-    C3.Plugins.PlaygamaBridge.Type = class PlaygamaBridgeType extends globalThis.ISDKObjectTypeBase {
+    C3.Plugins.PlaygamaBridge.Type = class PlaygamaBridgeType extends C3.SDKTypeBase {
         constructor(objectClass) {
             super(objectClass)
         }
 
-        _onCreate() { }
+        Release() {
+            super.Release()
+        }
+
+        OnCreate() { }
     }
 }

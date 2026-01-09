@@ -1,16 +1,15 @@
 'use strict'
 
-const C3 = globalThis.C3
 {
-    C3.Plugins.PlaygamaBridge.Instance = class PlaygamaBridgeInstance extends globalThis.ISDKInstanceBase {
-        constructor() {
-            super()
+    C3.Plugins.PlaygamaBridge.Instance = class PlaygamaBridgeInstance extends C3.ISDKInstanceBase {
+        constructor(inst) {
+            super(inst)
 
             this.conditions = C3.Plugins.PlaygamaBridge.Cnds
             this.actions = C3.Plugins.PlaygamaBridge.Acts
 
-            this.runtime.sdk.addLoadPromise(this.loadSdk())
-            this.runtime.sdk.addLoadPromise(this.initializeSdk())
+            this._runtime.AddLoadPromise(this.loadSdk())
+            this._runtime.AddLoadPromise(this.initializeSdk())
 
             this.serverTime = 0
             this.allGames = []
@@ -131,75 +130,75 @@ const C3 = globalThis.C3
                         window.bridge.initialize()
                             .then(() => {
                                 window.bridge.advertisement.on('banner_state_changed', state => {
-                                    this._trigger(this.conditions.OnBannerStateChanged)
+                                    this.Trigger(this.conditions.OnBannerStateChanged)
 
                                     switch (state) {
                                         case window.bridge.BANNER_STATE.LOADING:
-                                            this._trigger(this.conditions.OnBannerLoading)
+                                            this.Trigger(this.conditions.OnBannerLoading)
                                             break
                                         case window.bridge.BANNER_STATE.SHOWN:
-                                            this._trigger(this.conditions.OnBannerShown)
+                                            this.Trigger(this.conditions.OnBannerShown)
                                             break
                                         case window.bridge.BANNER_STATE.HIDDEN:
-                                            this._trigger(this.conditions.OnBannerHidden)
+                                            this.Trigger(this.conditions.OnBannerHidden)
                                             break
                                         case window.bridge.BANNER_STATE.FAILED:
-                                            this._trigger(this.conditions.OnBannerFailed)
+                                            this.Trigger(this.conditions.OnBannerFailed)
                                             break
                                     }
                                 })
 
                                 window.bridge.advertisement.on('interstitial_state_changed', state => {
-                                    this._trigger(this.conditions.OnInterstitialStateChanged)
+                                    this.Trigger(this.conditions.OnInterstitialStateChanged)
 
                                     switch (state) {
                                         case window.bridge.INTERSTITIAL_STATE.LOADING:
-                                            this._trigger(this.conditions.OnInterstitialLoading)
+                                            this.Trigger(this.conditions.OnInterstitialLoading)
                                             break
                                         case window.bridge.INTERSTITIAL_STATE.OPENED:
-                                            this._trigger(this.conditions.OnInterstitialOpened)
+                                            this.Trigger(this.conditions.OnInterstitialOpened)
                                             break
                                         case window.bridge.INTERSTITIAL_STATE.CLOSED:
-                                            this._trigger(this.conditions.OnInterstitialClosed)
+                                            this.Trigger(this.conditions.OnInterstitialClosed)
                                             break
                                         case window.bridge.INTERSTITIAL_STATE.FAILED:
-                                            this._trigger(this.conditions.OnInterstitialFailed)
+                                            this.Trigger(this.conditions.OnInterstitialFailed)
                                             break
                                     }
                                 })
 
                                 window.bridge.advertisement.on('rewarded_state_changed', state => {
-                                    this._trigger(this.conditions.OnRewardedStateChanged)
+                                    this.Trigger(this.conditions.OnRewardedStateChanged)
 
                                     switch (state) {
                                         case window.bridge.REWARDED_STATE.LOADING:
-                                            this._trigger(this.conditions.OnRewardedLoading)
+                                            this.Trigger(this.conditions.OnRewardedLoading)
                                             break
                                         case window.bridge.REWARDED_STATE.OPENED:
-                                            this._trigger(this.conditions.OnRewardedOpened)
+                                            this.Trigger(this.conditions.OnRewardedOpened)
                                             break
                                         case window.bridge.REWARDED_STATE.REWARDED:
-                                            this._trigger(this.conditions.OnRewardedRewarded)
+                                            this.Trigger(this.conditions.OnRewardedRewarded)
                                             break
                                         case window.bridge.REWARDED_STATE.CLOSED:
-                                            this._trigger(this.conditions.OnRewardedClosed)
+                                            this.Trigger(this.conditions.OnRewardedClosed)
                                             break
                                         case window.bridge.REWARDED_STATE.FAILED:
-                                            this._trigger(this.conditions.OnRewardedFailed)
+                                            this.Trigger(this.conditions.OnRewardedFailed)
                                             break
                                     }
                                 })
 
                                 window.bridge.game.on('visibility_state_changed', state => {
-                                    this._trigger(this.conditions.OnVisibilityStateChanged)
+                                    this.Trigger(this.conditions.OnVisibilityStateChanged)
                                 })
 
                                 window.bridge.platform.on('audio_state_changed', isEnabled => {
-                                    this._trigger(this.conditions.OnPlatformAudioStateChanged)
+                                    this.Trigger(this.conditions.OnPlatformAudioStateChanged)
                                 })
 
                                 window.bridge.platform.on('pause_state_changed', isPaused => {
-                                    this._trigger(this.conditions.OnPlatformPauseStateChanged)
+                                    this.Trigger(this.conditions.OnPlatformPauseStateChanged)
                                 })
 
                                 resolve()
@@ -214,18 +213,26 @@ const C3 = globalThis.C3
             })
         }
 
-        _release() {
-            super._release()
+        Release() {
+            super.Release()
         }
 
-        _saveToJson() {
+        SaveToJson() {
             return {
                 storageData: this.storageData
             }
         }
 
-        _loadFromJson(o) {
+        LoadFromJson(o) {
             this.storageData = o.storageData || { }
         }
+
+        GetDebuggerProperties() {
+            return [{
+                title: 'PlaygamaBridge',
+                properties: []
+            }]
+        }
+
     }
 }
