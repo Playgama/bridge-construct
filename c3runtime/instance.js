@@ -1,7 +1,7 @@
 'use strict'
 
 {
-    C3.Plugins.PlaygamaBridge.Instance = class PlaygamaBridgeInstance extends C3.ISDKInstanceBase {
+    C3.Plugins.PlaygamaBridge.Instance = class PlaygamaBridgeInstance extends C3.SDKInstanceBase {
         constructor(inst) {
             super(inst)
 
