@@ -194,7 +194,7 @@
                     {
                         "id": "message",
                         "type": "combo",
-                        "items": ["game-ready", "in-game-loading-started", "in-game-loading-stopped", "gameplay-started", "gameplay-stopped", "player-got-achievement"]
+                        "items": ["game-ready", "in-game-loading-started", "in-game-loading-stopped", "gameplay-started", "gameplay-stopped", "player-got-achievement", "level-started", "level-completed", "level-failed", "level-paused", "level-resumed"]
                     }
                 ]
             },
