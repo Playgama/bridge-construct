@@ -33,9 +33,25 @@ const C3 = globalThis.C3
                 case 5:
                     message = window.bridge.PLATFORM_MESSAGE.PLAYER_GOT_ACHIEVEMENT
                     break
+                case 6:
+                    message = window.bridge.PLATFORM_MESSAGE.LEVEL_STARTED
+                    break
+                case 7:
+                    message = window.bridge.PLATFORM_MESSAGE.LEVEL_COMPLETED
+                    break
+                case 8:
+                    message = window.bridge.PLATFORM_MESSAGE.LEVEL_FAILED
+                    break
+                case 9:
+                    message = window.bridge.PLATFORM_MESSAGE.LEVEL_PAUSED
+                    break
+                case 10:
+                    message = window.bridge.PLATFORM_MESSAGE.LEVEL_RESUMED
+                    break
             }
 
-            window.bridge.platform.sendMessage(message)
+            window.bridge.platform.sendMessage(message, this.actionParametersContainer)
+            this.actionParametersContainer = {}
         },
         GetServerTime() {
             this.isLastActionCompletedSuccessfully = false

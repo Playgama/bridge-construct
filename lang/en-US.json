@@ -566,7 +566,12 @@
                                     "in-game-loading-stopped": "In-Game Loading Stopped",
                                     "gameplay-started": "Gameplay Started",
                                     "gameplay-stopped": "Gameplay Stopped",
-                                    "player-got-achievement": "Player Got Achievement"
+                                    "player-got-achievement": "Player Got Achievement",
+                                    "level-started": "Level Started",
+                                    "level-completed": "Level Completed",
+                                    "level-failed": "Level Failed",
+                                    "level-paused": "Level Paused",
+                                    "level-resumed": "Level Resumed"
                                 }
                             }
                         }
