@@ -17,6 +17,11 @@ const SDK = globalThis.SDK
             this._info.SetHelpUrl(lang('.help-url'))
             this._info.SetIsSingleGlobal(true)
             this._info.SetSupportedRuntimes(['c3'])
+            this._info.AddFileDependency({
+                filename: 'c3runtime/playgama-bridge.js',
+                type: 'copy-to-output',
+                fileType: 'application/javascript'
+            })
 
             SDK.Lang.PushContext('.properties')
             this._info.SetProperties([]);
