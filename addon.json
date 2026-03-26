@@ -22,6 +22,7 @@
         "c3runtime/conditions.js",
         "c3runtime/actions.js",
         "c3runtime/expressions.js",
+        "c3runtime/playgama-bridge.js",
         "lang/en-US.json",
         "aces.json",
         "addon.json",
