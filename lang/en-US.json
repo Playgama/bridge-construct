@@ -576,6 +576,17 @@
                             }
                         }
                     },
+                    "send-custom-message": {
+                        "list-name": "SendCustomMessage",
+                        "display-text": "Send Custom Message to Platform. Id: [b]{0}[/b].",
+                        "description": "Send Custom Message to Platform",
+                        "params": {
+                            "id": {
+                                "name": "Id",
+                                "desc": "Id"
+                            }
+                        }
+                    },
                     "get-server-time": {
                         "list-name": "GetServerTime",
                         "display-text": "Get Server Time",
