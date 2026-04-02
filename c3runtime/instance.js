@@ -148,6 +148,25 @@ const C3 = globalThis.C3
                                     }
                                 })
 
+                                window.bridge.advertisement.on('advanced_banners_state_changed', state => {
+                                    this._trigger(this.conditions.OnAdvancedBannersStateChanged)
+
+                                    switch (state) {
+                                        case window.bridge.ADVANCED_BANNERS_STATE.LOADING:
+                                            this._trigger(this.conditions.OnAdvancedBannersLoading)
+                                            break
+                                        case window.bridge.ADVANCED_BANNERS_STATE.SHOWN:
+                                            this._trigger(this.conditions.OnAdvancedBannersShown)
+                                            break
+                                        case window.bridge.ADVANCED_BANNERS_STATE.HIDDEN:
+                                            this._trigger(this.conditions.OnAdvancedBannersHidden)
+                                            break
+                                        case window.bridge.ADVANCED_BANNERS_STATE.FAILED:
+                                            this._trigger(this.conditions.OnAdvancedBannersFailed)
+                                            break
+                                    }
+                                })
+
                                 window.bridge.advertisement.on('interstitial_state_changed', state => {
                                     this._trigger(this.conditions.OnInterstitialStateChanged)
 

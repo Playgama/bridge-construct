@@ -167,6 +167,25 @@ const C3 = globalThis.C3
             return true
         },
 
+        IsAdvancedBannersSupported() {
+            return window.bridge.advertisement.isAdvancedBannersSupported
+        },
+        OnAdvancedBannersStateChanged() {
+            return true
+        },
+        OnAdvancedBannersLoading() {
+            return true
+        },
+        OnAdvancedBannersShown() {
+            return true
+        },
+        OnAdvancedBannersHidden() {
+            return true
+        },
+        OnAdvancedBannersFailed() {
+            return true
+        },
+
         OnInterstitialStateChanged() {
             return true
         },

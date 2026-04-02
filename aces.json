@@ -656,6 +656,46 @@
                 "isCompatibleWithTriggers": false
             },
             {
+                "id": "is-advanced-banners-supported",
+                "scriptName": "IsAdvancedBannersSupported"
+            },
+            {
+                "id": "on-advanced-banners-state-changed",
+                "scriptName": "OnAdvancedBannersStateChanged",
+                "isTrigger": true,
+                "isInvertible": false,
+                "isCompatibleWithTriggers": false
+            },
+            {
+                "id": "on-advanced-banners-loading",
+                "scriptName": "OnAdvancedBannersLoading",
+                "isTrigger": true,
+                "isInvertible": false,
+                "isCompatibleWithTriggers": false
+            },
+            {
+                "id": "on-advanced-banners-shown",
+                "scriptName": "OnAdvancedBannersShown",
+                "isTrigger": true,
+                "isInvertible": false,
+                "isCompatibleWithTriggers": false
+            },
+            {
+                "id": "on-advanced-banners-hidden",
+                "scriptName": "OnAdvancedBannersHidden",
+                "isTrigger": true,
+                "isInvertible": false,
+                "isCompatibleWithTriggers": false
+            },
+            {
+                "id": "on-advanced-banners-failed",
+                "scriptName": "OnAdvancedBannersFailed",
+                "isTrigger": true,
+                "isInvertible": false,
+                "isCompatibleWithTriggers": false
+            },
+
+            {
                 "id": "on-check-adblock-completed",
                 "scriptName": "OnCheckAdBlockCompleted",
                 "isTrigger": true,
@@ -723,6 +763,22 @@
                 ]
             },
             {
+                "id": "show-advanced-banners",
+                "scriptName": "ShowAdvancedBanners",
+                "isAsync": false,
+                "params": [
+                    {
+                        "id": "placement",
+                        "type": "string"
+                    }
+                ]
+            },
+            {
+                "id": "hide-advanced-banners",
+                "scriptName": "HideAdvancedBanners",
+                "isAsync": false
+            },
+            {
                 "id": "check-adblock",
                 "scriptName": "CheckAdBlock",
                 "isAsync": true
@@ -752,6 +808,11 @@
             {
                 "id": "rewarded-placement",
                 "expressionName": "RewardedPlacement",
+                "returnType": "string"
+            },
+            {
+                "id": "advanced-banners-state",
+                "expressionName": "AdvancedBannersState",
                 "returnType": "string"
             }
         ]

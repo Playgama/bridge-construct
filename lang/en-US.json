@@ -316,6 +316,37 @@
                         "description": "On Rewarded Failed"
                     },
 
+                    "is-advanced-banners-supported": {
+                        "list-name": "IsAdvancedBannersSupported",
+                        "display-text": "Is Advanced Banners Supported",
+                        "description": "Is Advanced Banners Supported"
+                    },
+                    "on-advanced-banners-state-changed": {
+                        "list-name": "OnAdvancedBannersStateChanged",
+                        "display-text": "On Advanced Banners State Changed",
+                        "description": "On Advanced Banners State Changed"
+                    },
+                    "on-advanced-banners-loading": {
+                        "list-name": "OnAdvancedBannersLoading",
+                        "display-text": "On Advanced Banners Loading",
+                        "description": "On Advanced Banners Loading"
+                    },
+                    "on-advanced-banners-shown": {
+                        "list-name": "OnAdvancedBannersShown",
+                        "display-text": "On Advanced Banners Shown",
+                        "description": "On Advanced Banners Shown"
+                    },
+                    "on-advanced-banners-hidden": {
+                        "list-name": "OnAdvancedBannersHidden",
+                        "display-text": "On Advanced Banners Hidden",
+                        "description": "On Advanced Banners Hidden"
+                    },
+                    "on-advanced-banners-failed": {
+                        "list-name": "OnAdvancedBannersFailed",
+                        "display-text": "On Advanced Banners Failed",
+                        "description": "On Advanced Banners Failed"
+                    },
+
 
                     "is-share-supported": {
                         "list-name": "IsShareSupported",
@@ -762,6 +793,22 @@
                             }
                         }
                     },
+                    "show-advanced-banners": {
+                        "list-name": "ShowAdvancedBanners",
+                        "display-text": "Show Advanced Banners. Placement: [b]{0}[/b].",
+                        "description": "Show Advanced Banners",
+                        "params": {
+                            "placement": {
+                                "name": "Placement",
+                                "desc": "Placement (optional)"
+                            }
+                        }
+                    },
+                    "hide-advanced-banners": {
+                        "list-name": "HideAdvancedBanners",
+                        "display-text": "Hide Advanced Banners",
+                        "description": "Hide Advanced Banners"
+                    },
                     "check-adblock": {
                         "list-name": "CheckAdBlock",
                         "display-text": "Check Ad Block",
@@ -1083,6 +1130,10 @@
                     "minimum-delay-between-interstitial": {
                         "translated-name": "MinimumDelayBetweenInterstitial",
                         "description": "Minimum Delay Between Interstitial"
+                    },
+                    "advanced-banners-state": {
+                        "translated-name": "AdvancedBannersState",
+                        "description": "Advanced Banners State"
                     },
 
 

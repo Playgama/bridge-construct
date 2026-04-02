@@ -260,6 +260,12 @@ const C3 = globalThis.C3
         HideBanner() {
             window.bridge.advertisement.hideBanner()
         },
+        ShowAdvancedBanners(placement) {
+            window.bridge.advertisement.showAdvancedBanners(placement)
+        },
+        HideAdvancedBanners() {
+            window.bridge.advertisement.hideAdvancedBanners()
+        },
         ShowInterstitial(placement) {
             window.bridge.advertisement.showInterstitial(placement)
         },
