@@ -184,6 +184,9 @@ const C3 = globalThis.C3
         RewardedPlacement() {
             return window.bridge.advertisement.rewardedPlacement
         },
+        AdvancedBannersState() {
+            return window.bridge.advertisement.advancedBannersState
+        },
 
 
         // leaderboards

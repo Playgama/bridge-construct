@@ -53,6 +53,10 @@ const C3 = globalThis.C3
             window.bridge.platform.sendMessage(message, this.actionParametersContainer)
             this.actionParametersContainer = {}
         },
+        SendCustomMessage(id) {
+            window.bridge.platform.sendCustomMessage(id, this.actionParametersContainer)
+            this.actionParametersContainer = {}
+        },
         GetServerTime() {
             this.isLastActionCompletedSuccessfully = false
 
@@ -255,6 +259,12 @@ const C3 = globalThis.C3
         },
         HideBanner() {
             window.bridge.advertisement.hideBanner()
+        },
+        ShowAdvancedBanners(placement) {
+            window.bridge.advertisement.showAdvancedBanners(placement)
+        },
+        HideAdvancedBanners() {
+            window.bridge.advertisement.hideAdvancedBanners()
         },
         ShowInterstitial(placement) {
             window.bridge.advertisement.showInterstitial(placement)
