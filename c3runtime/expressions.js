@@ -144,9 +144,6 @@ const C3 = globalThis.C3
 
 
         // storage
-        DefaultStorageType() {
-            return window.bridge.storage.defaultType
-        },
         StorageData(key) {
             if (!this.storageData) {
                 return null

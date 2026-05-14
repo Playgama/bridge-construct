@@ -381,29 +381,6 @@
                 ]
             },
             {
-                "id": "is-storage-supported",
-                "scriptName": "IsStorageSupported",
-                "params": [
-                    {
-                        "id": "storage-type",
-                        "type": "combo",
-                        "items": ["local-storage", "platform-internal"]
-                    }
-                ]
-            },
-            {
-                "id": "is-storage-available",
-                "scriptName": "IsStorageAvailable",
-                "params": [
-                    {
-                        "id": "storage-type",
-                        "type": "combo",
-                        "items": ["local-storage", "platform-internal"]
-                    }
-                ]
-            },
-
-            {
                 "id": "on-storage-data-get-request-completed",
                 "scriptName": "OnStorageDataGetRequestCompleted",
                 "isTrigger": true,
@@ -439,14 +416,7 @@
             {
                 "id": "send-storage-data-get-request",
                 "scriptName": "SendStorageDataGetRequest",
-                "isAsync": true,
-                "params": [
-                    {
-                        "id": "storage-type",
-                        "type": "combo",
-                        "items": ["default", "local-storage", "platform-internal"]
-                    }
-                ]
+                "isAsync": true
             },
             {
                 "id": "append-storage-data-set-request",
@@ -465,14 +435,7 @@
             {
                 "id": "send-storage-data-set-request",
                 "scriptName": "SendStorageDataSetRequest",
-                "isAsync": true,
-                "params": [
-                    {
-                        "id": "storage-type",
-                        "type": "combo",
-                        "items": ["default", "local-storage", "platform-internal"]
-                    }
-                ]
+                "isAsync": true
             },
             {
                 "id": "append-storage-data-delete-request",
@@ -487,14 +450,7 @@
             {
                 "id": "send-storage-data-delete-request",
                 "scriptName": "SendStorageDataDeleteRequest",
-                "isAsync": true,
-                "params": [
-                    {
-                        "id": "storage-type",
-                        "type": "combo",
-                        "items": ["default", "local-storage", "platform-internal"]
-                    }
-                ]
+                "isAsync": true
             }
         ],
         "expressions": [
@@ -519,11 +475,6 @@
                         "type": "string"
                     }
                 ]
-            },
-            {
-                "id": "default-storage-type",
-                "expressionName": "DefaultStorageType",
-                "returnType": "string"
             }
         ]
     },

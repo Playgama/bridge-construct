@@ -159,36 +159,6 @@
                     },
 
 
-                    "is-storage-supported": {
-                        "list-name": "IsStorageSupported",
-                        "display-text": "Is Storage Supported: [b]{0}[/b].",
-                        "description": "Is Storage Supported",
-                        "params": {
-                            "storage-type": {
-                                "name": "StorageType",
-                                "desc": "Storage Type",
-                                "items": {
-                                    "local-storage": "LocalStorage",
-                                    "platform-internal": "PlatformInternal"
-                                }
-                            }
-                        }
-                    },
-                    "is-storage-available": {
-                        "list-name": "IsStorageAvailable",
-                        "display-text": "Is Storage Available: [b]{0}[/b].",
-                        "description": "Is Storage Available",
-                        "params": {
-                            "storage-type": {
-                                "name": "StorageType",
-                                "desc": "Storage Type",
-                                "items": {
-                                    "local-storage": "LocalStorage",
-                                    "platform-internal": "PlatformInternal"
-                                }
-                            }
-                        }
-                    },
                     "has-storage-data": {
                         "list-name": "HasStorageData",
                         "display-text": "Has Storage Data By Key: [b]{0}[/b].",
@@ -660,19 +630,8 @@
                     },
                     "send-storage-data-get-request": {
                         "list-name": "SendStorageDataGetRequest",
-                        "display-text": "Send Storage Data Get Request. Storage: [b]{0}[/b].",
-                        "description": "Send Storage Data Get Request",
-                        "params": {
-                            "storage-type": {
-                                "name": "StorageType",
-                                "desc": "Storage Type",
-                                "items": {
-                                    "default": "Default",
-                                    "local-storage": "LocalStorage",
-                                    "platform-internal": "PlatformInternal"
-                                }
-                            }
-                        }
+                        "display-text": "Send Storage Data Get Request",
+                        "description": "Send Storage Data Get Request"
                     },
 
                     "append-storage-data-set-request": {
@@ -692,19 +651,8 @@
                     },
                     "send-storage-data-set-request": {
                         "list-name": "SendStorageDataSetRequest",
-                        "display-text": "Send Storage Data Set Request. Storage: [b]{0}[/b].",
-                        "description": "Send Storage Data Set Request",
-                        "params": {
-                            "storage-type": {
-                                "name": "StorageType",
-                                "desc": "Storage Type",
-                                "items": {
-                                    "default": "Default",
-                                    "local-storage": "LocalStorage",
-                                    "platform-internal": "PlatformInternal"
-                                }
-                            }
-                        }
+                        "display-text": "Send Storage Data Set Request",
+                        "description": "Send Storage Data Set Request"
                     },
 
                     "append-storage-data-delete-request": {
@@ -720,19 +668,8 @@
                     },
                     "send-storage-data-delete-request": {
                         "list-name": "SendStorageDataDeleteRequest",
-                        "display-text": "Send Storage Data Delete Request. Storage: [b]{0}[/b].",
-                        "description": "Send Storage Data Delete Request",
-                        "params": {
-                            "storage-type": {
-                                "name": "StorageType",
-                                "desc": "Storage Type",
-                                "items": {
-                                    "default": "Default",
-                                    "local-storage": "LocalStorage",
-                                    "platform-internal": "PlatformInternal"
-                                }
-                            }
-                        }
+                        "display-text": "Send Storage Data Delete Request",
+                        "description": "Send Storage Data Delete Request"
                     },
 
 
@@ -1085,10 +1022,6 @@
                         "description": "Visibility State"
                     },
 
-                    "default-storage-type": {
-                        "translated-name": "DefaultStorageType",
-                        "description": "Default Storage Type"
-                    },
                     "storage-data": {
                         "translated-name": "StorageData",
                         "description": "Get Storage Data By Key",
