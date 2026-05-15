@@ -130,23 +130,11 @@ const C3 = globalThis.C3
         AppendStorageDataGetRequest(key) {
             this.storageDataGetRequestKeys.push(key)
         },
-        SendStorageDataGetRequest(storageType) {
+        SendStorageDataGetRequest() {
             this.isLastActionCompletedSuccessfully = false
 
-            switch (storageType) {
-                case 0:
-                    storageType = null
-                    break
-                case 1:
-                    storageType = "local_storage"
-                    break
-                case 2:
-                    storageType = "platform_internal"
-                    break
-            }
-
             return new Promise(resolve => {
-                window.bridge.storage.get(this.storageDataGetRequestKeys, storageType)
+                window.bridge.storage.get(this.storageDataGetRequestKeys)
                     .then(data => {
                         if (!this.storageData) {
                             this.storageData = {}
@@ -172,23 +160,11 @@ const C3 = globalThis.C3
             this.storageDataSetRequestKeys.push(key)
             this.storageDataSetRequestValues.push(value)
         },
-        SendStorageDataSetRequest(storageType) {
+        SendStorageDataSetRequest() {
             this.isLastActionCompletedSuccessfully = false
 
-            switch (storageType) {
-                case 0:
-                    storageType = null
-                    break
-                case 1:
-                    storageType = "local_storage"
-                    break
-                case 2:
-                    storageType = "platform_internal"
-                    break
-            }
-
             return new Promise(resolve => {
-                window.bridge.storage.set(this.storageDataSetRequestKeys, this.storageDataSetRequestValues, storageType)
+                window.bridge.storage.set(this.storageDataSetRequestKeys, this.storageDataSetRequestValues)
                     .then(() => {
                         if (!this.storageData) {
                             this.storageData = {}
@@ -213,23 +189,11 @@ const C3 = globalThis.C3
         AppendStorageDataDeleteRequest(key) {
             this.storageDataDeleteRequestKeys.push(key)
         },
-        SendStorageDataDeleteRequest(storageType) {
+        SendStorageDataDeleteRequest() {
             this.isLastActionCompletedSuccessfully = false
 
-            switch (storageType) {
-                case 0:
-                    storageType = null
-                    break
-                case 1:
-                    storageType = "local_storage"
-                    break
-                case 2:
-                    storageType = "platform_internal"
-                    break
-            }
-
             return new Promise(resolve => {
-                window.bridge.storage.delete(this.storageDataDeleteRequestKeys, storageType)
+                window.bridge.storage.delete(this.storageDataDeleteRequestKeys)
                     .then(() => {
                         if (this.storageData) {
                             for (let i = 0; i < this.storageDataDeleteRequestKeys.length; i++) {

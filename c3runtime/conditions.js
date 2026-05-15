@@ -115,30 +115,6 @@ const C3 = globalThis.C3
             let value = this.storageData[key]
             return value !== null && typeof value !== 'undefined'
         },
-        IsStorageSupported(storageType) {
-            switch (storageType) {
-                case 0:
-                    storageType = "local_storage"
-                    break
-                case 1:
-                    storageType = "platform_internal"
-                    break
-            }
-
-            return window.bridge.storage.isSupported(storageType)
-        },
-        IsStorageAvailable(storageType) {
-            switch (storageType) {
-                case 0:
-                    storageType = "local_storage"
-                    break
-                case 1:
-                    storageType = "platform_internal"
-                    break
-            }
-
-            return window.bridge.storage.isAvailable(storageType)
-        },
 
 
         // advertisement
