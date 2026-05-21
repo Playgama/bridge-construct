@@ -350,24 +350,6 @@
             }
         ]
     },
-    "game": {
-        "conditions": [
-            {
-                "id": "on-visibility-state-changed",
-                "scriptName": "OnVisibilityStateChanged",
-                "isTrigger": true,
-                "isInvertible": false,
-                "isCompatibleWithTriggers": false
-            }
-        ],
-        "expressions": [
-            {
-                "id": "visibility-state",
-                "expressionName": "VisibilityState",
-                "returnType": "string"
-            }
-        ]
-    },
     "storage": {
         "conditions": [
             {

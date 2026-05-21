@@ -152,13 +152,6 @@
                     },
 
 
-                    "on-visibility-state-changed": {
-                        "list-name": "OnVisibilityStateChanged",
-                        "display-text": "On Visibility State Changed",
-                        "description": "On Visibility State Changed"
-                    },
-
-
                     "has-storage-data": {
                         "list-name": "HasStorageData",
                         "display-text": "Has Storage Data By Key: [b]{0}[/b].",
@@ -1015,11 +1008,6 @@
                                 "desc": "Property"
                             }
                         }
-                    },
-
-                    "visibility-state": {
-                        "translated-name": "VisibilityState",
-                        "description": "Visibility State"
                     },
 
                     "storage-data": {

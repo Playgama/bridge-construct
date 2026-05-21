@@ -117,7 +117,7 @@ const C3 = globalThis.C3
                     scriptElement.onerror = null
                     scriptElement.parentNode.removeChild(scriptElement)
                 }
-                
+
                 window.bridge = null
                 window.playgamaBridge = null
 
@@ -215,10 +215,6 @@ const C3 = globalThis.C3
                                             this._trigger(this.conditions.OnRewardedFailed)
                                             break
                                     }
-                                })
-
-                                window.bridge.game.on('visibility_state_changed', state => {
-                                    this._trigger(this.conditions.OnVisibilityStateChanged)
                                 })
 
                                 window.bridge.platform.on('audio_state_changed', isEnabled => {

@@ -137,12 +137,6 @@ const C3 = globalThis.C3
         },
 
 
-        // game
-        VisibilityState() {
-            return window.bridge.game.visibilityState
-        },
-
-
         // storage
         StorageData(key) {
             if (!this.storageData) {

@@ -92,12 +92,6 @@ const C3 = globalThis.C3
         },
 
 
-        // game
-        OnVisibilityStateChanged() {
-            return true
-        },
-
-
         // storage
         OnStorageDataGetRequestCompleted() {
             return true
