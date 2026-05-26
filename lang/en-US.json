@@ -73,6 +73,11 @@
                         "display-text": "Is Platform Get Game By Id Supported",
                         "description": "Is Platform Get Game By Id Supported"
                     },
+                    "is-platform-external-calls-supported": {
+                        "list-name": "IsPlatformExternalCallsSupported",
+                        "display-text": "Is Platform External Calls Supported",
+                        "description": "Is Platform External Calls Supported"
+                    },
                     "on-get-all-games-completed": {
                         "list-name": "OnGetAllGamesCompleted",
                         "display-text": "On Get All Games Completed",
