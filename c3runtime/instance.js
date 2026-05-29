@@ -109,9 +109,18 @@ const C3 = globalThis.C3
             }
 
             scriptElement.onerror = function() {
-
                 isLoaded = true
                 clearTimeout(timeout)
+
+                if (scriptElement.parentNode) {
+                    scriptElement.onload = null
+                    scriptElement.onerror = null
+                    scriptElement.parentNode.removeChild(scriptElement)
+                }
+                
+                window.bridge = null
+                window.playgamaBridge = null
+
                 const fallbackScript = document.createElement('script')
                 fallbackScript.src = 'playgama-bridge.js'
                 fallbackScript.onload = function() {
