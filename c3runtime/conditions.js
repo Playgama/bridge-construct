@@ -76,6 +76,9 @@ const C3 = globalThis.C3
         IsPlayerAuthorized() {
             return window.bridge.player.isAuthorized
         },
+        IsPlayerGuest() {
+            return window.bridge.player.isGuest
+        },
         OnAuthorizePlayerCompleted() {
             return true
         },
