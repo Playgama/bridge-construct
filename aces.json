@@ -81,6 +81,10 @@
                 "scriptName": "IsPlatformGetGameByIdSupported"
             },
             {
+                "id": "is-platform-external-calls-supported",
+                "scriptName": "IsPlatformExternalCallsSupported"
+            },
+            {
                 "id": "on-get-all-games-completed",
                 "scriptName": "OnGetAllGamesCompleted",
                 "isTrigger": true,

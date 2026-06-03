@@ -34,6 +34,10 @@ const C3 = globalThis.C3
             return window.bridge.platform.isGetGameByIdSupported
         },
 
+        IsPlatformExternalCallsSupported() {
+            return window.bridge.platform.isExternalCallsSupported
+        },
+
         OnGetAllGamesCompleted() {
             return true
         },
