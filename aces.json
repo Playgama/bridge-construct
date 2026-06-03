@@ -265,6 +265,10 @@
                 "scriptName": "IsPlayerAuthorized"
             },
             {
+                "id": "is-player-guest",
+                "scriptName": "IsPlayerGuest"
+            },
+            {
                 "id": "on-authorize-player-completed",
                 "scriptName": "OnAuthorizePlayerCompleted",
                 "isTrigger": true,

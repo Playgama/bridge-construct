@@ -116,6 +116,11 @@
                         "display-text": "Is Player Authorized",
                         "description": "Is Player Authorized"
                     },
+                    "is-player-guest": {
+                        "list-name": "IsPlayerGuest",
+                        "display-text": "Is Player Guest",
+                        "description": "Is Player Guest"
+                    },
                     "on-authorize-player-completed": {
                         "list-name": "OnAuthorizePlayerCompleted",
                         "display-text": "On Authorize Player Completed",
