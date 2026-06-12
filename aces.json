@@ -1273,7 +1273,13 @@
             {
                 "id": "achievements-unlock",
                 "scriptName": "AchievementsUnlock",
-                "isAsync": true
+                "isAsync": true,
+                "params": [
+                    {
+                        "id": "id",
+                        "type": "string"
+                    }
+                ]
             },
             {
                 "id": "achievements-get-list",

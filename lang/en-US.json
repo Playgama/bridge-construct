@@ -867,8 +867,14 @@
 
                     "achievements-unlock": {
                         "list-name": "AchievementsUnlock",
-                        "display-text": "Achievements Unlock",
-                        "description": "Achievements Unlock"
+                        "display-text": "Achievements Unlock. ID: [b]{0}[/b].",
+                        "description": "Achievements Unlock",
+                        "params": {
+                            "id": {
+                                "name": "ID",
+                                "desc": "ID"
+                            }
+                        }
                     },
                     "achievements-get-list": {
                         "list-name": "AchievementsGetList",
