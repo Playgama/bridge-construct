@@ -8,7 +8,7 @@
                 "description": "One SDK for cross-platform publishing HTML5 games",
                 "author": "Playgama",
                 "help-url": "https://github.com/playgama",
-                "properties": { },
+                "properties": {},
                 "aceCategories": {
                     "common": "Common",
                     "platform": "Platform",
@@ -29,8 +29,6 @@
                         "display-text": "Is Last Action Completed Successfully",
                         "description": "Is Last Action Completed Successfully"
                     },
-
-
                     "on-get-server-time-completed": {
                         "list-name": "OnGetServerTimeCompleted",
                         "display-text": "On Get Server Time Completed",
@@ -41,7 +39,6 @@
                         "display-text": "Has Server Time",
                         "description": "Has Server Time"
                     },
-
                     "is-platform-audio-enabled": {
                         "list-name": "IsPlatformAudioEnabled",
                         "display-text": "Is Platform Audio Enabled",
@@ -62,7 +59,6 @@
                         "display-text": "On Platform Pause State Changed",
                         "description": "On Platform Pause State Changed"
                     },
-
                     "is-platform-get-all-games-supported": {
                         "list-name": "IsPlatformGetAllGamesSupported",
                         "display-text": "Is Platform Get All Games Supported",
@@ -88,7 +84,6 @@
                         "display-text": "On Get Game By Id Completed",
                         "description": "On Get Game By Id Completed"
                     },
-
                     "is-mobile": {
                         "list-name": "IsMobile",
                         "display-text": "Is Mobile",
@@ -109,8 +104,6 @@
                         "display-text": "Is Tv",
                         "description": "Is Tv"
                     },
-
-
                     "is-player-authorization-supported": {
                         "list-name": "IsPlayerAuthorizationSupported",
                         "display-text": "Is Player Authorization Supported",
@@ -131,7 +124,6 @@
                         "display-text": "On Authorize Player Completed",
                         "description": "On Authorize Player Completed"
                     },
-
                     "does-player-have-name": {
                         "list-name": "DoesPlayerHaveName",
                         "display-text": "Does Player Have Name",
@@ -148,8 +140,6 @@
                             }
                         }
                     },
-
-
                     "on-check-adblock-completed": {
                         "list-name": "OnCheckAdBlockCompleted",
                         "display-text": "On Check AdBlock Completed",
@@ -160,8 +150,6 @@
                         "display-text": "Is AdBlock Detected",
                         "description": "Is AdBlock Detected"
                     },
-
-
                     "has-storage-data": {
                         "list-name": "HasStorageData",
                         "display-text": "Has Storage Data By Key: [b]{0}[/b].",
@@ -173,7 +161,6 @@
                             }
                         }
                     },
-
                     "on-storage-data-get-request-completed": {
                         "list-name": "OnStorageDataGetRequestCompleted",
                         "display-text": "On Storage Data Get Request Completed",
@@ -189,8 +176,6 @@
                         "display-text": "On Storage Data Delete Request Completed",
                         "description": "On Storage Data Delete Request Completed"
                     },
-
-
                     "is-banner-supported": {
                         "list-name": "IsBannerSupported",
                         "display-text": "Is Banner Supported",
@@ -231,7 +216,6 @@
                         "display-text": "On Banner Failed",
                         "description": "On Banner Failed"
                     },
-
                     "on-interstitial-state-changed": {
                         "list-name": "OnInterstitialStateChanged",
                         "display-text": "On Interstitial State Changed",
@@ -257,7 +241,6 @@
                         "display-text": "On Interstitial Failed",
                         "description": "On Interstitial Failed"
                     },
-
                     "on-rewarded-state-changed": {
                         "list-name": "OnRewardedStateChanged",
                         "display-text": "On Rewarded State Changed",
@@ -288,7 +271,6 @@
                         "display-text": "On Rewarded Failed",
                         "description": "On Rewarded Failed"
                     },
-
                     "is-advanced-banners-supported": {
                         "list-name": "IsAdvancedBannersSupported",
                         "display-text": "Is Advanced Banners Supported",
@@ -319,8 +301,6 @@
                         "display-text": "On Advanced Banners Failed",
                         "description": "On Advanced Banners Failed"
                     },
-
-
                     "is-share-supported": {
                         "list-name": "IsShareSupported",
                         "display-text": "Is Share Supported",
@@ -331,7 +311,6 @@
                         "display-text": "On Share Completed",
                         "description": "On Share Completed"
                     },
-
                     "is-invite-friends-supported": {
                         "list-name": "IsInviteFriendsSupported",
                         "display-text": "Is Invite Friends Supported",
@@ -342,7 +321,6 @@
                         "display-text": "On Invite Friends Completed",
                         "description": "On Invite Friends Completed"
                     },
-
                     "is-join-community-supported": {
                         "list-name": "IsJoinCommunitySupported",
                         "display-text": "Is Join Community Supported",
@@ -353,7 +331,6 @@
                         "display-text": "On Join Community Completed",
                         "description": "On Join Community Completed"
                     },
-
                     "is-create-post-supported": {
                         "list-name": "IsCreatePostSupported",
                         "display-text": "Is Create Post Supported",
@@ -364,7 +341,6 @@
                         "display-text": "On Create Post Completed",
                         "description": "On Create Post Completed"
                     },
-
                     "is-add-to-home-screen-supported": {
                         "list-name": "IsAddToHomeScreenSupported",
                         "display-text": "Is Add To Home Screen Supported",
@@ -375,7 +351,6 @@
                         "display-text": "On Add To Home Screen Completed",
                         "description": "On Add To Home Screen Completed"
                     },
-
                     "is-add-to-favorites-supported": {
                         "list-name": "IsAddToFavoritesSupported",
                         "display-text": "Is Add To Favorites Supported",
@@ -386,7 +361,6 @@
                         "display-text": "On Add To Favorites Completed",
                         "description": "On Add To Favorites Completed"
                     },
-
                     "is-rate-supported": {
                         "list-name": "IsRateSupported",
                         "display-text": "Is Rate Supported",
@@ -397,14 +371,11 @@
                         "display-text": "On Rate Completed",
                         "description": "On Rate Completed"
                     },
-
                     "is-external-links-allowed": {
                         "list-name": "IsExternalLinksAllowed",
                         "display-text": "Is External Links Allowed",
                         "description": "Is External Links Allowed"
                     },
-
-
                     "is-leaderboards-type-not-available": {
                         "list-name": "IsLeaderboardsTypeNotAvailable",
                         "display-text": "Is Leaderboards Type = Not Available",
@@ -425,7 +396,6 @@
                         "display-text": "Is Leaderboards Type = Native Popup",
                         "description": "Is Leaderboards Type = Native Popup"
                     },
-
                     "on-leaderboards-set-score-completed": {
                         "list-name": "OnLeaderboardsSetScoreCompleted",
                         "display-text": "On Leaderboards Set Score Completed",
@@ -441,8 +411,6 @@
                         "display-text": "On Leaderboards Show Native Popup Completed",
                         "description": "On Leaderboards Show Native Popup Completed"
                     },
-
-
                     "is-payments-supported": {
                         "list-name": "IsPaymentsSupported",
                         "display-text": "Is Payments Supported",
@@ -468,21 +436,10 @@
                         "display-text": "On Payments Consume Purchase Completed",
                         "description": "On Payments Consume Purchase Completed"
                     },
-
                     "is-achievements-supported": {
                         "list-name": "IsAchievementsSupported",
                         "display-text": "Is Achievements Supported",
                         "description": "Is Achievements Supported"
-                    },
-                    "is-achievements-get-list-supported": {
-                        "list-name": "IsAchievementsGetListSupported",
-                        "display-text": "Is Achievements Get List Supported",
-                        "description": "Is Achievements Get List Supported"
-                    },
-                    "is-achievements-native-popup-supported": {
-                        "list-name": "IsAchievementsNativePopupSupported",
-                        "display-text": "Is Achievements Native Popup Supported",
-                        "description": "Is Achievements Native Popup Supported"
                     },
                     "on-achievements-unlock-completed": {
                         "list-name": "OnAchievementsUnlockCompleted",
@@ -494,13 +451,6 @@
                         "display-text": "On Achievements Get List Completed",
                         "description": "On Achievements Get List Completed"
                     },
-                    "on-achievements-show-native-popup-completed": {
-                        "list-name": "OnAchievementsShowNativePopupCompleted",
-                        "display-text": "On Achievements Show Native Popup Completed",
-                        "description": "On Achievements Show Native Popup Completed"
-                    },
-
-
                     "is-remote-config-supported": {
                         "list-name": "IsRemoteConfigSupported",
                         "display-text": "Is Remote Config Supported",
@@ -554,8 +504,6 @@
                             }
                         }
                     },
-
-
                     "send-message": {
                         "list-name": "SendMessage",
                         "display-text": "Send Message to Platform. Message: [b]{0}[/b].",
@@ -612,14 +560,11 @@
                             }
                         }
                     },
-
                     "authorize-player": {
                         "list-name": "AuthorizePlayer",
                         "display-text": "Authorize Player",
                         "description": "Authorize Player"
                     },
-
-
                     "append-storage-data-get-request": {
                         "list-name": "AppendStorageDataGetRequest",
                         "display-text": "Append Storage Data Get Request. Key: [b]{0}[/b].",
@@ -636,7 +581,6 @@
                         "display-text": "Send Storage Data Get Request",
                         "description": "Send Storage Data Get Request"
                     },
-
                     "append-storage-data-set-request": {
                         "list-name": "AppendStorageDataSetRequest",
                         "display-text": "Append Storage Data Set Request. Key: [b]{0}[/b]. Value: [b]{1}[/b].",
@@ -657,7 +601,6 @@
                         "display-text": "Send Storage Data Set Request",
                         "description": "Send Storage Data Set Request"
                     },
-
                     "append-storage-data-delete-request": {
                         "list-name": "AppendStorageDataDeleteRequest",
                         "display-text": "Append Storage Data Delete Request. Key: [b]{0}[/b].",
@@ -674,8 +617,6 @@
                         "display-text": "Send Storage Data Delete Request",
                         "description": "Send Storage Data Delete Request"
                     },
-
-
                     "show-banner": {
                         "list-name": "ShowBanner",
                         "display-text": "Show Banner. Position: [b]{0}[/b]. Placement: [b]{1}[/b].",
@@ -754,8 +695,6 @@
                         "display-text": "Check Ad Block",
                         "description": "Check Ad Block"
                     },
-
-
                     "share": {
                         "list-name": "Share",
                         "display-text": "Share",
@@ -791,8 +730,6 @@
                         "display-text": "Rate",
                         "description": "Rate"
                     },
-
-
                     "leaderboards-set-score": {
                         "list-name": "LeaderboardsSetScore",
                         "display-text": "Set Leaderboard Score. ID: [b]{0}[/b]. Score: [b]{1}[/b].",
@@ -830,8 +767,6 @@
                             }
                         }
                     },
-
-
                     "payments-purchase": {
                         "list-name": "PaymentsPurchase",
                         "display-text": "Payments Purchase. ID: [b]{0}[/b].",
@@ -864,7 +799,6 @@
                             }
                         }
                     },
-
                     "achievements-unlock": {
                         "list-name": "AchievementsUnlock",
                         "display-text": "Achievements Unlock. ID: [b]{0}[/b].",
@@ -881,13 +815,6 @@
                         "display-text": "Achievements Get List",
                         "description": "Achievements Get List"
                     },
-                    "achievements-show-native-popup": {
-                        "list-name": "AchievementsShowNativePopup",
-                        "display-text": "Achievements Show Native Popup",
-                        "description": "Achievements Show Native Popup"
-                    },
-
-
                     "send-remote-config-get-request": {
                         "list-name": "SendRemoteConfigGetRequest",
                         "display-text": "Send Remote Config Get Request",
@@ -971,14 +898,10 @@
                             }
                         }
                     },
-
-
                     "device-type": {
                         "translated-name": "DeviceType",
                         "description": "Device Type"
                     },
-
-
                     "player-id": {
                         "translated-name": "PlayerId",
                         "description": "Player ID"
@@ -1025,7 +948,6 @@
                             }
                         }
                     },
-
                     "storage-data": {
                         "translated-name": "StorageData",
                         "description": "Get Storage Data By Key",
@@ -1046,8 +968,6 @@
                             }
                         }
                     },
-
-
                     "banner-state": {
                         "translated-name": "BannerState",
                         "description": "Banner State"
@@ -1072,8 +992,6 @@
                         "translated-name": "AdvancedBannersState",
                         "description": "Advanced Banners State"
                     },
-
-
                     "leaderboards-type": {
                         "translated-name": "LeaderboardsType",
                         "description": "Leaderboards Type"
@@ -1132,7 +1050,6 @@
                             }
                         }
                     },
-
                     "payments-last-purchase-properties-count": {
                         "translated-name": "PaymentsLastPurchasePropertiesCount",
                         "description": "Payments Last Purchase Properties Count"
@@ -1193,7 +1110,6 @@
                             }
                         }
                     },
-
                     "payments-catalog-items-count": {
                         "translated-name": "PaymentsCatalogItemsCount",
                         "description": "Payments Catalog Items Count"
@@ -1248,7 +1164,6 @@
                             }
                         }
                     },
-
                     "achievements-count": {
                         "translated-name": "AchievementsCount",
                         "description": "Achievements Count"
@@ -1285,7 +1200,6 @@
                             }
                         }
                     },
-
                     "remote-config-value": {
                         "translated-name": "RemoteConfigValue",
                         "description": "Remote Config Value",

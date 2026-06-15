@@ -521,21 +521,6 @@ const C3 = globalThis.C3
             })
         },
 
-        AchievementsShowNativePopup() {
-            this.isLastActionCompletedSuccessfully = false
-
-            return new Promise(resolve => {
-                window.bridge.achievements.showNativePopup()
-                    .then(() => {
-                        this.isLastActionCompletedSuccessfully = true
-                    })
-                    .catch(error => console.log(error))
-                    .finally(() => {
-                        this._trigger(this.conditions.OnAchievementsShowNativePopupCompleted)
-                        resolve()
-                    })
-            })
-        },
 
         // remote-config
         SendRemoteConfigGetRequest() {
