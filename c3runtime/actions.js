@@ -545,7 +545,8 @@ const C3 = globalThis.C3
             this.isLastActionCompletedSuccessfully = false
 
             return new Promise(resolve => {
-                window.bridge.remoteConfig.get(this.actionParametersContainer)
+                window.bridge.remoteConfig.setDynamicParameters(this.actionParametersContainer)
+                window.bridge.remoteConfig.get()
                     .then(data => {
                         this.isLastActionCompletedSuccessfully = true
                         this.remoteConfig = data
