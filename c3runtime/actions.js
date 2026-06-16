@@ -488,17 +488,16 @@ const C3 = globalThis.C3
 
 
         // achievements
-        AchievementsUnlock() {
+        AchievementsUnlock(id) {
             this.isLastActionCompletedSuccessfully = false
 
             return new Promise(resolve => {
-                window.bridge.achievements.unlock(this.actionParametersContainer)
+                window.bridge.achievements.unlock(id)
                     .then(() => {
                         this.isLastActionCompletedSuccessfully = true
                     })
                     .catch(error => console.log(error))
                     .finally(() => {
-                        this.actionParametersContainer = {}
                         this._trigger(this.conditions.OnAchievementsUnlockCompleted)
                         resolve()
                     })
@@ -509,36 +508,19 @@ const C3 = globalThis.C3
             this.isLastActionCompletedSuccessfully = false
 
             return new Promise(resolve => {
-                window.bridge.achievements.getList(this.actionParametersContainer)
+                window.bridge.achievements.getList()
                     .then(data => {
                         this.isLastActionCompletedSuccessfully = true
                         this.achievementsList = data
                     })
                     .catch(error => console.log(error))
                     .finally(() => {
-                        this.actionParametersContainer = {}
                         this._trigger(this.conditions.OnAchievementsGetListCompleted)
                         resolve()
                     })
             })
         },
 
-        AchievementsShowNativePopup() {
-            this.isLastActionCompletedSuccessfully = false
-
-            return new Promise(resolve => {
-                window.bridge.achievements.showNativePopup(this.actionParametersContainer)
-                    .then(() => {
-                        this.isLastActionCompletedSuccessfully = true
-                    })
-                    .catch(error => console.log(error))
-                    .finally(() => {
-                        this.actionParametersContainer = {}
-                        this._trigger(this.conditions.OnAchievementsShowNativePopupCompleted)
-                        resolve()
-                    })
-            })
-        },
 
         // remote-config
         SendRemoteConfigGetRequest() {

@@ -198,7 +198,19 @@
                     {
                         "id": "message",
                         "type": "combo",
-                        "items": ["game-ready", "in-game-loading-started", "in-game-loading-stopped", "gameplay-started", "gameplay-stopped", "player-got-achievement", "level-started", "level-completed", "level-failed", "level-paused", "level-resumed"]
+                        "items": [
+                            "game-ready",
+                            "in-game-loading-started",
+                            "in-game-loading-stopped",
+                            "gameplay-started",
+                            "gameplay-stopped",
+                            "player-got-achievement",
+                            "level-started",
+                            "level-completed",
+                            "level-failed",
+                            "level-paused",
+                            "level-resumed"
+                        ]
                     }
                 ]
             },
@@ -263,7 +275,6 @@
                 "id": "is-player-authorization-supported",
                 "scriptName": "IsPlayerAuthorizationSupported"
             },
-
             {
                 "id": "is-player-authorized",
                 "scriptName": "IsPlayerAuthorized"
@@ -279,7 +290,6 @@
                 "isInvertible": false,
                 "isCompatibleWithTriggers": false
             },
-
             {
                 "id": "does-player-have-name",
                 "scriptName": "DoesPlayerHaveName"
@@ -517,7 +527,6 @@
                 "isInvertible": false,
                 "isCompatibleWithTriggers": false
             },
-
             {
                 "id": "on-interstitial-state-changed",
                 "scriptName": "OnInterstitialStateChanged",
@@ -553,7 +562,6 @@
                 "isInvertible": false,
                 "isCompatibleWithTriggers": false
             },
-
             {
                 "id": "on-rewarded-state-changed",
                 "scriptName": "OnRewardedStateChanged",
@@ -635,7 +643,6 @@
                 "isInvertible": false,
                 "isCompatibleWithTriggers": false
             },
-
             {
                 "id": "on-check-adblock-completed",
                 "scriptName": "OnCheckAdBlockCompleted",
@@ -668,7 +675,10 @@
                     {
                         "id": "position",
                         "type": "combo",
-                        "items": ["top", "bottom"]
+                        "items": [
+                            "top",
+                            "bottom"
+                        ]
                     },
                     {
                         "id": "placement",
@@ -771,7 +781,6 @@
                 "isInvertible": false,
                 "isCompatibleWithTriggers": false
             },
-
             {
                 "id": "is-invite-friends-supported",
                 "scriptName": "IsInviteFriendsSupported"
@@ -783,7 +792,6 @@
                 "isInvertible": false,
                 "isCompatibleWithTriggers": false
             },
-
             {
                 "id": "is-join-community-supported",
                 "scriptName": "IsJoinCommunitySupported"
@@ -795,7 +803,6 @@
                 "isInvertible": false,
                 "isCompatibleWithTriggers": false
             },
-
             {
                 "id": "is-create-post-supported",
                 "scriptName": "IsCreatePostSupported"
@@ -807,7 +814,6 @@
                 "isInvertible": false,
                 "isCompatibleWithTriggers": false
             },
-
             {
                 "id": "is-add-to-home-screen-supported",
                 "scriptName": "IsAddToHomeScreenSupported"
@@ -819,7 +825,6 @@
                 "isInvertible": false,
                 "isCompatibleWithTriggers": false
             },
-
             {
                 "id": "is-add-to-favorites-supported",
                 "scriptName": "IsAddToFavoritesSupported"
@@ -831,7 +836,6 @@
                 "isInvertible": false,
                 "isCompatibleWithTriggers": false
             },
-
             {
                 "id": "is-rate-supported",
                 "scriptName": "IsRateSupported"
@@ -843,7 +847,6 @@
                 "isInvertible": false,
                 "isCompatibleWithTriggers": false
             },
-
             {
                 "id": "is-external-links-allowed",
                 "scriptName": "IsExternalLinksAllowed"
@@ -905,7 +908,6 @@
                 "id": "is-leaderboards-type-native-popup",
                 "scriptName": "IsLeaderboardsTypeNativePopup"
             },
-
             {
                 "id": "on-leaderboards-set-score-completed",
                 "scriptName": "OnLeaderboardsSetScoreCompleted",
@@ -1041,7 +1043,6 @@
                 "id": "is-payments-supported",
                 "scriptName": "IsPaymentsSupported"
             },
-
             {
                 "id": "on-payments-purchase-completed",
                 "scriptName": "OnPaymentsPurchaseCompleted",
@@ -1049,7 +1050,6 @@
                 "isInvertible": false,
                 "isCompatibleWithTriggers": false
             },
-
             {
                 "id": "on-payments-get-purchases-completed",
                 "scriptName": "OnPaymentsGetPurchasesCompleted",
@@ -1057,7 +1057,6 @@
                 "isInvertible": false,
                 "isCompatibleWithTriggers": false
             },
-
             {
                 "id": "on-payments-get-catalog-completed",
                 "scriptName": "OnPaymentsGetCatalogCompleted",
@@ -1065,7 +1064,6 @@
                 "isInvertible": false,
                 "isCompatibleWithTriggers": false
             },
-
             {
                 "id": "on-payments-consume-purchase-completed",
                 "scriptName": "OnPaymentsConsumePurchaseCompleted",
@@ -1172,7 +1170,6 @@
                     }
                 ]
             },
-
             {
                 "id": "payments-catalog-items-count",
                 "expressionName": "PaymentsCatalogItemsCount",
@@ -1237,33 +1234,15 @@
                 "scriptName": "IsAchievementsSupported"
             },
             {
-                "id": "is-achievements-get-list-supported",
-                "scriptName": "IsAchievementsGetListSupported"
-            },
-            {
-                "id": "is-achievements-native-popup-supported",
-                "scriptName": "IsAchievementsNativePopupSupported"
-            },
-
-            {
                 "id": "on-achievements-unlock-completed",
                 "scriptName": "OnAchievementsUnlockCompleted",
                 "isTrigger": true,
                 "isInvertible": false,
                 "isCompatibleWithTriggers": false
             },
-
             {
                 "id": "on-achievements-get-list-completed",
                 "scriptName": "OnAchievementsGetListCompleted",
-                "isTrigger": true,
-                "isInvertible": false,
-                "isCompatibleWithTriggers": false
-            },
-
-            {
-                "id": "on-achievements-show-native-popup-completed",
-                "scriptName": "OnAchievementsShowNativePopupCompleted",
                 "isTrigger": true,
                 "isInvertible": false,
                 "isCompatibleWithTriggers": false
@@ -1273,16 +1252,17 @@
             {
                 "id": "achievements-unlock",
                 "scriptName": "AchievementsUnlock",
-                "isAsync": true
+                "isAsync": true,
+                "params": [
+                    {
+                        "id": "id",
+                        "type": "string"
+                    }
+                ]
             },
             {
                 "id": "achievements-get-list",
                 "scriptName": "AchievementsGetList",
-                "isAsync": true
-            },
-            {
-                "id": "achievements-show-native-popup",
-                "scriptName": "AchievementsShowNativePopup",
                 "isAsync": true
             }
         ],
