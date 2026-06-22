@@ -21,7 +21,8 @@
                     "leaderboards": "Leaderboards",
                     "payments": "Payments",
                     "achievements": "Achievements",
-                    "remote-config": "Remote Config"
+                    "remote-config": "Remote Config",
+                    "cross-promo": "Cross Promo"
                 },
                 "conditions": {
                     "is-last-action-completed-successfully": {
@@ -59,30 +60,10 @@
                         "display-text": "On Platform Pause State Changed",
                         "description": "On Platform Pause State Changed"
                     },
-                    "is-platform-get-all-games-supported": {
-                        "list-name": "IsPlatformGetAllGamesSupported",
-                        "display-text": "Is Platform Get All Games Supported",
-                        "description": "Is Platform Get All Games Supported"
-                    },
-                    "is-platform-get-game-by-id-supported": {
-                        "list-name": "IsPlatformGetGameByIdSupported",
-                        "display-text": "Is Platform Get Game By Id Supported",
-                        "description": "Is Platform Get Game By Id Supported"
-                    },
                     "is-platform-external-calls-supported": {
                         "list-name": "IsPlatformExternalCallsSupported",
                         "display-text": "Is Platform External Calls Supported",
                         "description": "Is Platform External Calls Supported"
-                    },
-                    "on-get-all-games-completed": {
-                        "list-name": "OnGetAllGamesCompleted",
-                        "display-text": "On Get All Games Completed",
-                        "description": "On Get All Games Completed"
-                    },
-                    "on-get-game-by-id-completed": {
-                        "list-name": "OnGetGameByIdCompleted",
-                        "display-text": "On Get Game By Id Completed",
-                        "description": "On Get Game By Id Completed"
                     },
                     "is-mobile": {
                         "list-name": "IsMobile",
@@ -471,6 +452,16 @@
                                 "desc": "Key"
                             }
                         }
+                    },
+                    "on-cross-promo-get-games-list-completed": {
+                        "list-name": "OnCrossPromoGetGamesListCompleted",
+                        "display-text": "On Cross Promo Get Games List Completed",
+                        "description": "On Cross Promo Get Games List Completed"
+                    },
+                    "is-cross-promo-visible": {
+                        "list-name": "IsCrossPromoVisible",
+                        "display-text": "Is Cross Promo Visible",
+                        "description": "Is Cross Promo Visible"
                     }
                 },
                 "actions": {
@@ -543,22 +534,6 @@
                         "list-name": "GetServerTime",
                         "display-text": "Get Server Time",
                         "description": "Get Server Time"
-                    },
-                    "get-all-games": {
-                        "list-name": "GetAllGames",
-                        "display-text": "Get All Games",
-                        "description": "Get All Games"
-                    },
-                    "get-game-by-id": {
-                        "list-name": "GetGameById",
-                        "display-text": "Get Game By Id",
-                        "description": "Get Game By Id",
-                        "params": {
-                            "game-id": {
-                                "name": "GameId",
-                                "desc": "Game ID"
-                            }
-                        }
                     },
                     "authorize-player": {
                         "list-name": "AuthorizePlayer",
@@ -819,6 +794,21 @@
                         "list-name": "SendRemoteConfigGetRequest",
                         "display-text": "Send Remote Config Get Request",
                         "description": "Send Remote Config Get Request"
+                    },
+                    "cross-promo-get-games-list": {
+                        "list-name": "CrossPromoGetGamesList",
+                        "display-text": "Cross Promo Get Games List",
+                        "description": "Cross Promo Get Games List"
+                    },
+                    "cross-promo-show": {
+                        "list-name": "CrossPromoShow",
+                        "display-text": "Cross Promo Show",
+                        "description": "Cross Promo Show"
+                    },
+                    "cross-promo-hide": {
+                        "list-name": "CrossPromoHide",
+                        "display-text": "Cross Promo Hide",
+                        "description": "Cross Promo Hide"
                     }
                 },
                 "expressions": {
@@ -841,62 +831,6 @@
                     "server-time": {
                         "translated-name": "ServerTime",
                         "description": "Server Time"
-                    },
-                    "platform-all-games-count": {
-                        "translated-name": "PlatformAllGamesCount",
-                        "description": "Platform All Games Count"
-                    },
-                    "platform-all-games-properties-count": {
-                        "translated-name": "PlatformAllGamesPropertiesCount",
-                        "description": "Platform All Games Properties Count"
-                    },
-                    "platform-all-games-property-name": {
-                        "translated-name": "PlatformAllGamesPropertyName",
-                        "description": "Platform All Games Property Name",
-                        "params": {
-                            "property-index": {
-                                "name": "Property Index",
-                                "desc": "Property Index"
-                            }
-                        }
-                    },
-                    "platform-all-games-property-value": {
-                        "translated-name": "PlatformAllGamesPropertyValue",
-                        "description": "Platform All Games Property Value",
-                        "params": {
-                            "game-index": {
-                                "name": "Game Index",
-                                "desc": "Game Index"
-                            },
-                            "property": {
-                                "name": "Property",
-                                "desc": "Property"
-                            }
-                        }
-                    },
-                    "platform-game-by-id-properties-count": {
-                        "translated-name": "PlatformGameByIdPropertiesCount",
-                        "description": "Platform Game By Id Properties Count"
-                    },
-                    "platform-game-by-id-property-name": {
-                        "translated-name": "PlatformGameByIdPropertyName",
-                        "description": "Platform Game By Id Property Name",
-                        "params": {
-                            "property-index": {
-                                "name": "Property Index",
-                                "desc": "Property Index"
-                            }
-                        }
-                    },
-                    "platform-game-by-id-property-value": {
-                        "translated-name": "PlatformGameByIdPropertyValue",
-                        "description": "Platform Game By Id Property Value",
-                        "params": {
-                            "property": {
-                                "name": "Property",
-                                "desc": "Property"
-                            }
-                        }
                     },
                     "device-type": {
                         "translated-name": "DeviceType",
@@ -1209,6 +1143,42 @@
                                 "desc": "Key"
                             }
                         }
+                    },
+                    "cross-promo-games-count": {
+                        "translated-name": "CrossPromoGamesCount",
+                        "description": "Cross Promo Games Count"
+                    },
+                    "cross-promo-games-properties-count": {
+                        "translated-name": "CrossPromoGamesPropertiesCount",
+                        "description": "Cross Promo Games Properties Count"
+                    },
+                    "cross-promo-games-property-name": {
+                        "translated-name": "CrossPromoGamesPropertyName",
+                        "description": "Cross Promo Games Property Name",
+                        "params": {
+                            "property-index": {
+                                "name": "Property Index",
+                                "desc": "Property Index"
+                            }
+                        }
+                    },
+                    "cross-promo-games-property-value": {
+                        "translated-name": "CrossPromoGamesPropertyValue",
+                        "description": "Cross Promo Games Property Value",
+                        "params": {
+                            "game-index": {
+                                "name": "Game Index",
+                                "desc": "Game Index"
+                            },
+                            "property": {
+                                "name": "Property",
+                                "desc": "Property"
+                            }
+                        }
+                    },
+                    "cross-promo-games-as-json": {
+                        "translated-name": "CrossPromoGamesAsJSON",
+                        "description": "Cross Promo Games As JSON"
                     }
                 }
             }

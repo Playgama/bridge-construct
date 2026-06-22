@@ -13,8 +13,7 @@ const C3 = globalThis.C3
             this.runtime.sdk.addLoadPromise(this.initializeSdk())
 
             this.serverTime = 0
-            this.allGames = []
-            this.gameById = null
+            this.crossPromoGames = []
             this.isAdBlockDetected = false
             this.storageData = null
             this.storageDataGetRequestKeys = []
