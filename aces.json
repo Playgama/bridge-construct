@@ -85,6 +85,10 @@
                 "scriptName": "IsPlatformExternalCallsSupported"
             },
             {
+                "id": "is-external-links-allowed",
+                "scriptName": "IsExternalLinksAllowed"
+            },
+            {
                 "id": "on-get-all-games-completed",
                 "scriptName": "OnGetAllGamesCompleted",
                 "isTrigger": true,
@@ -842,11 +846,6 @@
                 "isTrigger": true,
                 "isInvertible": false,
                 "isCompatibleWithTriggers": false
-            },
-
-            {
-                "id": "is-external-links-allowed",
-                "scriptName": "IsExternalLinksAllowed"
             }
         ],
         "actions": [

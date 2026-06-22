@@ -78,6 +78,11 @@
                         "display-text": "Is Platform External Calls Supported",
                         "description": "Is Platform External Calls Supported"
                     },
+                    "is-external-links-allowed": {
+                        "list-name": "IsExternalLinksAllowed",
+                        "display-text": "Is External Links Allowed",
+                        "description": "Is External Links Allowed"
+                    },
                     "on-get-all-games-completed": {
                         "list-name": "OnGetAllGamesCompleted",
                         "display-text": "On Get All Games Completed",
@@ -397,13 +402,6 @@
                         "display-text": "On Rate Completed",
                         "description": "On Rate Completed"
                     },
-
-                    "is-external-links-allowed": {
-                        "list-name": "IsExternalLinksAllowed",
-                        "display-text": "Is External Links Allowed",
-                        "description": "Is External Links Allowed"
-                    },
-
 
                     "is-leaderboards-type-not-available": {
                         "list-name": "IsLeaderboardsTypeNotAvailable",
