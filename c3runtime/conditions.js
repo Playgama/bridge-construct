@@ -234,7 +234,7 @@ const C3 = globalThis.C3
         },
 
         IsExternalLinksAllowed() {
-            return window.bridge.social.isExternalLinksAllowed
+            return window.bridge.platform.isExternalLinksAllowed
         },
 
 
