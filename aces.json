@@ -73,34 +73,8 @@
                 "isCompatibleWithTriggers": false
             },
             {
-                "id": "is-platform-get-all-games-supported",
-                "scriptName": "IsPlatformGetAllGamesSupported"
-            },
-            {
-                "id": "is-platform-get-game-by-id-supported",
-                "scriptName": "IsPlatformGetGameByIdSupported"
-            },
-            {
                 "id": "is-platform-external-calls-supported",
                 "scriptName": "IsPlatformExternalCallsSupported"
-            },
-            {
-                "id": "is-external-links-allowed",
-                "scriptName": "IsExternalLinksAllowed"
-            },
-            {
-                "id": "on-get-all-games-completed",
-                "scriptName": "OnGetAllGamesCompleted",
-                "isTrigger": true,
-                "isInvertible": false,
-                "isCompatibleWithTriggers": false
-            },
-            {
-                "id": "on-get-game-by-id-completed",
-                "scriptName": "OnGetGameByIdCompleted",
-                "isTrigger": true,
-                "isInvertible": false,
-                "isCompatibleWithTriggers": false
             }
         ],
         "expressions": [
@@ -128,69 +102,6 @@
                 "id": "server-time",
                 "expressionName": "ServerTime",
                 "returnType": "number"
-            },
-            {
-                "id": "platform-all-games-count",
-                "expressionName": "PlatformAllGamesCount",
-                "returnType": "number"
-            },
-            {
-                "id": "platform-all-games-properties-count",
-                "expressionName": "PlatformAllGamesPropertiesCount",
-                "returnType": "number"
-            },
-            {
-                "id": "platform-all-games-property-name",
-                "expressionName": "PlatformAllGamesPropertyName",
-                "returnType": "string",
-                "params": [
-                    {
-                        "id": "property-index",
-                        "type": "number"
-                    }
-                ]
-            },
-            {
-                "id": "platform-all-games-property-value",
-                "expressionName": "PlatformAllGamesPropertyValue",
-                "returnType": "any",
-                "params": [
-                    {
-                        "id": "game-index",
-                        "type": "number"
-                    },
-                    {
-                        "id": "property",
-                        "type": "any"
-                    }
-                ]
-            },
-            {
-                "id": "platform-game-by-id-properties-count",
-                "expressionName": "PlatformGameByIdPropertiesCount",
-                "returnType": "number"
-            },
-            {
-                "id": "platform-game-by-id-property-name",
-                "expressionName": "PlatformGameByIdPropertyName",
-                "returnType": "string",
-                "params": [
-                    {
-                        "id": "property-index",
-                        "type": "number"
-                    }
-                ]
-            },
-            {
-                "id": "platform-game-by-id-property-value",
-                "expressionName": "PlatformGameByIdPropertyValue",
-                "returnType": "any",
-                "params": [
-                    {
-                        "id": "property",
-                        "type": "any"
-                    }
-                ]
             }
         ],
         "actions": [
@@ -202,7 +113,19 @@
                     {
                         "id": "message",
                         "type": "combo",
-                        "items": ["game-ready", "in-game-loading-started", "in-game-loading-stopped", "gameplay-started", "gameplay-stopped", "player-got-achievement", "level-started", "level-completed", "level-failed", "level-paused", "level-resumed"]
+                        "items": [
+                            "game-ready",
+                            "in-game-loading-started",
+                            "in-game-loading-stopped",
+                            "gameplay-started",
+                            "gameplay-stopped",
+                            "player-got-achievement",
+                            "level-started",
+                            "level-completed",
+                            "level-failed",
+                            "level-paused",
+                            "level-resumed"
+                        ]
                     }
                 ]
             },
@@ -220,16 +143,6 @@
             {
                 "id": "get-server-time",
                 "scriptName": "GetServerTime",
-                "isAsync": true
-            },
-            {
-                "id": "get-all-games",
-                "scriptName": "GetAllGames",
-                "isAsync": true
-            },
-            {
-                "id": "get-game-by-id",
-                "scriptName": "GetGameById",
                 "isAsync": true
             }
         ]
@@ -267,7 +180,6 @@
                 "id": "is-player-authorization-supported",
                 "scriptName": "IsPlayerAuthorizationSupported"
             },
-
             {
                 "id": "is-player-authorized",
                 "scriptName": "IsPlayerAuthorized"
@@ -283,7 +195,6 @@
                 "isInvertible": false,
                 "isCompatibleWithTriggers": false
             },
-
             {
                 "id": "does-player-have-name",
                 "scriptName": "DoesPlayerHaveName"
@@ -521,7 +432,6 @@
                 "isInvertible": false,
                 "isCompatibleWithTriggers": false
             },
-
             {
                 "id": "on-interstitial-state-changed",
                 "scriptName": "OnInterstitialStateChanged",
@@ -557,7 +467,6 @@
                 "isInvertible": false,
                 "isCompatibleWithTriggers": false
             },
-
             {
                 "id": "on-rewarded-state-changed",
                 "scriptName": "OnRewardedStateChanged",
@@ -639,7 +548,6 @@
                 "isInvertible": false,
                 "isCompatibleWithTriggers": false
             },
-
             {
                 "id": "on-check-adblock-completed",
                 "scriptName": "OnCheckAdBlockCompleted",
@@ -672,7 +580,10 @@
                     {
                         "id": "position",
                         "type": "combo",
-                        "items": ["top", "bottom"]
+                        "items": [
+                            "top",
+                            "bottom"
+                        ]
                     },
                     {
                         "id": "placement",
@@ -775,7 +686,6 @@
                 "isInvertible": false,
                 "isCompatibleWithTriggers": false
             },
-
             {
                 "id": "is-invite-friends-supported",
                 "scriptName": "IsInviteFriendsSupported"
@@ -787,7 +697,6 @@
                 "isInvertible": false,
                 "isCompatibleWithTriggers": false
             },
-
             {
                 "id": "is-join-community-supported",
                 "scriptName": "IsJoinCommunitySupported"
@@ -799,7 +708,6 @@
                 "isInvertible": false,
                 "isCompatibleWithTriggers": false
             },
-
             {
                 "id": "is-create-post-supported",
                 "scriptName": "IsCreatePostSupported"
@@ -811,7 +719,6 @@
                 "isInvertible": false,
                 "isCompatibleWithTriggers": false
             },
-
             {
                 "id": "is-add-to-home-screen-supported",
                 "scriptName": "IsAddToHomeScreenSupported"
@@ -823,7 +730,6 @@
                 "isInvertible": false,
                 "isCompatibleWithTriggers": false
             },
-
             {
                 "id": "is-add-to-favorites-supported",
                 "scriptName": "IsAddToFavoritesSupported"
@@ -835,7 +741,6 @@
                 "isInvertible": false,
                 "isCompatibleWithTriggers": false
             },
-
             {
                 "id": "is-rate-supported",
                 "scriptName": "IsRateSupported"
@@ -846,6 +751,10 @@
                 "isTrigger": true,
                 "isInvertible": false,
                 "isCompatibleWithTriggers": false
+            },
+            {
+                "id": "is-external-links-allowed",
+                "scriptName": "IsExternalLinksAllowed"
             }
         ],
         "actions": [
@@ -904,7 +813,6 @@
                 "id": "is-leaderboards-type-native-popup",
                 "scriptName": "IsLeaderboardsTypeNativePopup"
             },
-
             {
                 "id": "on-leaderboards-set-score-completed",
                 "scriptName": "OnLeaderboardsSetScoreCompleted",
@@ -1040,7 +948,6 @@
                 "id": "is-payments-supported",
                 "scriptName": "IsPaymentsSupported"
             },
-
             {
                 "id": "on-payments-purchase-completed",
                 "scriptName": "OnPaymentsPurchaseCompleted",
@@ -1048,7 +955,6 @@
                 "isInvertible": false,
                 "isCompatibleWithTriggers": false
             },
-
             {
                 "id": "on-payments-get-purchases-completed",
                 "scriptName": "OnPaymentsGetPurchasesCompleted",
@@ -1056,7 +962,6 @@
                 "isInvertible": false,
                 "isCompatibleWithTriggers": false
             },
-
             {
                 "id": "on-payments-get-catalog-completed",
                 "scriptName": "OnPaymentsGetCatalogCompleted",
@@ -1064,7 +969,6 @@
                 "isInvertible": false,
                 "isCompatibleWithTriggers": false
             },
-
             {
                 "id": "on-payments-consume-purchase-completed",
                 "scriptName": "OnPaymentsConsumePurchaseCompleted",
@@ -1171,7 +1075,6 @@
                     }
                 ]
             },
-
             {
                 "id": "payments-catalog-items-count",
                 "expressionName": "PaymentsCatalogItemsCount",
@@ -1236,33 +1139,15 @@
                 "scriptName": "IsAchievementsSupported"
             },
             {
-                "id": "is-achievements-get-list-supported",
-                "scriptName": "IsAchievementsGetListSupported"
-            },
-            {
-                "id": "is-achievements-native-popup-supported",
-                "scriptName": "IsAchievementsNativePopupSupported"
-            },
-
-            {
                 "id": "on-achievements-unlock-completed",
                 "scriptName": "OnAchievementsUnlockCompleted",
                 "isTrigger": true,
                 "isInvertible": false,
                 "isCompatibleWithTriggers": false
             },
-
             {
                 "id": "on-achievements-get-list-completed",
                 "scriptName": "OnAchievementsGetListCompleted",
-                "isTrigger": true,
-                "isInvertible": false,
-                "isCompatibleWithTriggers": false
-            },
-
-            {
-                "id": "on-achievements-show-native-popup-completed",
-                "scriptName": "OnAchievementsShowNativePopupCompleted",
                 "isTrigger": true,
                 "isInvertible": false,
                 "isCompatibleWithTriggers": false
@@ -1272,16 +1157,17 @@
             {
                 "id": "achievements-unlock",
                 "scriptName": "AchievementsUnlock",
-                "isAsync": true
+                "isAsync": true,
+                "params": [
+                    {
+                        "id": "id",
+                        "type": "string"
+                    }
+                ]
             },
             {
                 "id": "achievements-get-list",
                 "scriptName": "AchievementsGetList",
-                "isAsync": true
-            },
-            {
-                "id": "achievements-show-native-popup",
-                "scriptName": "AchievementsShowNativePopup",
                 "isAsync": true
             }
         ],
@@ -1366,6 +1252,81 @@
                         "type": "string"
                     }
                 ]
+            }
+        ]
+    },
+    "cross-promo": {
+        "conditions": [
+            {
+                "id": "on-cross-promo-get-games-list-completed",
+                "scriptName": "OnCrossPromoGetGamesListCompleted",
+                "isTrigger": true,
+                "isInvertible": false,
+                "isCompatibleWithTriggers": false
+            },
+            {
+                "id": "is-cross-promo-visible",
+                "scriptName": "IsCrossPromoVisible"
+            }
+        ],
+        "actions": [
+            {
+                "id": "cross-promo-get-games-list",
+                "scriptName": "CrossPromoGetGamesList",
+                "isAsync": true
+            },
+            {
+                "id": "cross-promo-show",
+                "scriptName": "CrossPromoShow",
+                "isAsync": false
+            },
+            {
+                "id": "cross-promo-hide",
+                "scriptName": "CrossPromoHide",
+                "isAsync": false
+            }
+        ],
+        "expressions": [
+            {
+                "id": "cross-promo-games-count",
+                "expressionName": "CrossPromoGamesCount",
+                "returnType": "number"
+            },
+            {
+                "id": "cross-promo-games-properties-count",
+                "expressionName": "CrossPromoGamesPropertiesCount",
+                "returnType": "number"
+            },
+            {
+                "id": "cross-promo-games-property-name",
+                "expressionName": "CrossPromoGamesPropertyName",
+                "returnType": "string",
+                "params": [
+                    {
+                        "id": "property-index",
+                        "type": "number"
+                    }
+                ]
+            },
+            {
+                "id": "cross-promo-games-property-value",
+                "expressionName": "CrossPromoGamesPropertyValue",
+                "returnType": "any",
+                "params": [
+                    {
+                        "id": "game-index",
+                        "type": "number"
+                    },
+                    {
+                        "id": "property",
+                        "type": "any"
+                    }
+                ]
+            },
+            {
+                "id": "cross-promo-games-as-json",
+                "expressionName": "CrossPromoGamesAsJSON",
+                "returnType": "string"
             }
         ]
     }

@@ -26,24 +26,8 @@ const C3 = globalThis.C3
             return true
         },
 
-        IsPlatformGetAllGamesSupported() {
-            return window.bridge.platform.isGetAllGamesSupported
-        },
-
-        IsPlatformGetGameByIdSupported() {
-            return window.bridge.platform.isGetGameByIdSupported
-        },
-
         IsPlatformExternalCallsSupported() {
             return window.bridge.platform.isExternalCallsSupported
-        },
-
-        OnGetAllGamesCompleted() {
-            return true
-        },
-
-        OnGetGameByIdCompleted() {
-            return true
         },
 
         OnGetServerTimeCompleted() {
@@ -301,20 +285,11 @@ const C3 = globalThis.C3
         IsAchievementsSupported() {
             return window.bridge.achievements.isSupported
         },
-        IsAchievementsGetListSupported() {
-            return window.bridge.achievements.isGetListSupported
-        },
-        IsAchievementsNativePopupSupported() {
-            return window.bridge.achievements.isNativePopupSupported
-        },
 
         OnAchievementsUnlockCompleted() {
             return true
         },
         OnAchievementsGetListCompleted() {
-            return true
-        },
-        OnAchievementsShowNativePopupCompleted() {
             return true
         },
 
@@ -333,6 +308,16 @@ const C3 = globalThis.C3
 
             let value = this.remoteConfig[key]
             return value !== null && typeof value !== 'undefined'
+        },
+
+
+        // cross-promo
+        OnCrossPromoGetGamesListCompleted() {
+            return true
+        },
+
+        IsCrossPromoVisible() {
+            return window.bridge.crossPromo.isVisible
         },
 
     }
