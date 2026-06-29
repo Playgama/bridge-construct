@@ -320,5 +320,48 @@ const C3 = globalThis.C3
             return window.bridge.crossPromo.isVisible
         },
 
+
+        // tasks
+        OnTasksGetTasksCompleted() {
+            return true
+        },
+
+        OnTasksAddProgressCompleted() {
+            return true
+        },
+
+        OnTasksClaimRewardCompleted() {
+            return true
+        },
+
+        IsTaskCompleted(taskIndex) {
+            if (!this.tasksList || !this.tasksList[taskIndex]) {
+                return false
+            }
+
+            return this.tasksList[taskIndex].completed === true
+        },
+
+        IsTaskClaimed(taskIndex) {
+            if (!this.tasksList || !this.tasksList[taskIndex]) {
+                return false
+            }
+
+            return this.tasksList[taskIndex].claimed === true
+        },
+
+        IsTaskTargetCompleted(taskIndex, targetIndex) {
+            if (!this.tasksList || !this.tasksList[taskIndex]) {
+                return false
+            }
+
+            const targets = this.tasksList[taskIndex].targets
+            if (!targets || !targets[targetIndex]) {
+                return false
+            }
+
+            return targets[targetIndex].completed === true
+        },
+
     }
 }

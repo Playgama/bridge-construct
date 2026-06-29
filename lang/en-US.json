@@ -22,7 +22,8 @@
                     "payments": "Payments",
                     "achievements": "Achievements",
                     "remote-config": "Remote Config",
-                    "cross-promo": "Cross Promo"
+                    "cross-promo": "Cross Promo",
+                    "tasks": "Tasks"
                 },
                 "conditions": {
                     "is-last-action-completed-successfully": {
@@ -462,6 +463,58 @@
                         "list-name": "IsCrossPromoVisible",
                         "display-text": "Is Cross Promo Visible",
                         "description": "Is Cross Promo Visible"
+                    },
+                    "on-tasks-get-tasks-completed": {
+                        "list-name": "OnTasksGetTasksCompleted",
+                        "display-text": "On Tasks Get Tasks Completed",
+                        "description": "On Tasks Get Tasks Completed"
+                    },
+                    "on-tasks-add-progress-completed": {
+                        "list-name": "OnTasksAddProgressCompleted",
+                        "display-text": "On Tasks Add Progress Completed",
+                        "description": "On Tasks Add Progress Completed"
+                    },
+                    "on-tasks-claim-reward-completed": {
+                        "list-name": "OnTasksClaimRewardCompleted",
+                        "display-text": "On Tasks Claim Reward Completed",
+                        "description": "On Tasks Claim Reward Completed"
+                    },
+                    "is-task-completed": {
+                        "list-name": "IsTaskCompleted",
+                        "display-text": "Task [b]{0}[/b] is completed",
+                        "description": "Is Task Completed",
+                        "params": {
+                            "task-index": {
+                                "name": "Task Index",
+                                "desc": "Task Index"
+                            }
+                        }
+                    },
+                    "is-task-claimed": {
+                        "list-name": "IsTaskClaimed",
+                        "display-text": "Task [b]{0}[/b] is claimed",
+                        "description": "Is Task Claimed",
+                        "params": {
+                            "task-index": {
+                                "name": "Task Index",
+                                "desc": "Task Index"
+                            }
+                        }
+                    },
+                    "is-task-target-completed": {
+                        "list-name": "IsTaskTargetCompleted",
+                        "display-text": "Task [b]{0}[/b] target [b]{1}[/b] is completed",
+                        "description": "Is Task Target Completed",
+                        "params": {
+                            "task-index": {
+                                "name": "Task Index",
+                                "desc": "Task Index"
+                            },
+                            "target-index": {
+                                "name": "Target Index",
+                                "desc": "Target Index"
+                            }
+                        }
                     }
                 },
                 "actions": {
@@ -809,6 +862,37 @@
                         "list-name": "CrossPromoHide",
                         "display-text": "Cross Promo Hide",
                         "description": "Cross Promo Hide"
+                    },
+                    "tasks-get-tasks": {
+                        "list-name": "TasksGetTasks",
+                        "display-text": "Tasks Get Tasks",
+                        "description": "Tasks Get Tasks"
+                    },
+                    "tasks-add-progress": {
+                        "list-name": "TasksAddProgress",
+                        "display-text": "Tasks Add Progress. Metric: [b]{0}[/b], Amount: [b]{1}[/b].",
+                        "description": "Tasks Add Progress",
+                        "params": {
+                            "metric": {
+                                "name": "Metric",
+                                "desc": "Metric"
+                            },
+                            "amount": {
+                                "name": "Amount",
+                                "desc": "Amount"
+                            }
+                        }
+                    },
+                    "tasks-claim-reward": {
+                        "list-name": "TasksClaimReward",
+                        "display-text": "Tasks Claim Reward. Task ID: [b]{0}[/b].",
+                        "description": "Tasks Claim Reward",
+                        "params": {
+                            "task-id": {
+                                "name": "Task ID",
+                                "desc": "Task ID"
+                            }
+                        }
                     }
                 },
                 "expressions": {
@@ -1179,6 +1263,124 @@
                     "cross-promo-games-as-json": {
                         "translated-name": "CrossPromoGamesAsJSON",
                         "description": "Cross Promo Games As JSON"
+                    },
+                    "tasks-count": {
+                        "translated-name": "TasksCount",
+                        "description": "Tasks Count"
+                    },
+                    "tasks-as-json": {
+                        "translated-name": "TasksAsJSON",
+                        "description": "All tasks as a JSON string"
+                    },
+                    "task-id": {
+                        "translated-name": "TaskId",
+                        "description": "Task Id",
+                        "params": {
+                            "task-index": {
+                                "name": "Task Index",
+                                "desc": "Task Index"
+                            }
+                        }
+                    },
+                    "task-type": {
+                        "translated-name": "TaskType",
+                        "description": "Task Type",
+                        "params": {
+                            "task-index": {
+                                "name": "Task Index",
+                                "desc": "Task Index"
+                            }
+                        }
+                    },
+                    "task-targets-count": {
+                        "translated-name": "TaskTargetsCount",
+                        "description": "Task Targets Count",
+                        "params": {
+                            "task-index": {
+                                "name": "Task Index",
+                                "desc": "Task Index"
+                            }
+                        }
+                    },
+                    "task-target-id": {
+                        "translated-name": "TaskTargetId",
+                        "description": "Task Target Id",
+                        "params": {
+                            "task-index": {
+                                "name": "Task Index",
+                                "desc": "Task Index"
+                            },
+                            "target-index": {
+                                "name": "Target Index",
+                                "desc": "Target Index"
+                            }
+                        }
+                    },
+                    "task-target-amount": {
+                        "translated-name": "TaskTargetAmount",
+                        "description": "Task Target Amount",
+                        "params": {
+                            "task-index": {
+                                "name": "Task Index",
+                                "desc": "Task Index"
+                            },
+                            "target-index": {
+                                "name": "Target Index",
+                                "desc": "Target Index"
+                            }
+                        }
+                    },
+                    "task-target-progress": {
+                        "translated-name": "TaskTargetProgress",
+                        "description": "Task Target Progress",
+                        "params": {
+                            "task-index": {
+                                "name": "Task Index",
+                                "desc": "Task Index"
+                            },
+                            "target-index": {
+                                "name": "Target Index",
+                                "desc": "Target Index"
+                            }
+                        }
+                    },
+                    "task-rewards-count": {
+                        "translated-name": "TaskRewardsCount",
+                        "description": "Task Rewards Count",
+                        "params": {
+                            "task-index": {
+                                "name": "Task Index",
+                                "desc": "Task Index"
+                            }
+                        }
+                    },
+                    "task-reward-id": {
+                        "translated-name": "TaskRewardId",
+                        "description": "Task Reward Id",
+                        "params": {
+                            "task-index": {
+                                "name": "Task Index",
+                                "desc": "Task Index"
+                            },
+                            "reward-index": {
+                                "name": "Reward Index",
+                                "desc": "Reward Index"
+                            }
+                        }
+                    },
+                    "task-reward-amount": {
+                        "translated-name": "TaskRewardAmount",
+                        "description": "Task Reward Amount",
+                        "params": {
+                            "task-index": {
+                                "name": "Task Index",
+                                "desc": "Task Index"
+                            },
+                            "reward-index": {
+                                "name": "Reward Index",
+                                "desc": "Reward Index"
+                            }
+                        }
                     }
                 }
             }
