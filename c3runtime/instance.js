@@ -14,6 +14,7 @@ const C3 = globalThis.C3
 
             this.serverTime = 0
             this.crossPromoGames = []
+            this.tasksList = []
             this.isAdBlockDetected = false
             this.storageData = null
             this.storageDataGetRequestKeys = []

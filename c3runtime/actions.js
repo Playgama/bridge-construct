@@ -531,5 +531,56 @@ const C3 = globalThis.C3
         CrossPromoHide() {
             window.bridge.crossPromo.hide()
         },
+
+
+        // tasks
+        TasksGetTasks() {
+            this.isLastActionCompletedSuccessfully = false
+
+            return new Promise(resolve => {
+                window.bridge.tasks.getTasks()
+                    .then(data => {
+                        this.isLastActionCompletedSuccessfully = true
+                        this.tasksList = data
+                    })
+                    .catch(error => console.log(error))
+                    .finally(() => {
+                        this._trigger(this.conditions.OnTasksGetTasksCompleted)
+                        resolve()
+                    })
+            })
+        },
+
+        TasksAddProgress(metric, amount) {
+            this.isLastActionCompletedSuccessfully = false
+
+            return new Promise(resolve => {
+                window.bridge.tasks.addProgress(metric, amount)
+                    .then(() => {
+                        this.isLastActionCompletedSuccessfully = true
+                    })
+                    .catch(error => console.log(error))
+                    .finally(() => {
+                        this._trigger(this.conditions.OnTasksAddProgressCompleted)
+                        resolve()
+                    })
+            })
+        },
+
+        TasksClaimReward(taskId) {
+            this.isLastActionCompletedSuccessfully = false
+
+            return new Promise(resolve => {
+                window.bridge.tasks.claimReward(taskId)
+                    .then(claimed => {
+                        this.isLastActionCompletedSuccessfully = claimed === true
+                    })
+                    .catch(error => console.log(error))
+                    .finally(() => {
+                        this._trigger(this.conditions.OnTasksClaimRewardCompleted)
+                        resolve()
+                    })
+            })
+        },
     }
 }

@@ -1329,5 +1329,228 @@
                 "returnType": "string"
             }
         ]
+    },
+    "tasks": {
+        "conditions": [
+            {
+                "id": "on-tasks-get-tasks-completed",
+                "scriptName": "OnTasksGetTasksCompleted",
+                "isTrigger": true,
+                "isInvertible": false,
+                "isCompatibleWithTriggers": false
+            },
+            {
+                "id": "on-tasks-add-progress-completed",
+                "scriptName": "OnTasksAddProgressCompleted",
+                "isTrigger": true,
+                "isInvertible": false,
+                "isCompatibleWithTriggers": false
+            },
+            {
+                "id": "on-tasks-claim-reward-completed",
+                "scriptName": "OnTasksClaimRewardCompleted",
+                "isTrigger": true,
+                "isInvertible": false,
+                "isCompatibleWithTriggers": false
+            },
+            {
+                "id": "is-task-completed",
+                "scriptName": "IsTaskCompleted",
+                "params": [
+                    {
+                        "id": "task-index",
+                        "type": "number"
+                    }
+                ]
+            },
+            {
+                "id": "is-task-claimed",
+                "scriptName": "IsTaskClaimed",
+                "params": [
+                    {
+                        "id": "task-index",
+                        "type": "number"
+                    }
+                ]
+            },
+            {
+                "id": "is-task-target-completed",
+                "scriptName": "IsTaskTargetCompleted",
+                "params": [
+                    {
+                        "id": "task-index",
+                        "type": "number"
+                    },
+                    {
+                        "id": "target-index",
+                        "type": "number"
+                    }
+                ]
+            }
+        ],
+        "actions": [
+            {
+                "id": "tasks-get-tasks",
+                "scriptName": "TasksGetTasks",
+                "isAsync": true
+            },
+            {
+                "id": "tasks-add-progress",
+                "scriptName": "TasksAddProgress",
+                "isAsync": true,
+                "params": [
+                    {
+                        "id": "metric",
+                        "type": "string"
+                    },
+                    {
+                        "id": "amount",
+                        "type": "number"
+                    }
+                ]
+            },
+            {
+                "id": "tasks-claim-reward",
+                "scriptName": "TasksClaimReward",
+                "isAsync": true,
+                "params": [
+                    {
+                        "id": "task-id",
+                        "type": "string"
+                    }
+                ]
+            }
+        ],
+        "expressions": [
+            {
+                "id": "tasks-count",
+                "expressionName": "TasksCount",
+                "returnType": "number"
+            },
+            {
+                "id": "tasks-as-json",
+                "expressionName": "TasksAsJSON",
+                "returnType": "string"
+            },
+            {
+                "id": "task-id",
+                "expressionName": "TaskId",
+                "returnType": "string",
+                "params": [
+                    {
+                        "id": "task-index",
+                        "type": "number"
+                    }
+                ]
+            },
+            {
+                "id": "task-type",
+                "expressionName": "TaskType",
+                "returnType": "string",
+                "params": [
+                    {
+                        "id": "task-index",
+                        "type": "number"
+                    }
+                ]
+            },
+            {
+                "id": "task-targets-count",
+                "expressionName": "TaskTargetsCount",
+                "returnType": "number",
+                "params": [
+                    {
+                        "id": "task-index",
+                        "type": "number"
+                    }
+                ]
+            },
+            {
+                "id": "task-target-id",
+                "expressionName": "TaskTargetId",
+                "returnType": "string",
+                "params": [
+                    {
+                        "id": "task-index",
+                        "type": "number"
+                    },
+                    {
+                        "id": "target-index",
+                        "type": "number"
+                    }
+                ]
+            },
+            {
+                "id": "task-target-amount",
+                "expressionName": "TaskTargetAmount",
+                "returnType": "number",
+                "params": [
+                    {
+                        "id": "task-index",
+                        "type": "number"
+                    },
+                    {
+                        "id": "target-index",
+                        "type": "number"
+                    }
+                ]
+            },
+            {
+                "id": "task-target-progress",
+                "expressionName": "TaskTargetProgress",
+                "returnType": "number",
+                "params": [
+                    {
+                        "id": "task-index",
+                        "type": "number"
+                    },
+                    {
+                        "id": "target-index",
+                        "type": "number"
+                    }
+                ]
+            },
+            {
+                "id": "task-rewards-count",
+                "expressionName": "TaskRewardsCount",
+                "returnType": "number",
+                "params": [
+                    {
+                        "id": "task-index",
+                        "type": "number"
+                    }
+                ]
+            },
+            {
+                "id": "task-reward-id",
+                "expressionName": "TaskRewardId",
+                "returnType": "string",
+                "params": [
+                    {
+                        "id": "task-index",
+                        "type": "number"
+                    },
+                    {
+                        "id": "reward-index",
+                        "type": "number"
+                    }
+                ]
+            },
+            {
+                "id": "task-reward-amount",
+                "expressionName": "TaskRewardAmount",
+                "returnType": "number",
+                "params": [
+                    {
+                        "id": "task-index",
+                        "type": "number"
+                    },
+                    {
+                        "id": "reward-index",
+                        "type": "number"
+                    }
+                ]
+            }
+        ]
     }
 }
