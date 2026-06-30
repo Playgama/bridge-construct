@@ -1135,10 +1135,6 @@
     "achievements": {
         "conditions": [
             {
-                "id": "is-achievements-supported",
-                "scriptName": "IsAchievementsSupported"
-            },
-            {
                 "id": "on-achievements-unlock-completed",
                 "scriptName": "OnAchievementsUnlockCompleted",
                 "isTrigger": true,
@@ -1550,6 +1546,97 @@
                         "type": "number"
                     }
                 ]
+            }
+        ]
+    },
+    "dailyRewards": {
+        "conditions": [
+            {
+                "id": "on-daily-rewards-get-rewards-completed",
+                "scriptName": "OnDailyRewardsGetRewardsCompleted",
+                "isTrigger": true,
+                "isInvertible": false,
+                "isCompatibleWithTriggers": false
+            },
+            {
+                "id": "on-daily-rewards-get-current-day-completed",
+                "scriptName": "OnDailyRewardsGetCurrentDayCompleted",
+                "isTrigger": true,
+                "isInvertible": false,
+                "isCompatibleWithTriggers": false
+            },
+            {
+                "id": "on-daily-rewards-get-current-reward-completed",
+                "scriptName": "OnDailyRewardsGetCurrentRewardCompleted",
+                "isTrigger": true,
+                "isInvertible": false,
+                "isCompatibleWithTriggers": false
+            },
+            {
+                "id": "on-daily-rewards-claim-current-reward-completed",
+                "scriptName": "OnDailyRewardsClaimCurrentRewardCompleted",
+                "isTrigger": true,
+                "isInvertible": false,
+                "isCompatibleWithTriggers": false
+            },
+            {
+                "id": "is-daily-rewards-current-reward-available",
+                "scriptName": "IsDailyRewardsCurrentRewardAvailable"
+            }
+        ],
+        "actions": [
+            {
+                "id": "daily-rewards-get-rewards",
+                "scriptName": "DailyRewardsGetRewards",
+                "isAsync": true
+            },
+            {
+                "id": "daily-rewards-get-current-day",
+                "scriptName": "DailyRewardsGetCurrentDay",
+                "isAsync": true
+            },
+            {
+                "id": "daily-rewards-get-current-reward",
+                "scriptName": "DailyRewardsGetCurrentReward",
+                "isAsync": true
+            },
+            {
+                "id": "daily-rewards-claim-current-reward",
+                "scriptName": "DailyRewardsClaimCurrentReward",
+                "isAsync": true
+            }
+        ],
+        "expressions": [
+            {
+                "id": "daily-rewards-count",
+                "expressionName": "DailyRewardsCount",
+                "returnType": "number"
+            },
+            {
+                "id": "daily-rewards-as-json",
+                "expressionName": "DailyRewardsAsJSON",
+                "returnType": "string"
+            },
+            {
+                "id": "daily-rewards-reward",
+                "expressionName": "DailyRewardsReward",
+                "returnType": "string",
+                "params": [
+                    {
+                        "id": "reward-index",
+                        "type": "number"
+                    }
+                ]
+            },
+            {
+                "id": "daily-rewards-current-day",
+                "expressionName": "DailyRewardsCurrentDay",
+                "returnType": "number"
+            },
+            {
+                "id": "daily-rewards-current-reward",
+                "expressionName": "DailyRewardsCurrentReward",
+                "returnType": "string"
             }
         ]
     }

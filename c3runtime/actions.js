@@ -473,7 +473,7 @@ const C3 = globalThis.C3
             this.isLastActionCompletedSuccessfully = false
 
             return new Promise(resolve => {
-                window.bridge.achievements.getList()
+                window.bridge.achievements.getAchievements()
                     .then(data => {
                         this.isLastActionCompletedSuccessfully = true
                         this.achievementsList = data
@@ -492,7 +492,7 @@ const C3 = globalThis.C3
             this.isLastActionCompletedSuccessfully = false
 
             return new Promise(resolve => {
-                window.bridge.remoteConfig.setDynamicParameters(this.actionParametersContainer)
+                window.bridge.remoteConfig.setContext(this.actionParametersContainer)
                 window.bridge.remoteConfig.get()
                     .then(data => {
                         this.isLastActionCompletedSuccessfully = true
@@ -513,7 +513,7 @@ const C3 = globalThis.C3
             this.isLastActionCompletedSuccessfully = false
 
             return new Promise(resolve => {
-                window.bridge.crossPromo.getGamesList()
+                window.bridge.crossPromo.getGames()
                     .then((games) => {
                         this.isLastActionCompletedSuccessfully = true
                         this.crossPromoGames = games
@@ -578,6 +578,75 @@ const C3 = globalThis.C3
                     .catch(error => console.log(error))
                     .finally(() => {
                         this._trigger(this.conditions.OnTasksClaimRewardCompleted)
+                        resolve()
+                    })
+            })
+        },
+
+
+        // daily rewards
+        DailyRewardsGetRewards() {
+            this.isLastActionCompletedSuccessfully = false
+
+            return new Promise(resolve => {
+                window.bridge.dailyRewards.getRewards()
+                    .then(data => {
+                        this.isLastActionCompletedSuccessfully = true
+                        this.dailyRewardsList = data
+                    })
+                    .catch(error => console.log(error))
+                    .finally(() => {
+                        this._trigger(this.conditions.OnDailyRewardsGetRewardsCompleted)
+                        resolve()
+                    })
+            })
+        },
+
+        DailyRewardsGetCurrentDay() {
+            this.isLastActionCompletedSuccessfully = false
+
+            return new Promise(resolve => {
+                window.bridge.dailyRewards.getCurrentDay()
+                    .then(day => {
+                        this.isLastActionCompletedSuccessfully = true
+                        this.dailyRewardsCurrentDay = day
+                    })
+                    .catch(error => console.log(error))
+                    .finally(() => {
+                        this._trigger(this.conditions.OnDailyRewardsGetCurrentDayCompleted)
+                        resolve()
+                    })
+            })
+        },
+
+        DailyRewardsGetCurrentReward() {
+            this.isLastActionCompletedSuccessfully = false
+
+            return new Promise(resolve => {
+                window.bridge.dailyRewards.getCurrentReward()
+                    .then(reward => {
+                        this.isLastActionCompletedSuccessfully = true
+                        this.dailyRewardsCurrentReward = reward
+                    })
+                    .catch(error => console.log(error))
+                    .finally(() => {
+                        this._trigger(this.conditions.OnDailyRewardsGetCurrentRewardCompleted)
+                        resolve()
+                    })
+            })
+        },
+
+        DailyRewardsClaimCurrentReward() {
+            this.isLastActionCompletedSuccessfully = false
+
+            return new Promise(resolve => {
+                window.bridge.dailyRewards.claimCurrentReward()
+                    .then(claimed => {
+                        this.isLastActionCompletedSuccessfully = claimed === true
+                    })
+                    .catch(error => console.log(error))
+                    .finally(() => {
+                        this._trigger(this.conditions.OnDailyRewardsClaimCurrentRewardCompleted)
                         resolve()
                     })
             })

@@ -450,6 +450,33 @@ const C3 = globalThis.C3
             const task = this.tasksList && this.tasksList[taskIndex]
             const reward = task && task.rewards && task.rewards[rewardIndex]
             return reward ? reward.amount : 0
+        },
+
+
+        // daily rewards
+        DailyRewardsCount() {
+            if (!this.dailyRewardsList) {
+                return 0
+            }
+
+            return this.dailyRewardsList.length
+        },
+        DailyRewardsAsJSON() {
+            if (!this.dailyRewardsList) {
+                return '[]'
+            }
+
+            return JSON.stringify(this.dailyRewardsList)
+        },
+        DailyRewardsReward(rewardIndex) {
+            const reward = this.dailyRewardsList && this.dailyRewardsList[rewardIndex]
+            return reward ? reward : ''
+        },
+        DailyRewardsCurrentDay() {
+            return this.dailyRewardsCurrentDay || 0
+        },
+        DailyRewardsCurrentReward() {
+            return this.dailyRewardsCurrentReward || ''
         }
     }
 }

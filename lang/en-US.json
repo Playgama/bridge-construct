@@ -23,7 +23,8 @@
                     "achievements": "Achievements",
                     "remote-config": "Remote Config",
                     "cross-promo": "Cross Promo",
-                    "tasks": "Tasks"
+                    "tasks": "Tasks",
+                    "daily-rewards": "Daily Rewards"
                 },
                 "conditions": {
                     "is-last-action-completed-successfully": {
@@ -418,11 +419,6 @@
                         "display-text": "On Payments Consume Purchase Completed",
                         "description": "On Payments Consume Purchase Completed"
                     },
-                    "is-achievements-supported": {
-                        "list-name": "IsAchievementsSupported",
-                        "display-text": "Is Achievements Supported",
-                        "description": "Is Achievements Supported"
-                    },
                     "on-achievements-unlock-completed": {
                         "list-name": "OnAchievementsUnlockCompleted",
                         "display-text": "On Achievements Unlock Completed",
@@ -515,6 +511,31 @@
                                 "desc": "Target Index"
                             }
                         }
+                    },
+                    "on-daily-rewards-get-rewards-completed": {
+                        "list-name": "OnDailyRewardsGetRewardsCompleted",
+                        "display-text": "On Daily Rewards Get Rewards Completed",
+                        "description": "On Daily Rewards Get Rewards Completed"
+                    },
+                    "on-daily-rewards-get-current-day-completed": {
+                        "list-name": "OnDailyRewardsGetCurrentDayCompleted",
+                        "display-text": "On Daily Rewards Get Current Day Completed",
+                        "description": "On Daily Rewards Get Current Day Completed"
+                    },
+                    "on-daily-rewards-get-current-reward-completed": {
+                        "list-name": "OnDailyRewardsGetCurrentRewardCompleted",
+                        "display-text": "On Daily Rewards Get Current Reward Completed",
+                        "description": "On Daily Rewards Get Current Reward Completed"
+                    },
+                    "on-daily-rewards-claim-current-reward-completed": {
+                        "list-name": "OnDailyRewardsClaimCurrentRewardCompleted",
+                        "display-text": "On Daily Rewards Claim Current Reward Completed",
+                        "description": "On Daily Rewards Claim Current Reward Completed"
+                    },
+                    "is-daily-rewards-current-reward-available": {
+                        "list-name": "IsDailyRewardsCurrentRewardAvailable",
+                        "display-text": "Is Daily Rewards Current Reward Available",
+                        "description": "Is Daily Rewards Current Reward Available"
                     }
                 },
                 "actions": {
@@ -893,6 +914,26 @@
                                 "desc": "Task ID"
                             }
                         }
+                    },
+                    "daily-rewards-get-rewards": {
+                        "list-name": "DailyRewardsGetRewards",
+                        "display-text": "Daily Rewards Get Rewards",
+                        "description": "Daily Rewards Get Rewards"
+                    },
+                    "daily-rewards-get-current-day": {
+                        "list-name": "DailyRewardsGetCurrentDay",
+                        "display-text": "Daily Rewards Get Current Day",
+                        "description": "Daily Rewards Get Current Day"
+                    },
+                    "daily-rewards-get-current-reward": {
+                        "list-name": "DailyRewardsGetCurrentReward",
+                        "display-text": "Daily Rewards Get Current Reward",
+                        "description": "Daily Rewards Get Current Reward"
+                    },
+                    "daily-rewards-claim-current-reward": {
+                        "list-name": "DailyRewardsClaimCurrentReward",
+                        "display-text": "Daily Rewards Claim Current Reward",
+                        "description": "Daily Rewards Claim Current Reward"
                     }
                 },
                 "expressions": {
@@ -1381,6 +1422,32 @@
                                 "desc": "Reward Index"
                             }
                         }
+                    },
+                    "daily-rewards-count": {
+                        "translated-name": "DailyRewardsCount",
+                        "description": "Daily Rewards Count"
+                    },
+                    "daily-rewards-as-json": {
+                        "translated-name": "DailyRewardsAsJSON",
+                        "description": "All daily rewards as a JSON string"
+                    },
+                    "daily-rewards-reward": {
+                        "translated-name": "DailyRewardsReward",
+                        "description": "Daily Rewards Reward",
+                        "params": {
+                            "reward-index": {
+                                "name": "Reward Index",
+                                "desc": "Reward Index"
+                            }
+                        }
+                    },
+                    "daily-rewards-current-day": {
+                        "translated-name": "DailyRewardsCurrentDay",
+                        "description": "Daily Rewards Current Day"
+                    },
+                    "daily-rewards-current-reward": {
+                        "translated-name": "DailyRewardsCurrentReward",
+                        "description": "Daily Rewards Current Reward"
                     }
                 }
             }

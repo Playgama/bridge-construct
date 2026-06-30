@@ -282,10 +282,6 @@ const C3 = globalThis.C3
 
 
         // achievements
-        IsAchievementsSupported() {
-            return window.bridge.achievements.isSupported
-        },
-
         OnAchievementsUnlockCompleted() {
             return true
         },
@@ -361,6 +357,28 @@ const C3 = globalThis.C3
             }
 
             return targets[targetIndex].completed === true
+        },
+
+
+        // daily rewards
+        OnDailyRewardsGetRewardsCompleted() {
+            return true
+        },
+
+        OnDailyRewardsGetCurrentDayCompleted() {
+            return true
+        },
+
+        OnDailyRewardsGetCurrentRewardCompleted() {
+            return true
+        },
+
+        OnDailyRewardsClaimCurrentRewardCompleted() {
+            return true
+        },
+
+        IsDailyRewardsCurrentRewardAvailable() {
+            return this.dailyRewardsCurrentReward !== null && this.dailyRewardsCurrentReward !== undefined
         },
 
     }
