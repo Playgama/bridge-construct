@@ -1145,10 +1145,6 @@
                         "translated-name": "PaymentsPurchasePropertyName",
                         "description": "Payments Purchase Property Name",
                         "params": {
-                            "purchase-index": {
-                                "name": "Purchase Index",
-                                "desc": "Purchase Index"
-                            },
                             "property-index": {
                                 "name": "Property Index",
                                 "desc": "Property Index"
@@ -1181,10 +1177,6 @@
                         "translated-name": "PaymentsCatalogItemPropertyName",
                         "description": "Payments Catalog Item Property Name",
                         "params": {
-                            "item-index": {
-                                "name": "Item Index",
-                                "desc": "Item Index"
-                            },
                             "property-index": {
                                 "name": "Property Index",
                                 "desc": "Property Index"
@@ -1235,10 +1227,6 @@
                         "translated-name": "AchievementPropertyName",
                         "description": "Achievement Property Name",
                         "params": {
-                            "achievement-index": {
-                                "name": "Achievement Index",
-                                "desc": "Achievement Index"
-                            },
                             "property-index": {
                                 "name": "Property Index",
                                 "desc": "Property Index"
