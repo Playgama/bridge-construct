@@ -94,7 +94,7 @@ const C3 = globalThis.C3
         loadSdk() {
             return new Promise((resolve) => {
             const scriptElement = document.createElement('script')
-            scriptElement.src = 'https://bridge.playgama.com/v1/stable/playgama-bridge.js'
+            scriptElement.src = 'https://bridge.playgama.com/v2/stable/playgama-bridge.js'
             document.body.appendChild(scriptElement)
 
             let isLoaded = false
