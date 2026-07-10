@@ -26,20 +26,8 @@ const C3 = globalThis.C3
             return true
         },
 
-        IsPlatformGetAllGamesSupported() {
-            return window.bridge.platform.isGetAllGamesSupported
-        },
-
-        IsPlatformGetGameByIdSupported() {
-            return window.bridge.platform.isGetGameByIdSupported
-        },
-
-        OnGetAllGamesCompleted() {
-            return true
-        },
-
-        OnGetGameByIdCompleted() {
-            return true
+        IsPlatformExternalCallsSupported() {
+            return window.bridge.platform.isExternalCallsSupported
         },
 
         OnGetServerTimeCompleted() {
@@ -72,6 +60,9 @@ const C3 = globalThis.C3
         IsPlayerAuthorized() {
             return window.bridge.player.isAuthorized
         },
+        IsPlayerGuest() {
+            return window.bridge.player.isGuest
+        },
         OnAuthorizePlayerCompleted() {
             return true
         },
@@ -92,12 +83,6 @@ const C3 = globalThis.C3
         },
 
 
-        // game
-        OnVisibilityStateChanged() {
-            return true
-        },
-
-
         // storage
         OnStorageDataGetRequestCompleted() {
             return true
@@ -114,30 +99,6 @@ const C3 = globalThis.C3
 
             let value = this.storageData[key]
             return value !== null && typeof value !== 'undefined'
-        },
-        IsStorageSupported(storageType) {
-            switch (storageType) {
-                case 0:
-                    storageType = "local_storage"
-                    break
-                case 1:
-                    storageType = "platform_internal"
-                    break
-            }
-
-            return window.bridge.storage.isSupported(storageType)
-        },
-        IsStorageAvailable(storageType) {
-            switch (storageType) {
-                case 0:
-                    storageType = "local_storage"
-                    break
-                case 1:
-                    storageType = "platform_internal"
-                    break
-            }
-
-            return window.bridge.storage.isAvailable(storageType)
         },
 
 
@@ -273,7 +234,7 @@ const C3 = globalThis.C3
         },
 
         IsExternalLinksAllowed() {
-            return window.bridge.social.isExternalLinksAllowed
+            return window.bridge.platform.isExternalLinksAllowed
         },
 
 
@@ -321,23 +282,10 @@ const C3 = globalThis.C3
 
 
         // achievements
-        IsAchievementsSupported() {
-            return window.bridge.achievements.isSupported
-        },
-        IsAchievementsGetListSupported() {
-            return window.bridge.achievements.isGetListSupported
-        },
-        IsAchievementsNativePopupSupported() {
-            return window.bridge.achievements.isNativePopupSupported
-        },
-
         OnAchievementsUnlockCompleted() {
             return true
         },
         OnAchievementsGetListCompleted() {
-            return true
-        },
-        OnAchievementsShowNativePopupCompleted() {
             return true
         },
 
@@ -356,6 +304,81 @@ const C3 = globalThis.C3
 
             let value = this.remoteConfig[key]
             return value !== null && typeof value !== 'undefined'
+        },
+
+
+        // cross-promo
+        OnCrossPromoGetGamesListCompleted() {
+            return true
+        },
+
+        IsCrossPromoVisible() {
+            return window.bridge.crossPromo.isVisible
+        },
+
+
+        // tasks
+        OnTasksGetTasksCompleted() {
+            return true
+        },
+
+        OnTasksAddProgressCompleted() {
+            return true
+        },
+
+        OnTasksClaimRewardCompleted() {
+            return true
+        },
+
+        IsTaskCompleted(taskIndex) {
+            if (!this.tasksList || !this.tasksList[taskIndex]) {
+                return false
+            }
+
+            return this.tasksList[taskIndex].completed === true
+        },
+
+        IsTaskClaimed(taskIndex) {
+            if (!this.tasksList || !this.tasksList[taskIndex]) {
+                return false
+            }
+
+            return this.tasksList[taskIndex].claimed === true
+        },
+
+        IsTaskTargetCompleted(taskIndex, targetIndex) {
+            if (!this.tasksList || !this.tasksList[taskIndex]) {
+                return false
+            }
+
+            const targets = this.tasksList[taskIndex].targets
+            if (!targets || !targets[targetIndex]) {
+                return false
+            }
+
+            return targets[targetIndex].completed === true
+        },
+
+
+        // daily rewards
+        OnDailyRewardsGetRewardsCompleted() {
+            return true
+        },
+
+        OnDailyRewardsGetCurrentDayCompleted() {
+            return true
+        },
+
+        OnDailyRewardsGetCurrentRewardCompleted() {
+            return true
+        },
+
+        OnDailyRewardsClaimCurrentRewardCompleted() {
+            return true
+        },
+
+        IsDailyRewardsCurrentRewardAvailable() {
+            return this.dailyRewardsCurrentReward !== null && this.dailyRewardsCurrentReward !== undefined
         },
 
     }

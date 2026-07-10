@@ -23,81 +23,6 @@ const C3 = globalThis.C3
         ServerTime() {
             return this.serverTime
         },
-        PlatformAllGamesCount() {
-            if (!this.allGames) {
-                return 0
-            }
-
-            return this.allGames.length
-        },
-        PlatformAllGamesPropertiesCount() {
-            if (!this.allGames || this.allGames.length <= 0) {
-                return 0
-            }
-
-            let game = this.allGames[0]
-            let properties = Object.keys(game)
-            return properties.length
-        },
-        PlatformAllGamesPropertyName(propertyIndex) {
-            if (!this.allGames || this.allGames.length <= 0) {
-                return ''
-            }
-
-            let game = this.allGames[0]
-            let properties = Object.keys(game)
-            return properties[propertyIndex]
-        },
-        PlatformAllGamesPropertyValue(gameIndex, property) {
-            if (!this.allGames || this.allGames.length <= 0) {
-                return ''
-            }
-
-            let game = this.allGames[gameIndex]
-
-            if (!game) {
-                return ''
-            }
-
-            if (typeof property === 'number') {
-                let properties = Object.keys(game)
-                let propertyName = properties[property]
-                return game[propertyName]
-            }
-
-            return game[property]
-        },
-        PlatformGameByIdPropertiesCount() {
-            if (!this.gameById) {
-                return 0
-            }
-
-            let properties = Object.keys(this.gameById)
-            return properties.length
-        },
-        PlatformGameByIdPropertyName(propertyIndex) {
-            if (!this.gameById) {
-                return ''
-            }
-
-            let properties = Object.keys(this.gameById)
-            return properties[propertyIndex]
-        },
-        PlatformGameByIdPropertyValue(property) {
-            if (!this.gameById) {
-                return ''
-            }
-
-            if (typeof property === 'number') {
-                let properties = Object.keys(this.gameById)
-                let propertyName = properties[property]
-                return this.gameById[propertyName]
-            }
-
-            return this.gameById[property]
-        },
-
-
         // device
         DeviceType() {
             return window.bridge.device.type
@@ -137,16 +62,7 @@ const C3 = globalThis.C3
         },
 
 
-        // game
-        VisibilityState() {
-            return window.bridge.game.visibilityState
-        },
-
-
         // storage
-        DefaultStorageType() {
-            return window.bridge.storage.defaultType
-        },
         StorageData(key) {
             if (!this.storageData) {
                 return null
@@ -422,6 +338,145 @@ const C3 = globalThis.C3
             }
 
             return this.remoteConfig[key]
+        },
+
+
+        // cross-promo
+        CrossPromoGamesCount() {
+            if (!this.crossPromoGames) {
+                return 0
+            }
+
+            return this.crossPromoGames.length
+        },
+        CrossPromoGamesPropertiesCount() {
+            if (!this.crossPromoGames || this.crossPromoGames.length <= 0) {
+                return 0
+            }
+
+            let game = this.crossPromoGames[0]
+            let properties = Object.keys(game)
+            return properties.length
+        },
+        CrossPromoGamesPropertyName(propertyIndex) {
+            if (!this.crossPromoGames || this.crossPromoGames.length <= 0) {
+                return ''
+            }
+
+            let game = this.crossPromoGames[0]
+            let properties = Object.keys(game)
+            return properties[propertyIndex]
+        },
+        CrossPromoGamesPropertyValue(gameIndex, property) {
+            if (!this.crossPromoGames || this.crossPromoGames.length <= 0) {
+                return ''
+            }
+
+            let game = this.crossPromoGames[gameIndex]
+
+            if (!game) {
+                return ''
+            }
+
+            if (typeof property === 'number') {
+                let properties = Object.keys(game)
+                let propertyName = properties[property]
+                return game[propertyName]
+            }
+
+            return game[property]
+        },
+        CrossPromoGamesAsJSON() {
+            if (!this.crossPromoGames) {
+                return '[]'
+            }
+
+            return JSON.stringify(this.crossPromoGames)
+        },
+
+
+        // tasks
+        TasksCount() {
+            if (!this.tasksList) {
+                return 0
+            }
+
+            return this.tasksList.length
+        },
+        TasksAsJSON() {
+            if (!this.tasksList) {
+                return '[]'
+            }
+
+            return JSON.stringify(this.tasksList)
+        },
+        TaskId(taskIndex) {
+            const task = this.tasksList && this.tasksList[taskIndex]
+            return task ? task.id : ''
+        },
+        TaskType(taskIndex) {
+            const task = this.tasksList && this.tasksList[taskIndex]
+            return task ? task.type : ''
+        },
+        TaskTargetsCount(taskIndex) {
+            const task = this.tasksList && this.tasksList[taskIndex]
+            return task && task.targets ? task.targets.length : 0
+        },
+        TaskTargetId(taskIndex, targetIndex) {
+            const task = this.tasksList && this.tasksList[taskIndex]
+            const target = task && task.targets && task.targets[targetIndex]
+            return target ? target.id : ''
+        },
+        TaskTargetAmount(taskIndex, targetIndex) {
+            const task = this.tasksList && this.tasksList[taskIndex]
+            const target = task && task.targets && task.targets[targetIndex]
+            return target ? target.amount : 0
+        },
+        TaskTargetProgress(taskIndex, targetIndex) {
+            const task = this.tasksList && this.tasksList[taskIndex]
+            const target = task && task.targets && task.targets[targetIndex]
+            return target ? target.progress : 0
+        },
+        TaskRewardsCount(taskIndex) {
+            const task = this.tasksList && this.tasksList[taskIndex]
+            return task && task.rewards ? task.rewards.length : 0
+        },
+        TaskRewardId(taskIndex, rewardIndex) {
+            const task = this.tasksList && this.tasksList[taskIndex]
+            const reward = task && task.rewards && task.rewards[rewardIndex]
+            return reward ? reward.id : ''
+        },
+        TaskRewardAmount(taskIndex, rewardIndex) {
+            const task = this.tasksList && this.tasksList[taskIndex]
+            const reward = task && task.rewards && task.rewards[rewardIndex]
+            return reward ? reward.amount : 0
+        },
+
+
+        // daily rewards
+        DailyRewardsCount() {
+            if (!this.dailyRewardsList) {
+                return 0
+            }
+
+            return this.dailyRewardsList.length
+        },
+        DailyRewardsAsJSON() {
+            if (!this.dailyRewardsList) {
+                return '[]'
+            }
+
+            return JSON.stringify(this.dailyRewardsList)
+        },
+        DailyRewardsReward(rewardIndex) {
+            const reward = this.dailyRewardsList && this.dailyRewardsList[rewardIndex]
+            return reward ? reward : ''
+        },
+        DailyRewardsCurrentDay() {
+            return this.dailyRewardsCurrentDay || 0
+        },
+        DailyRewardsCurrentReward() {
+            return this.dailyRewardsCurrentReward || ''
         }
     }
 }

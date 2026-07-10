@@ -73,41 +73,6 @@ const C3 = globalThis.C3
                     })
             })
         },
-        GetAllGames() {
-            this.isLastActionCompletedSuccessfully = false
-
-            return new Promise(resolve => {
-                window.bridge.platform.getAllGames()
-                    .then((games) => {
-                        this.isLastActionCompletedSuccessfully = true
-                        this.allGames = games
-                    })
-                    .catch(error => console.log(error))
-                    .finally(() => {
-                        this._trigger(this.conditions.OnGetAllGamesCompleted)
-                        resolve()
-                    })
-            })
-        },
-        GetGameById() {
-            this.isLastActionCompletedSuccessfully = false
-
-            return new Promise(resolve => {
-                window.bridge.platform.getGameById(this.actionParametersContainer)
-                    .then((game) => {
-                        this.isLastActionCompletedSuccessfully = true
-                        this.gameById = game
-                    })
-                    .catch(error => console.log(error))
-                    .finally(() => {
-                        this.actionParametersContainer = {}
-                        this._trigger(this.conditions.OnGetGameByIdCompleted)
-                        resolve()
-                    })
-            })
-        },
-
-
         // player
         AuthorizePlayer() {
             this.isLastActionCompletedSuccessfully = false
@@ -130,23 +95,11 @@ const C3 = globalThis.C3
         AppendStorageDataGetRequest(key) {
             this.storageDataGetRequestKeys.push(key)
         },
-        SendStorageDataGetRequest(storageType) {
+        SendStorageDataGetRequest() {
             this.isLastActionCompletedSuccessfully = false
 
-            switch (storageType) {
-                case 0:
-                    storageType = null
-                    break
-                case 1:
-                    storageType = "local_storage"
-                    break
-                case 2:
-                    storageType = "platform_internal"
-                    break
-            }
-
             return new Promise(resolve => {
-                window.bridge.storage.get(this.storageDataGetRequestKeys, storageType)
+                window.bridge.storage.get(this.storageDataGetRequestKeys)
                     .then(data => {
                         if (!this.storageData) {
                             this.storageData = {}
@@ -172,23 +125,11 @@ const C3 = globalThis.C3
             this.storageDataSetRequestKeys.push(key)
             this.storageDataSetRequestValues.push(value)
         },
-        SendStorageDataSetRequest(storageType) {
+        SendStorageDataSetRequest() {
             this.isLastActionCompletedSuccessfully = false
 
-            switch (storageType) {
-                case 0:
-                    storageType = null
-                    break
-                case 1:
-                    storageType = "local_storage"
-                    break
-                case 2:
-                    storageType = "platform_internal"
-                    break
-            }
-
             return new Promise(resolve => {
-                window.bridge.storage.set(this.storageDataSetRequestKeys, this.storageDataSetRequestValues, storageType)
+                window.bridge.storage.set(this.storageDataSetRequestKeys, this.storageDataSetRequestValues)
                     .then(() => {
                         if (!this.storageData) {
                             this.storageData = {}
@@ -213,23 +154,11 @@ const C3 = globalThis.C3
         AppendStorageDataDeleteRequest(key) {
             this.storageDataDeleteRequestKeys.push(key)
         },
-        SendStorageDataDeleteRequest(storageType) {
+        SendStorageDataDeleteRequest() {
             this.isLastActionCompletedSuccessfully = false
 
-            switch (storageType) {
-                case 0:
-                    storageType = null
-                    break
-                case 1:
-                    storageType = "local_storage"
-                    break
-                case 2:
-                    storageType = "platform_internal"
-                    break
-            }
-
             return new Promise(resolve => {
-                window.bridge.storage.delete(this.storageDataDeleteRequestKeys, storageType)
+                window.bridge.storage.delete(this.storageDataDeleteRequestKeys)
                     .then(() => {
                         if (this.storageData) {
                             for (let i = 0; i < this.storageDataDeleteRequestKeys.length; i++) {
@@ -524,17 +453,16 @@ const C3 = globalThis.C3
 
 
         // achievements
-        AchievementsUnlock() {
+        AchievementsUnlock(id) {
             this.isLastActionCompletedSuccessfully = false
 
             return new Promise(resolve => {
-                window.bridge.achievements.unlock(this.actionParametersContainer)
+                window.bridge.achievements.unlock(id)
                     .then(() => {
                         this.isLastActionCompletedSuccessfully = true
                     })
                     .catch(error => console.log(error))
                     .finally(() => {
-                        this.actionParametersContainer = {}
                         this._trigger(this.conditions.OnAchievementsUnlockCompleted)
                         resolve()
                     })
@@ -545,43 +473,27 @@ const C3 = globalThis.C3
             this.isLastActionCompletedSuccessfully = false
 
             return new Promise(resolve => {
-                window.bridge.achievements.getList(this.actionParametersContainer)
+                window.bridge.achievements.getAchievements()
                     .then(data => {
                         this.isLastActionCompletedSuccessfully = true
                         this.achievementsList = data
                     })
                     .catch(error => console.log(error))
                     .finally(() => {
-                        this.actionParametersContainer = {}
                         this._trigger(this.conditions.OnAchievementsGetListCompleted)
                         resolve()
                     })
             })
         },
 
-        AchievementsShowNativePopup() {
-            this.isLastActionCompletedSuccessfully = false
-
-            return new Promise(resolve => {
-                window.bridge.achievements.showNativePopup(this.actionParametersContainer)
-                    .then(() => {
-                        this.isLastActionCompletedSuccessfully = true
-                    })
-                    .catch(error => console.log(error))
-                    .finally(() => {
-                        this.actionParametersContainer = {}
-                        this._trigger(this.conditions.OnAchievementsShowNativePopupCompleted)
-                        resolve()
-                    })
-            })
-        },
 
         // remote-config
         SendRemoteConfigGetRequest() {
             this.isLastActionCompletedSuccessfully = false
 
             return new Promise(resolve => {
-                window.bridge.remoteConfig.get(this.actionParametersContainer)
+                window.bridge.remoteConfig.setContext(this.actionParametersContainer)
+                window.bridge.remoteConfig.get()
                     .then(data => {
                         this.isLastActionCompletedSuccessfully = true
                         this.remoteConfig = data
@@ -590,6 +502,151 @@ const C3 = globalThis.C3
                     .finally(() => {
                         this.actionParametersContainer = {}
                         this._trigger(this.conditions.OnRemoteConfigGotCompleted)
+                        resolve()
+                    })
+            })
+        },
+
+
+        // cross-promo
+        CrossPromoGetGamesList() {
+            this.isLastActionCompletedSuccessfully = false
+
+            return new Promise(resolve => {
+                window.bridge.crossPromo.getGames()
+                    .then((games) => {
+                        this.isLastActionCompletedSuccessfully = true
+                        this.crossPromoGames = games
+                    })
+                    .catch(error => console.log(error))
+                    .finally(() => {
+                        this._trigger(this.conditions.OnCrossPromoGetGamesListCompleted)
+                        resolve()
+                    })
+            })
+        },
+        CrossPromoShow() {
+            window.bridge.crossPromo.show()
+        },
+        CrossPromoHide() {
+            window.bridge.crossPromo.hide()
+        },
+
+
+        // tasks
+        TasksGetTasks() {
+            this.isLastActionCompletedSuccessfully = false
+
+            return new Promise(resolve => {
+                window.bridge.tasks.getTasks()
+                    .then(data => {
+                        this.isLastActionCompletedSuccessfully = true
+                        this.tasksList = data
+                    })
+                    .catch(error => console.log(error))
+                    .finally(() => {
+                        this._trigger(this.conditions.OnTasksGetTasksCompleted)
+                        resolve()
+                    })
+            })
+        },
+
+        TasksAddProgress(metric, amount) {
+            this.isLastActionCompletedSuccessfully = false
+
+            return new Promise(resolve => {
+                window.bridge.tasks.addProgress(metric, amount)
+                    .then(() => {
+                        this.isLastActionCompletedSuccessfully = true
+                    })
+                    .catch(error => console.log(error))
+                    .finally(() => {
+                        this._trigger(this.conditions.OnTasksAddProgressCompleted)
+                        resolve()
+                    })
+            })
+        },
+
+        TasksClaimReward(taskId) {
+            this.isLastActionCompletedSuccessfully = false
+
+            return new Promise(resolve => {
+                window.bridge.tasks.claimReward(taskId)
+                    .then(claimed => {
+                        this.isLastActionCompletedSuccessfully = claimed === true
+                    })
+                    .catch(error => console.log(error))
+                    .finally(() => {
+                        this._trigger(this.conditions.OnTasksClaimRewardCompleted)
+                        resolve()
+                    })
+            })
+        },
+
+
+        // daily rewards
+        DailyRewardsGetRewards() {
+            this.isLastActionCompletedSuccessfully = false
+
+            return new Promise(resolve => {
+                window.bridge.dailyRewards.getRewards()
+                    .then(data => {
+                        this.isLastActionCompletedSuccessfully = true
+                        this.dailyRewardsList = data
+                    })
+                    .catch(error => console.log(error))
+                    .finally(() => {
+                        this._trigger(this.conditions.OnDailyRewardsGetRewardsCompleted)
+                        resolve()
+                    })
+            })
+        },
+
+        DailyRewardsGetCurrentDay() {
+            this.isLastActionCompletedSuccessfully = false
+
+            return new Promise(resolve => {
+                window.bridge.dailyRewards.getCurrentDay()
+                    .then(day => {
+                        this.isLastActionCompletedSuccessfully = true
+                        this.dailyRewardsCurrentDay = day
+                    })
+                    .catch(error => console.log(error))
+                    .finally(() => {
+                        this._trigger(this.conditions.OnDailyRewardsGetCurrentDayCompleted)
+                        resolve()
+                    })
+            })
+        },
+
+        DailyRewardsGetCurrentReward() {
+            this.isLastActionCompletedSuccessfully = false
+
+            return new Promise(resolve => {
+                window.bridge.dailyRewards.getCurrentReward()
+                    .then(reward => {
+                        this.isLastActionCompletedSuccessfully = true
+                        this.dailyRewardsCurrentReward = reward
+                    })
+                    .catch(error => console.log(error))
+                    .finally(() => {
+                        this._trigger(this.conditions.OnDailyRewardsGetCurrentRewardCompleted)
+                        resolve()
+                    })
+            })
+        },
+
+        DailyRewardsClaimCurrentReward() {
+            this.isLastActionCompletedSuccessfully = false
+
+            return new Promise(resolve => {
+                window.bridge.dailyRewards.claimCurrentReward()
+                    .then(claimed => {
+                        this.isLastActionCompletedSuccessfully = claimed === true
+                    })
+                    .catch(error => console.log(error))
+                    .finally(() => {
+                        this._trigger(this.conditions.OnDailyRewardsClaimCurrentRewardCompleted)
                         resolve()
                     })
             })

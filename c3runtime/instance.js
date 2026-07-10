@@ -13,8 +13,11 @@ const C3 = globalThis.C3
             this.runtime.sdk.addLoadPromise(this.initializeSdk())
 
             this.serverTime = 0
-            this.allGames = []
-            this.gameById = null
+            this.crossPromoGames = []
+            this.tasksList = []
+            this.dailyRewardsList = []
+            this.dailyRewardsCurrentDay = 0
+            this.dailyRewardsCurrentReward = null
             this.isAdBlockDetected = false
             this.storageData = null
             this.storageDataGetRequestKeys = []
@@ -91,7 +94,7 @@ const C3 = globalThis.C3
         loadSdk() {
             return new Promise((resolve) => {
             const scriptElement = document.createElement('script')
-            scriptElement.src = 'https://bridge.playgama.com/v1/stable/playgama-bridge.js'
+            scriptElement.src = 'https://bridge.playgama.com/v2/stable/playgama-bridge.js'
             document.body.appendChild(scriptElement)
 
             let isLoaded = false
@@ -117,7 +120,7 @@ const C3 = globalThis.C3
                     scriptElement.onerror = null
                     scriptElement.parentNode.removeChild(scriptElement)
                 }
-                
+
                 window.bridge = null
                 window.playgamaBridge = null
 
@@ -215,10 +218,6 @@ const C3 = globalThis.C3
                                             this._trigger(this.conditions.OnRewardedFailed)
                                             break
                                     }
-                                })
-
-                                window.bridge.game.on('visibility_state_changed', state => {
-                                    this._trigger(this.conditions.OnVisibilityStateChanged)
                                 })
 
                                 window.bridge.platform.on('audio_state_changed', isEnabled => {

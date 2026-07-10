@@ -8,7 +8,7 @@
                 "description": "One SDK for cross-platform publishing HTML5 games",
                 "author": "Playgama",
                 "help-url": "https://github.com/playgama",
-                "properties": { },
+                "properties": {},
                 "aceCategories": {
                     "common": "Common",
                     "platform": "Platform",
@@ -21,7 +21,10 @@
                     "leaderboards": "Leaderboards",
                     "payments": "Payments",
                     "achievements": "Achievements",
-                    "remote-config": "Remote Config"
+                    "remote-config": "Remote Config",
+                    "cross-promo": "Cross Promo",
+                    "tasks": "Tasks",
+                    "daily-rewards": "Daily Rewards"
                 },
                 "conditions": {
                     "is-last-action-completed-successfully": {
@@ -29,8 +32,6 @@
                         "display-text": "Is Last Action Completed Successfully",
                         "description": "Is Last Action Completed Successfully"
                     },
-
-
                     "on-get-server-time-completed": {
                         "list-name": "OnGetServerTimeCompleted",
                         "display-text": "On Get Server Time Completed",
@@ -41,7 +42,6 @@
                         "display-text": "Has Server Time",
                         "description": "Has Server Time"
                     },
-
                     "is-platform-audio-enabled": {
                         "list-name": "IsPlatformAudioEnabled",
                         "display-text": "Is Platform Audio Enabled",
@@ -62,28 +62,11 @@
                         "display-text": "On Platform Pause State Changed",
                         "description": "On Platform Pause State Changed"
                     },
-
-                    "is-platform-get-all-games-supported": {
-                        "list-name": "IsPlatformGetAllGamesSupported",
-                        "display-text": "Is Platform Get All Games Supported",
-                        "description": "Is Platform Get All Games Supported"
+                    "is-platform-external-calls-supported": {
+                        "list-name": "IsPlatformExternalCallsSupported",
+                        "display-text": "Is Platform External Calls Supported",
+                        "description": "Is Platform External Calls Supported"
                     },
-                    "is-platform-get-game-by-id-supported": {
-                        "list-name": "IsPlatformGetGameByIdSupported",
-                        "display-text": "Is Platform Get Game By Id Supported",
-                        "description": "Is Platform Get Game By Id Supported"
-                    },
-                    "on-get-all-games-completed": {
-                        "list-name": "OnGetAllGamesCompleted",
-                        "display-text": "On Get All Games Completed",
-                        "description": "On Get All Games Completed"
-                    },
-                    "on-get-game-by-id-completed": {
-                        "list-name": "OnGetGameByIdCompleted",
-                        "display-text": "On Get Game By Id Completed",
-                        "description": "On Get Game By Id Completed"
-                    },
-
                     "is-mobile": {
                         "list-name": "IsMobile",
                         "display-text": "Is Mobile",
@@ -104,8 +87,6 @@
                         "display-text": "Is Tv",
                         "description": "Is Tv"
                     },
-
-
                     "is-player-authorization-supported": {
                         "list-name": "IsPlayerAuthorizationSupported",
                         "display-text": "Is Player Authorization Supported",
@@ -116,12 +97,16 @@
                         "display-text": "Is Player Authorized",
                         "description": "Is Player Authorized"
                     },
+                    "is-player-guest": {
+                        "list-name": "IsPlayerGuest",
+                        "display-text": "Is Player Guest",
+                        "description": "Is Player Guest"
+                    },
                     "on-authorize-player-completed": {
                         "list-name": "OnAuthorizePlayerCompleted",
                         "display-text": "On Authorize Player Completed",
                         "description": "On Authorize Player Completed"
                     },
-
                     "does-player-have-name": {
                         "list-name": "DoesPlayerHaveName",
                         "display-text": "Does Player Have Name",
@@ -138,8 +123,6 @@
                             }
                         }
                     },
-
-
                     "on-check-adblock-completed": {
                         "list-name": "OnCheckAdBlockCompleted",
                         "display-text": "On Check AdBlock Completed",
@@ -149,45 +132,6 @@
                         "list-name": "IsAdBlockDetected",
                         "display-text": "Is AdBlock Detected",
                         "description": "Is AdBlock Detected"
-                    },
-
-
-                    "on-visibility-state-changed": {
-                        "list-name": "OnVisibilityStateChanged",
-                        "display-text": "On Visibility State Changed",
-                        "description": "On Visibility State Changed"
-                    },
-
-
-                    "is-storage-supported": {
-                        "list-name": "IsStorageSupported",
-                        "display-text": "Is Storage Supported: [b]{0}[/b].",
-                        "description": "Is Storage Supported",
-                        "params": {
-                            "storage-type": {
-                                "name": "StorageType",
-                                "desc": "Storage Type",
-                                "items": {
-                                    "local-storage": "LocalStorage",
-                                    "platform-internal": "PlatformInternal"
-                                }
-                            }
-                        }
-                    },
-                    "is-storage-available": {
-                        "list-name": "IsStorageAvailable",
-                        "display-text": "Is Storage Available: [b]{0}[/b].",
-                        "description": "Is Storage Available",
-                        "params": {
-                            "storage-type": {
-                                "name": "StorageType",
-                                "desc": "Storage Type",
-                                "items": {
-                                    "local-storage": "LocalStorage",
-                                    "platform-internal": "PlatformInternal"
-                                }
-                            }
-                        }
                     },
                     "has-storage-data": {
                         "list-name": "HasStorageData",
@@ -200,7 +144,6 @@
                             }
                         }
                     },
-
                     "on-storage-data-get-request-completed": {
                         "list-name": "OnStorageDataGetRequestCompleted",
                         "display-text": "On Storage Data Get Request Completed",
@@ -216,8 +159,6 @@
                         "display-text": "On Storage Data Delete Request Completed",
                         "description": "On Storage Data Delete Request Completed"
                     },
-
-
                     "is-banner-supported": {
                         "list-name": "IsBannerSupported",
                         "display-text": "Is Banner Supported",
@@ -258,7 +199,6 @@
                         "display-text": "On Banner Failed",
                         "description": "On Banner Failed"
                     },
-
                     "on-interstitial-state-changed": {
                         "list-name": "OnInterstitialStateChanged",
                         "display-text": "On Interstitial State Changed",
@@ -284,7 +224,6 @@
                         "display-text": "On Interstitial Failed",
                         "description": "On Interstitial Failed"
                     },
-
                     "on-rewarded-state-changed": {
                         "list-name": "OnRewardedStateChanged",
                         "display-text": "On Rewarded State Changed",
@@ -315,7 +254,6 @@
                         "display-text": "On Rewarded Failed",
                         "description": "On Rewarded Failed"
                     },
-
                     "is-advanced-banners-supported": {
                         "list-name": "IsAdvancedBannersSupported",
                         "display-text": "Is Advanced Banners Supported",
@@ -346,8 +284,6 @@
                         "display-text": "On Advanced Banners Failed",
                         "description": "On Advanced Banners Failed"
                     },
-
-
                     "is-share-supported": {
                         "list-name": "IsShareSupported",
                         "display-text": "Is Share Supported",
@@ -358,7 +294,6 @@
                         "display-text": "On Share Completed",
                         "description": "On Share Completed"
                     },
-
                     "is-invite-friends-supported": {
                         "list-name": "IsInviteFriendsSupported",
                         "display-text": "Is Invite Friends Supported",
@@ -369,7 +304,6 @@
                         "display-text": "On Invite Friends Completed",
                         "description": "On Invite Friends Completed"
                     },
-
                     "is-join-community-supported": {
                         "list-name": "IsJoinCommunitySupported",
                         "display-text": "Is Join Community Supported",
@@ -380,7 +314,6 @@
                         "display-text": "On Join Community Completed",
                         "description": "On Join Community Completed"
                     },
-
                     "is-create-post-supported": {
                         "list-name": "IsCreatePostSupported",
                         "display-text": "Is Create Post Supported",
@@ -391,7 +324,6 @@
                         "display-text": "On Create Post Completed",
                         "description": "On Create Post Completed"
                     },
-
                     "is-add-to-home-screen-supported": {
                         "list-name": "IsAddToHomeScreenSupported",
                         "display-text": "Is Add To Home Screen Supported",
@@ -402,7 +334,6 @@
                         "display-text": "On Add To Home Screen Completed",
                         "description": "On Add To Home Screen Completed"
                     },
-
                     "is-add-to-favorites-supported": {
                         "list-name": "IsAddToFavoritesSupported",
                         "display-text": "Is Add To Favorites Supported",
@@ -413,7 +344,6 @@
                         "display-text": "On Add To Favorites Completed",
                         "description": "On Add To Favorites Completed"
                     },
-
                     "is-rate-supported": {
                         "list-name": "IsRateSupported",
                         "display-text": "Is Rate Supported",
@@ -424,14 +354,11 @@
                         "display-text": "On Rate Completed",
                         "description": "On Rate Completed"
                     },
-
                     "is-external-links-allowed": {
                         "list-name": "IsExternalLinksAllowed",
                         "display-text": "Is External Links Allowed",
                         "description": "Is External Links Allowed"
                     },
-
-
                     "is-leaderboards-type-not-available": {
                         "list-name": "IsLeaderboardsTypeNotAvailable",
                         "display-text": "Is Leaderboards Type = Not Available",
@@ -452,7 +379,6 @@
                         "display-text": "Is Leaderboards Type = Native Popup",
                         "description": "Is Leaderboards Type = Native Popup"
                     },
-
                     "on-leaderboards-set-score-completed": {
                         "list-name": "OnLeaderboardsSetScoreCompleted",
                         "display-text": "On Leaderboards Set Score Completed",
@@ -468,8 +394,6 @@
                         "display-text": "On Leaderboards Show Native Popup Completed",
                         "description": "On Leaderboards Show Native Popup Completed"
                     },
-
-
                     "is-payments-supported": {
                         "list-name": "IsPaymentsSupported",
                         "display-text": "Is Payments Supported",
@@ -495,22 +419,6 @@
                         "display-text": "On Payments Consume Purchase Completed",
                         "description": "On Payments Consume Purchase Completed"
                     },
-
-                    "is-achievements-supported": {
-                        "list-name": "IsAchievementsSupported",
-                        "display-text": "Is Achievements Supported",
-                        "description": "Is Achievements Supported"
-                    },
-                    "is-achievements-get-list-supported": {
-                        "list-name": "IsAchievementsGetListSupported",
-                        "display-text": "Is Achievements Get List Supported",
-                        "description": "Is Achievements Get List Supported"
-                    },
-                    "is-achievements-native-popup-supported": {
-                        "list-name": "IsAchievementsNativePopupSupported",
-                        "display-text": "Is Achievements Native Popup Supported",
-                        "description": "Is Achievements Native Popup Supported"
-                    },
                     "on-achievements-unlock-completed": {
                         "list-name": "OnAchievementsUnlockCompleted",
                         "display-text": "On Achievements Unlock Completed",
@@ -521,13 +429,6 @@
                         "display-text": "On Achievements Get List Completed",
                         "description": "On Achievements Get List Completed"
                     },
-                    "on-achievements-show-native-popup-completed": {
-                        "list-name": "OnAchievementsShowNativePopupCompleted",
-                        "display-text": "On Achievements Show Native Popup Completed",
-                        "description": "On Achievements Show Native Popup Completed"
-                    },
-
-
                     "is-remote-config-supported": {
                         "list-name": "IsRemoteConfigSupported",
                         "display-text": "Is Remote Config Supported",
@@ -548,6 +449,93 @@
                                 "desc": "Key"
                             }
                         }
+                    },
+                    "on-cross-promo-get-games-list-completed": {
+                        "list-name": "OnCrossPromoGetGamesListCompleted",
+                        "display-text": "On Cross Promo Get Games List Completed",
+                        "description": "On Cross Promo Get Games List Completed"
+                    },
+                    "is-cross-promo-visible": {
+                        "list-name": "IsCrossPromoVisible",
+                        "display-text": "Is Cross Promo Visible",
+                        "description": "Is Cross Promo Visible"
+                    },
+                    "on-tasks-get-tasks-completed": {
+                        "list-name": "OnTasksGetTasksCompleted",
+                        "display-text": "On Tasks Get Tasks Completed",
+                        "description": "On Tasks Get Tasks Completed"
+                    },
+                    "on-tasks-add-progress-completed": {
+                        "list-name": "OnTasksAddProgressCompleted",
+                        "display-text": "On Tasks Add Progress Completed",
+                        "description": "On Tasks Add Progress Completed"
+                    },
+                    "on-tasks-claim-reward-completed": {
+                        "list-name": "OnTasksClaimRewardCompleted",
+                        "display-text": "On Tasks Claim Reward Completed",
+                        "description": "On Tasks Claim Reward Completed"
+                    },
+                    "is-task-completed": {
+                        "list-name": "IsTaskCompleted",
+                        "display-text": "Task [b]{0}[/b] is completed",
+                        "description": "Is Task Completed",
+                        "params": {
+                            "task-index": {
+                                "name": "Task Index",
+                                "desc": "Task Index"
+                            }
+                        }
+                    },
+                    "is-task-claimed": {
+                        "list-name": "IsTaskClaimed",
+                        "display-text": "Task [b]{0}[/b] is claimed",
+                        "description": "Is Task Claimed",
+                        "params": {
+                            "task-index": {
+                                "name": "Task Index",
+                                "desc": "Task Index"
+                            }
+                        }
+                    },
+                    "is-task-target-completed": {
+                        "list-name": "IsTaskTargetCompleted",
+                        "display-text": "Task [b]{0}[/b] target [b]{1}[/b] is completed",
+                        "description": "Is Task Target Completed",
+                        "params": {
+                            "task-index": {
+                                "name": "Task Index",
+                                "desc": "Task Index"
+                            },
+                            "target-index": {
+                                "name": "Target Index",
+                                "desc": "Target Index"
+                            }
+                        }
+                    },
+                    "on-daily-rewards-get-rewards-completed": {
+                        "list-name": "OnDailyRewardsGetRewardsCompleted",
+                        "display-text": "On Daily Rewards Get Rewards Completed",
+                        "description": "On Daily Rewards Get Rewards Completed"
+                    },
+                    "on-daily-rewards-get-current-day-completed": {
+                        "list-name": "OnDailyRewardsGetCurrentDayCompleted",
+                        "display-text": "On Daily Rewards Get Current Day Completed",
+                        "description": "On Daily Rewards Get Current Day Completed"
+                    },
+                    "on-daily-rewards-get-current-reward-completed": {
+                        "list-name": "OnDailyRewardsGetCurrentRewardCompleted",
+                        "display-text": "On Daily Rewards Get Current Reward Completed",
+                        "description": "On Daily Rewards Get Current Reward Completed"
+                    },
+                    "on-daily-rewards-claim-current-reward-completed": {
+                        "list-name": "OnDailyRewardsClaimCurrentRewardCompleted",
+                        "display-text": "On Daily Rewards Claim Current Reward Completed",
+                        "description": "On Daily Rewards Claim Current Reward Completed"
+                    },
+                    "is-daily-rewards-current-reward-available": {
+                        "list-name": "IsDailyRewardsCurrentRewardAvailable",
+                        "display-text": "Is Daily Rewards Current Reward Available",
+                        "description": "Is Daily Rewards Current Reward Available"
                     }
                 },
                 "actions": {
@@ -581,8 +569,6 @@
                             }
                         }
                     },
-
-
                     "send-message": {
                         "list-name": "SendMessage",
                         "display-text": "Send Message to Platform. Message: [b]{0}[/b].",
@@ -623,30 +609,11 @@
                         "display-text": "Get Server Time",
                         "description": "Get Server Time"
                     },
-                    "get-all-games": {
-                        "list-name": "GetAllGames",
-                        "display-text": "Get All Games",
-                        "description": "Get All Games"
-                    },
-                    "get-game-by-id": {
-                        "list-name": "GetGameById",
-                        "display-text": "Get Game By Id",
-                        "description": "Get Game By Id",
-                        "params": {
-                            "game-id": {
-                                "name": "GameId",
-                                "desc": "Game ID"
-                            }
-                        }
-                    },
-
                     "authorize-player": {
                         "list-name": "AuthorizePlayer",
                         "display-text": "Authorize Player",
                         "description": "Authorize Player"
                     },
-
-
                     "append-storage-data-get-request": {
                         "list-name": "AppendStorageDataGetRequest",
                         "display-text": "Append Storage Data Get Request. Key: [b]{0}[/b].",
@@ -660,21 +627,9 @@
                     },
                     "send-storage-data-get-request": {
                         "list-name": "SendStorageDataGetRequest",
-                        "display-text": "Send Storage Data Get Request. Storage: [b]{0}[/b].",
-                        "description": "Send Storage Data Get Request",
-                        "params": {
-                            "storage-type": {
-                                "name": "StorageType",
-                                "desc": "Storage Type",
-                                "items": {
-                                    "default": "Default",
-                                    "local-storage": "LocalStorage",
-                                    "platform-internal": "PlatformInternal"
-                                }
-                            }
-                        }
+                        "display-text": "Send Storage Data Get Request",
+                        "description": "Send Storage Data Get Request"
                     },
-
                     "append-storage-data-set-request": {
                         "list-name": "AppendStorageDataSetRequest",
                         "display-text": "Append Storage Data Set Request. Key: [b]{0}[/b]. Value: [b]{1}[/b].",
@@ -692,21 +647,9 @@
                     },
                     "send-storage-data-set-request": {
                         "list-name": "SendStorageDataSetRequest",
-                        "display-text": "Send Storage Data Set Request. Storage: [b]{0}[/b].",
-                        "description": "Send Storage Data Set Request",
-                        "params": {
-                            "storage-type": {
-                                "name": "StorageType",
-                                "desc": "Storage Type",
-                                "items": {
-                                    "default": "Default",
-                                    "local-storage": "LocalStorage",
-                                    "platform-internal": "PlatformInternal"
-                                }
-                            }
-                        }
+                        "display-text": "Send Storage Data Set Request",
+                        "description": "Send Storage Data Set Request"
                     },
-
                     "append-storage-data-delete-request": {
                         "list-name": "AppendStorageDataDeleteRequest",
                         "display-text": "Append Storage Data Delete Request. Key: [b]{0}[/b].",
@@ -720,22 +663,9 @@
                     },
                     "send-storage-data-delete-request": {
                         "list-name": "SendStorageDataDeleteRequest",
-                        "display-text": "Send Storage Data Delete Request. Storage: [b]{0}[/b].",
-                        "description": "Send Storage Data Delete Request",
-                        "params": {
-                            "storage-type": {
-                                "name": "StorageType",
-                                "desc": "Storage Type",
-                                "items": {
-                                    "default": "Default",
-                                    "local-storage": "LocalStorage",
-                                    "platform-internal": "PlatformInternal"
-                                }
-                            }
-                        }
+                        "display-text": "Send Storage Data Delete Request",
+                        "description": "Send Storage Data Delete Request"
                     },
-
-
                     "show-banner": {
                         "list-name": "ShowBanner",
                         "display-text": "Show Banner. Position: [b]{0}[/b]. Placement: [b]{1}[/b].",
@@ -814,8 +744,6 @@
                         "display-text": "Check Ad Block",
                         "description": "Check Ad Block"
                     },
-
-
                     "share": {
                         "list-name": "Share",
                         "display-text": "Share",
@@ -851,8 +779,6 @@
                         "display-text": "Rate",
                         "description": "Rate"
                     },
-
-
                     "leaderboards-set-score": {
                         "list-name": "LeaderboardsSetScore",
                         "display-text": "Set Leaderboard Score. ID: [b]{0}[/b]. Score: [b]{1}[/b].",
@@ -890,8 +816,6 @@
                             }
                         }
                     },
-
-
                     "payments-purchase": {
                         "list-name": "PaymentsPurchase",
                         "display-text": "Payments Purchase. ID: [b]{0}[/b].",
@@ -924,28 +848,92 @@
                             }
                         }
                     },
-
                     "achievements-unlock": {
                         "list-name": "AchievementsUnlock",
-                        "display-text": "Achievements Unlock",
-                        "description": "Achievements Unlock"
+                        "display-text": "Achievements Unlock. ID: [b]{0}[/b].",
+                        "description": "Achievements Unlock",
+                        "params": {
+                            "id": {
+                                "name": "ID",
+                                "desc": "ID"
+                            }
+                        }
                     },
                     "achievements-get-list": {
                         "list-name": "AchievementsGetList",
                         "display-text": "Achievements Get List",
                         "description": "Achievements Get List"
                     },
-                    "achievements-show-native-popup": {
-                        "list-name": "AchievementsShowNativePopup",
-                        "display-text": "Achievements Show Native Popup",
-                        "description": "Achievements Show Native Popup"
-                    },
-
-
                     "send-remote-config-get-request": {
                         "list-name": "SendRemoteConfigGetRequest",
                         "display-text": "Send Remote Config Get Request",
                         "description": "Send Remote Config Get Request"
+                    },
+                    "cross-promo-get-games-list": {
+                        "list-name": "CrossPromoGetGamesList",
+                        "display-text": "Cross Promo Get Games List",
+                        "description": "Cross Promo Get Games List"
+                    },
+                    "cross-promo-show": {
+                        "list-name": "CrossPromoShow",
+                        "display-text": "Cross Promo Show",
+                        "description": "Cross Promo Show"
+                    },
+                    "cross-promo-hide": {
+                        "list-name": "CrossPromoHide",
+                        "display-text": "Cross Promo Hide",
+                        "description": "Cross Promo Hide"
+                    },
+                    "tasks-get-tasks": {
+                        "list-name": "TasksGetTasks",
+                        "display-text": "Tasks Get Tasks",
+                        "description": "Tasks Get Tasks"
+                    },
+                    "tasks-add-progress": {
+                        "list-name": "TasksAddProgress",
+                        "display-text": "Tasks Add Progress. Metric: [b]{0}[/b], Amount: [b]{1}[/b].",
+                        "description": "Tasks Add Progress",
+                        "params": {
+                            "metric": {
+                                "name": "Metric",
+                                "desc": "Metric"
+                            },
+                            "amount": {
+                                "name": "Amount",
+                                "desc": "Amount"
+                            }
+                        }
+                    },
+                    "tasks-claim-reward": {
+                        "list-name": "TasksClaimReward",
+                        "display-text": "Tasks Claim Reward. Task ID: [b]{0}[/b].",
+                        "description": "Tasks Claim Reward",
+                        "params": {
+                            "task-id": {
+                                "name": "Task ID",
+                                "desc": "Task ID"
+                            }
+                        }
+                    },
+                    "daily-rewards-get-rewards": {
+                        "list-name": "DailyRewardsGetRewards",
+                        "display-text": "Daily Rewards Get Rewards",
+                        "description": "Daily Rewards Get Rewards"
+                    },
+                    "daily-rewards-get-current-day": {
+                        "list-name": "DailyRewardsGetCurrentDay",
+                        "display-text": "Daily Rewards Get Current Day",
+                        "description": "Daily Rewards Get Current Day"
+                    },
+                    "daily-rewards-get-current-reward": {
+                        "list-name": "DailyRewardsGetCurrentReward",
+                        "display-text": "Daily Rewards Get Current Reward",
+                        "description": "Daily Rewards Get Current Reward"
+                    },
+                    "daily-rewards-claim-current-reward": {
+                        "list-name": "DailyRewardsClaimCurrentReward",
+                        "display-text": "Daily Rewards Claim Current Reward",
+                        "description": "Daily Rewards Claim Current Reward"
                     }
                 },
                 "expressions": {
@@ -969,70 +957,10 @@
                         "translated-name": "ServerTime",
                         "description": "Server Time"
                     },
-                    "platform-all-games-count": {
-                        "translated-name": "PlatformAllGamesCount",
-                        "description": "Platform All Games Count"
-                    },
-                    "platform-all-games-properties-count": {
-                        "translated-name": "PlatformAllGamesPropertiesCount",
-                        "description": "Platform All Games Properties Count"
-                    },
-                    "platform-all-games-property-name": {
-                        "translated-name": "PlatformAllGamesPropertyName",
-                        "description": "Platform All Games Property Name",
-                        "params": {
-                            "property-index": {
-                                "name": "Property Index",
-                                "desc": "Property Index"
-                            }
-                        }
-                    },
-                    "platform-all-games-property-value": {
-                        "translated-name": "PlatformAllGamesPropertyValue",
-                        "description": "Platform All Games Property Value",
-                        "params": {
-                            "game-index": {
-                                "name": "Game Index",
-                                "desc": "Game Index"
-                            },
-                            "property": {
-                                "name": "Property",
-                                "desc": "Property"
-                            }
-                        }
-                    },
-                    "platform-game-by-id-properties-count": {
-                        "translated-name": "PlatformGameByIdPropertiesCount",
-                        "description": "Platform Game By Id Properties Count"
-                    },
-                    "platform-game-by-id-property-name": {
-                        "translated-name": "PlatformGameByIdPropertyName",
-                        "description": "Platform Game By Id Property Name",
-                        "params": {
-                            "property-index": {
-                                "name": "Property Index",
-                                "desc": "Property Index"
-                            }
-                        }
-                    },
-                    "platform-game-by-id-property-value": {
-                        "translated-name": "PlatformGameByIdPropertyValue",
-                        "description": "Platform Game By Id Property Value",
-                        "params": {
-                            "property": {
-                                "name": "Property",
-                                "desc": "Property"
-                            }
-                        }
-                    },
-
-
                     "device-type": {
                         "translated-name": "DeviceType",
                         "description": "Device Type"
                     },
-
-
                     "player-id": {
                         "translated-name": "PlayerId",
                         "description": "Player ID"
@@ -1079,16 +1007,6 @@
                             }
                         }
                     },
-
-                    "visibility-state": {
-                        "translated-name": "VisibilityState",
-                        "description": "Visibility State"
-                    },
-
-                    "default-storage-type": {
-                        "translated-name": "DefaultStorageType",
-                        "description": "Default Storage Type"
-                    },
                     "storage-data": {
                         "translated-name": "StorageData",
                         "description": "Get Storage Data By Key",
@@ -1109,8 +1027,6 @@
                             }
                         }
                     },
-
-
                     "banner-state": {
                         "translated-name": "BannerState",
                         "description": "Banner State"
@@ -1135,8 +1051,6 @@
                         "translated-name": "AdvancedBannersState",
                         "description": "Advanced Banners State"
                     },
-
-
                     "leaderboards-type": {
                         "translated-name": "LeaderboardsType",
                         "description": "Leaderboards Type"
@@ -1195,7 +1109,6 @@
                             }
                         }
                     },
-
                     "payments-last-purchase-properties-count": {
                         "translated-name": "PaymentsLastPurchasePropertiesCount",
                         "description": "Payments Last Purchase Properties Count"
@@ -1232,10 +1145,6 @@
                         "translated-name": "PaymentsPurchasePropertyName",
                         "description": "Payments Purchase Property Name",
                         "params": {
-                            "purchase-index": {
-                                "name": "Purchase Index",
-                                "desc": "Purchase Index"
-                            },
                             "property-index": {
                                 "name": "Property Index",
                                 "desc": "Property Index"
@@ -1256,7 +1165,6 @@
                             }
                         }
                     },
-
                     "payments-catalog-items-count": {
                         "translated-name": "PaymentsCatalogItemsCount",
                         "description": "Payments Catalog Items Count"
@@ -1269,10 +1177,6 @@
                         "translated-name": "PaymentsCatalogItemPropertyName",
                         "description": "Payments Catalog Item Property Name",
                         "params": {
-                            "item-index": {
-                                "name": "Item Index",
-                                "desc": "Item Index"
-                            },
                             "property-index": {
                                 "name": "Property Index",
                                 "desc": "Property Index"
@@ -1311,7 +1215,6 @@
                             }
                         }
                     },
-
                     "achievements-count": {
                         "translated-name": "AchievementsCount",
                         "description": "Achievements Count"
@@ -1324,10 +1227,6 @@
                         "translated-name": "AchievementPropertyName",
                         "description": "Achievement Property Name",
                         "params": {
-                            "achievement-index": {
-                                "name": "Achievement Index",
-                                "desc": "Achievement Index"
-                            },
                             "property-index": {
                                 "name": "Property Index",
                                 "desc": "Property Index"
@@ -1348,7 +1247,6 @@
                             }
                         }
                     },
-
                     "remote-config-value": {
                         "translated-name": "RemoteConfigValue",
                         "description": "Remote Config Value",
@@ -1358,6 +1256,186 @@
                                 "desc": "Key"
                             }
                         }
+                    },
+                    "cross-promo-games-count": {
+                        "translated-name": "CrossPromoGamesCount",
+                        "description": "Cross Promo Games Count"
+                    },
+                    "cross-promo-games-properties-count": {
+                        "translated-name": "CrossPromoGamesPropertiesCount",
+                        "description": "Cross Promo Games Properties Count"
+                    },
+                    "cross-promo-games-property-name": {
+                        "translated-name": "CrossPromoGamesPropertyName",
+                        "description": "Cross Promo Games Property Name",
+                        "params": {
+                            "property-index": {
+                                "name": "Property Index",
+                                "desc": "Property Index"
+                            }
+                        }
+                    },
+                    "cross-promo-games-property-value": {
+                        "translated-name": "CrossPromoGamesPropertyValue",
+                        "description": "Cross Promo Games Property Value",
+                        "params": {
+                            "game-index": {
+                                "name": "Game Index",
+                                "desc": "Game Index"
+                            },
+                            "property": {
+                                "name": "Property",
+                                "desc": "Property"
+                            }
+                        }
+                    },
+                    "cross-promo-games-as-json": {
+                        "translated-name": "CrossPromoGamesAsJSON",
+                        "description": "Cross Promo Games As JSON"
+                    },
+                    "tasks-count": {
+                        "translated-name": "TasksCount",
+                        "description": "Tasks Count"
+                    },
+                    "tasks-as-json": {
+                        "translated-name": "TasksAsJSON",
+                        "description": "All tasks as a JSON string"
+                    },
+                    "task-id": {
+                        "translated-name": "TaskId",
+                        "description": "Task Id",
+                        "params": {
+                            "task-index": {
+                                "name": "Task Index",
+                                "desc": "Task Index"
+                            }
+                        }
+                    },
+                    "task-type": {
+                        "translated-name": "TaskType",
+                        "description": "Task Type",
+                        "params": {
+                            "task-index": {
+                                "name": "Task Index",
+                                "desc": "Task Index"
+                            }
+                        }
+                    },
+                    "task-targets-count": {
+                        "translated-name": "TaskTargetsCount",
+                        "description": "Task Targets Count",
+                        "params": {
+                            "task-index": {
+                                "name": "Task Index",
+                                "desc": "Task Index"
+                            }
+                        }
+                    },
+                    "task-target-id": {
+                        "translated-name": "TaskTargetId",
+                        "description": "Task Target Id",
+                        "params": {
+                            "task-index": {
+                                "name": "Task Index",
+                                "desc": "Task Index"
+                            },
+                            "target-index": {
+                                "name": "Target Index",
+                                "desc": "Target Index"
+                            }
+                        }
+                    },
+                    "task-target-amount": {
+                        "translated-name": "TaskTargetAmount",
+                        "description": "Task Target Amount",
+                        "params": {
+                            "task-index": {
+                                "name": "Task Index",
+                                "desc": "Task Index"
+                            },
+                            "target-index": {
+                                "name": "Target Index",
+                                "desc": "Target Index"
+                            }
+                        }
+                    },
+                    "task-target-progress": {
+                        "translated-name": "TaskTargetProgress",
+                        "description": "Task Target Progress",
+                        "params": {
+                            "task-index": {
+                                "name": "Task Index",
+                                "desc": "Task Index"
+                            },
+                            "target-index": {
+                                "name": "Target Index",
+                                "desc": "Target Index"
+                            }
+                        }
+                    },
+                    "task-rewards-count": {
+                        "translated-name": "TaskRewardsCount",
+                        "description": "Task Rewards Count",
+                        "params": {
+                            "task-index": {
+                                "name": "Task Index",
+                                "desc": "Task Index"
+                            }
+                        }
+                    },
+                    "task-reward-id": {
+                        "translated-name": "TaskRewardId",
+                        "description": "Task Reward Id",
+                        "params": {
+                            "task-index": {
+                                "name": "Task Index",
+                                "desc": "Task Index"
+                            },
+                            "reward-index": {
+                                "name": "Reward Index",
+                                "desc": "Reward Index"
+                            }
+                        }
+                    },
+                    "task-reward-amount": {
+                        "translated-name": "TaskRewardAmount",
+                        "description": "Task Reward Amount",
+                        "params": {
+                            "task-index": {
+                                "name": "Task Index",
+                                "desc": "Task Index"
+                            },
+                            "reward-index": {
+                                "name": "Reward Index",
+                                "desc": "Reward Index"
+                            }
+                        }
+                    },
+                    "daily-rewards-count": {
+                        "translated-name": "DailyRewardsCount",
+                        "description": "Daily Rewards Count"
+                    },
+                    "daily-rewards-as-json": {
+                        "translated-name": "DailyRewardsAsJSON",
+                        "description": "All daily rewards as a JSON string"
+                    },
+                    "daily-rewards-reward": {
+                        "translated-name": "DailyRewardsReward",
+                        "description": "Daily Rewards Reward",
+                        "params": {
+                            "reward-index": {
+                                "name": "Reward Index",
+                                "desc": "Reward Index"
+                            }
+                        }
+                    },
+                    "daily-rewards-current-day": {
+                        "translated-name": "DailyRewardsCurrentDay",
+                        "description": "Daily Rewards Current Day"
+                    },
+                    "daily-rewards-current-reward": {
+                        "translated-name": "DailyRewardsCurrentReward",
+                        "description": "Daily Rewards Current Reward"
                     }
                 }
             }
