@@ -136,6 +136,7 @@ const C3 = globalThis.C3
                 const waitForBridgeLoaded = () => {
                     if (window.bridge !== undefined) {
                         window.bridge.engine = 'construct'
+                        window.bridge.gameVersion = this.runtime.projectVersion
                         window.bridge.initialize()
                             .then(() => {
                                 window.bridge.advertisement.on('banner_state_changed', state => {
