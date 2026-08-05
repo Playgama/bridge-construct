@@ -381,5 +381,23 @@ const C3 = globalThis.C3
             return this.dailyRewardsCurrentReward !== null && this.dailyRewardsCurrentReward !== undefined
         },
 
+
+        // notifications
+        IsNotificationsSupported() {
+            return window.bridge.notifications.isSupported
+        },
+
+        OnNotificationsScheduleCompleted() {
+            return true
+        },
+
+        OnNotificationsCancelCompleted() {
+            return true
+        },
+
+        OnNotificationsCancelAllCompleted() {
+            return true
+        },
+
     }
 }
