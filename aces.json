@@ -1549,7 +1549,7 @@
             }
         ]
     },
-    "dailyRewards": {
+    "daily-rewards": {
         "conditions": [
             {
                 "id": "on-daily-rewards-get-rewards-completed",
