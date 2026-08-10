@@ -2,6 +2,11 @@
 
 const C3 = globalThis.C3
 {
+    const BRIDGE_REMOTE_URL = 'https://bridge.playgama.com/v1/stable/playgama-bridge.js'
+    const BRIDGE_LOCAL_URL = 'playgama-bridge.js'
+    const BRIDGE_LOAD_TIMEOUT = 2000
+    const BRIDGE_POLL_INTERVAL = 100
+
     C3.Plugins.PlaygamaBridge.Instance = class PlaygamaBridgeInstance extends globalThis.ISDKInstanceBase {
         constructor() {
             super()
@@ -89,52 +94,65 @@ const C3 = globalThis.C3
         }
 
         loadSdk() {
-            return new Promise((resolve) => {
-            const scriptElement = document.createElement('script')
-            scriptElement.src = 'https://bridge.playgama.com/v1/stable/playgama-bridge.js'
-            document.body.appendChild(scriptElement)
+            // Some platforms block external scripts with a Content Security Policy,
+            // so fall back to the local copy and then to an inline evaluation of it
+            return this._loadScript(BRIDGE_REMOTE_URL)
+                .catch(() => this._loadScript(BRIDGE_LOCAL_URL))
+                .catch(() => this._loadInlineScript(BRIDGE_LOCAL_URL))
+                .catch(() => console.error('[PlaygamaBridge] failed to load the SDK'))
+        }
 
-            let isLoaded = false
+        _loadScript(src) {
+            return new Promise((resolve, reject) => {
+                const scriptElement = document.createElement('script')
+                scriptElement.src = src
 
-            const timeout = setTimeout(() => {
-                if (!isLoaded) {
-                    scriptElement.onerror()
-                }
-            }, 2000)
+                let isSettled = false
 
-            scriptElement.onload = function() {
-                isLoaded = true
-                clearTimeout(timeout)
-                resolve()
-            }
+                const settle = (isLoaded) => {
+                    if (isSettled) {
+                        return
+                    }
 
-            scriptElement.onerror = function() {
-                isLoaded = true
-                clearTimeout(timeout)
-
-                if (scriptElement.parentNode) {
+                    isSettled = true
+                    clearTimeout(timeout)
                     scriptElement.onload = null
                     scriptElement.onerror = null
-                    scriptElement.parentNode.removeChild(scriptElement)
-                }
-                
-                window.bridge = null
-                window.playgamaBridge = null
 
-                const fallbackScript = document.createElement('script')
-                fallbackScript.src = 'playgama-bridge.js'
-                fallbackScript.onload = function() {
-                    resolve()
+                    if (isLoaded && window.bridge) {
+                        resolve()
+                        return
+                    }
+
+                    scriptElement.remove()
+                    reject()
                 }
-                document.body.appendChild(fallbackScript)
-            }
-        })
-}
+
+                const timeout = setTimeout(() => settle(false), BRIDGE_LOAD_TIMEOUT)
+
+                scriptElement.onload = () => settle(true)
+                scriptElement.onerror = () => settle(false)
+
+                document.body.appendChild(scriptElement)
+            })
+        }
+
+        _loadInlineScript(src) {
+            return fetch(src)
+                .then(response => (response.ok ? response.text() : Promise.reject()))
+                .then(source => {
+                    const scriptElement = document.createElement('script')
+                    scriptElement.textContent = source
+                    document.body.appendChild(scriptElement)
+
+                    return window.bridge ? undefined : Promise.reject()
+                })
+        }
 
         initializeSdk() {
             return new Promise((resolve, reject) => {
                 const waitForBridgeLoaded = () => {
-                    if (window.bridge !== undefined) {
+                    if (window.bridge) {
                         window.bridge.engine = 'construct'
                         window.bridge.gameVersion = this.runtime.projectVersion
                         window.bridge.initialize()
@@ -234,11 +252,21 @@ const C3 = globalThis.C3
                             })
                             .catch(error => reject(error))
                     } else {
-                        setTimeout(waitForBridgeLoaded, 100)
+                        setTimeout(pollForBridge, BRIDGE_POLL_INTERVAL)
                     }
                 }
 
-                waitForBridgeLoaded()
+                // Keep every attempt guarded, otherwise a synchronous failure
+                // would leave the promise unsettled and freeze the loading screen
+                const pollForBridge = () => {
+                    try {
+                        waitForBridgeLoaded()
+                    } catch (error) {
+                        reject(error)
+                    }
+                }
+
+                pollForBridge()
             })
         }
 
