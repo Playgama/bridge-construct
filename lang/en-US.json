@@ -24,7 +24,8 @@
                     "remote-config": "Remote Config",
                     "cross-promo": "Cross Promo",
                     "tasks": "Tasks",
-                    "daily-rewards": "Daily Rewards"
+                    "daily-rewards": "Daily Rewards",
+                    "notifications": "Notifications"
                 },
                 "conditions": {
                     "is-last-action-completed-successfully": {
@@ -536,6 +537,26 @@
                         "list-name": "IsDailyRewardsCurrentRewardAvailable",
                         "display-text": "Is Daily Rewards Current Reward Available",
                         "description": "Is Daily Rewards Current Reward Available"
+                    },
+                    "on-notifications-schedule-completed": {
+                        "list-name": "OnNotificationsScheduleCompleted",
+                        "display-text": "On Notifications Schedule Completed",
+                        "description": "On Notifications Schedule Completed"
+                    },
+                    "on-notifications-cancel-completed": {
+                        "list-name": "OnNotificationsCancelCompleted",
+                        "display-text": "On Notifications Cancel Completed",
+                        "description": "On Notifications Cancel Completed"
+                    },
+                    "on-notifications-cancel-all-completed": {
+                        "list-name": "OnNotificationsCancelAllCompleted",
+                        "display-text": "On Notifications Cancel All Completed",
+                        "description": "On Notifications Cancel All Completed"
+                    },
+                    "is-notifications-supported": {
+                        "list-name": "IsNotificationsSupported",
+                        "display-text": "Is Notifications Supported",
+                        "description": "Is Notifications Supported"
                     }
                 },
                 "actions": {
@@ -934,6 +955,27 @@
                         "list-name": "DailyRewardsClaimCurrentReward",
                         "display-text": "Daily Rewards Claim Current Reward",
                         "description": "Daily Rewards Claim Current Reward"
+                    },
+                    "notifications-schedule": {
+                        "list-name": "NotificationsSchedule",
+                        "display-text": "Notifications Schedule",
+                        "description": "Notifications Schedule"
+                    },
+                    "notifications-cancel": {
+                        "list-name": "NotificationsCancel",
+                        "display-text": "Notifications Cancel. ID: [b]{0}[/b].",
+                        "description": "Notifications Cancel",
+                        "params": {
+                            "id": {
+                                "name": "ID",
+                                "desc": "ID"
+                            }
+                        }
+                    },
+                    "notifications-cancel-all": {
+                        "list-name": "NotificationsCancelAll",
+                        "display-text": "Notifications Cancel All",
+                        "description": "Notifications Cancel All"
                     }
                 },
                 "expressions": {

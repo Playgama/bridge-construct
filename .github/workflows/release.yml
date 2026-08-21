@@ -1,0 +1,37 @@
+name: GitHub Release
+
+# Creates a GitHub release with the .c3addon package attached when a v2+ tag is pushed (v1.x tags are ignored).
+# The .c3addon is a zip of the addon files listed in addon.json "file-list".
+# Release notes are auto-generated from commits and can be edited afterwards.
+
+on:
+  push:
+    tags:
+      - 'v[2-9].*'
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Package addon
+        env:
+          TAG: ${{ github.ref_name }}
+        run: |
+          zip -r "playgama_bridge_${TAG}.c3addon" \
+            addon.json aces.json icon.svg plugin.js instance.js type.js lang c3runtime \
+            -x '*.DS_Store'
+      - name: Create or update release
+        env:
+          GH_TOKEN: ${{ github.token }}
+          TAG: ${{ github.ref_name }}
+        run: |
+          ASSET="playgama_bridge_${TAG}.c3addon"
+          if gh release view "$TAG" >/dev/null 2>&1; then
+            gh release upload "$TAG" "$ASSET" --clobber
+          else
+            gh release create "$TAG" "$ASSET" --title "$TAG" --generate-notes --verify-tag
+          fi

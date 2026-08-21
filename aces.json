@@ -1639,5 +1639,58 @@
                 "returnType": "string"
             }
         ]
+    },
+    "notifications": {
+        "conditions": [
+            {
+                "id": "on-notifications-schedule-completed",
+                "scriptName": "OnNotificationsScheduleCompleted",
+                "isTrigger": true,
+                "isInvertible": false,
+                "isCompatibleWithTriggers": false
+            },
+            {
+                "id": "on-notifications-cancel-completed",
+                "scriptName": "OnNotificationsCancelCompleted",
+                "isTrigger": true,
+                "isInvertible": false,
+                "isCompatibleWithTriggers": false
+            },
+            {
+                "id": "on-notifications-cancel-all-completed",
+                "scriptName": "OnNotificationsCancelAllCompleted",
+                "isTrigger": true,
+                "isInvertible": false,
+                "isCompatibleWithTriggers": false
+            },
+            {
+                "id": "is-notifications-supported",
+                "scriptName": "IsNotificationsSupported"
+            }
+        ],
+        "actions": [
+            {
+                "id": "notifications-schedule",
+                "scriptName": "NotificationsSchedule",
+                "isAsync": true
+            },
+            {
+                "id": "notifications-cancel",
+                "scriptName": "NotificationsCancel",
+                "isAsync": true,
+                "params": [
+                    {
+                        "id": "id",
+                        "type": "string"
+                    }
+                ]
+            },
+            {
+                "id": "notifications-cancel-all",
+                "scriptName": "NotificationsCancelAll",
+                "isAsync": true
+            }
+        ],
+        "expressions": []
     }
 }

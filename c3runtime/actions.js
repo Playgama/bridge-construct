@@ -651,5 +651,55 @@ const C3 = globalThis.C3
                     })
             })
         },
+
+        // notifications
+        NotificationsSchedule() {
+            this.isLastActionCompletedSuccessfully = false
+
+            return new Promise(resolve => {
+                window.bridge.notifications.schedule(this.actionParametersContainer)
+                    .then(() => {
+                        this.isLastActionCompletedSuccessfully = true
+                    })
+                    .catch(error => console.log(error))
+                    .finally(() => {
+                        this.actionParametersContainer = {}
+                        this._trigger(this.conditions.OnNotificationsScheduleCompleted)
+                        resolve()
+                    })
+            })
+        },
+
+        NotificationsCancel(id) {
+            this.isLastActionCompletedSuccessfully = false
+
+            return new Promise(resolve => {
+                window.bridge.notifications.cancel(id)
+                    .then(() => {
+                        this.isLastActionCompletedSuccessfully = true
+                    })
+                    .catch(error => console.log(error))
+                    .finally(() => {
+                        this._trigger(this.conditions.OnNotificationsCancelCompleted)
+                        resolve()
+                    })
+            })
+        },
+
+        NotificationsCancelAll() {
+            this.isLastActionCompletedSuccessfully = false
+
+            return new Promise(resolve => {
+                window.bridge.notifications.cancelAll()
+                    .then(() => {
+                        this.isLastActionCompletedSuccessfully = true
+                    })
+                    .catch(error => console.log(error))
+                    .finally(() => {
+                        this._trigger(this.conditions.OnNotificationsCancelAllCompleted)
+                        resolve()
+                    })
+            })
+        },
     }
 }
