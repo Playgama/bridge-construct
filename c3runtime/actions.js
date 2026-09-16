@@ -270,11 +270,11 @@ const C3 = globalThis.C3
                     })
             })
         },
-        CreatePost(id) {
+        CreatePost(id, payload) {
             this.isLastActionCompletedSuccessfully = false
 
             return new Promise(resolve => {
-                window.bridge.social.createPost(id || this.actionParametersContainer)
+                window.bridge.social.createPost(id || this.actionParametersContainer, payload || undefined)
                     .then(() => {
                         this.isLastActionCompletedSuccessfully = true
                     })
@@ -327,6 +327,22 @@ const C3 = globalThis.C3
                     .catch(error => console.log(error))
                     .finally(() => {
                         this._trigger(this.conditions.OnRateCompleted)
+                        resolve()
+                    })
+            })
+        },
+        GetPostReward() {
+            this.isLastActionCompletedSuccessfully = false
+
+            return new Promise(resolve => {
+                window.bridge.social.getPostReward()
+                    .then(rewards => {
+                        this.postRewards = rewards || []
+                        this.isLastActionCompletedSuccessfully = true
+                    })
+                    .catch(error => console.log(error))
+                    .finally(() => {
+                        this._trigger(this.conditions.OnGetPostRewardCompleted)
                         resolve()
                     })
             })

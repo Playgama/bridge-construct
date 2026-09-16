@@ -20,6 +20,7 @@ const C3 = globalThis.C3
             this.serverTime = 0
             this.crossPromoGames = []
             this.tasksList = []
+            this.postRewards = []
             this.dailyRewardsList = []
             this.dailyRewardsCurrentDay = 0
             this.dailyRewardsCurrentReward = null

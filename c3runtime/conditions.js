@@ -232,6 +232,12 @@ const C3 = globalThis.C3
         OnRateCompleted() {
             return true
         },
+        IsPostRewardSupported() {
+            return window.bridge.social.isPostRewardSupported
+        },
+        OnGetPostRewardCompleted() {
+            return true
+        },
 
         IsExternalLinksAllowed() {
             return window.bridge.platform.isExternalLinksAllowed
