@@ -761,12 +761,24 @@
             {
                 "id": "share",
                 "scriptName": "Share",
-                "isAsync": true
+                "isAsync": true,
+                "params": [
+                    {
+                        "id": "id",
+                        "type": "string"
+                    }
+                ]
             },
             {
                 "id": "invite-friends",
                 "scriptName": "InviteFriends",
-                "isAsync": true
+                "isAsync": true,
+                "params": [
+                    {
+                        "id": "id",
+                        "type": "string"
+                    }
+                ]
             },
             {
                 "id": "join-community",
@@ -776,7 +788,13 @@
             {
                 "id": "create-post",
                 "scriptName": "CreatePost",
-                "isAsync": true
+                "isAsync": true,
+                "params": [
+                    {
+                        "id": "id",
+                        "type": "string"
+                    }
+                ]
             },
             {
                 "id": "add-to-home-screen",
