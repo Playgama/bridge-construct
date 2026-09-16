@@ -220,11 +220,13 @@ const C3 = globalThis.C3
 
 
         // social
-        Share() {
+        // Share, InviteFriends and CreatePost send either the id of a config entry
+        // (social.shares, social.invites, social.posts) or the action parameters.
+        Share(id) {
             this.isLastActionCompletedSuccessfully = false
 
             return new Promise(resolve => {
-                window.bridge.social.share(this.actionParametersContainer)
+                window.bridge.social.share(id || this.actionParametersContainer)
                     .then(() => {
                         this.isLastActionCompletedSuccessfully = true
                     })
@@ -236,11 +238,11 @@ const C3 = globalThis.C3
                     })
             })
         },
-        InviteFriends() {
+        InviteFriends(id) {
             this.isLastActionCompletedSuccessfully = false
 
             return new Promise(resolve => {
-                window.bridge.social.inviteFriends(this.actionParametersContainer)
+                window.bridge.social.inviteFriends(id || this.actionParametersContainer)
                     .then(() => {
                         this.isLastActionCompletedSuccessfully = true
                     })
@@ -268,11 +270,11 @@ const C3 = globalThis.C3
                     })
             })
         },
-        CreatePost() {
+        CreatePost(id) {
             this.isLastActionCompletedSuccessfully = false
 
             return new Promise(resolve => {
-                window.bridge.social.createPost(this.actionParametersContainer)
+                window.bridge.social.createPost(id || this.actionParametersContainer)
                     .then(() => {
                         this.isLastActionCompletedSuccessfully = true
                     })

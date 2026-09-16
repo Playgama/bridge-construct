@@ -767,13 +767,25 @@
                     },
                     "share": {
                         "list-name": "Share",
-                        "display-text": "Share",
-                        "description": "Share"
+                        "display-text": "Share. ID: [b]{0}[/b].",
+                        "description": "Share",
+                        "params": {
+                            "id": {
+                                "name": "ID",
+                                "desc": "social.shares entry ID (optional)"
+                            }
+                        }
                     },
                     "invite-friends": {
                         "list-name": "InviteFriends",
-                        "display-text": "Invite Friends",
-                        "description": "Invite Friends"
+                        "display-text": "Invite Friends. ID: [b]{0}[/b].",
+                        "description": "Invite Friends",
+                        "params": {
+                            "id": {
+                                "name": "ID",
+                                "desc": "social.invites entry ID (optional)"
+                            }
+                        }
                     },
                     "join-community": {
                         "list-name": "JoinCommunity",
@@ -782,8 +794,14 @@
                     },
                     "create-post": {
                         "list-name": "CreatePost",
-                        "display-text": "Create Post",
-                        "description": "Create Post"
+                        "display-text": "Create Post. ID: [b]{0}[/b].",
+                        "description": "Create Post",
+                        "params": {
+                            "id": {
+                                "name": "ID",
+                                "desc": "social.posts entry ID (optional)"
+                            }
+                        }
                     },
                     "add-to-home-screen": {
                         "list-name": "AddToHomeScreen",
