@@ -355,6 +355,16 @@
                         "display-text": "On Rate Completed",
                         "description": "On Rate Completed"
                     },
+                    "is-post-reward-supported": {
+                        "list-name": "IsPostRewardSupported",
+                        "display-text": "Is Post Reward Supported",
+                        "description": "Is Post Reward Supported"
+                    },
+                    "on-get-post-reward-completed": {
+                        "list-name": "OnGetPostRewardCompleted",
+                        "display-text": "On Get Post Reward Completed",
+                        "description": "On Get Post Reward Completed"
+                    },
                     "is-external-links-allowed": {
                         "list-name": "IsExternalLinksAllowed",
                         "display-text": "Is External Links Allowed",
@@ -794,12 +804,16 @@
                     },
                     "create-post": {
                         "list-name": "CreatePost",
-                        "display-text": "Create Post. ID: [b]{0}[/b].",
+                        "display-text": "Create Post. ID: [b]{0}[/b]. Payload: [b]{1}[/b].",
                         "description": "Create Post",
                         "params": {
                             "id": {
                                 "name": "ID",
                                 "desc": "social.posts entry ID (optional)"
+                            },
+                            "payload": {
+                                "name": "Payload",
+                                "desc": "Handed back as PlatformPayload when someone opens the post (optional)"
                             }
                         }
                     },
@@ -817,6 +831,11 @@
                         "list-name": "Rate",
                         "display-text": "Rate",
                         "description": "Rate"
+                    },
+                    "get-post-reward": {
+                        "list-name": "GetPostReward",
+                        "display-text": "Get Post Reward",
+                        "description": "Get Post Reward"
                     },
                     "leaderboards-set-score": {
                         "list-name": "LeaderboardsSetScore",
@@ -1013,6 +1032,24 @@
                         "translated-name": "PlatformTld",
                         "description": "Platform Tld"
                     },
+                    "platform-launch-source": {
+                        "translated-name": "PlatformLaunchSource",
+                        "description": "Platform Launch Source"
+                    },
+                    "platform-data-value": {
+                        "translated-name": "PlatformDataValue",
+                        "description": "Platform Data Value By Key",
+                        "params": {
+                            "key": {
+                                "name": "Key",
+                                "desc": "Key"
+                            }
+                        }
+                    },
+                    "platform-data-as-json": {
+                        "translated-name": "PlatformDataAsJSON",
+                        "description": "Platform Data As JSON"
+                    },
                     "server-time": {
                         "translated-name": "ServerTime",
                         "description": "Server Time"
@@ -1114,6 +1151,44 @@
                     "leaderboards-type": {
                         "translated-name": "LeaderboardsType",
                         "description": "Leaderboards Type"
+                    },
+                    "post-rewards-count": {
+                        "translated-name": "PostRewardsCount",
+                        "description": "Post Rewards Count"
+                    },
+                    "post-reward-id": {
+                        "translated-name": "PostRewardId",
+                        "description": "Post Reward Id",
+                        "params": {
+                            "reward-index": {
+                                "name": "Reward Index",
+                                "desc": "Reward Index"
+                            }
+                        }
+                    },
+                    "post-reward-amount": {
+                        "translated-name": "PostRewardAmount",
+                        "description": "Post Reward Amount",
+                        "params": {
+                            "reward-index": {
+                                "name": "Reward Index",
+                                "desc": "Reward Index"
+                            }
+                        }
+                    },
+                    "post-reward-type": {
+                        "translated-name": "PostRewardType",
+                        "description": "Post Reward Type",
+                        "params": {
+                            "reward-index": {
+                                "name": "Reward Index",
+                                "desc": "Reward Index"
+                            }
+                        }
+                    },
+                    "post-rewards-as-json": {
+                        "translated-name": "PostRewardsAsJSON",
+                        "description": "All post rewards as a JSON string"
                     },
                     "leaderboard-entries-count": {
                         "translated-name": "LeaderboardEntriesCount",

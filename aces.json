@@ -99,6 +99,27 @@
                 "returnType": "string"
             },
             {
+                "id": "platform-launch-source",
+                "expressionName": "PlatformLaunchSource",
+                "returnType": "string"
+            },
+            {
+                "id": "platform-data-value",
+                "expressionName": "PlatformDataValue",
+                "returnType": "any",
+                "params": [
+                    {
+                        "id": "key",
+                        "type": "string"
+                    }
+                ]
+            },
+            {
+                "id": "platform-data-as-json",
+                "expressionName": "PlatformDataAsJSON",
+                "returnType": "string"
+            },
+            {
                 "id": "server-time",
                 "expressionName": "ServerTime",
                 "returnType": "number"
@@ -753,6 +774,17 @@
                 "isCompatibleWithTriggers": false
             },
             {
+                "id": "is-post-reward-supported",
+                "scriptName": "IsPostRewardSupported"
+            },
+            {
+                "id": "on-get-post-reward-completed",
+                "scriptName": "OnGetPostRewardCompleted",
+                "isTrigger": true,
+                "isInvertible": false,
+                "isCompatibleWithTriggers": false
+            },
+            {
                 "id": "is-external-links-allowed",
                 "scriptName": "IsExternalLinksAllowed"
             }
@@ -793,6 +825,10 @@
                     {
                         "id": "id",
                         "type": "string"
+                    },
+                    {
+                        "id": "payload",
+                        "type": "string"
                     }
                 ]
             },
@@ -810,6 +846,56 @@
                 "id": "rate",
                 "scriptName": "Rate",
                 "isAsync": true
+            },
+            {
+                "id": "get-post-reward",
+                "scriptName": "GetPostReward",
+                "isAsync": true
+            }
+        ],
+        "expressions": [
+            {
+                "id": "post-rewards-count",
+                "expressionName": "PostRewardsCount",
+                "returnType": "number"
+            },
+            {
+                "id": "post-reward-id",
+                "expressionName": "PostRewardId",
+                "returnType": "string",
+                "params": [
+                    {
+                        "id": "reward-index",
+                        "type": "number"
+                    }
+                ]
+            },
+            {
+                "id": "post-reward-amount",
+                "expressionName": "PostRewardAmount",
+                "returnType": "number",
+                "params": [
+                    {
+                        "id": "reward-index",
+                        "type": "number"
+                    }
+                ]
+            },
+            {
+                "id": "post-reward-type",
+                "expressionName": "PostRewardType",
+                "returnType": "string",
+                "params": [
+                    {
+                        "id": "reward-index",
+                        "type": "number"
+                    }
+                ]
+            },
+            {
+                "id": "post-rewards-as-json",
+                "expressionName": "PostRewardsAsJSON",
+                "returnType": "string"
             }
         ]
     },

@@ -20,6 +20,24 @@ const C3 = globalThis.C3
 
             return ''
         },
+        PlatformLaunchSource() {
+            if (window.bridge.platform.launchSource) {
+                return window.bridge.platform.launchSource
+            }
+
+            return ''
+        },
+        PlatformDataValue(key) {
+            const data = window.bridge.platform.data
+            if (!data || data[key] === undefined) {
+                return ''
+            }
+
+            return data[key]
+        },
+        PlatformDataAsJSON() {
+            return JSON.stringify(window.bridge.platform.data || {})
+        },
         ServerTime() {
             return this.serverTime
         },
@@ -105,6 +123,33 @@ const C3 = globalThis.C3
         },
 
 
+        // social
+        PostRewardsCount() {
+            if (!this.postRewards) {
+                return 0
+            }
+
+            return this.postRewards.length
+        },
+        PostRewardId(rewardIndex) {
+            const reward = this.postRewards && this.postRewards[rewardIndex]
+            return reward ? reward.id : ''
+        },
+        PostRewardAmount(rewardIndex) {
+            const reward = this.postRewards && this.postRewards[rewardIndex]
+            return reward ? reward.amount : 0
+        },
+        PostRewardType(rewardIndex) {
+            const reward = this.postRewards && this.postRewards[rewardIndex]
+            return reward ? reward.type : ''
+        },
+        PostRewardsAsJSON() {
+            if (!this.postRewards) {
+                return '[]'
+            }
+
+            return JSON.stringify(this.postRewards)
+        },
         // leaderboards
         LeaderboardsType() {
             return window.bridge.leaderboards.type
