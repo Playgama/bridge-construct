@@ -1796,5 +1796,22 @@
             }
         ],
         "expressions": []
+    },
+    "analytics": {
+        "conditions": [],
+        "actions": [
+            {
+                "id": "send-analytics-event",
+                "scriptName": "SendAnalyticsEvent",
+                "isAsync": false,
+                "params": [
+                    {
+                        "id": "event-name",
+                        "type": "string"
+                    }
+                ]
+            }
+        ],
+        "expressions": []
     }
 }

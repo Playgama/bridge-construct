@@ -25,7 +25,8 @@
                     "cross-promo": "Cross Promo",
                     "tasks": "Tasks",
                     "daily-rewards": "Daily Rewards",
-                    "notifications": "Notifications"
+                    "notifications": "Notifications",
+                    "analytics": "Analytics"
                 },
                 "conditions": {
                     "is-last-action-completed-successfully": {
@@ -1013,6 +1014,17 @@
                         "list-name": "NotificationsCancelAll",
                         "display-text": "Notifications Cancel All",
                         "description": "Notifications Cancel All"
+                    },
+                    "send-analytics-event": {
+                        "list-name": "SendAnalyticsEvent",
+                        "display-text": "Send Analytics Event. Name: [b]{0}[/b].",
+                        "description": "Send a game event to Playgama analytics. The event name and the parameters added before it are entirely up to the game.",
+                        "params": {
+                            "event-name": {
+                                "name": "Event Name",
+                                "desc": "Event Name"
+                            }
+                        }
                     }
                 },
                 "expressions": {

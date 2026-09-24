@@ -57,6 +57,13 @@ const C3 = globalThis.C3
             window.bridge.platform.sendCustomMessage(id, this.actionParametersContainer)
             this.actionParametersContainer = {}
         },
+
+
+        // analytics
+        SendAnalyticsEvent(eventName) {
+            window.bridge.analytics.send(eventName, this.actionParametersContainer)
+            this.actionParametersContainer = {}
+        },
         GetServerTime() {
             this.isLastActionCompletedSuccessfully = false
 
