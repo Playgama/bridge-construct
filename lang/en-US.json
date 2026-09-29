@@ -783,7 +783,7 @@
                         "params": {
                             "id": {
                                 "name": "ID",
-                                "desc": "social.shares entry ID (optional)"
+                                "desc": "social.shares entry ID"
                             }
                         }
                     },
@@ -794,7 +794,7 @@
                         "params": {
                             "id": {
                                 "name": "ID",
-                                "desc": "social.invites entry ID (optional)"
+                                "desc": "social.invites entry ID"
                             }
                         }
                     },
@@ -810,7 +810,7 @@
                         "params": {
                             "id": {
                                 "name": "ID",
-                                "desc": "social.posts entry ID (optional)"
+                                "desc": "social.posts entry ID"
                             },
                             "payload": {
                                 "name": "Payload",

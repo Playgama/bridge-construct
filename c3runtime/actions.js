@@ -227,19 +227,18 @@ const C3 = globalThis.C3
 
 
         // social
-        // Share, InviteFriends and CreatePost send either the id of a config entry
-        // (social.shares, social.invites, social.posts) or the action parameters.
+        // Share, InviteFriends and CreatePost send the id of a config entry
+        // (social.shares, social.invites, social.posts). JoinCommunity reads social.joinCommunity.
         Share(id) {
             this.isLastActionCompletedSuccessfully = false
 
             return new Promise(resolve => {
-                window.bridge.social.share(id || this.actionParametersContainer)
+                window.bridge.social.share(id || undefined)
                     .then(() => {
                         this.isLastActionCompletedSuccessfully = true
                     })
                     .catch(error => console.log(error))
                     .finally(() => {
-                        this.actionParametersContainer = {}
                         this._trigger(this.conditions.OnShareCompleted)
                         resolve()
                     })
@@ -249,13 +248,12 @@ const C3 = globalThis.C3
             this.isLastActionCompletedSuccessfully = false
 
             return new Promise(resolve => {
-                window.bridge.social.inviteFriends(id || this.actionParametersContainer)
+                window.bridge.social.inviteFriends(id || undefined)
                     .then(() => {
                         this.isLastActionCompletedSuccessfully = true
                     })
                     .catch(error => console.log(error))
                     .finally(() => {
-                        this.actionParametersContainer = {}
                         this._trigger(this.conditions.OnInviteFriendsCompleted)
                         resolve()
                     })
@@ -265,13 +263,12 @@ const C3 = globalThis.C3
             this.isLastActionCompletedSuccessfully = false
 
             return new Promise(resolve => {
-                window.bridge.social.joinCommunity(this.actionParametersContainer)
+                window.bridge.social.joinCommunity()
                     .then(() => {
                         this.isLastActionCompletedSuccessfully = true
                     })
                     .catch(error => console.log(error))
                     .finally(() => {
-                        this.actionParametersContainer = {}
                         this._trigger(this.conditions.OnJoinCommunityCompleted)
                         resolve()
                     })
@@ -281,13 +278,12 @@ const C3 = globalThis.C3
             this.isLastActionCompletedSuccessfully = false
 
             return new Promise(resolve => {
-                window.bridge.social.createPost(id || this.actionParametersContainer, payload || undefined)
+                window.bridge.social.createPost(id || undefined, payload || undefined)
                     .then(() => {
                         this.isLastActionCompletedSuccessfully = true
                     })
                     .catch(error => console.log(error))
                     .finally(() => {
-                        this.actionParametersContainer = {}
                         this._trigger(this.conditions.OnCreatePostCompleted)
                         resolve()
                     })
