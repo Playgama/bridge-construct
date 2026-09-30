@@ -184,16 +184,16 @@ const C3 = globalThis.C3
                                     this._trigger(this.conditions.OnAdvancedBannersStateChanged)
 
                                     switch (state) {
-                                        case window.bridge.ADVANCED_BANNERS_STATE.LOADING:
+                                        case window.bridge.BANNER_STATE.LOADING:
                                             this._trigger(this.conditions.OnAdvancedBannersLoading)
                                             break
-                                        case window.bridge.ADVANCED_BANNERS_STATE.SHOWN:
+                                        case window.bridge.BANNER_STATE.SHOWN:
                                             this._trigger(this.conditions.OnAdvancedBannersShown)
                                             break
-                                        case window.bridge.ADVANCED_BANNERS_STATE.HIDDEN:
+                                        case window.bridge.BANNER_STATE.HIDDEN:
                                             this._trigger(this.conditions.OnAdvancedBannersHidden)
                                             break
-                                        case window.bridge.ADVANCED_BANNERS_STATE.FAILED:
+                                        case window.bridge.BANNER_STATE.FAILED:
                                             this._trigger(this.conditions.OnAdvancedBannersFailed)
                                             break
                                     }
