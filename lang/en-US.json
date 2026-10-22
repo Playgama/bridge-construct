@@ -1210,38 +1210,22 @@
                     },
                     "multiplayer-set-room-properties": {
                         "list-name": "MultiplayerSetRoomProperties",
-                        "display-text": "Multiplayer Set Room Properties. Properties: [b]{0}[/b].",
-                        "description": "Multiplayer Set Room Properties",
-                        "params": {
-                            "properties": {
-                                "name": "Properties",
-                                "desc": "JSON object, keys are merged, null removes a key (host only)"
-                            }
-                        }
+                        "display-text": "Multiplayer Set Room Properties",
+                        "description": "Host only: the action parameters become room properties, keys are merged"
                     },
                     "multiplayer-set-player-properties": {
                         "list-name": "MultiplayerSetPlayerProperties",
-                        "display-text": "Multiplayer Set Player Properties. Properties: [b]{0}[/b].",
-                        "description": "Multiplayer Set Player Properties",
-                        "params": {
-                            "properties": {
-                                "name": "Properties",
-                                "desc": "JSON object, keys are merged, null removes a key"
-                            }
-                        }
+                        "display-text": "Multiplayer Set Player Properties",
+                        "description": "The action parameters become properties of the local player, keys are merged"
                     },
                     "multiplayer-send-message": {
                         "list-name": "MultiplayerSendMessage",
-                        "display-text": "Multiplayer Send Message. Type: [b]{0}[/b]. Data: [b]{1}[/b]. Target: [b]{2}[/b]. Player ID: [b]{3}[/b].",
-                        "description": "Multiplayer Send Message",
+                        "display-text": "Multiplayer Send Message. Type: [b]{0}[/b]. Target: [b]{1}[/b]. Player ID: [b]{2}[/b].",
+                        "description": "Multiplayer Send Message, the action parameters become the message data",
                         "params": {
                             "type": {
                                 "name": "Type",
                                 "desc": "Message type"
-                            },
-                            "data": {
-                                "name": "Data",
-                                "desc": "JSON string or plain text (optional)"
                             },
                             "target": {
                                 "name": "Target",

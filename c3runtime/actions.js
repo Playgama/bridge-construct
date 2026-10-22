@@ -729,15 +729,17 @@ const C3 = globalThis.C3
         MultiplayerCreateRoom() {
             this.isLastActionCompletedSuccessfully = false
             this.multiplayerLastErrorCode = ''
+            // Taken right away: actions run before this request completes collect their own parameters
+            const options = this.actionParametersContainer
+            this.actionParametersContainer = {}
 
             return new Promise(resolve => {
-                window.bridge.multiplayer.createRoom(this.actionParametersContainer)
+                window.bridge.multiplayer.createRoom(options)
                     .then(() => {
                         this.isLastActionCompletedSuccessfully = true
                     })
                     .catch(error => this.setMultiplayerError(error))
                     .finally(() => {
-                        this.actionParametersContainer = {}
                         this._trigger(this.conditions.OnMultiplayerCreateRoomCompleted)
                         resolve()
                     })
@@ -747,15 +749,17 @@ const C3 = globalThis.C3
         MultiplayerJoinRoom(roomId) {
             this.isLastActionCompletedSuccessfully = false
             this.multiplayerLastErrorCode = ''
+            // Taken right away: actions run before this request completes collect their own parameters
+            const options = this.actionParametersContainer
+            this.actionParametersContainer = {}
 
             return new Promise(resolve => {
-                window.bridge.multiplayer.joinRoom(roomId, this.actionParametersContainer)
+                window.bridge.multiplayer.joinRoom(roomId, options)
                     .then(() => {
                         this.isLastActionCompletedSuccessfully = true
                     })
                     .catch(error => this.setMultiplayerError(error))
                     .finally(() => {
-                        this.actionParametersContainer = {}
                         this._trigger(this.conditions.OnMultiplayerJoinRoomCompleted)
                         resolve()
                     })
@@ -765,15 +769,17 @@ const C3 = globalThis.C3
         MultiplayerJoinOrCreateRoom() {
             this.isLastActionCompletedSuccessfully = false
             this.multiplayerLastErrorCode = ''
+            // Taken right away: actions run before this request completes collect their own parameters
+            const options = this.actionParametersContainer
+            this.actionParametersContainer = {}
 
             return new Promise(resolve => {
-                window.bridge.multiplayer.joinOrCreateRoom(this.actionParametersContainer)
+                window.bridge.multiplayer.joinOrCreateRoom(options)
                     .then(() => {
                         this.isLastActionCompletedSuccessfully = true
                     })
                     .catch(error => this.setMultiplayerError(error))
                     .finally(() => {
-                        this.actionParametersContainer = {}
                         this._trigger(this.conditions.OnMultiplayerJoinOrCreateRoomCompleted)
                         resolve()
                     })
@@ -783,16 +789,18 @@ const C3 = globalThis.C3
         MultiplayerGetRooms() {
             this.isLastActionCompletedSuccessfully = false
             this.multiplayerLastErrorCode = ''
+            // Taken right away: actions run before this request completes collect their own parameters
+            const options = this.actionParametersContainer
+            this.actionParametersContainer = {}
 
             return new Promise(resolve => {
-                window.bridge.multiplayer.getRooms(this.actionParametersContainer)
+                window.bridge.multiplayer.getRooms(options)
                     .then(rooms => {
                         this.isLastActionCompletedSuccessfully = true
                         this.multiplayerRooms = rooms || []
                     })
                     .catch(error => this.setMultiplayerError(error))
                     .finally(() => {
-                        this.actionParametersContainer = {}
                         this._trigger(this.conditions.OnMultiplayerGetRoomsCompleted)
                         resolve()
                     })
@@ -802,15 +810,17 @@ const C3 = globalThis.C3
         MultiplayerInviteToRoom() {
             this.isLastActionCompletedSuccessfully = false
             this.multiplayerLastErrorCode = ''
+            // Taken right away: actions run before this request completes collect their own parameters
+            const options = this.actionParametersContainer
+            this.actionParametersContainer = {}
 
             return new Promise(resolve => {
-                window.bridge.multiplayer.inviteToRoom(this.actionParametersContainer)
+                window.bridge.multiplayer.inviteToRoom(options)
                     .then(() => {
                         this.isLastActionCompletedSuccessfully = true
                     })
                     .catch(error => this.setMultiplayerError(error))
                     .finally(() => {
-                        this.actionParametersContainer = {}
                         this._trigger(this.conditions.OnMultiplayerInviteToRoomCompleted)
                         resolve()
                     })
@@ -829,31 +839,22 @@ const C3 = globalThis.C3
             window.bridge.multiplayer.setRoomVisible(isVisible)
         },
 
-        // properties is a JSON object string, a null value removes the key
-        MultiplayerSetRoomProperties(properties) {
-            const value = this.parseJSONValue(properties)
-            if (!this.isObject(value)) {
-                console.log('[PlaygamaBridge] room properties must be a JSON object')
-                return
-            }
-
-            window.bridge.multiplayer.setRoomProperties(value)
+        // The action parameters are the properties: keys are merged
+        MultiplayerSetRoomProperties() {
+            window.bridge.multiplayer.setRoomProperties(this.actionParametersContainer)
+            this.actionParametersContainer = {}
         },
 
-        MultiplayerSetPlayerProperties(properties) {
-            const value = this.parseJSONValue(properties)
-            if (!this.isObject(value)) {
-                console.log('[PlaygamaBridge] player properties must be a JSON object')
-                return
-            }
-
-            window.bridge.multiplayer.setPlayerProperties(value)
+        MultiplayerSetPlayerProperties() {
+            window.bridge.multiplayer.setPlayerProperties(this.actionParametersContainer)
+            this.actionParametersContainer = {}
         },
 
-        // data is a JSON string or plain text, target is others / all / host / player (by id)
-        MultiplayerSendMessage(type, data, target, playerId) {
+        // The action parameters are the message data; target is others / all / host / player (by id)
+        MultiplayerSendMessage(type, target, playerId) {
             const to = target < this.multiplayerTargets.length ? this.multiplayerTargets[target] : playerId
-            window.bridge.multiplayer.send(type, this.parseJSONValue(data), { to })
+            window.bridge.multiplayer.send(type, this.actionParametersContainer, { to })
+            this.actionParametersContainer = {}
         },
     }
 }

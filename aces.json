@@ -2022,23 +2022,13 @@
                 "id": "multiplayer-set-room-properties",
                 "scriptName": "MultiplayerSetRoomProperties",
                 "isAsync": false,
-                "params": [
-                    {
-                        "id": "properties",
-                        "type": "string"
-                    }
-                ]
+                "params": []
             },
             {
                 "id": "multiplayer-set-player-properties",
                 "scriptName": "MultiplayerSetPlayerProperties",
                 "isAsync": false,
-                "params": [
-                    {
-                        "id": "properties",
-                        "type": "string"
-                    }
-                ]
+                "params": []
             },
             {
                 "id": "multiplayer-send-message",
@@ -2047,10 +2037,6 @@
                 "params": [
                     {
                         "id": "type",
-                        "type": "string"
-                    },
-                    {
-                        "id": "data",
                         "type": "string"
                     },
                     {
