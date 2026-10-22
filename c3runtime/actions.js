@@ -722,5 +722,138 @@ const C3 = globalThis.C3
                     })
             })
         },
+
+        // multiplayer
+        // Room options (maxPlayers, isVisible, isOpen, filter, limit, properties, playerName, playerProperties)
+        // are taken from the action parameters container
+        MultiplayerCreateRoom() {
+            this.isLastActionCompletedSuccessfully = false
+            this.multiplayerLastErrorCode = ''
+
+            return new Promise(resolve => {
+                window.bridge.multiplayer.createRoom(this.actionParametersContainer)
+                    .then(() => {
+                        this.isLastActionCompletedSuccessfully = true
+                    })
+                    .catch(error => this.setMultiplayerError(error))
+                    .finally(() => {
+                        this.actionParametersContainer = {}
+                        this._trigger(this.conditions.OnMultiplayerCreateRoomCompleted)
+                        resolve()
+                    })
+            })
+        },
+
+        MultiplayerJoinRoom(roomId) {
+            this.isLastActionCompletedSuccessfully = false
+            this.multiplayerLastErrorCode = ''
+
+            return new Promise(resolve => {
+                window.bridge.multiplayer.joinRoom(roomId, this.actionParametersContainer)
+                    .then(() => {
+                        this.isLastActionCompletedSuccessfully = true
+                    })
+                    .catch(error => this.setMultiplayerError(error))
+                    .finally(() => {
+                        this.actionParametersContainer = {}
+                        this._trigger(this.conditions.OnMultiplayerJoinRoomCompleted)
+                        resolve()
+                    })
+            })
+        },
+
+        MultiplayerJoinOrCreateRoom() {
+            this.isLastActionCompletedSuccessfully = false
+            this.multiplayerLastErrorCode = ''
+
+            return new Promise(resolve => {
+                window.bridge.multiplayer.joinOrCreateRoom(this.actionParametersContainer)
+                    .then(() => {
+                        this.isLastActionCompletedSuccessfully = true
+                    })
+                    .catch(error => this.setMultiplayerError(error))
+                    .finally(() => {
+                        this.actionParametersContainer = {}
+                        this._trigger(this.conditions.OnMultiplayerJoinOrCreateRoomCompleted)
+                        resolve()
+                    })
+            })
+        },
+
+        MultiplayerGetRooms() {
+            this.isLastActionCompletedSuccessfully = false
+            this.multiplayerLastErrorCode = ''
+
+            return new Promise(resolve => {
+                window.bridge.multiplayer.getRooms(this.actionParametersContainer)
+                    .then(rooms => {
+                        this.isLastActionCompletedSuccessfully = true
+                        this.multiplayerRooms = rooms || []
+                    })
+                    .catch(error => this.setMultiplayerError(error))
+                    .finally(() => {
+                        this.actionParametersContainer = {}
+                        this._trigger(this.conditions.OnMultiplayerGetRoomsCompleted)
+                        resolve()
+                    })
+            })
+        },
+
+        MultiplayerInviteToRoom() {
+            this.isLastActionCompletedSuccessfully = false
+            this.multiplayerLastErrorCode = ''
+
+            return new Promise(resolve => {
+                window.bridge.multiplayer.inviteToRoom(this.actionParametersContainer)
+                    .then(() => {
+                        this.isLastActionCompletedSuccessfully = true
+                    })
+                    .catch(error => this.setMultiplayerError(error))
+                    .finally(() => {
+                        this.actionParametersContainer = {}
+                        this._trigger(this.conditions.OnMultiplayerInviteToRoomCompleted)
+                        resolve()
+                    })
+            })
+        },
+
+        MultiplayerLeaveRoom() {
+            window.bridge.multiplayer.leaveRoom()
+        },
+
+        MultiplayerSetRoomOpen(isOpen) {
+            window.bridge.multiplayer.setRoomOpen(isOpen)
+        },
+
+        MultiplayerSetRoomVisible(isVisible) {
+            window.bridge.multiplayer.setRoomVisible(isVisible)
+        },
+
+        // properties is a JSON object string, a null value removes the key
+        MultiplayerSetRoomProperties(properties) {
+            const value = this.parseJSONValue(properties)
+            if (!this.isObject(value)) {
+                console.log('[PlaygamaBridge] room properties must be a JSON object')
+                return
+            }
+
+            window.bridge.multiplayer.setRoomProperties(value)
+        },
+
+        MultiplayerSetPlayerProperties(properties) {
+            const value = this.parseJSONValue(properties)
+            if (!this.isObject(value)) {
+                console.log('[PlaygamaBridge] player properties must be a JSON object')
+                return
+            }
+
+            window.bridge.multiplayer.setPlayerProperties(value)
+        },
+
+        // data is a JSON string or plain text, target is others / all / host / player (by id)
+        MultiplayerSendMessage(type, data, target, playerId) {
+            const to = target < this.multiplayerTargets.length ? this.multiplayerTargets[target] : playerId
+            window.bridge.multiplayer.send(type, this.parseJSONValue(data), { to })
+        },
     }
 }

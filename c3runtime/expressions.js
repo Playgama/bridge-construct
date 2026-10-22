@@ -522,6 +522,144 @@ const C3 = globalThis.C3
         },
         DailyRewardsCurrentReward() {
             return this.dailyRewardsCurrentReward || ''
+        },
+
+
+        // multiplayer
+        MultiplayerState() {
+            return window.bridge.multiplayer.state || ''
+        },
+        MultiplayerRoomId() {
+            return window.bridge.multiplayer.roomId || ''
+        },
+        MultiplayerPlayerId() {
+            return window.bridge.multiplayer.playerId || ''
+        },
+        MultiplayerHostId() {
+            return window.bridge.multiplayer.hostId || ''
+        },
+        MultiplayerIsHost() {
+            return window.bridge.multiplayer.isHost ? 1 : 0
+        },
+        MultiplayerLaunchRoomId() {
+            return window.bridge.multiplayer.launchRoomId || ''
+        },
+        MultiplayerLastErrorCode() {
+            return this.multiplayerLastErrorCode || ''
+        },
+        MultiplayerLastRoomLeftReason() {
+            return this.multiplayerLastRoomLeftReason || ''
+        },
+
+        MultiplayerRoomAsJSON() {
+            const room = window.bridge.multiplayer.room
+            return room ? JSON.stringify(room) : ''
+        },
+        MultiplayerRoomMaxPlayers() {
+            const room = window.bridge.multiplayer.room
+            return room ? room.maxPlayers : 0
+        },
+        MultiplayerRoomProperty(key) {
+            const room = window.bridge.multiplayer.room
+            return this.toExpressionValue(room && room.properties ? room.properties[key] : null)
+        },
+        MultiplayerRoomPropertiesAsJSON() {
+            const room = window.bridge.multiplayer.room
+            return JSON.stringify(room && room.properties ? room.properties : {})
+        },
+
+        MultiplayerRoomPlayersCount() {
+            return window.bridge.multiplayer.players.length
+        },
+        MultiplayerRoomPlayersAsJSON() {
+            return JSON.stringify(window.bridge.multiplayer.players)
+        },
+        MultiplayerRoomPlayerId(playerIndex) {
+            const player = window.bridge.multiplayer.players[playerIndex]
+            return player ? player.id : ''
+        },
+        MultiplayerRoomPlayerName(playerIndex) {
+            const player = window.bridge.multiplayer.players[playerIndex]
+            return player && player.name ? player.name : ''
+        },
+        MultiplayerRoomPlayerIsHost(playerIndex) {
+            const player = window.bridge.multiplayer.players[playerIndex]
+            return player && player.isHost ? 1 : 0
+        },
+        MultiplayerRoomPlayerIsConnected(playerIndex) {
+            const player = window.bridge.multiplayer.players[playerIndex]
+            return player && player.isConnected ? 1 : 0
+        },
+        MultiplayerRoomPlayerProperty(playerIndex, key) {
+            const player = window.bridge.multiplayer.players[playerIndex]
+            return this.toExpressionValue(player && player.properties ? player.properties[key] : null)
+        },
+        MultiplayerRoomPlayerPropertiesAsJSON(playerIndex) {
+            const player = window.bridge.multiplayer.players[playerIndex]
+            return JSON.stringify(player && player.properties ? player.properties : {})
+        },
+
+        MultiplayerLastEventPlayerId() {
+            const player = this.multiplayerLastEventPlayer
+            return player ? player.id : ''
+        },
+        MultiplayerLastEventPlayerName() {
+            const player = this.multiplayerLastEventPlayer
+            return player && player.name ? player.name : ''
+        },
+        MultiplayerLastEventPlayerProperty(key) {
+            const player = this.multiplayerLastEventPlayer
+            return this.toExpressionValue(player && player.properties ? player.properties[key] : null)
+        },
+        MultiplayerLastEventPlayerAsJSON() {
+            const player = this.multiplayerLastEventPlayer
+            return player ? JSON.stringify(player) : ''
+        },
+
+        MultiplayerLastMessageType() {
+            const message = this.multiplayerLastMessage
+            return message ? message.type : ''
+        },
+        MultiplayerLastMessageFrom() {
+            const message = this.multiplayerLastMessage
+            return message && message.from ? message.from : ''
+        },
+        MultiplayerLastMessageData() {
+            const message = this.multiplayerLastMessage
+            if (!message || message.data === null || typeof message.data === 'undefined') {
+                return ''
+            }
+
+            // plain strings are returned as is, everything else as a JSON string
+            return typeof message.data === 'string' ? message.data : JSON.stringify(message.data)
+        },
+        MultiplayerLastMessageDataValue(key) {
+            const message = this.multiplayerLastMessage
+            const data = message && this.isObject(message.data) ? message.data : null
+            return this.toExpressionValue(data ? data[key] : null)
+        },
+
+        MultiplayerRoomListCount() {
+            return this.multiplayerRooms ? this.multiplayerRooms.length : 0
+        },
+        MultiplayerRoomListAsJSON() {
+            return JSON.stringify(this.multiplayerRooms || [])
+        },
+        MultiplayerRoomListId(roomIndex) {
+            const room = this.multiplayerRooms && this.multiplayerRooms[roomIndex]
+            return room ? room.id : ''
+        },
+        MultiplayerRoomListPlayerCount(roomIndex) {
+            const room = this.multiplayerRooms && this.multiplayerRooms[roomIndex]
+            return room ? room.playerCount : 0
+        },
+        MultiplayerRoomListMaxPlayers(roomIndex) {
+            const room = this.multiplayerRooms && this.multiplayerRooms[roomIndex]
+            return room ? room.maxPlayers : 0
+        },
+        MultiplayerRoomListProperty(roomIndex, key) {
+            const room = this.multiplayerRooms && this.multiplayerRooms[roomIndex]
+            return this.toExpressionValue(room && room.properties ? room.properties[key] : null)
         }
     }
 }

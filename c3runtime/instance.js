@@ -33,6 +33,16 @@ const C3 = globalThis.C3
             this.remoteConfig = {}
             this.isLastActionCompletedSuccessfully = false
             this.actionParametersContainer = {}
+            this.multiplayerRooms = []
+            this.multiplayerLastEventPlayer = null
+            this.multiplayerLastMessage = null
+            this.multiplayerLastRoomLeftReason = ''
+            this.multiplayerLastErrorCode = ''
+
+            // combo items order must match aces.json
+            this.multiplayerStates = ['disconnected', 'connecting', 'connected', 'reconnecting']
+            this.multiplayerTargets = ['others', 'all', 'host']
+            this.multiplayerRoomLeaveReasons = ['left', 'connection_lost', 'room_closed']
 
 
             // utils for action parameters
@@ -94,6 +104,40 @@ const C3 = globalThis.C3
                     obj = obj[k]
                 }
                 return obj
+            }
+
+            // utils for multiplayer data
+            // Parses a JSON string, falls back to the raw string, empty string means no value
+            this.parseJSONValue = function(text) {
+                if (text === '' || text === null || typeof text === 'undefined') {
+                    return undefined
+                }
+
+                try {
+                    return JSON.parse(text)
+                } catch (error) {
+                    return text
+                }
+            }
+            // Converts any JS value to a value Construct expressions can return
+            this.toExpressionValue = function(value) {
+                if (value === null || typeof value === 'undefined') {
+                    return ''
+                }
+
+                if (typeof value === 'boolean') {
+                    return value ? 1 : 0
+                }
+
+                if (typeof value === 'object') {
+                    return JSON.stringify(value)
+                }
+
+                return value
+            }
+            this.setMultiplayerError = function(error) {
+                console.log(error)
+                self.multiplayerLastErrorCode = error && error.code ? error.code : ''
             }
         }
 
@@ -248,6 +292,11 @@ const C3 = globalThis.C3
                                     this._trigger(this.conditions.OnPlatformPauseStateChanged)
                                 })
 
+                                // the multiplayer module may be missing in older SDK builds
+                                if (window.bridge.multiplayer) {
+                                    this._subscribeMultiplayerEvents()
+                                }
+
                                 resolve()
                             })
                             .catch(error => reject(error))
@@ -267,6 +316,48 @@ const C3 = globalThis.C3
                 }
 
                 pollForBridge()
+            })
+        }
+
+        _subscribeMultiplayerEvents() {
+            const multiplayer = window.bridge.multiplayer
+
+            multiplayer.on('multiplayer_state_changed', state => {
+                this._trigger(this.conditions.OnMultiplayerStateChanged)
+            })
+
+            multiplayer.on('multiplayer_room_left', reason => {
+                this.multiplayerLastRoomLeftReason = reason || ''
+                this._trigger(this.conditions.OnMultiplayerRoomLeft)
+            })
+
+            multiplayer.on('multiplayer_room_updated', room => {
+                this._trigger(this.conditions.OnMultiplayerRoomUpdated)
+            })
+
+            multiplayer.on('multiplayer_player_joined', player => {
+                this.multiplayerLastEventPlayer = player
+                this._trigger(this.conditions.OnMultiplayerPlayerJoined)
+            })
+
+            multiplayer.on('multiplayer_player_left', player => {
+                this.multiplayerLastEventPlayer = player
+                this._trigger(this.conditions.OnMultiplayerPlayerLeft)
+            })
+
+            multiplayer.on('multiplayer_player_updated', player => {
+                this.multiplayerLastEventPlayer = player
+                this._trigger(this.conditions.OnMultiplayerPlayerUpdated)
+            })
+
+            multiplayer.on('multiplayer_host_changed', player => {
+                this.multiplayerLastEventPlayer = player || null
+                this._trigger(this.conditions.OnMultiplayerHostChanged)
+            })
+
+            multiplayer.on('multiplayer_message_received', message => {
+                this.multiplayerLastMessage = message
+                this._trigger(this.conditions.OnMultiplayerMessageReceived)
             })
         }
 

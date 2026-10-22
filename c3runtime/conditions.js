@@ -405,5 +405,87 @@ const C3 = globalThis.C3
             return true
         },
 
+
+        // multiplayer
+        IsMultiplayerSupported() {
+            return !!window.bridge.multiplayer && window.bridge.multiplayer.isSupported
+        },
+
+        IsMultiplayerInRoom() {
+            return window.bridge.multiplayer.isInRoom
+        },
+
+        IsMultiplayerHost() {
+            return window.bridge.multiplayer.isHost
+        },
+
+        IsMultiplayerState(state) {
+            return window.bridge.multiplayer.state === this.multiplayerStates[state]
+        },
+
+        IsMultiplayerInviteSupported() {
+            return window.bridge.multiplayer.isInviteSupported
+        },
+
+        HasMultiplayerLaunchRoomId() {
+            return typeof window.bridge.multiplayer.launchRoomId === 'string' && window.bridge.multiplayer.launchRoomId !== ''
+        },
+
+        IsMultiplayerRoomLeftReason(reason) {
+            return this.multiplayerLastRoomLeftReason === this.multiplayerRoomLeaveReasons[reason]
+        },
+
+        OnMultiplayerStateChanged() {
+            return true
+        },
+
+        OnMultiplayerRoomLeft() {
+            return true
+        },
+
+        OnMultiplayerRoomUpdated() {
+            return true
+        },
+
+        OnMultiplayerPlayerJoined() {
+            return true
+        },
+
+        OnMultiplayerPlayerLeft() {
+            return true
+        },
+
+        OnMultiplayerPlayerUpdated() {
+            return true
+        },
+
+        OnMultiplayerHostChanged() {
+            return true
+        },
+
+        OnMultiplayerMessageReceived() {
+            return true
+        },
+
+        OnMultiplayerCreateRoomCompleted() {
+            return true
+        },
+
+        OnMultiplayerJoinRoomCompleted() {
+            return true
+        },
+
+        OnMultiplayerJoinOrCreateRoomCompleted() {
+            return true
+        },
+
+        OnMultiplayerGetRoomsCompleted() {
+            return true
+        },
+
+        OnMultiplayerInviteToRoomCompleted() {
+            return true
+        },
+
     }
 }

@@ -26,7 +26,8 @@
                     "tasks": "Tasks",
                     "daily-rewards": "Daily Rewards",
                     "notifications": "Notifications",
-                    "analytics": "Analytics"
+                    "analytics": "Analytics",
+                    "multiplayer": "Multiplayer"
                 },
                 "conditions": {
                     "is-last-action-completed-successfully": {
@@ -568,6 +569,129 @@
                         "list-name": "IsNotificationsSupported",
                         "display-text": "Is Notifications Supported",
                         "description": "Is Notifications Supported"
+                    },
+                    "is-multiplayer-supported": {
+                        "list-name": "IsMultiplayerSupported",
+                        "display-text": "Is Multiplayer Supported",
+                        "description": "Is Multiplayer Supported"
+                    },
+                    "is-multiplayer-in-room": {
+                        "list-name": "IsMultiplayerInRoom",
+                        "display-text": "Is Multiplayer In Room",
+                        "description": "Is Multiplayer In Room"
+                    },
+                    "is-multiplayer-host": {
+                        "list-name": "IsMultiplayerHost",
+                        "display-text": "Is Multiplayer Host",
+                        "description": "Is Multiplayer Host"
+                    },
+                    "is-multiplayer-state": {
+                        "list-name": "IsMultiplayerState",
+                        "display-text": "Multiplayer State is [b]{0}[/b]",
+                        "description": "Is Multiplayer State",
+                        "params": {
+                            "state": {
+                                "name": "State",
+                                "desc": "Multiplayer state",
+                                "items": {
+                                    "disconnected": "Disconnected",
+                                    "connecting": "Connecting",
+                                    "connected": "Connected",
+                                    "reconnecting": "Reconnecting"
+                                }
+                            }
+                        }
+                    },
+                    "is-multiplayer-invite-supported": {
+                        "list-name": "IsMultiplayerInviteSupported",
+                        "display-text": "Is Multiplayer Invite Supported",
+                        "description": "Is Multiplayer Invite Supported"
+                    },
+                    "has-multiplayer-launch-room-id": {
+                        "list-name": "HasMultiplayerLaunchRoomId",
+                        "display-text": "Has Multiplayer Launch Room Id",
+                        "description": "The game was opened with an invite link to a room"
+                    },
+                    "is-multiplayer-room-left-reason": {
+                        "list-name": "IsMultiplayerRoomLeftReason",
+                        "display-text": "Multiplayer Room Left Reason is [b]{0}[/b]",
+                        "description": "Is Multiplayer Room Left Reason",
+                        "params": {
+                            "reason": {
+                                "name": "Reason",
+                                "desc": "Room left reason",
+                                "items": {
+                                    "left": "Left",
+                                    "connection-lost": "Connection Lost",
+                                    "room-closed": "Room Closed"
+                                }
+                            }
+                        }
+                    },
+                    "on-multiplayer-state-changed": {
+                        "list-name": "OnMultiplayerStateChanged",
+                        "display-text": "On Multiplayer State Changed",
+                        "description": "On Multiplayer State Changed"
+                    },
+                    "on-multiplayer-room-left": {
+                        "list-name": "OnMultiplayerRoomLeft",
+                        "display-text": "On Multiplayer Room Left",
+                        "description": "On Multiplayer Room Left"
+                    },
+                    "on-multiplayer-room-updated": {
+                        "list-name": "OnMultiplayerRoomUpdated",
+                        "display-text": "On Multiplayer Room Updated",
+                        "description": "On Multiplayer Room Updated"
+                    },
+                    "on-multiplayer-player-joined": {
+                        "list-name": "OnMultiplayerPlayerJoined",
+                        "display-text": "On Multiplayer Player Joined",
+                        "description": "On Multiplayer Player Joined"
+                    },
+                    "on-multiplayer-player-left": {
+                        "list-name": "OnMultiplayerPlayerLeft",
+                        "display-text": "On Multiplayer Player Left",
+                        "description": "On Multiplayer Player Left"
+                    },
+                    "on-multiplayer-player-updated": {
+                        "list-name": "OnMultiplayerPlayerUpdated",
+                        "display-text": "On Multiplayer Player Updated",
+                        "description": "On Multiplayer Player Updated"
+                    },
+                    "on-multiplayer-host-changed": {
+                        "list-name": "OnMultiplayerHostChanged",
+                        "display-text": "On Multiplayer Host Changed",
+                        "description": "On Multiplayer Host Changed"
+                    },
+                    "on-multiplayer-message-received": {
+                        "list-name": "OnMultiplayerMessageReceived",
+                        "display-text": "On Multiplayer Message Received",
+                        "description": "On Multiplayer Message Received"
+                    },
+                    "on-multiplayer-create-room-completed": {
+                        "list-name": "OnMultiplayerCreateRoomCompleted",
+                        "display-text": "On Multiplayer Create Room Completed",
+                        "description": "On Multiplayer Create Room Completed"
+                    },
+                    "on-multiplayer-join-room-completed": {
+                        "list-name": "OnMultiplayerJoinRoomCompleted",
+                        "display-text": "On Multiplayer Join Room Completed",
+                        "description": "On Multiplayer Join Room Completed"
+                    },
+                    "on-multiplayer-join-or-create-room-completed": {
+                        "list-name": "OnMultiplayerJoinOrCreateRoomCompleted",
+                        "display-text": "On Multiplayer Join Or Create Room Completed",
+                        "description": "On Multiplayer Join Or Create Room Completed"
+                    },
+                    "on-multiplayer-get-rooms-completed": {
+                        "list-name": "OnMultiplayerGetRoomsCompleted",
+                        "display-text": "On Multiplayer Get Rooms Completed",
+                        "description": "On Multiplayer Get Rooms Completed"
+                    },
+                    "on-multiplayer-invite-to-room-completed": {
+                        "list-name": "OnMultiplayerInviteToRoomCompleted",
+                        "display-text": "On Multiplayer Invite To Room Completed",
+                        "description": "On Multiplayer Invite To Room Completed"
                     }
                 },
                 "actions": {
@@ -1023,6 +1147,115 @@
                             "event-name": {
                                 "name": "Event Name",
                                 "desc": "Event Name"
+                            }
+                        }
+                    },
+                    "multiplayer-create-room": {
+                        "list-name": "MultiplayerCreateRoom",
+                        "display-text": "Multiplayer Create Room",
+                        "description": "Multiplayer Create Room. Options are taken from Add Action Parameter: maxPlayers, isVisible, isOpen, properties.*, playerName, playerProperties.*"
+                    },
+                    "multiplayer-join-room": {
+                        "list-name": "MultiplayerJoinRoom",
+                        "display-text": "Multiplayer Join Room. Room ID: [b]{0}[/b].",
+                        "description": "Multiplayer Join Room. Options are taken from Add Action Parameter: playerName, playerProperties.*",
+                        "params": {
+                            "room-id": {
+                                "name": "Room ID",
+                                "desc": "Room ID (code)"
+                            }
+                        }
+                    },
+                    "multiplayer-join-or-create-room": {
+                        "list-name": "MultiplayerJoinOrCreateRoom",
+                        "display-text": "Multiplayer Join Or Create Room",
+                        "description": "Multiplayer Join Or Create Room. Options are taken from Add Action Parameter: maxPlayers, filter.*, properties.*, playerName, playerProperties.*"
+                    },
+                    "multiplayer-get-rooms": {
+                        "list-name": "MultiplayerGetRooms",
+                        "display-text": "Multiplayer Get Rooms",
+                        "description": "Multiplayer Get Rooms. Options are taken from Add Action Parameter: filter.*, maxPlayers, limit"
+                    },
+                    "multiplayer-invite-to-room": {
+                        "list-name": "MultiplayerInviteToRoom",
+                        "display-text": "Multiplayer Invite To Room",
+                        "description": "Multiplayer Invite To Room. Options are taken from Add Action Parameter: text, image"
+                    },
+                    "multiplayer-leave-room": {
+                        "list-name": "MultiplayerLeaveRoom",
+                        "display-text": "Multiplayer Leave Room",
+                        "description": "Multiplayer Leave Room"
+                    },
+                    "multiplayer-set-room-open": {
+                        "list-name": "MultiplayerSetRoomOpen",
+                        "display-text": "Multiplayer Set Room Open. Is Open: [b]{0}[/b].",
+                        "description": "Multiplayer Set Room Open",
+                        "params": {
+                            "is-open": {
+                                "name": "Is Open",
+                                "desc": "Whether new players can join (host only)"
+                            }
+                        }
+                    },
+                    "multiplayer-set-room-visible": {
+                        "list-name": "MultiplayerSetRoomVisible",
+                        "display-text": "Multiplayer Set Room Visible. Is Visible: [b]{0}[/b].",
+                        "description": "Multiplayer Set Room Visible",
+                        "params": {
+                            "is-visible": {
+                                "name": "Is Visible",
+                                "desc": "Whether the room is listed in Get Rooms (host only)"
+                            }
+                        }
+                    },
+                    "multiplayer-set-room-properties": {
+                        "list-name": "MultiplayerSetRoomProperties",
+                        "display-text": "Multiplayer Set Room Properties. Properties: [b]{0}[/b].",
+                        "description": "Multiplayer Set Room Properties",
+                        "params": {
+                            "properties": {
+                                "name": "Properties",
+                                "desc": "JSON object, keys are merged, null removes a key (host only)"
+                            }
+                        }
+                    },
+                    "multiplayer-set-player-properties": {
+                        "list-name": "MultiplayerSetPlayerProperties",
+                        "display-text": "Multiplayer Set Player Properties. Properties: [b]{0}[/b].",
+                        "description": "Multiplayer Set Player Properties",
+                        "params": {
+                            "properties": {
+                                "name": "Properties",
+                                "desc": "JSON object, keys are merged, null removes a key"
+                            }
+                        }
+                    },
+                    "multiplayer-send-message": {
+                        "list-name": "MultiplayerSendMessage",
+                        "display-text": "Multiplayer Send Message. Type: [b]{0}[/b]. Data: [b]{1}[/b]. Target: [b]{2}[/b]. Player ID: [b]{3}[/b].",
+                        "description": "Multiplayer Send Message",
+                        "params": {
+                            "type": {
+                                "name": "Type",
+                                "desc": "Message type"
+                            },
+                            "data": {
+                                "name": "Data",
+                                "desc": "JSON string or plain text (optional)"
+                            },
+                            "target": {
+                                "name": "Target",
+                                "desc": "Who receives the message",
+                                "items": {
+                                    "others": "Others",
+                                    "all": "All",
+                                    "host": "Host",
+                                    "player": "Player (by ID)"
+                                }
+                            },
+                            "player-id": {
+                                "name": "Player ID",
+                                "desc": "Receiver ID when the target is Player"
                             }
                         }
                     }
@@ -1583,6 +1816,228 @@
                     "daily-rewards-current-reward": {
                         "translated-name": "DailyRewardsCurrentReward",
                         "description": "Daily Rewards Current Reward"
+                    },
+                    "multiplayer-state": {
+                        "translated-name": "MultiplayerState",
+                        "description": "Multiplayer state: disconnected, connecting, connected or reconnecting"
+                    },
+                    "multiplayer-room-id": {
+                        "translated-name": "MultiplayerRoomId",
+                        "description": "Current room ID (code)"
+                    },
+                    "multiplayer-player-id": {
+                        "translated-name": "MultiplayerPlayerId",
+                        "description": "Local player ID in the room"
+                    },
+                    "multiplayer-host-id": {
+                        "translated-name": "MultiplayerHostId",
+                        "description": "Host player ID"
+                    },
+                    "multiplayer-is-host": {
+                        "translated-name": "MultiplayerIsHost",
+                        "description": "1 if the local player is the host, otherwise 0"
+                    },
+                    "multiplayer-launch-room-id": {
+                        "translated-name": "MultiplayerLaunchRoomId",
+                        "description": "Room ID from the invite link the game was opened with"
+                    },
+                    "multiplayer-last-error-code": {
+                        "translated-name": "MultiplayerLastErrorCode",
+                        "description": "Error code of the last failed multiplayer action"
+                    },
+                    "multiplayer-last-room-left-reason": {
+                        "translated-name": "MultiplayerLastRoomLeftReason",
+                        "description": "Reason of the last room left: left, connection_lost or room_closed"
+                    },
+                    "multiplayer-room-as-json": {
+                        "translated-name": "MultiplayerRoomAsJSON",
+                        "description": "Current room as a JSON string"
+                    },
+                    "multiplayer-room-max-players": {
+                        "translated-name": "MultiplayerRoomMaxPlayers",
+                        "description": "Current room max players"
+                    },
+                    "multiplayer-room-property": {
+                        "translated-name": "MultiplayerRoomProperty",
+                        "description": "Current room property value (objects as JSON strings)",
+                        "params": {
+                            "key": {
+                                "name": "Key",
+                                "desc": "Property key"
+                            }
+                        }
+                    },
+                    "multiplayer-room-properties-as-json": {
+                        "translated-name": "MultiplayerRoomPropertiesAsJSON",
+                        "description": "Current room properties as a JSON string"
+                    },
+                    "multiplayer-room-players-count": {
+                        "translated-name": "MultiplayerRoomPlayersCount",
+                        "description": "Players count in the current room"
+                    },
+                    "multiplayer-room-players-as-json": {
+                        "translated-name": "MultiplayerRoomPlayersAsJSON",
+                        "description": "Players in the current room as a JSON string"
+                    },
+                    "multiplayer-room-player-id": {
+                        "translated-name": "MultiplayerRoomPlayerId",
+                        "description": "Room player ID",
+                        "params": {
+                            "player-index": {
+                                "name": "Player Index",
+                                "desc": "Player Index"
+                            }
+                        }
+                    },
+                    "multiplayer-room-player-name": {
+                        "translated-name": "MultiplayerRoomPlayerName",
+                        "description": "Room player name",
+                        "params": {
+                            "player-index": {
+                                "name": "Player Index",
+                                "desc": "Player Index"
+                            }
+                        }
+                    },
+                    "multiplayer-room-player-is-host": {
+                        "translated-name": "MultiplayerRoomPlayerIsHost",
+                        "description": "1 if the room player is the host, otherwise 0",
+                        "params": {
+                            "player-index": {
+                                "name": "Player Index",
+                                "desc": "Player Index"
+                            }
+                        }
+                    },
+                    "multiplayer-room-player-is-connected": {
+                        "translated-name": "MultiplayerRoomPlayerIsConnected",
+                        "description": "1 if the room player is connected, otherwise 0",
+                        "params": {
+                            "player-index": {
+                                "name": "Player Index",
+                                "desc": "Player Index"
+                            }
+                        }
+                    },
+                    "multiplayer-room-player-property": {
+                        "translated-name": "MultiplayerRoomPlayerProperty",
+                        "description": "Room player property value (objects as JSON strings)",
+                        "params": {
+                            "player-index": {
+                                "name": "Player Index",
+                                "desc": "Player Index"
+                            },
+                            "key": {
+                                "name": "Key",
+                                "desc": "Property key"
+                            }
+                        }
+                    },
+                    "multiplayer-room-player-properties-as-json": {
+                        "translated-name": "MultiplayerRoomPlayerPropertiesAsJSON",
+                        "description": "Room player properties as a JSON string",
+                        "params": {
+                            "player-index": {
+                                "name": "Player Index",
+                                "desc": "Player Index"
+                            }
+                        }
+                    },
+                    "multiplayer-last-event-player-id": {
+                        "translated-name": "MultiplayerLastEventPlayerId",
+                        "description": "ID of the player from the last player joined / left / updated / host changed event"
+                    },
+                    "multiplayer-last-event-player-name": {
+                        "translated-name": "MultiplayerLastEventPlayerName",
+                        "description": "Name of the player from the last player event"
+                    },
+                    "multiplayer-last-event-player-property": {
+                        "translated-name": "MultiplayerLastEventPlayerProperty",
+                        "description": "Property value of the player from the last player event",
+                        "params": {
+                            "key": {
+                                "name": "Key",
+                                "desc": "Property key"
+                            }
+                        }
+                    },
+                    "multiplayer-last-event-player-as-json": {
+                        "translated-name": "MultiplayerLastEventPlayerAsJSON",
+                        "description": "Player from the last player event as a JSON string"
+                    },
+                    "multiplayer-last-message-type": {
+                        "translated-name": "MultiplayerLastMessageType",
+                        "description": "Type of the last received message"
+                    },
+                    "multiplayer-last-message-data": {
+                        "translated-name": "MultiplayerLastMessageData",
+                        "description": "Data of the last received message (plain text or JSON string)"
+                    },
+                    "multiplayer-last-message-data-value": {
+                        "translated-name": "MultiplayerLastMessageDataValue",
+                        "description": "Value by key from the last received message data object",
+                        "params": {
+                            "key": {
+                                "name": "Key",
+                                "desc": "Property key"
+                            }
+                        }
+                    },
+                    "multiplayer-last-message-from": {
+                        "translated-name": "MultiplayerLastMessageFrom",
+                        "description": "Sender ID of the last received message"
+                    },
+                    "multiplayer-room-list-count": {
+                        "translated-name": "MultiplayerRoomListCount",
+                        "description": "Rooms count from the last Get Rooms"
+                    },
+                    "multiplayer-room-list-as-json": {
+                        "translated-name": "MultiplayerRoomListAsJSON",
+                        "description": "Rooms from the last Get Rooms as a JSON string"
+                    },
+                    "multiplayer-room-list-id": {
+                        "translated-name": "MultiplayerRoomListId",
+                        "description": "Room ID from the last Get Rooms",
+                        "params": {
+                            "room-index": {
+                                "name": "Room Index",
+                                "desc": "Room Index"
+                            }
+                        }
+                    },
+                    "multiplayer-room-list-player-count": {
+                        "translated-name": "MultiplayerRoomListPlayerCount",
+                        "description": "Room players count from the last Get Rooms",
+                        "params": {
+                            "room-index": {
+                                "name": "Room Index",
+                                "desc": "Room Index"
+                            }
+                        }
+                    },
+                    "multiplayer-room-list-max-players": {
+                        "translated-name": "MultiplayerRoomListMaxPlayers",
+                        "description": "Room max players from the last Get Rooms",
+                        "params": {
+                            "room-index": {
+                                "name": "Room Index",
+                                "desc": "Room Index"
+                            }
+                        }
+                    },
+                    "multiplayer-room-list-property": {
+                        "translated-name": "MultiplayerRoomListProperty",
+                        "description": "Room property value from the last Get Rooms",
+                        "params": {
+                            "room-index": {
+                                "name": "Room Index",
+                                "desc": "Room Index"
+                            },
+                            "key": {
+                                "name": "Key",
+                                "desc": "Property key"
+                            }
+                        }
                     }
                 }
             }

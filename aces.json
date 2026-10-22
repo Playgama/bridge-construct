@@ -1813,5 +1813,520 @@
             }
         ],
         "expressions": []
+    },
+    "multiplayer": {
+        "conditions": [
+            {
+                "id": "is-multiplayer-supported",
+                "scriptName": "IsMultiplayerSupported"
+            },
+            {
+                "id": "is-multiplayer-in-room",
+                "scriptName": "IsMultiplayerInRoom"
+            },
+            {
+                "id": "is-multiplayer-host",
+                "scriptName": "IsMultiplayerHost"
+            },
+            {
+                "id": "is-multiplayer-state",
+                "scriptName": "IsMultiplayerState",
+                "params": [
+                    {
+                        "id": "state",
+                        "type": "combo",
+                        "items": [
+                            "disconnected",
+                            "connecting",
+                            "connected",
+                            "reconnecting"
+                        ]
+                    }
+                ]
+            },
+            {
+                "id": "is-multiplayer-invite-supported",
+                "scriptName": "IsMultiplayerInviteSupported"
+            },
+            {
+                "id": "has-multiplayer-launch-room-id",
+                "scriptName": "HasMultiplayerLaunchRoomId"
+            },
+            {
+                "id": "is-multiplayer-room-left-reason",
+                "scriptName": "IsMultiplayerRoomLeftReason",
+                "params": [
+                    {
+                        "id": "reason",
+                        "type": "combo",
+                        "items": [
+                            "left",
+                            "connection-lost",
+                            "room-closed"
+                        ]
+                    }
+                ]
+            },
+            {
+                "id": "on-multiplayer-state-changed",
+                "scriptName": "OnMultiplayerStateChanged",
+                "isTrigger": true,
+                "isInvertible": false,
+                "isCompatibleWithTriggers": false
+            },
+            {
+                "id": "on-multiplayer-room-left",
+                "scriptName": "OnMultiplayerRoomLeft",
+                "isTrigger": true,
+                "isInvertible": false,
+                "isCompatibleWithTriggers": false
+            },
+            {
+                "id": "on-multiplayer-room-updated",
+                "scriptName": "OnMultiplayerRoomUpdated",
+                "isTrigger": true,
+                "isInvertible": false,
+                "isCompatibleWithTriggers": false
+            },
+            {
+                "id": "on-multiplayer-player-joined",
+                "scriptName": "OnMultiplayerPlayerJoined",
+                "isTrigger": true,
+                "isInvertible": false,
+                "isCompatibleWithTriggers": false
+            },
+            {
+                "id": "on-multiplayer-player-left",
+                "scriptName": "OnMultiplayerPlayerLeft",
+                "isTrigger": true,
+                "isInvertible": false,
+                "isCompatibleWithTriggers": false
+            },
+            {
+                "id": "on-multiplayer-player-updated",
+                "scriptName": "OnMultiplayerPlayerUpdated",
+                "isTrigger": true,
+                "isInvertible": false,
+                "isCompatibleWithTriggers": false
+            },
+            {
+                "id": "on-multiplayer-host-changed",
+                "scriptName": "OnMultiplayerHostChanged",
+                "isTrigger": true,
+                "isInvertible": false,
+                "isCompatibleWithTriggers": false
+            },
+            {
+                "id": "on-multiplayer-message-received",
+                "scriptName": "OnMultiplayerMessageReceived",
+                "isTrigger": true,
+                "isInvertible": false,
+                "isCompatibleWithTriggers": false
+            },
+            {
+                "id": "on-multiplayer-create-room-completed",
+                "scriptName": "OnMultiplayerCreateRoomCompleted",
+                "isTrigger": true,
+                "isInvertible": false,
+                "isCompatibleWithTriggers": false
+            },
+            {
+                "id": "on-multiplayer-join-room-completed",
+                "scriptName": "OnMultiplayerJoinRoomCompleted",
+                "isTrigger": true,
+                "isInvertible": false,
+                "isCompatibleWithTriggers": false
+            },
+            {
+                "id": "on-multiplayer-join-or-create-room-completed",
+                "scriptName": "OnMultiplayerJoinOrCreateRoomCompleted",
+                "isTrigger": true,
+                "isInvertible": false,
+                "isCompatibleWithTriggers": false
+            },
+            {
+                "id": "on-multiplayer-get-rooms-completed",
+                "scriptName": "OnMultiplayerGetRoomsCompleted",
+                "isTrigger": true,
+                "isInvertible": false,
+                "isCompatibleWithTriggers": false
+            },
+            {
+                "id": "on-multiplayer-invite-to-room-completed",
+                "scriptName": "OnMultiplayerInviteToRoomCompleted",
+                "isTrigger": true,
+                "isInvertible": false,
+                "isCompatibleWithTriggers": false
+            }
+        ],
+        "actions": [
+            {
+                "id": "multiplayer-create-room",
+                "scriptName": "MultiplayerCreateRoom",
+                "isAsync": true
+            },
+            {
+                "id": "multiplayer-join-room",
+                "scriptName": "MultiplayerJoinRoom",
+                "isAsync": true,
+                "params": [
+                    {
+                        "id": "room-id",
+                        "type": "string"
+                    }
+                ]
+            },
+            {
+                "id": "multiplayer-join-or-create-room",
+                "scriptName": "MultiplayerJoinOrCreateRoom",
+                "isAsync": true
+            },
+            {
+                "id": "multiplayer-get-rooms",
+                "scriptName": "MultiplayerGetRooms",
+                "isAsync": true
+            },
+            {
+                "id": "multiplayer-invite-to-room",
+                "scriptName": "MultiplayerInviteToRoom",
+                "isAsync": true
+            },
+            {
+                "id": "multiplayer-leave-room",
+                "scriptName": "MultiplayerLeaveRoom",
+                "isAsync": false
+            },
+            {
+                "id": "multiplayer-set-room-open",
+                "scriptName": "MultiplayerSetRoomOpen",
+                "isAsync": false,
+                "params": [
+                    {
+                        "id": "is-open",
+                        "type": "boolean"
+                    }
+                ]
+            },
+            {
+                "id": "multiplayer-set-room-visible",
+                "scriptName": "MultiplayerSetRoomVisible",
+                "isAsync": false,
+                "params": [
+                    {
+                        "id": "is-visible",
+                        "type": "boolean"
+                    }
+                ]
+            },
+            {
+                "id": "multiplayer-set-room-properties",
+                "scriptName": "MultiplayerSetRoomProperties",
+                "isAsync": false,
+                "params": [
+                    {
+                        "id": "properties",
+                        "type": "string"
+                    }
+                ]
+            },
+            {
+                "id": "multiplayer-set-player-properties",
+                "scriptName": "MultiplayerSetPlayerProperties",
+                "isAsync": false,
+                "params": [
+                    {
+                        "id": "properties",
+                        "type": "string"
+                    }
+                ]
+            },
+            {
+                "id": "multiplayer-send-message",
+                "scriptName": "MultiplayerSendMessage",
+                "isAsync": false,
+                "params": [
+                    {
+                        "id": "type",
+                        "type": "string"
+                    },
+                    {
+                        "id": "data",
+                        "type": "string"
+                    },
+                    {
+                        "id": "target",
+                        "type": "combo",
+                        "items": [
+                            "others",
+                            "all",
+                            "host",
+                            "player"
+                        ]
+                    },
+                    {
+                        "id": "player-id",
+                        "type": "string"
+                    }
+                ]
+            }
+        ],
+        "expressions": [
+            {
+                "id": "multiplayer-state",
+                "expressionName": "MultiplayerState",
+                "returnType": "string"
+            },
+            {
+                "id": "multiplayer-room-id",
+                "expressionName": "MultiplayerRoomId",
+                "returnType": "string"
+            },
+            {
+                "id": "multiplayer-player-id",
+                "expressionName": "MultiplayerPlayerId",
+                "returnType": "string"
+            },
+            {
+                "id": "multiplayer-host-id",
+                "expressionName": "MultiplayerHostId",
+                "returnType": "string"
+            },
+            {
+                "id": "multiplayer-is-host",
+                "expressionName": "MultiplayerIsHost",
+                "returnType": "number"
+            },
+            {
+                "id": "multiplayer-launch-room-id",
+                "expressionName": "MultiplayerLaunchRoomId",
+                "returnType": "string"
+            },
+            {
+                "id": "multiplayer-last-error-code",
+                "expressionName": "MultiplayerLastErrorCode",
+                "returnType": "string"
+            },
+            {
+                "id": "multiplayer-last-room-left-reason",
+                "expressionName": "MultiplayerLastRoomLeftReason",
+                "returnType": "string"
+            },
+            {
+                "id": "multiplayer-room-as-json",
+                "expressionName": "MultiplayerRoomAsJSON",
+                "returnType": "string"
+            },
+            {
+                "id": "multiplayer-room-max-players",
+                "expressionName": "MultiplayerRoomMaxPlayers",
+                "returnType": "number"
+            },
+            {
+                "id": "multiplayer-room-property",
+                "expressionName": "MultiplayerRoomProperty",
+                "returnType": "any",
+                "params": [
+                    {
+                        "id": "key",
+                        "type": "string"
+                    }
+                ]
+            },
+            {
+                "id": "multiplayer-room-properties-as-json",
+                "expressionName": "MultiplayerRoomPropertiesAsJSON",
+                "returnType": "string"
+            },
+            {
+                "id": "multiplayer-room-players-count",
+                "expressionName": "MultiplayerRoomPlayersCount",
+                "returnType": "number"
+            },
+            {
+                "id": "multiplayer-room-players-as-json",
+                "expressionName": "MultiplayerRoomPlayersAsJSON",
+                "returnType": "string"
+            },
+            {
+                "id": "multiplayer-room-player-id",
+                "expressionName": "MultiplayerRoomPlayerId",
+                "returnType": "string",
+                "params": [
+                    {
+                        "id": "player-index",
+                        "type": "number"
+                    }
+                ]
+            },
+            {
+                "id": "multiplayer-room-player-name",
+                "expressionName": "MultiplayerRoomPlayerName",
+                "returnType": "string",
+                "params": [
+                    {
+                        "id": "player-index",
+                        "type": "number"
+                    }
+                ]
+            },
+            {
+                "id": "multiplayer-room-player-is-host",
+                "expressionName": "MultiplayerRoomPlayerIsHost",
+                "returnType": "number",
+                "params": [
+                    {
+                        "id": "player-index",
+                        "type": "number"
+                    }
+                ]
+            },
+            {
+                "id": "multiplayer-room-player-is-connected",
+                "expressionName": "MultiplayerRoomPlayerIsConnected",
+                "returnType": "number",
+                "params": [
+                    {
+                        "id": "player-index",
+                        "type": "number"
+                    }
+                ]
+            },
+            {
+                "id": "multiplayer-room-player-property",
+                "expressionName": "MultiplayerRoomPlayerProperty",
+                "returnType": "any",
+                "params": [
+                    {
+                        "id": "player-index",
+                        "type": "number"
+                    },
+                    {
+                        "id": "key",
+                        "type": "string"
+                    }
+                ]
+            },
+            {
+                "id": "multiplayer-room-player-properties-as-json",
+                "expressionName": "MultiplayerRoomPlayerPropertiesAsJSON",
+                "returnType": "string",
+                "params": [
+                    {
+                        "id": "player-index",
+                        "type": "number"
+                    }
+                ]
+            },
+            {
+                "id": "multiplayer-last-event-player-id",
+                "expressionName": "MultiplayerLastEventPlayerId",
+                "returnType": "string"
+            },
+            {
+                "id": "multiplayer-last-event-player-name",
+                "expressionName": "MultiplayerLastEventPlayerName",
+                "returnType": "string"
+            },
+            {
+                "id": "multiplayer-last-event-player-property",
+                "expressionName": "MultiplayerLastEventPlayerProperty",
+                "returnType": "any",
+                "params": [
+                    {
+                        "id": "key",
+                        "type": "string"
+                    }
+                ]
+            },
+            {
+                "id": "multiplayer-last-event-player-as-json",
+                "expressionName": "MultiplayerLastEventPlayerAsJSON",
+                "returnType": "string"
+            },
+            {
+                "id": "multiplayer-last-message-type",
+                "expressionName": "MultiplayerLastMessageType",
+                "returnType": "string"
+            },
+            {
+                "id": "multiplayer-last-message-data",
+                "expressionName": "MultiplayerLastMessageData",
+                "returnType": "string"
+            },
+            {
+                "id": "multiplayer-last-message-data-value",
+                "expressionName": "MultiplayerLastMessageDataValue",
+                "returnType": "any",
+                "params": [
+                    {
+                        "id": "key",
+                        "type": "string"
+                    }
+                ]
+            },
+            {
+                "id": "multiplayer-last-message-from",
+                "expressionName": "MultiplayerLastMessageFrom",
+                "returnType": "string"
+            },
+            {
+                "id": "multiplayer-room-list-count",
+                "expressionName": "MultiplayerRoomListCount",
+                "returnType": "number"
+            },
+            {
+                "id": "multiplayer-room-list-as-json",
+                "expressionName": "MultiplayerRoomListAsJSON",
+                "returnType": "string"
+            },
+            {
+                "id": "multiplayer-room-list-id",
+                "expressionName": "MultiplayerRoomListId",
+                "returnType": "string",
+                "params": [
+                    {
+                        "id": "room-index",
+                        "type": "number"
+                    }
+                ]
+            },
+            {
+                "id": "multiplayer-room-list-player-count",
+                "expressionName": "MultiplayerRoomListPlayerCount",
+                "returnType": "number",
+                "params": [
+                    {
+                        "id": "room-index",
+                        "type": "number"
+                    }
+                ]
+            },
+            {
+                "id": "multiplayer-room-list-max-players",
+                "expressionName": "MultiplayerRoomListMaxPlayers",
+                "returnType": "number",
+                "params": [
+                    {
+                        "id": "room-index",
+                        "type": "number"
+                    }
+                ]
+            },
+            {
+                "id": "multiplayer-room-list-property",
+                "expressionName": "MultiplayerRoomListProperty",
+                "returnType": "any",
+                "params": [
+                    {
+                        "id": "room-index",
+                        "type": "number"
+                    },
+                    {
+                        "id": "key",
+                        "type": "string"
+                    }
+                ]
+            }
+        ]
     }
 }
