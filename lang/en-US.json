@@ -1153,7 +1153,7 @@
                     "multiplayer-create-room": {
                         "list-name": "MultiplayerCreateRoom",
                         "display-text": "Multiplayer Create Room",
-                        "description": "Multiplayer Create Room. Options are taken from Add Action Parameter: maxPlayers, isVisible, isOpen, properties.*, playerName, playerProperties.*"
+                        "description": "Multiplayer Create Room. Options are taken from Add Action Parameter: maxPlayers, isVisible, isOpen, filter.*, properties.*, playerName, playerProperties.*"
                     },
                     "multiplayer-join-room": {
                         "list-name": "MultiplayerJoinRoom",
@@ -1169,12 +1169,12 @@
                     "multiplayer-join-or-create-room": {
                         "list-name": "MultiplayerJoinOrCreateRoom",
                         "display-text": "Multiplayer Join Or Create Room",
-                        "description": "Multiplayer Join Or Create Room. Options are taken from Add Action Parameter: maxPlayers, filter.*, properties.*, playerName, playerProperties.*"
+                        "description": "Multiplayer Join Or Create Room. Joins a public room with the same maxPlayers and exactly the same filter, or creates one. Options are taken from Add Action Parameter: maxPlayers, filter.*, properties.*, playerName, playerProperties.*"
                     },
                     "multiplayer-get-rooms": {
                         "list-name": "MultiplayerGetRooms",
                         "display-text": "Multiplayer Get Rooms",
-                        "description": "Multiplayer Get Rooms. Options are taken from Add Action Parameter: filter.*, maxPlayers, limit"
+                        "description": "Multiplayer Get Rooms. Lists public rooms; with filter.* only rooms created with exactly that filter. Options are taken from Add Action Parameter: filter.*, maxPlayers, limit"
                     },
                     "multiplayer-invite-to-room": {
                         "list-name": "MultiplayerInviteToRoom",
