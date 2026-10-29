@@ -668,6 +668,11 @@
                         "display-text": "On Multiplayer Message Received",
                         "description": "On Multiplayer Message Received"
                     },
+                    "on-multiplayer-sync-state-received": {
+                        "list-name": "OnMultiplayerSyncStateReceived",
+                        "display-text": "On Multiplayer Sync State Received",
+                        "description": "Fires on the other players for each world from the host, and on a new host when it takes over the last world"
+                    },
                     "on-multiplayer-create-room-completed": {
                         "list-name": "OnMultiplayerCreateRoomCompleted",
                         "display-text": "On Multiplayer Create Room Completed",
@@ -1153,12 +1158,12 @@
                     "multiplayer-create-room": {
                         "list-name": "MultiplayerCreateRoom",
                         "display-text": "Multiplayer Create Room",
-                        "description": "Multiplayer Create Room. Options are taken from Add Action Parameter: maxPlayers, isVisible, isOpen, filter.*, properties.*, playerName, playerProperties.*"
+                        "description": "Multiplayer Create Room. Options are taken from Add Action Parameter: maxPlayers, isVisible, isOpen, filter.*, properties.*, playerName, playerProperties.*, syncState, syncState.updatesPerSecond"
                     },
                     "multiplayer-join-room": {
                         "list-name": "MultiplayerJoinRoom",
                         "display-text": "Multiplayer Join Room. Room ID: [b]{0}[/b].",
-                        "description": "Multiplayer Join Room. Options are taken from Add Action Parameter: playerName, playerProperties.*",
+                        "description": "Multiplayer Join Room. Options are taken from Add Action Parameter: playerName, playerProperties.*, syncState, syncState.updatesPerSecond",
                         "params": {
                             "room-id": {
                                 "name": "Room ID",
@@ -1169,7 +1174,7 @@
                     "multiplayer-join-or-create-room": {
                         "list-name": "MultiplayerJoinOrCreateRoom",
                         "display-text": "Multiplayer Join Or Create Room",
-                        "description": "Multiplayer Join Or Create Room. Joins a public room with the same maxPlayers and exactly the same filter, or creates one. Options are taken from Add Action Parameter: maxPlayers, filter.*, properties.*, playerName, playerProperties.*"
+                        "description": "Multiplayer Join Or Create Room. Joins a public room with the same maxPlayers and exactly the same filter, or creates one. Options are taken from Add Action Parameter: maxPlayers, filter.*, properties.*, playerName, playerProperties.*, syncState, syncState.updatesPerSecond"
                     },
                     "multiplayer-get-rooms": {
                         "list-name": "MultiplayerGetRooms",
@@ -1242,6 +1247,11 @@
                                 "desc": "Receiver ID when the target is Player"
                             }
                         }
+                    },
+                    "multiplayer-set-sync-state": {
+                        "list-name": "MultiplayerSetSyncState",
+                        "display-text": "Multiplayer Set Sync State",
+                        "description": "The action parameters replace the synced world. Only the host's world is sent; can be set before entering a room, cleared when the room is left"
                     }
                 },
                 "expressions": {
@@ -1970,6 +1980,16 @@
                     "multiplayer-last-message-from": {
                         "translated-name": "MultiplayerLastMessageFrom",
                         "description": "Sender ID of the last received message"
+                    },
+                    "multiplayer-sync-state-value": {
+                        "translated-name": "MultiplayerSyncStateValue",
+                        "description": "Value by key from the synced world, the last one set or received",
+                        "params": {
+                            "key": {
+                                "name": "Key",
+                                "desc": "Property key"
+                            }
+                        }
                     },
                     "multiplayer-room-list-count": {
                         "translated-name": "MultiplayerRoomListCount",

@@ -1924,6 +1924,13 @@
                 "isCompatibleWithTriggers": false
             },
             {
+                "id": "on-multiplayer-sync-state-received",
+                "scriptName": "OnMultiplayerSyncStateReceived",
+                "isTrigger": true,
+                "isInvertible": false,
+                "isCompatibleWithTriggers": false
+            },
+            {
                 "id": "on-multiplayer-create-room-completed",
                 "scriptName": "OnMultiplayerCreateRoomCompleted",
                 "isTrigger": true,
@@ -2054,6 +2061,12 @@
                         "type": "string"
                     }
                 ]
+            },
+            {
+                "id": "multiplayer-set-sync-state",
+                "scriptName": "MultiplayerSetSyncState",
+                "isAsync": false,
+                "params": []
             }
         ],
         "expressions": [
@@ -2254,6 +2267,17 @@
                 "id": "multiplayer-last-message-from",
                 "expressionName": "MultiplayerLastMessageFrom",
                 "returnType": "string"
+            },
+            {
+                "id": "multiplayer-sync-state-value",
+                "expressionName": "MultiplayerSyncStateValue",
+                "returnType": "any",
+                "params": [
+                    {
+                        "id": "key",
+                        "type": "string"
+                    }
+                ]
             },
             {
                 "id": "multiplayer-room-list-count",

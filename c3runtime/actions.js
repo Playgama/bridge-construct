@@ -724,13 +724,13 @@ const C3 = globalThis.C3
         },
 
         // multiplayer
-        // Room options (maxPlayers, isVisible, isOpen, filter, limit, properties, playerName, playerProperties)
+        // Room options (maxPlayers, isVisible, isOpen, filter, limit, properties, playerName, playerProperties, syncState)
         // are taken from the action parameters container
         MultiplayerCreateRoom() {
             this.isLastActionCompletedSuccessfully = false
             this.multiplayerLastErrorCode = ''
             // Taken right away: actions run before this request completes collect their own parameters
-            const options = this.actionParametersContainer
+            const options = this.normalizeMultiplayerSyncState(this.actionParametersContainer)
             this.actionParametersContainer = {}
 
             return new Promise(resolve => {
@@ -750,7 +750,7 @@ const C3 = globalThis.C3
             this.isLastActionCompletedSuccessfully = false
             this.multiplayerLastErrorCode = ''
             // Taken right away: actions run before this request completes collect their own parameters
-            const options = this.actionParametersContainer
+            const options = this.normalizeMultiplayerSyncState(this.actionParametersContainer)
             this.actionParametersContainer = {}
 
             return new Promise(resolve => {
@@ -770,7 +770,7 @@ const C3 = globalThis.C3
             this.isLastActionCompletedSuccessfully = false
             this.multiplayerLastErrorCode = ''
             // Taken right away: actions run before this request completes collect their own parameters
-            const options = this.actionParametersContainer
+            const options = this.normalizeMultiplayerSyncState(this.actionParametersContainer)
             this.actionParametersContainer = {}
 
             return new Promise(resolve => {
@@ -854,6 +854,12 @@ const C3 = globalThis.C3
         MultiplayerSendMessage(type, target, playerId) {
             const to = target < this.multiplayerTargets.length ? this.multiplayerTargets[target] : playerId
             window.bridge.multiplayer.send(type, this.actionParametersContainer, { to })
+            this.actionParametersContainer = {}
+        },
+
+        // The action parameters replace the synced world; only the host's world is sent
+        MultiplayerSetSyncState() {
+            window.bridge.multiplayer.setSyncState(this.actionParametersContainer)
             this.actionParametersContainer = {}
         },
     }

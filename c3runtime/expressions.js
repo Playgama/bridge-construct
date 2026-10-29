@@ -639,6 +639,12 @@ const C3 = globalThis.C3
             return this.toExpressionValue(data ? data[key] : null)
         },
 
+        // The world is the last one set on this player or received from the host
+        MultiplayerSyncStateValue(key) {
+            const world = window.bridge.multiplayer.syncState
+            return this.toExpressionValue(this.isObject(world) ? world[key] : null)
+        },
+
         MultiplayerRoomListCount() {
             return this.multiplayerRooms ? this.multiplayerRooms.length : 0
         },

@@ -467,6 +467,10 @@ const C3 = globalThis.C3
             return true
         },
 
+        OnMultiplayerSyncStateReceived() {
+            return true
+        },
+
         OnMultiplayerCreateRoomCompleted() {
             return true
         },

@@ -139,6 +139,15 @@ const C3 = globalThis.C3
                 console.log(error)
                 self.multiplayerLastErrorCode = error && error.code ? error.code : ''
             }
+            // Add Action Parameter gives syncState as a number or a string: 0, "0", "false" and "" turn it off,
+            // any other value turns it on, syncState.updatesPerSecond keeps it an object
+            this.normalizeMultiplayerSyncState = function(options) {
+                const syncState = options.syncState
+                if (typeof syncState === 'number' || typeof syncState === 'string') {
+                    options.syncState = syncState !== 0 && syncState !== '0' && syncState !== 'false' && syncState !== ''
+                }
+                return options
+            }
         }
 
         loadSdk() {
@@ -358,6 +367,11 @@ const C3 = globalThis.C3
             multiplayer.on('multiplayer_message_received', message => {
                 this.multiplayerLastMessage = message
                 this._trigger(this.conditions.OnMultiplayerMessageReceived)
+            })
+
+            // the world itself is read from multiplayer.syncState
+            multiplayer.on('multiplayer_sync_state_received', world => {
+                this._trigger(this.conditions.OnMultiplayerSyncStateReceived)
             })
         }
 
