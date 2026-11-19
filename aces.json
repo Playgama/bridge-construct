@@ -1959,6 +1959,13 @@
                 "isCompatibleWithTriggers": false
             },
             {
+                "id": "on-multiplayer-get-regions-completed",
+                "scriptName": "OnMultiplayerGetRegionsCompleted",
+                "isTrigger": true,
+                "isInvertible": false,
+                "isCompatibleWithTriggers": false
+            },
+            {
                 "id": "on-multiplayer-invite-to-room-completed",
                 "scriptName": "OnMultiplayerInviteToRoomCompleted",
                 "isTrigger": true,
@@ -1992,6 +1999,22 @@
                 "id": "multiplayer-get-rooms",
                 "scriptName": "MultiplayerGetRooms",
                 "isAsync": true
+            },
+            {
+                "id": "multiplayer-get-regions",
+                "scriptName": "MultiplayerGetRegions",
+                "isAsync": true
+            },
+            {
+                "id": "multiplayer-set-region",
+                "scriptName": "MultiplayerSetRegion",
+                "isAsync": false,
+                "params": [
+                    {
+                        "id": "region",
+                        "type": "string"
+                    }
+                ]
             },
             {
                 "id": "multiplayer-invite-to-room",
@@ -2078,6 +2101,11 @@
             {
                 "id": "multiplayer-room-id",
                 "expressionName": "MultiplayerRoomId",
+                "returnType": "string"
+            },
+            {
+                "id": "multiplayer-region",
+                "expressionName": "MultiplayerRegion",
                 "returnType": "string"
             },
             {
@@ -2334,6 +2362,27 @@
                     {
                         "id": "key",
                         "type": "string"
+                    }
+                ]
+            },
+            {
+                "id": "multiplayer-region-list-count",
+                "expressionName": "MultiplayerRegionListCount",
+                "returnType": "number"
+            },
+            {
+                "id": "multiplayer-region-list-as-json",
+                "expressionName": "MultiplayerRegionListAsJSON",
+                "returnType": "string"
+            },
+            {
+                "id": "multiplayer-region-list-id",
+                "expressionName": "MultiplayerRegionListId",
+                "returnType": "string",
+                "params": [
+                    {
+                        "id": "region-index",
+                        "type": "number"
                     }
                 ]
             }

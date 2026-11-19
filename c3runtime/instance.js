@@ -34,6 +34,7 @@ const C3 = globalThis.C3
             this.isLastActionCompletedSuccessfully = false
             this.actionParametersContainer = {}
             this.multiplayerRooms = []
+            this.multiplayerRegions = []
             this.multiplayerLastEventPlayer = null
             this.multiplayerLastMessage = null
             this.multiplayerLastRoomLeftReason = ''

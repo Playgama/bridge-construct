@@ -487,6 +487,10 @@ const C3 = globalThis.C3
             return true
         },
 
+        OnMultiplayerGetRegionsCompleted() {
+            return true
+        },
+
         OnMultiplayerInviteToRoomCompleted() {
             return true
         },

@@ -693,6 +693,11 @@
                         "display-text": "On Multiplayer Get Rooms Completed",
                         "description": "On Multiplayer Get Rooms Completed"
                     },
+                    "on-multiplayer-get-regions-completed": {
+                        "list-name": "OnMultiplayerGetRegionsCompleted",
+                        "display-text": "On Multiplayer Get Regions Completed",
+                        "description": "On Multiplayer Get Regions Completed"
+                    },
                     "on-multiplayer-invite-to-room-completed": {
                         "list-name": "OnMultiplayerInviteToRoomCompleted",
                         "display-text": "On Multiplayer Invite To Room Completed",
@@ -1180,6 +1185,22 @@
                         "list-name": "MultiplayerGetRooms",
                         "display-text": "Multiplayer Get Rooms",
                         "description": "Multiplayer Get Rooms. Lists public rooms; with filter.* only rooms created with exactly that filter. Options are taken from Add Action Parameter: filter.*, maxPlayers, limit"
+                    },
+                    "multiplayer-get-regions": {
+                        "list-name": "MultiplayerGetRegions",
+                        "display-text": "Multiplayer Get Regions",
+                        "description": "Multiplayer Get Regions. Lists region IDs for a region picker; also sets Multiplayer Region to the default one if it is still unknown"
+                    },
+                    "multiplayer-set-region": {
+                        "list-name": "MultiplayerSetRegion",
+                        "display-text": "Multiplayer Set Region. Region: [b]{0}[/b].",
+                        "description": "Multiplayer Set Region. Region of the next created or matched room and of Get Rooms. The current room stays where it is; Join Room by code always enters the region of the code",
+                        "params": {
+                            "region": {
+                                "name": "Region",
+                                "desc": "Region ID from Get Regions"
+                            }
+                        }
                     },
                     "multiplayer-invite-to-room": {
                         "list-name": "MultiplayerInviteToRoom",
@@ -1819,6 +1840,10 @@
                         "translated-name": "MultiplayerRoomId",
                         "description": "Current room ID (code)"
                     },
+                    "multiplayer-region": {
+                        "translated-name": "MultiplayerRegion",
+                        "description": "Region of the next created or matched room and of Get Rooms; empty until Set Region, Get Regions or the first room action"
+                    },
                     "multiplayer-player-id": {
                         "translated-name": "MultiplayerPlayerId",
                         "description": "Local player ID in the room"
@@ -2040,6 +2065,24 @@
                             "key": {
                                 "name": "Key",
                                 "desc": "Property key"
+                            }
+                        }
+                    },
+                    "multiplayer-region-list-count": {
+                        "translated-name": "MultiplayerRegionListCount",
+                        "description": "Regions count from the last Get Regions"
+                    },
+                    "multiplayer-region-list-as-json": {
+                        "translated-name": "MultiplayerRegionListAsJSON",
+                        "description": "Region IDs from the last Get Regions as a JSON string"
+                    },
+                    "multiplayer-region-list-id": {
+                        "translated-name": "MultiplayerRegionListId",
+                        "description": "Region ID from the last Get Regions",
+                        "params": {
+                            "region-index": {
+                                "name": "Region Index",
+                                "desc": "Region Index"
                             }
                         }
                     }

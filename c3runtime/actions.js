@@ -807,6 +807,28 @@ const C3 = globalThis.C3
             })
         },
 
+        MultiplayerGetRegions() {
+            this.isLastActionCompletedSuccessfully = false
+            this.multiplayerLastErrorCode = ''
+
+            return new Promise(resolve => {
+                window.bridge.multiplayer.getRegions()
+                    .then(regions => {
+                        this.isLastActionCompletedSuccessfully = true
+                        this.multiplayerRegions = regions || []
+                    })
+                    .catch(error => this.setMultiplayerError(error))
+                    .finally(() => {
+                        this._trigger(this.conditions.OnMultiplayerGetRegionsCompleted)
+                        resolve()
+                    })
+            })
+        },
+
+        MultiplayerSetRegion(region) {
+            window.bridge.multiplayer.setRegion(region)
+        },
+
         MultiplayerInviteToRoom() {
             this.isLastActionCompletedSuccessfully = false
             this.multiplayerLastErrorCode = ''

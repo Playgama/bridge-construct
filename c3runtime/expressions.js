@@ -532,6 +532,9 @@ const C3 = globalThis.C3
         MultiplayerRoomId() {
             return window.bridge.multiplayer.roomId || ''
         },
+        MultiplayerRegion() {
+            return window.bridge.multiplayer.region || ''
+        },
         MultiplayerPlayerId() {
             return window.bridge.multiplayer.playerId || ''
         },
@@ -666,6 +669,17 @@ const C3 = globalThis.C3
         MultiplayerRoomListProperty(roomIndex, key) {
             const room = this.multiplayerRooms && this.multiplayerRooms[roomIndex]
             return this.toExpressionValue(room && room.properties ? room.properties[key] : null)
+        },
+
+        MultiplayerRegionListCount() {
+            return this.multiplayerRegions ? this.multiplayerRegions.length : 0
+        },
+        MultiplayerRegionListAsJSON() {
+            return JSON.stringify(this.multiplayerRegions || [])
+        },
+        MultiplayerRegionListId(regionIndex) {
+            const region = this.multiplayerRegions && this.multiplayerRegions[regionIndex]
+            return region || ''
         }
     }
 }
