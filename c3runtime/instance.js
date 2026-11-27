@@ -46,6 +46,7 @@ const C3 = globalThis.C3
             this.multiplayerTargets = ['others', 'all', 'host']
             this.multiplayerRoomLeaveReasons = ['left', 'connection_lost', 'room_closed']
             this.leaderboardPeriods = ['permanent', 'daily', 'weekly', 'monthly']
+            this.leaderboardScoreModes = ['best', 'sum']
 
 
             // utils for action parameters
@@ -375,6 +376,25 @@ const C3 = globalThis.C3
             // the world itself is read from multiplayer.syncState
             multiplayer.on('multiplayer_sync_state_received', world => {
                 this._trigger(this.conditions.OnMultiplayerSyncStateReceived)
+            })
+        }
+
+        // Shared by Get Leaderboard Entries and Get Leaderboard Entries For Period
+        _getLeaderboardEntries(id, options) {
+            this.leaderboardEntries = null
+            this.isLastActionCompletedSuccessfully = false
+
+            return new Promise(resolve => {
+                window.bridge.leaderboards.getEntries(id, options)
+                    .then(entries => {
+                        this.leaderboardEntries = entries
+                        this.isLastActionCompletedSuccessfully = true
+                    })
+                    .catch(error => console.log(error))
+                    .finally(() => {
+                        this._trigger(this.conditions.OnLeaderboardsGetEntriesCompleted)
+                        resolve()
+                    })
             })
         }
 

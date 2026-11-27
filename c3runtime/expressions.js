@@ -201,15 +201,15 @@ const C3 = globalThis.C3
             let entry = this.leaderboardEntries[entryIndex]
             return entry['rank']
         },
-        LeaderboardPeriod() {
-            return this.leaderboardInfo ? this.leaderboardInfo.period : ''
+        LeaderboardScoreMode() {
+            return this.leaderboardInfo ? this.leaderboardInfo.scoreMode : ''
         },
-        LeaderboardTimeLeft() {
-            if (!this.leaderboardInfo || typeof this.leaderboardInfo.timeLeft !== 'number') {
-                return -1
-            }
+        LeaderboardTimeLeft(period) {
+            const timeLeft = this.leaderboardInfo && this.leaderboardInfo.timeLeft
+                ? this.leaderboardInfo.timeLeft[period]
+                : undefined
 
-            return this.leaderboardInfo.timeLeft
+            return typeof timeLeft === 'number' ? timeLeft : -1
         },
 
         // achievements
