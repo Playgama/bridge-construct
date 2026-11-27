@@ -975,7 +975,7 @@
                     "leaderboards-set-score": {
                         "list-name": "LeaderboardsSetScore",
                         "display-text": "Set Leaderboard Score. ID: [b]{0}[/b]. Score: [b]{1}[/b].",
-                        "description": "Set Leaderboard Score",
+                        "description": "Set Leaderboard Score. On a leaderboard configured as sum in the developer console the score is an increment: send the points the player earned (e.g. 120), not the total",
                         "params": {
                             "id": {
                                 "name": "ID",
@@ -983,18 +983,39 @@
                             },
                             "score": {
                                 "name": "Score",
-                                "desc": "Score"
+                                "desc": "Score; on a sum leaderboard the points earned"
                             }
                         }
                     },
                     "leaderboards-get-entries": {
                         "list-name": "LeaderboardsGetEntries",
                         "display-text": "Get Leaderboard Entries. ID: [b]{0}[/b].",
-                        "description": "Get Leaderboard Entries",
+                        "description": "Get Leaderboard Entries of the permanent (all time) standings",
                         "params": {
                             "id": {
                                 "name": "ID",
                                 "desc": "ID"
+                            }
+                        }
+                    },
+                    "leaderboards-get-entries-for-period": {
+                        "list-name": "LeaderboardsGetEntriesForPeriod",
+                        "display-text": "Get Leaderboard Entries For Period. ID: [b]{0}[/b]. Period: [b]{1}[/b].",
+                        "description": "Get Leaderboard Entries of the permanent (all time), daily, weekly or monthly standings. Triggers On Leaderboards Get Entries Completed. Only Playgama leaderboards have daily, weekly and monthly standings; on native platform leaderboards these periods fail",
+                        "params": {
+                            "id": {
+                                "name": "ID",
+                                "desc": "ID"
+                            },
+                            "period": {
+                                "name": "Period",
+                                "desc": "Standings to read; daily, weekly and monthly reset at 00:00 UTC (weekly on Monday, monthly on the 1st)",
+                                "items": {
+                                    "permanent": "Permanent",
+                                    "daily": "Daily",
+                                    "weekly": "Weekly",
+                                    "monthly": "Monthly"
+                                }
                             }
                         }
                     },

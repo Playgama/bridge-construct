@@ -967,6 +967,27 @@
                 ]
             },
             {
+                "id": "leaderboards-get-entries-for-period",
+                "scriptName": "LeaderboardsGetEntriesForPeriod",
+                "isAsync": true,
+                "params": [
+                    {
+                        "id": "id",
+                        "type": "string"
+                    },
+                    {
+                        "id": "period",
+                        "type": "combo",
+                        "items": [
+                            "permanent",
+                            "daily",
+                            "weekly",
+                            "monthly"
+                        ]
+                    }
+                ]
+            },
+            {
                 "id": "leaderboards-show-native-popup",
                 "scriptName": "LeaderboardsShowNativePopup",
                 "isAsync": true,

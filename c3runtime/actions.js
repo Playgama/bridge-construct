@@ -369,21 +369,10 @@ const C3 = globalThis.C3
             })
         },
         LeaderboardsGetEntries(id) {
-            this.leaderboardEntries = null
-            this.isLastActionCompletedSuccessfully = false
-
-            return new Promise(resolve => {
-                window.bridge.leaderboards.getEntries(id)
-                    .then(entries => {
-                        this.leaderboardEntries = entries
-                        this.isLastActionCompletedSuccessfully = true
-                    })
-                    .catch(error => console.log(error))
-                    .finally(() => {
-                        this._trigger(this.conditions.OnLeaderboardsGetEntriesCompleted)
-                        resolve()
-                    })
-            })
+            return this._getLeaderboardEntries(id)
+        },
+        LeaderboardsGetEntriesForPeriod(id, period) {
+            return this._getLeaderboardEntries(id, { period: this.leaderboardPeriods[period] })
         },
         LeaderboardsShowNativePopup(id) {
             this.isLastActionCompletedSuccessfully = false
