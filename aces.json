@@ -918,36 +918,6 @@
                 "scriptName": "IsLeaderboardsTypeNativePopup"
             },
             {
-                "id": "has-leaderboard-period",
-                "scriptName": "HasLeaderboardPeriod",
-                "params": [
-                    {
-                        "id": "period",
-                        "type": "combo",
-                        "items": [
-                            "permanent",
-                            "daily",
-                            "weekly",
-                            "monthly"
-                        ]
-                    }
-                ]
-            },
-            {
-                "id": "is-leaderboard-score-mode",
-                "scriptName": "IsLeaderboardScoreMode",
-                "params": [
-                    {
-                        "id": "score-mode",
-                        "type": "combo",
-                        "items": [
-                            "best",
-                            "sum"
-                        ]
-                    }
-                ]
-            },
-            {
                 "id": "on-leaderboards-set-score-completed",
                 "scriptName": "OnLeaderboardsSetScoreCompleted",
                 "isTrigger": true,
@@ -957,13 +927,6 @@
             {
                 "id": "on-leaderboards-get-entries-completed",
                 "scriptName": "OnLeaderboardsGetEntriesCompleted",
-                "isTrigger": true,
-                "isInvertible": false,
-                "isCompatibleWithTriggers": false
-            },
-            {
-                "id": "on-leaderboards-get-info-completed",
-                "scriptName": "OnLeaderboardsGetInfoCompleted",
                 "isTrigger": true,
                 "isInvertible": false,
                 "isCompatibleWithTriggers": false
@@ -1021,17 +984,6 @@
                             "weekly",
                             "monthly"
                         ]
-                    }
-                ]
-            },
-            {
-                "id": "leaderboards-get-info",
-                "scriptName": "LeaderboardsGetInfo",
-                "isAsync": true,
-                "params": [
-                    {
-                        "id": "id",
-                        "type": "string"
                     }
                 ]
             },
@@ -1110,22 +1062,6 @@
                     {
                         "id": "entry-index",
                         "type": "number"
-                    }
-                ]
-            },
-            {
-                "id": "leaderboard-score-mode",
-                "expressionName": "LeaderboardScoreMode",
-                "returnType": "string"
-            },
-            {
-                "id": "leaderboard-time-left",
-                "expressionName": "LeaderboardTimeLeft",
-                "returnType": "number",
-                "params": [
-                    {
-                        "id": "period",
-                        "type": "string"
                     }
                 ]
             }

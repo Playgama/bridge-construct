@@ -374,23 +374,6 @@ const C3 = globalThis.C3
         LeaderboardsGetEntriesForPeriod(id, period) {
             return this._getLeaderboardEntries(id, { period: this.leaderboardPeriods[period] })
         },
-        LeaderboardsGetInfo(id) {
-            this.leaderboardInfo = null
-            this.isLastActionCompletedSuccessfully = false
-
-            return new Promise(resolve => {
-                window.bridge.leaderboards.getInfo(id)
-                    .then(info => {
-                        this.leaderboardInfo = info
-                        this.isLastActionCompletedSuccessfully = true
-                    })
-                    .catch(error => console.log(error))
-                    .finally(() => {
-                        this._trigger(this.conditions.OnLeaderboardsGetInfoCompleted)
-                        resolve()
-                    })
-            })
-        },
         LeaderboardsShowNativePopup(id) {
             this.isLastActionCompletedSuccessfully = false
 

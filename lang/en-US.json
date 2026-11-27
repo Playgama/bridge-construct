@@ -392,38 +392,6 @@
                         "display-text": "Is Leaderboards Type = Native Popup",
                         "description": "Is Leaderboards Type = Native Popup"
                     },
-                    "has-leaderboard-period": {
-                        "list-name": "HasLeaderboardPeriod",
-                        "display-text": "Leaderboard Has Period [b]{0}[/b]",
-                        "description": "The leaderboard from the last Get Leaderboard Info has standings of this period. Playgama leaderboards have all of them, native platform leaderboards only permanent",
-                        "params": {
-                            "period": {
-                                "name": "Period",
-                                "desc": "Leaderboard period",
-                                "items": {
-                                    "permanent": "Permanent",
-                                    "daily": "Daily",
-                                    "weekly": "Weekly",
-                                    "monthly": "Monthly"
-                                }
-                            }
-                        }
-                    },
-                    "is-leaderboard-score-mode": {
-                        "list-name": "IsLeaderboardScoreMode",
-                        "display-text": "Leaderboard Score Mode is [b]{0}[/b]",
-                        "description": "Is Leaderboard Score Mode from the last Get Leaderboard Info",
-                        "params": {
-                            "score-mode": {
-                                "name": "Score Mode",
-                                "desc": "Best keeps the best score, Sum adds every submitted score",
-                                "items": {
-                                    "best": "Best",
-                                    "sum": "Sum"
-                                }
-                            }
-                        }
-                    },
                     "on-leaderboards-set-score-completed": {
                         "list-name": "OnLeaderboardsSetScoreCompleted",
                         "display-text": "On Leaderboards Set Score Completed",
@@ -433,11 +401,6 @@
                         "list-name": "OnLeaderboardsGetEntriesCompleted",
                         "display-text": "On Leaderboards Get Entries Completed",
                         "description": "On Leaderboards Get Entries Completed"
-                    },
-                    "on-leaderboards-get-info-completed": {
-                        "list-name": "OnLeaderboardsGetInfoCompleted",
-                        "display-text": "On Leaderboards Get Info Completed",
-                        "description": "On Leaderboards Get Info Completed"
                     },
                     "on-leaderboards-show-native-popup-completed": {
                         "list-name": "OnLeaderboardsShowNativePopupCompleted",
@@ -1012,7 +975,7 @@
                     "leaderboards-set-score": {
                         "list-name": "LeaderboardsSetScore",
                         "display-text": "Set Leaderboard Score. ID: [b]{0}[/b]. Score: [b]{1}[/b].",
-                        "description": "Set Leaderboard Score. A leaderboard with the Sum score mode adds every submitted score, so send what the player earned (e.g. 120), not the total",
+                        "description": "Set Leaderboard Score. On a leaderboard configured as sum in the developer console the score is an increment: send the points the player earned (e.g. 120), not the total",
                         "params": {
                             "id": {
                                 "name": "ID",
@@ -1020,7 +983,7 @@
                             },
                             "score": {
                                 "name": "Score",
-                                "desc": "Score; for the Sum score mode the amount to add"
+                                "desc": "Score; on a sum leaderboard the points earned"
                             }
                         }
                     },
@@ -1038,7 +1001,7 @@
                     "leaderboards-get-entries-for-period": {
                         "list-name": "LeaderboardsGetEntriesForPeriod",
                         "display-text": "Get Leaderboard Entries For Period. ID: [b]{0}[/b]. Period: [b]{1}[/b].",
-                        "description": "Get Leaderboard Entries of the permanent (all time), daily, weekly or monthly standings. Triggers On Leaderboards Get Entries Completed. Only Playgama leaderboards have daily, weekly and monthly standings, it fails for them on native platform leaderboards",
+                        "description": "Get Leaderboard Entries of the permanent (all time), daily, weekly or monthly standings. Triggers On Leaderboards Get Entries Completed. Only Playgama leaderboards have daily, weekly and monthly standings; on native platform leaderboards these periods fail",
                         "params": {
                             "id": {
                                 "name": "ID",
@@ -1053,17 +1016,6 @@
                                     "weekly": "Weekly",
                                     "monthly": "Monthly"
                                 }
-                            }
-                        }
-                    },
-                    "leaderboards-get-info": {
-                        "list-name": "LeaderboardsGetInfo",
-                        "display-text": "Get Leaderboard Info. ID: [b]{0}[/b].",
-                        "description": "Get Leaderboard Info: score mode, periods with standings and time left until each period resets. Playgama leaderboards have permanent, daily, weekly and monthly standings (reset at 00:00 UTC, weekly on Monday, monthly on the 1st); native platform leaderboards have only permanent and the Best score mode",
-                        "params": {
-                            "id": {
-                                "name": "ID",
-                                "desc": "ID"
                             }
                         }
                     },
@@ -1570,20 +1522,6 @@
                             "entry-index": {
                                 "name": "Entry Index",
                                 "desc": "Entry Index"
-                            }
-                        }
-                    },
-                    "leaderboard-score-mode": {
-                        "translated-name": "LeaderboardScoreMode",
-                        "description": "Leaderboard score mode from the last Get Leaderboard Info: best (keeps the best score) or sum (adds every submitted score); empty until it succeeds"
-                    },
-                    "leaderboard-time-left": {
-                        "translated-name": "LeaderboardTimeLeft",
-                        "description": "Seconds until the leaderboard period resets, from the last Get Leaderboard Info; -1 for permanent, a period the leaderboard does not have, or until it succeeds",
-                        "params": {
-                            "period": {
-                                "name": "Period",
-                                "desc": "daily, weekly or monthly"
                             }
                         }
                     },

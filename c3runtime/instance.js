@@ -31,7 +31,6 @@ const C3 = globalThis.C3
             this.storageDataSetRequestValues = []
             this.storageDataDeleteRequestKeys = []
             this.remoteConfig = {}
-            this.leaderboardInfo = null
             this.isLastActionCompletedSuccessfully = false
             this.actionParametersContainer = {}
             this.multiplayerRooms = []
@@ -46,7 +45,6 @@ const C3 = globalThis.C3
             this.multiplayerTargets = ['others', 'all', 'host']
             this.multiplayerRoomLeaveReasons = ['left', 'connection_lost', 'room_closed']
             this.leaderboardPeriods = ['permanent', 'daily', 'weekly', 'monthly']
-            this.leaderboardScoreModes = ['best', 'sum']
 
 
             // utils for action parameters

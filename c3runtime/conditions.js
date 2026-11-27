@@ -257,22 +257,11 @@ const C3 = globalThis.C3
         IsLeaderboardsTypeNativePopup() {
             return window.bridge.leaderboards.type === 'native_popup'
         },
-        HasLeaderboardPeriod(period) {
-            return !!this.leaderboardInfo
-                && Array.isArray(this.leaderboardInfo.periods)
-                && this.leaderboardInfo.periods.includes(this.leaderboardPeriods[period])
-        },
-        IsLeaderboardScoreMode(scoreMode) {
-            return !!this.leaderboardInfo && this.leaderboardInfo.scoreMode === this.leaderboardScoreModes[scoreMode]
-        },
 
         OnLeaderboardsSetScoreCompleted() {
             return true
         },
         OnLeaderboardsGetEntriesCompleted() {
-            return true
-        },
-        OnLeaderboardsGetInfoCompleted() {
             return true
         },
         OnLeaderboardsShowNativePopupCompleted() {
