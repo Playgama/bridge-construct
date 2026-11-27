@@ -257,11 +257,17 @@ const C3 = globalThis.C3
         IsLeaderboardsTypeNativePopup() {
             return window.bridge.leaderboards.type === 'native_popup'
         },
+        IsLeaderboardPeriod(period) {
+            return !!this.leaderboardInfo && this.leaderboardInfo.period === this.leaderboardPeriods[period]
+        },
 
         OnLeaderboardsSetScoreCompleted() {
             return true
         },
         OnLeaderboardsGetEntriesCompleted() {
+            return true
+        },
+        OnLeaderboardsGetInfoCompleted() {
             return true
         },
         OnLeaderboardsShowNativePopupCompleted() {

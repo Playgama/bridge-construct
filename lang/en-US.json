@@ -392,6 +392,23 @@
                         "display-text": "Is Leaderboards Type = Native Popup",
                         "description": "Is Leaderboards Type = Native Popup"
                     },
+                    "is-leaderboard-period": {
+                        "list-name": "IsLeaderboardPeriod",
+                        "display-text": "Leaderboard Period is [b]{0}[/b]",
+                        "description": "Is Leaderboard Period from the last Get Leaderboard Info",
+                        "params": {
+                            "period": {
+                                "name": "Period",
+                                "desc": "Leaderboard period",
+                                "items": {
+                                    "permanent": "Permanent",
+                                    "daily": "Daily",
+                                    "weekly": "Weekly",
+                                    "monthly": "Monthly"
+                                }
+                            }
+                        }
+                    },
                     "on-leaderboards-set-score-completed": {
                         "list-name": "OnLeaderboardsSetScoreCompleted",
                         "display-text": "On Leaderboards Set Score Completed",
@@ -401,6 +418,11 @@
                         "list-name": "OnLeaderboardsGetEntriesCompleted",
                         "display-text": "On Leaderboards Get Entries Completed",
                         "description": "On Leaderboards Get Entries Completed"
+                    },
+                    "on-leaderboards-get-info-completed": {
+                        "list-name": "OnLeaderboardsGetInfoCompleted",
+                        "display-text": "On Leaderboards Get Info Completed",
+                        "description": "On Leaderboards Get Info Completed"
                     },
                     "on-leaderboards-show-native-popup-completed": {
                         "list-name": "OnLeaderboardsShowNativePopupCompleted",
@@ -998,6 +1020,17 @@
                             }
                         }
                     },
+                    "leaderboards-get-info": {
+                        "list-name": "LeaderboardsGetInfo",
+                        "display-text": "Get Leaderboard Info. ID: [b]{0}[/b].",
+                        "description": "Get Leaderboard Info: period and time left until the period resets. Daily, weekly and monthly periods exist only for Playgama leaderboards and reset at 00:00 UTC (weekly on Monday, monthly on the 1st); native platform leaderboards are always permanent",
+                        "params": {
+                            "id": {
+                                "name": "ID",
+                                "desc": "ID"
+                            }
+                        }
+                    },
                     "leaderboards-show-native-popup": {
                         "list-name": "LeaderboardsShowNativePopup",
                         "display-text": "Show Leaderboard Native Popup. ID: [b]{0}[/b].",
@@ -1503,6 +1536,14 @@
                                 "desc": "Entry Index"
                             }
                         }
+                    },
+                    "leaderboard-period": {
+                        "translated-name": "LeaderboardPeriod",
+                        "description": "Leaderboard period from the last Get Leaderboard Info: permanent, daily, weekly or monthly; empty until it succeeds"
+                    },
+                    "leaderboard-time-left": {
+                        "translated-name": "LeaderboardTimeLeft",
+                        "description": "Seconds until the leaderboard period resets, from the last Get Leaderboard Info; -1 for a permanent leaderboard or until it succeeds"
                     },
                     "payments-last-purchase-properties-count": {
                         "translated-name": "PaymentsLastPurchasePropertiesCount",

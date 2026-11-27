@@ -201,6 +201,16 @@ const C3 = globalThis.C3
             let entry = this.leaderboardEntries[entryIndex]
             return entry['rank']
         },
+        LeaderboardPeriod() {
+            return this.leaderboardInfo ? this.leaderboardInfo.period : ''
+        },
+        LeaderboardTimeLeft() {
+            if (!this.leaderboardInfo || typeof this.leaderboardInfo.timeLeft !== 'number') {
+                return -1
+            }
+
+            return this.leaderboardInfo.timeLeft
+        },
 
         // achievements
         AchievementsCount() {

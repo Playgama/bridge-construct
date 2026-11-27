@@ -918,6 +918,22 @@
                 "scriptName": "IsLeaderboardsTypeNativePopup"
             },
             {
+                "id": "is-leaderboard-period",
+                "scriptName": "IsLeaderboardPeriod",
+                "params": [
+                    {
+                        "id": "period",
+                        "type": "combo",
+                        "items": [
+                            "permanent",
+                            "daily",
+                            "weekly",
+                            "monthly"
+                        ]
+                    }
+                ]
+            },
+            {
                 "id": "on-leaderboards-set-score-completed",
                 "scriptName": "OnLeaderboardsSetScoreCompleted",
                 "isTrigger": true,
@@ -927,6 +943,13 @@
             {
                 "id": "on-leaderboards-get-entries-completed",
                 "scriptName": "OnLeaderboardsGetEntriesCompleted",
+                "isTrigger": true,
+                "isInvertible": false,
+                "isCompatibleWithTriggers": false
+            },
+            {
+                "id": "on-leaderboards-get-info-completed",
+                "scriptName": "OnLeaderboardsGetInfoCompleted",
                 "isTrigger": true,
                 "isInvertible": false,
                 "isCompatibleWithTriggers": false
@@ -958,6 +981,17 @@
             {
                 "id": "leaderboards-get-entries",
                 "scriptName": "LeaderboardsGetEntries",
+                "isAsync": true,
+                "params": [
+                    {
+                        "id": "id",
+                        "type": "string"
+                    }
+                ]
+            },
+            {
+                "id": "leaderboards-get-info",
+                "scriptName": "LeaderboardsGetInfo",
                 "isAsync": true,
                 "params": [
                     {
@@ -1043,6 +1077,16 @@
                         "type": "number"
                     }
                 ]
+            },
+            {
+                "id": "leaderboard-period",
+                "expressionName": "LeaderboardPeriod",
+                "returnType": "string"
+            },
+            {
+                "id": "leaderboard-time-left",
+                "expressionName": "LeaderboardTimeLeft",
+                "returnType": "number"
             }
         ]
     },
